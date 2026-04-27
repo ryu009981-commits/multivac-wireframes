@@ -82,7 +82,7 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
 .anchor-nav a { padding:10px 20px; font-size:13px; cursor:pointer; color:#666; text-decoration:none; display:inline-block; }
 .anchor-nav a:hover { color:#003087; }
 
-.tab-btn { cursor:pointer; }
+html { scroll-behavior: smooth; }
 </style>
 </head>
 <body>
@@ -120,16 +120,17 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
     <h1>会社概要</h1>
   </div>
 
-  <!-- タブナビ -->
-  <div class="anchor-nav" style="margin-bottom:32px">
-    <span class="tab-btn active" data-tab="overview"   onclick="showTab('overview')">会社概要</span>
-    <span class="tab-btn"        data-tab="philosophy" onclick="showTab('philosophy')">経営理念</span>
-    <span class="tab-btn"        data-tab="history"    onclick="showTab('history')">沿革</span>
-    <span class="tab-btn"        data-tab="clients"    onclick="showTab('clients')">主要取引先</span>
+  <!-- アンカーナビ（スクロールジャンプ） -->
+  <div class="anchor-nav" style="margin-bottom:48px">
+    <a href="#overview">会社概要</a>
+    <a href="#philosophy">経営理念</a>
+    <a href="#history">沿革</a>
+    <a href="#clients">主要取引先</a>
   </div>
 
   <!-- ① 会社概要 -->
-  <div id="overview" class="tab-content">
+  <div id="overview" style="margin-bottom:56px">
+    <h2 style="font-size:20px;font-weight:900;color:#003087;padding-bottom:10px;border-bottom:2px solid #003087;margin-bottom:24px">会社概要</h2>
     <div class="l-grid2" style="margin-bottom:40px">
       <table>
         <tr><th>会社名</th><td>ムルチバック・ジャパン株式会社</td></tr>
@@ -152,7 +153,8 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
   </div>
 
   <!-- ② 経営理念 -->
-  <div id="philosophy" class="tab-content" style="display:none">
+  <div id="philosophy" style="margin-bottom:56px">
+    <h2 style="font-size:20px;font-weight:900;color:#003087;padding-bottom:10px;border-bottom:2px solid #003087;margin-bottom:24px">経営理念</h2>
     <div style="text-align:center;padding:48px 0;background:#f0f4ff;border-radius:6px;margin-bottom:48px">
       <p style="font-size:13px;color:#888;letter-spacing:2px;margin-bottom:16px">MISSION</p>
       <h2 style="font-size:28px;font-weight:900;color:#003087;line-height:1.6">食品の加工技術と包装技術を通じて<br>社会に貢献する</h2>
@@ -162,7 +164,8 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
   </div>
 
   <!-- ③ 沿革 -->
-  <div id="history" class="tab-content" style="display:none">
+  <div id="history" style="margin-bottom:56px">
+    <h2 style="font-size:20px;font-weight:900;color:#003087;padding-bottom:10px;border-bottom:2px solid #003087;margin-bottom:24px">沿革</h2>
     <div style="position:relative;padding-left:32px;max-width:700px">
       <div style="position:absolute;left:8px;top:0;bottom:0;width:2px;background:#003087"></div>
       <div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">1973年2月</p><p style="font-size:14px;color:#333;line-height:1.6">東京都中央区日本橋小伝馬町に資本金500万円にて東京食品機械株式会社を設立</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">1975年</p><p style="font-size:14px;color:#333;line-height:1.6">千葉県松戸市に工場を開設</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">1981年</p><p style="font-size:14px;color:#333;line-height:1.6">資本金を4,500万円に増資</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">1991年</p><p style="font-size:14px;color:#333;line-height:1.6">大阪支店を開設</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">1995年</p><p style="font-size:14px;color:#333;line-height:1.6">ドイツの複数企業との代理店権取得。MULTIVAC製品の本格展開開始</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2004年</p><p style="font-size:14px;color:#333;line-height:1.6">ムルチバック社と資本提携。九州支店開設</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2006年</p><p style="font-size:14px;color:#333;line-height:1.6">北海道支店開設</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2007年</p><p style="font-size:14px;color:#333;line-height:1.6">ISO14001認証取得</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2009年</p><p style="font-size:14px;color:#333;line-height:1.6">大阪ショールーム建設</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2010年</p><p style="font-size:14px;color:#333;line-height:1.6">本社をつくば市に移転</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2016年</p><p style="font-size:14px;color:#333;line-height:1.6">複数支店の移転・拡張</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2023年</p><p style="font-size:14px;color:#333;line-height:1.6">社名をムルチバック・ジャパン株式会社に変更</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2025年</p><p style="font-size:14px;color:#333;line-height:1.6">新潟支店を開設</p></div>
@@ -170,7 +173,8 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
   </div>
 
   <!-- ④ 主要取引先 -->
-  <div id="clients" class="tab-content" style="display:none">
+  <div id="clients" style="margin-bottom:56px">
+    <h2 style="font-size:20px;font-weight:900;color:#003087;padding-bottom:10px;border-bottom:2px solid #003087;margin-bottom:24px">主要取引先</h2>
     <div class="wf-section">食品・飲料</div>
     <div style="display:flex;flex-wrap:wrap;gap:12px;margin:12px 0 32px">
       <div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[食品メーカーAロゴ]</div><div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[食品メーカーBロゴ]</div><div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[食品メーカーCロゴ]</div><div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[食品メーカーDロゴ]</div><div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[食品メーカーEロゴ]</div><div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[食品メーカーFロゴ]</div>
@@ -187,25 +191,6 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
   </div>
 
 </div>
-
-<script>
-function showTab(id) {
-  document.querySelectorAll('.tab-content').forEach(function(el) {
-    el.style.display = 'none';
-  });
-  document.querySelectorAll('.tab-btn').forEach(function(el) {
-    el.classList.toggle('active', el.dataset.tab === id);
-  });
-  document.getElementById(id).style.display = 'block';
-  history.replaceState(null, '', '#' + id);
-}
-window.addEventListener('DOMContentLoaded', function() {
-  var hash = location.hash.slice(1);
-  if (['overview','philosophy','history','clients'].indexOf(hash) !== -1) {
-    showTab(hash);
-  }
-});
-</script>
 
 
 <footer>
