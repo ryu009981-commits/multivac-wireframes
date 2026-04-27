@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WF｜製品情報 - ムルチバック・ジャパン</title>
+<style>
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; color: #222; background: #fff; }
+.wf-note { background:#fff9c4; border:1px solid #f0c040; border-radius:4px; padding:6px 10px; font-size:12px; color:#555; display:inline-block; margin-bottom:8px; }
+.wf-new  { background:#e3f2fd; border:1px solid #90caf9; border-radius:4px; padding:3px 8px; font-size:11px; color:#1565c0; font-weight:bold; }
+.wf-img  { background:#e8e8e8; border:1px dashed #aaa; display:flex; align-items:center; justify-content:center; color:#888; font-size:13px; }
+.wf-box  { background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:16px; margin-bottom:16px; }
+.wf-section { border-left:4px solid #003087; padding:10px 14px; background:#f0f4ff; margin-bottom:12px; font-weight:bold; }
+
+.l-wrap  { max-width:1200px; margin:0 auto; padding:0 24px; }
+.l-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.l-grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; }
+.l-grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.l-side  { display:grid; grid-template-columns:260px 1fr; gap:32px; }
+
+header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; position:sticky; top:0; z-index:100; }
+.hd-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:24px; }
+.hd-logo  { font-size:18px; font-weight:900; color:#003087; letter-spacing:2px; min-width:180px; }
+.hd-nav   { display:flex; gap:16px; font-size:13px; flex:1; }
+.hd-nav span { padding:4px 0; cursor:pointer; color:#333; }
+.hd-nav span:hover { color:#003087; }
+.hd-btns  { display:flex; gap:10px; }
+.btn-primary { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; cursor:pointer; }
+.btn-outline { border:2px solid #003087; color:#003087; padding:6px 14px; border-radius:4px; font-size:13px; cursor:pointer; }
+
+.breadcrumb { background:#f5f5f5; padding:8px 0; font-size:12px; color:#666; }
+.breadcrumb span { margin:0 6px; }
+
+.hero { background:#e8edf5; padding:60px 0; text-align:left; }
+.hero h1 { font-size:32px; font-weight:900; color:#003087; }
+.hero p  { font-size:15px; color:#555; margin-top:12px; max-width:600px; }
+.hero-en { font-size:13px; color:#888; letter-spacing:2px; margin-bottom:8px; }
+
+.page-head { padding:40px 0 24px; border-bottom:1px solid #eee; margin-bottom:32px; }
+.page-head h1 { font-size:28px; font-weight:900; color:#003087; }
+.page-head p  { font-size:14px; color:#666; margin-top:8px; }
+
+footer { background:#003087; color:#fff; padding:40px 0 20px; margin-top:60px; font-size:13px; }
+.ft-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:1200px; margin:0 auto; padding:0 24px; }
+.ft-col h4 { font-size:13px; font-weight:bold; margin-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:6px; }
+.ft-col p  { color:rgba(255,255,255,0.7); line-height:2; font-size:12px; }
+.ft-copy { text-align:center; color:rgba(255,255,255,0.5); font-size:11px; padding-top:24px; margin-top:24px; border-top:1px solid rgba(255,255,255,0.2); }
+
+.card { background:#fff; border:1px solid #e0e0e0; border-radius:6px; overflow:hidden; }
+.card-body { padding:16px; }
+.tag { background:#e3f2fd; color:#003087; font-size:11px; padding:2px 8px; border-radius:2px; display:inline-block; margin-bottom:6px; }
+.tag-red { background:#fce4ec; color:#c62828; }
+.tag-green { background:#e8f5e9; color:#2e7d32; }
+.news-item { display:flex; gap:16px; padding:16px 0; border-bottom:1px solid #eee; align-items:flex-start; }
+.news-date { color:#888; font-size:12px; min-width:90px; }
+.news-title { font-size:14px; color:#003087; }
+.btn-more { border:1px solid #003087; color:#003087; padding:8px 24px; border-radius:4px; font-size:13px; cursor:pointer; margin:16px auto; display:block; width:fit-content; }
+.label { font-size:12px; color:#666; margin-bottom:4px; display:block; }
+input, select, textarea { width:100%; border:1px solid #ccc; border-radius:4px; padding:10px 12px; font-size:14px; margin-bottom:16px; }
+table { width:100%; border-collapse:collapse; }
+th { background:#f0f4ff; padding:10px 14px; text-align:left; font-size:13px; color:#003087; border:1px solid #ddd; width:160px; }
+td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
+.search-bar { display:flex; gap:8px; background:#f0f4ff; padding:20px; border-radius:6px; margin-bottom:24px; }
+.search-bar input { margin:0; flex:1; }
+.cat-btn { border:1px solid #003087; padding:6px 14px; border-radius:20px; font-size:12px; color:#003087; cursor:pointer; display:inline-block; margin:4px; }
+.cat-btn.active { background:#003087; color:#fff; }
+.anchor-nav { display:flex; gap:8px; border-bottom:2px solid #003087; margin-bottom:24px; padding-bottom:0; }
+.anchor-nav span { padding:10px 20px; font-size:13px; cursor:pointer; color:#666; }
+.anchor-nav span.active { color:#003087; font-weight:bold; border-bottom:3px solid #003087; margin-bottom:-2px; }
+
+</style>
+</head>
+<body>
+<script>
+(function(){
+  if(sessionStorage.getItem('wf_auth')!=='ok'){
+    location.replace('gate.html?r='+encodeURIComponent(location.pathname.split('/').pop()||'index.html'));
+  }
+})();
+</script>
+
+<header>
+  <div class="hd-inner">
+    <div class="hd-logo">■ MULTIVAC<br><small style="font-size:10px;font-weight:400">ムルチバック・ジャパン株式会社</small></div>
+    <nav class="hd-nav">
+      <span>展示会情報</span>
+      <span>お知らせ</span>
+      <span>製品情報 ▾</span>
+      <span>サービス ▾</span>
+      <span>会社概要 ▾</span>
+      <span>採用情報</span>
+    </nav>
+    <div class="hd-btns">
+      <div class="btn-outline">■ お問い合わせ</div>
+      <div class="btn-primary">▼ カタログDL</div>
+    </div>
+  </div>
+</header>
+<div class="breadcrumb"><div class="l-wrap"><span>HOME</span><span>›</span><span>製品情報</span></div></div>
+<div class="l-wrap" style="padding-top:32px;padding-bottom:60px">
+  <div class="page-head">
+    <p class="hero-en">PRODUCTS</p>
+    <h1>製品情報</h1>
+    <p>あらゆるニーズに最先端の技術でお応えします。食品・メディカル・工業・家庭用品など幅広い分野での最適なソリューションを提供。</p>
+  </div>
+
+  <div class="search-bar">
+    <input placeholder="製品名・キーワードで検索">
+    <div class="btn-primary" style="white-space:nowrap;padding:10px 20px">検索</div>
+  </div>
+
+  <div class="anchor-nav" style="margin-bottom:32px">
+    <span class="active">業種から探す</span>
+    <span>目的から探す</span>
+    <span>メーカーから探す</span>
+  </div>
+
+  <div class="wf-section">業種から探す</div>
+  <div class="l-grid3" style="margin-bottom:40px"><div class="card"><div class="wf-img" style="width:100%;height:160px">[食品製品イメージ]</div><div class="card-body"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:6px">食品</h3><p style="font-size:13px;color:#666">深絞り包装機・トレーシーラー・食肉加工機械など食品向け製品</p><div class="btn-more" style="margin:12px 0 0">製品を見る →</div></div></div><div class="card"><div class="wf-img" style="width:100%;height:160px">[メディカル製品イメージ]</div><div class="card-body"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:6px">メディカル</h3><p style="font-size:13px;color:#666">医療機器向け包装機・ブリスター包装機など</p><div class="btn-more" style="margin:12px 0 0">製品を見る →</div></div></div><div class="card"><div class="wf-img" style="width:100%;height:160px">[工業製品イメージ]</div><div class="card-body"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:6px">工業</h3><p style="font-size:13px;color:#666">工業製品・電子部品向け包装機・真空包装機など</p><div class="btn-more" style="margin:12px 0 0">製品を見る →</div></div></div><div class="card"><div class="wf-img" style="width:100%;height:160px">[家庭用品製品イメージ]</div><div class="card-body"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:6px">家庭用品</h3><p style="font-size:13px;color:#666">家庭用品・化粧品向け包装ソリューション</p><div class="btn-more" style="margin:12px 0 0">製品を見る →</div></div></div><div class="card"><div class="wf-img" style="width:100%;height:160px">[化成品（コスメほか）製品イメージ]</div><div class="card-body"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:6px">化成品（コスメほか）</h3><p style="font-size:13px;color:#666">化粧品・日用品向け包装ライン</p><div class="btn-more" style="margin:12px 0 0">製品を見る →</div></div></div></div>
+
+  <div class="wf-section">目的から探す</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px"><div class="cat-btn">真空包装したい</div><div class="cat-btn">スキンパックしたい</div><div class="cat-btn">MAP包装したい</div><div class="cat-btn">歩留まりを上げたい</div><div class="cat-btn">製品価値を上げたい</div><div class="cat-btn">より短時間で加工したい</div><div class="cat-btn">定量・定形でカットしたい</div><div class="cat-btn">定量で充填・成型したい</div><div class="cat-btn">混ぜたい</div><div class="cat-btn">カット・粉砕したい</div><div class="cat-btn">乳化したい</div><div class="cat-btn">骨と肉を分けたい</div><div class="cat-btn">ハム・ソーセージを作りたい</div><div class="cat-btn">パン・ピザを作りたい</div><div class="cat-btn">ミンチにしたい</div><div class="cat-btn">冷凍のまま加工したい</div></div>
+
+  <div class="wf-section">メーカーから探す</div>
+  <div class="l-grid4"><div class="wf-box" style="text-align:center;padding:20px"><div class="wf-img" style="width:100%;height:60px">[MULTIVACロゴ]</div><p style="font-size:13px;margin-top:8px">MULTIVAC</p></div><div class="wf-box" style="text-align:center;padding:20px"><div class="wf-img" style="width:100%;height:60px">[TVIロゴ]</div><p style="font-size:13px;margin-top:8px">TVI</p></div><div class="wf-box" style="text-align:center;padding:20px"><div class="wf-img" style="width:100%;height:60px">[FRITSCHロゴ]</div><p style="font-size:13px;margin-top:8px">FRITSCH</p></div><div class="wf-box" style="text-align:center;padding:20px"><div class="wf-img" style="width:100%;height:60px">[Stephanロゴ]</div><p style="font-size:13px;margin-top:8px">Stephan</p></div><div class="wf-box" style="text-align:center;padding:20px"><div class="wf-img" style="width:100%;height:60px">[SCHROEDERロゴ]</div><p style="font-size:13px;margin-top:8px">SCHROEDER</p></div><div class="wf-box" style="text-align:center;padding:20px"><div class="wf-img" style="width:100%;height:60px">[Seydelmannロゴ]</div><p style="font-size:13px;margin-top:8px">Seydelmann</p></div><div class="wf-box" style="text-align:center;padding:20px"><div class="wf-img" style="width:100%;height:60px">[handtmannロゴ]</div><p style="font-size:13px;margin-top:8px">handtmann</p></div><div class="wf-box" style="text-align:center;padding:20px"><div class="wf-img" style="width:100%;height:60px">[TRIMAロゴ]</div><p style="font-size:13px;margin-top:8px">TRIMA</p></div></div>
+</div>
+
+<footer>
+  <div class="ft-grid">
+    <div class="ft-col"><h4>製品情報</h4><p>食品<br>メディカル<br>工業<br>家庭用品<br>化成品</p></div>
+    <div class="ft-col"><h4>サービス</h4><p>グローバルイノベーションセンター<br>トレーニング<br>アフターサポート</p></div>
+    <div class="ft-col"><h4>会社情報</h4><p>会社概要<br>経営理念<br>沿革<br>主要取引先</p></div>
+    <div class="ft-col"><h4>採用・お問い合わせ</h4><p>採用情報<br>お問い合わせ<br>カタログダウンロード<br>個人情報保護方針</p></div>
+  </div>
+  <div class="ft-copy">© 2026 MULTIVAC Japan Co., Ltd. All Rights Reserved.</div>
+</footer>
+</body></html>

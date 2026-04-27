@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ワイヤーフレーム一覧 - ムルチバック・ジャパン</title>
+<style>
+body { font-family: sans-serif; max-width:900px; margin:40px auto; padding:0 24px; }
+h1 { font-size:24px; color:#003087; margin-bottom:8px; }
+p.sub { color:#666; font-size:14px; margin-bottom:32px; }
+table { width:100%; border-collapse:collapse; }
+th { background:#003087; color:#fff; padding:10px 16px; text-align:left; font-size:13px; }
+td { padding:10px 16px; border-bottom:1px solid #eee; font-size:14px; }
+tr:hover td { background:#f0f4ff; }
+a { color:#003087; text-decoration:none; font-weight:bold; }
+.new { background:#e3f2fd; color:#1565c0; font-size:11px; padding:2px 8px; border-radius:2px; font-weight:bold; }
+.exist { background:#e8f5e9; color:#2e7d32; font-size:11px; padding:2px 8px; border-radius:2px; }
+</style>
+</head>
+<body>
+<script>
+(function(){
+  if(sessionStorage.getItem('wf_auth')!=='ok'){
+    location.replace('gate.html?r='+encodeURIComponent(location.pathname.split('/').pop()||'index.html'));
+  }
+})();
+</script>
+<h1>ワイヤーフレーム一覧</h1>
+<p class="sub">ムルチバック・ジャパン WEBサイトリニューアル｜下層ページ ワイヤーフレーム</p>
+<table>
+<tr><th>#</th><th>ページ名</th><th>種別</th><th>ファイル</th></tr>
+<tr><td>01</td><td><a href="01_news-list.html">ニュース一覧</a></td><td><span class="exist">既存</span></td><td><a href="01_news-list.html">01_news-list.html</a></td></tr><tr><td>02</td><td><a href="02_news-detail.html">お知らせ詳細（テンプレ）</a></td><td><span class="exist">既存</span></td><td><a href="02_news-detail.html">02_news-detail.html</a></td></tr><tr><td>03</td><td><a href="03_exhibition.html">展示会情報</a></td><td><span class="exist">既存</span></td><td><a href="03_exhibition.html">03_exhibition.html</a></td></tr><tr><td>04</td><td><a href="04_products-top.html">製品情報TOP</a></td><td><span class="exist">既存</span></td><td><a href="04_products-top.html">04_products-top.html</a></td></tr><tr><td>05</td><td><a href="05_products-food.html">製品情報：食品</a></td><td><span class="exist">既存</span></td><td><a href="05_products-food.html">05_products-food.html</a></td></tr><tr><td>06</td><td><a href="06_products-medical.html">製品情報：メディカル</a></td><td><span class="exist">既存</span></td><td><a href="06_products-medical.html">06_products-medical.html</a></td></tr><tr><td>07</td><td><a href="07_products-industry.html">製品情報：工業</a></td><td><span class="exist">既存</span></td><td><a href="07_products-industry.html">07_products-industry.html</a></td></tr><tr><td>08</td><td><a href="08_products-household.html">製品情報：家庭用品</a></td><td><span class="exist">既存</span></td><td><a href="08_products-household.html">08_products-household.html</a></td></tr><tr><td>09</td><td><a href="09_products-chemical.html">製品情報：化成品（コスメほか）</a></td><td><span class="new">新規</span></td><td><a href="09_products-chemical.html">09_products-chemical.html</a></td></tr><tr><td>10</td><td><a href="10_products-detail.html">製品詳細（テンプレ）</a></td><td><span class="exist">既存</span></td><td><a href="10_products-detail.html">10_products-detail.html</a></td></tr><tr><td>11</td><td><a href="11_products-maker.html">製品情報：メーカーから探す</a></td><td><span class="exist">既存</span></td><td><a href="11_products-maker.html">11_products-maker.html</a></td></tr><tr><td>12</td><td><a href="12_service-top.html">サービスTOP</a></td><td><span class="exist">既存</span></td><td><a href="12_service-top.html">12_service-top.html</a></td></tr><tr><td>13</td><td><a href="13_service-innovation.html">グローバルイノベーションセンター</a></td><td><span class="new">新規</span></td><td><a href="13_service-innovation.html">13_service-innovation.html</a></td></tr><tr><td>14</td><td><a href="14_service-training.html">トレーニング</a></td><td><span class="new">新規</span></td><td><a href="14_service-training.html">14_service-training.html</a></td></tr><tr><td>15</td><td><a href="15_service-aftersales.html">アフターサポート</a></td><td><span class="exist">新規拡充</span></td><td><a href="15_service-aftersales.html">15_service-aftersales.html</a></td></tr><tr><td>16</td><td><a href="16_company-overview.html">会社概要</a></td><td><span class="exist">既存</span></td><td><a href="16_company-overview.html">16_company-overview.html</a></td></tr><tr><td>17</td><td><a href="17_company-philosophy.html">経営理念</a></td><td><span class="exist">既存</span></td><td><a href="17_company-philosophy.html">17_company-philosophy.html</a></td></tr><tr><td>18</td><td><a href="18_company-history.html">沿革</a></td><td><span class="exist">既存</span></td><td><a href="18_company-history.html">18_company-history.html</a></td></tr><tr><td>19</td><td><a href="19_company-clients.html">主要取引先</a></td><td><span class="exist">既存</span></td><td><a href="19_company-clients.html">19_company-clients.html</a></td></tr><tr><td>20</td><td><a href="20_careers.html">採用情報</a></td><td><span class="exist">既存</span></td><td><a href="20_careers.html">20_careers.html</a></td></tr><tr><td>21</td><td><a href="21_contact.html">お問い合わせ</a></td><td><span class="exist">既存</span></td><td><a href="21_contact.html">21_contact.html</a></td></tr><tr><td>22</td><td><a href="22_catalog-download.html">カタログダウンロード</a></td><td><span class="new">新規</span></td><td><a href="22_catalog-download.html">22_catalog-download.html</a></td></tr><tr><td>23</td><td><a href="23_privacy.html">個人情報保護方針</a></td><td><span class="exist">既存</span></td><td><a href="23_privacy.html">23_privacy.html</a></td></tr><tr><td>24</td><td><a href="24_terms.html">サイトのご利用にあたって</a></td><td><span class="exist">既存</span></td><td><a href="24_terms.html">24_terms.html</a></td></tr><tr><td>25</td><td><a href="25_search-results.html">検索結果</a></td><td><span class="exist">既存</span></td><td><a href="25_search-results.html">25_search-results.html</a></td></tr><tr><td>26</td><td><a href="26_sitemap.html">サイトマップ</a></td><td><span class="exist">既存</span></td><td><a href="26_sitemap.html">26_sitemap.html</a></td></tr>
+</table>
+</body></html>
