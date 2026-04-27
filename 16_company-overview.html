@@ -6,6 +6,7 @@
 <title>WF｜会社概要 - ムルチバック・ジャパン</title>
 <style>
 
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; color: #222; background: #fff; }
 .wf-note { background:#fff9c4; border:1px solid #f0c040; border-radius:4px; padding:6px 10px; font-size:12px; color:#555; display:inline-block; margin-bottom:8px; }
@@ -80,6 +81,8 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
 .breadcrumb a:hover { color:#003087; text-decoration:underline; }
 .anchor-nav a { padding:10px 20px; font-size:13px; cursor:pointer; color:#666; text-decoration:none; display:inline-block; }
 .anchor-nav a:hover { color:#003087; }
+
+.tab-btn { cursor:pointer; }
 </style>
 </head>
 <body>
@@ -108,47 +111,108 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
     </div>
   </div>
 </header>
+
 <div class="breadcrumb"><div class="l-wrap"><a href="index.html">HOME</a><span>›</span><span>会社概要</span></div></div>
+
 <div class="l-wrap" style="padding-top:32px;padding-bottom:60px">
   <div class="page-head">
     <p class="hero-en">COMPANY</p>
     <h1>会社概要</h1>
   </div>
 
+  <!-- タブナビ -->
   <div class="anchor-nav" style="margin-bottom:32px">
-    <span class="active">会社概要</span>
-    <a href="17_company-philosophy.html">経営理念</a>
-    <a href="18_company-history.html">沿革</a>
-    <a href="19_company-clients.html">主要取引先</a>
+    <span class="tab-btn active" data-tab="overview"   onclick="showTab('overview')">会社概要</span>
+    <span class="tab-btn"        data-tab="philosophy" onclick="showTab('philosophy')">経営理念</span>
+    <span class="tab-btn"        data-tab="history"    onclick="showTab('history')">沿革</span>
+    <span class="tab-btn"        data-tab="clients"    onclick="showTab('clients')">主要取引先</span>
   </div>
 
-  <div class="l-grid2" style="margin-bottom:40px">
-    <table>
-      <tr><th>会社名</th><td>ムルチバック・ジャパン株式会社</td></tr>
-      <tr><th>代表取締役</th><td>大沼 謙一郎</td></tr>
-      <tr><th>設立</th><td>1973年2月16日</td></tr>
-      <tr><th>資本金</th><td>9,800万円</td></tr>
-      <tr><th>売上高</th><td>199.5億円（2025年12月・IFRS基準）</td></tr>
-      <tr><th>社員数</th><td>202名（2026年4月1日現在）</td></tr>
-      <tr><th>本社所在地</th><td>東京都中央区銀座5丁目9-8<br>クロス銀座ビル5F</td></tr>
-      <tr><th>本社工場</th><td>茨城県つくば市</td></tr>
-      <tr><th>営業内容</th><td>食品・メディカル・工業・家庭用品の加工機械・包装機械の輸入販売、包装資材の販売</td></tr>
-    </table>
-    <div>
-      <div class="wf-img" style="width:100%;height:240px">[本社ビル外観写真]</div>
-      <div style="margin-top:16px"><div class="wf-img" style="width:100%;height:180px">[つくば本社工場写真]</div></div>
+  <!-- ① 会社概要 -->
+  <div id="overview" class="tab-content">
+    <div class="l-grid2" style="margin-bottom:40px">
+      <table>
+        <tr><th>会社名</th><td>ムルチバック・ジャパン株式会社</td></tr>
+        <tr><th>代表取締役</th><td>大沼 謙一郎</td></tr>
+        <tr><th>設立</th><td>1973年2月16日</td></tr>
+        <tr><th>資本金</th><td>9,800万円</td></tr>
+        <tr><th>売上高</th><td>199.5億円（2025年12月・IFRS基準）</td></tr>
+        <tr><th>社員数</th><td>202名（2026年4月1日現在）</td></tr>
+        <tr><th>本社所在地</th><td>東京都中央区銀座5丁目9-8<br>クロス銀座ビル5F</td></tr>
+        <tr><th>本社工場</th><td>茨城県つくば市</td></tr>
+        <tr><th>営業内容</th><td>食品・メディカル・工業・家庭用品の加工機械・包装機械の輸入販売、包装資材の販売</td></tr>
+      </table>
+      <div>
+        <div class="wf-img" style="width:100%;height:240px">[本社ビル外観写真]</div>
+        <div style="margin-top:16px"><div class="wf-img" style="width:100%;height:180px">[つくば本社工場写真]</div></div>
+      </div>
+    </div>
+    <div class="wf-section">国内拠点</div>
+    <div class="l-grid4" style="margin-top:12px"><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">つくば本社工場</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">北海道支店</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">東北支店（仙台）</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">新潟支店</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">名古屋支店</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">大阪支店</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">広島支店</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">九州支店</p></div></div>
+  </div>
+
+  <!-- ② 経営理念 -->
+  <div id="philosophy" class="tab-content" style="display:none">
+    <div style="text-align:center;padding:48px 0;background:#f0f4ff;border-radius:6px;margin-bottom:48px">
+      <p style="font-size:13px;color:#888;letter-spacing:2px;margin-bottom:16px">MISSION</p>
+      <h2 style="font-size:28px;font-weight:900;color:#003087;line-height:1.6">食品の加工技術と包装技術を通じて<br>社会に貢献する</h2>
+    </div>
+    <div class="wf-section">4つの実践目標</div>
+    <div class="l-grid2" style="margin-top:12px;margin-bottom:48px"><div class="wf-box"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:8px"><span style="font-size:24px;margin-right:8px">01</span>革新的商品の開発と提供</h3><p style="font-size:14px;line-height:1.8;color:#555">常に業界の先駆者として、日本初・世界初の革新的商品を開発し市場に提供します。</p></div><div class="wf-box"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:8px"><span style="font-size:24px;margin-right:8px">02</span>技術開発と市場提供</h3><p style="font-size:14px;line-height:1.8;color:#555">ワールドワイドな最新情報をもとに、業界をリードする技術開発を推進します。</p></div><div class="wf-box"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:8px"><span style="font-size:24px;margin-right:8px">03</span>アフターサービスの充実</h3><p style="font-size:14px;line-height:1.8;color:#555">ご成約後も継続的なサポート体制を維持し、お客様の安心な操業を支援します。</p></div><div class="wf-box"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:8px"><span style="font-size:24px;margin-right:8px">04</span>短納期・安全性・品質</h3><p style="font-size:14px;line-height:1.8;color:#555">迅速な納品と高い安全性・品質を両立し、お客様の満足と信頼に応えます。</p></div></div>
+  </div>
+
+  <!-- ③ 沿革 -->
+  <div id="history" class="tab-content" style="display:none">
+    <div style="position:relative;padding-left:32px;max-width:700px">
+      <div style="position:absolute;left:8px;top:0;bottom:0;width:2px;background:#003087"></div>
+      <div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">1973年2月</p><p style="font-size:14px;color:#333;line-height:1.6">東京都中央区日本橋小伝馬町に資本金500万円にて東京食品機械株式会社を設立</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">1975年</p><p style="font-size:14px;color:#333;line-height:1.6">千葉県松戸市に工場を開設</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">1981年</p><p style="font-size:14px;color:#333;line-height:1.6">資本金を4,500万円に増資</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">1991年</p><p style="font-size:14px;color:#333;line-height:1.6">大阪支店を開設</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">1995年</p><p style="font-size:14px;color:#333;line-height:1.6">ドイツの複数企業との代理店権取得。MULTIVAC製品の本格展開開始</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2004年</p><p style="font-size:14px;color:#333;line-height:1.6">ムルチバック社と資本提携。九州支店開設</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2006年</p><p style="font-size:14px;color:#333;line-height:1.6">北海道支店開設</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2007年</p><p style="font-size:14px;color:#333;line-height:1.6">ISO14001認証取得</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2009年</p><p style="font-size:14px;color:#333;line-height:1.6">大阪ショールーム建設</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2010年</p><p style="font-size:14px;color:#333;line-height:1.6">本社をつくば市に移転</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2016年</p><p style="font-size:14px;color:#333;line-height:1.6">複数支店の移転・拡張</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2023年</p><p style="font-size:14px;color:#333;line-height:1.6">社名をムルチバック・ジャパン株式会社に変更</p></div><div style="position:relative;margin-bottom:24px"><div style="position:absolute;left:-28px;top:4px;width:12px;height:12px;background:#003087;border-radius:50%"></div><p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px">2025年</p><p style="font-size:14px;color:#333;line-height:1.6">新潟支店を開設</p></div>
     </div>
   </div>
 
-  <div class="wf-section">国内拠点</div>
-  <div class="l-grid4" style="margin-bottom:40px"><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">つくば本社工場</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">北海道支店</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">東北支店（仙台）</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">新潟支店</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">名古屋支店</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">大阪支店</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">広島支店</p></div><div class="wf-box" style="text-align:center"><p style="font-weight:bold;color:#003087">九州支店</p></div></div>
+  <!-- ④ 主要取引先 -->
+  <div id="clients" class="tab-content" style="display:none">
+    <div class="wf-section">食品・飲料</div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin:12px 0 32px">
+      <div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[食品メーカーAロゴ]</div><div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[食品メーカーBロゴ]</div><div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[食品メーカーCロゴ]</div><div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[食品メーカーDロゴ]</div><div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[食品メーカーEロゴ]</div><div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[食品メーカーFロゴ]</div>
+    </div>
+    <div class="wf-section">メディカル</div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin:12px 0 32px">
+      <div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[医療機器メーカーAロゴ]</div><div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[医療機器メーカーBロゴ]</div><div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[医療機器メーカーCロゴ]</div>
+    </div>
+    <div class="wf-section">工業</div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin:12px 0 32px">
+      <div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[工業メーカーAロゴ]</div><div class="wf-box" style="text-align:center;width:150px;height:60px;display:flex;align-items:center;justify-content:center;font-size:13px">[工業メーカーBロゴ]</div>
+    </div>
+    <div class="wf-note">※ 掲載企業・ロゴはクライアント確認後に確定。</div>
+  </div>
+
 </div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(function(el) {
+    el.style.display = 'none';
+  });
+  document.querySelectorAll('.tab-btn').forEach(function(el) {
+    el.classList.toggle('active', el.dataset.tab === id);
+  });
+  document.getElementById(id).style.display = 'block';
+  history.replaceState(null, '', '#' + id);
+}
+window.addEventListener('DOMContentLoaded', function() {
+  var hash = location.hash.slice(1);
+  if (['overview','philosophy','history','clients'].indexOf(hash) !== -1) {
+    showTab(hash);
+  }
+});
+</script>
+
 
 <footer>
   <div class="ft-grid">
     <div class="ft-col"><h4>製品情報</h4><p><a href="05_products-food.html">食品</a><br><a href="06_products-medical.html">メディカル</a><br><a href="07_products-industry.html">工業</a><br><a href="08_products-household.html">家庭用品</a><br><a href="09_products-chemical.html">化成品</a></p></div>
     <div class="ft-col"><h4>サービス</h4><p><a href="13_service-innovation.html">グローバルイノベーションセンター</a><br><a href="14_service-training.html">トレーニング</a><br><a href="15_service-aftersales.html">アフターサポート</a></p></div>
-    <div class="ft-col"><h4>会社情報</h4><p><a href="16_company-overview.html">会社概要</a><br><a href="17_company-philosophy.html">経営理念</a><br><a href="18_company-history.html">沿革</a><br><a href="19_company-clients.html">主要取引先</a></p></div>
+    <div class="ft-col"><h4>会社情報</h4><p><a href="16_company-overview.html">会社概要</a><br><a href="16_company-overview.html#philosophy">経営理念</a><br><a href="16_company-overview.html#history">沿革</a><br><a href="16_company-overview.html#clients">主要取引先</a></p></div>
     <div class="ft-col"><h4>採用・お問い合わせ</h4><p><a href="20_careers.html">採用情報</a><br><a href="21_contact.html">お問い合わせ</a><br><a href="22_catalog-download.html">カタログダウンロード</a><br><a href="23_privacy.html">個人情報保護方針</a></p></div>
   </div>
   <div class="ft-copy">© 2026 MULTIVAC Japan Co., Ltd. All Rights Reserved.</div>
