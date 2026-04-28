@@ -90,7 +90,6 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
   }
 })();
 </script>
-
 <header>
   <div class="hd-inner">
     <div class="hd-logo">■ MULTIVAC<br><small style="font-size:10px;font-weight:400">ムルチバック・ジャパン株式会社</small></div>
@@ -109,50 +108,200 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
   </div>
 </header>
 <div class="breadcrumb"><div class="l-wrap"><a href="index.html">HOME</a><span>›</span><span>お問い合わせ</span></div></div>
-<div class="l-wrap" style="padding-top:32px;padding-bottom:60px;max-width:800px">
+
+<div class="l-wrap" style="padding-top:32px;padding-bottom:60px">
   <div class="page-head">
     <p class="hero-en">CONTACT</p>
     <h1>お問い合わせ</h1>
-    <p>製品に関するご質問・ご相談・デモのご依頼など、お気軽にお問い合わせください。</p>
+    <p>製品・サービスに関するご質問・資料請求・見積依頼など、お気軽にお問い合わせください。</p>
   </div>
 
-  <div class="anchor-nav" style="margin-bottom:32px">
-    <span class="active">メールでのお問い合わせ</span>
-    <span>電話でのお問い合わせ</span>
+  <div class="anchor-nav" style="margin-bottom:40px">
+    <a href="#form">メールでのお問い合わせ</a>
+    <a href="#branches">電話・拠点からのお問い合わせ</a>
   </div>
 
-  <div class="wf-box" style="margin-bottom:32px;background:#f0f4ff">
-    <p style="font-size:14px;line-height:2">内容を確認の上、担当者よりご連絡いたします（通常2〜3営業日以内）。<br>
-    お急ぎの場合は電話（TEL: 03-XXXX-XXXX）にてお問い合わせください。</p>
-  </div>
-
-  <div>
-    <label class="label">お名前 <span style="color:red">*</span></label>
-    <input placeholder="山田 太郎">
-    <label class="label">会社名</label>
-    <input placeholder="株式会社〇〇">
-    <label class="label">メールアドレス <span style="color:red">*</span></label>
-    <input type="email" placeholder="example@email.com">
-    <label class="label">電話番号</label>
-    <input type="tel" placeholder="03-0000-0000">
-    <label class="label">お問い合わせ種別 <span style="color:red">*</span></label>
-    <select>
-      <option>選択してください</option>
-      <option>製品に関するお問い合わせ</option>
-      <option>テスト・デモのご依頼</option>
-      <option>アフターサービス・修理</option>
-      <option>カタログ・資料請求</option>
-      <option>その他</option>
-    </select>
-    <label class="label">お問い合わせ内容 <span style="color:red">*</span></label>
-    <textarea rows="6" placeholder="ご質問・ご相談内容をご記入ください"></textarea>
-    <div style="background:#f5f5f5;padding:16px;font-size:12px;border-radius:4px;margin-bottom:20px">
-      <label><input type="checkbox"> 個人情報保護方針に同意する</label>
+  <!-- ① メールフォーム -->
+  <div id="form" style="margin-bottom:60px">
+    <div class="wf-section">メールでのお問い合わせ</div>
+    <div class="wf-box" style="background:#f0f4ff;margin-bottom:24px">
+      <p style="font-size:13px;line-height:2">
+        内容確認後、担当者よりご連絡いたします（通常2〜3営業日以内）。<br>
+        ※ 弊社商品・サービスに関するお問い合わせ以外のご用件は、お答えしかねる場合がございます。
+      </p>
     </div>
-    <div class="btn-primary" style="text-align:center;padding:16px;border-radius:4px;font-size:16px;cursor:pointer">送信する</div>
-  </div>
-</div>
 
+    <div style="max-width:760px">
+
+      <p style="font-size:12px;color:#c62828;margin-bottom:20px">＊は必須項目です</p>
+
+      <label class="label">会社名・学校名 <span style="color:red">*</span></label>
+      <input placeholder="例：ムルチバック・ジャパン株式会社">
+
+      <label class="label">所属部署・役職名 <span style="color:red">*</span></label>
+      <input placeholder="所属がない場合は「なし」と入力">
+
+      <label class="label">お名前 <span style="color:red">*</span></label>
+      <input placeholder="例：山田 太郎">
+
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:12px;align-items:end;margin-bottom:16px">
+        <div>
+          <label class="label" style="margin-bottom:4px">郵便番号 <span style="color:red">*</span></label>
+          <input placeholder="例：104-0061" style="margin-bottom:0">
+        </div>
+        <div style="padding-bottom:2px">
+          <div class="btn-outline" style="display:inline-block;padding:10px 18px;cursor:pointer;font-size:13px">住所を検索</div>
+        </div>
+      </div>
+
+      <label class="label">都道府県 <span style="color:red">*</span></label>
+      <select>
+        <option>選択してください</option>
+        <option>北海道</option><option>青森県</option><option>岩手県</option><option>宮城県</option>
+        <option>東京都</option><option>神奈川県</option><option>愛知県</option><option>大阪府</option>
+        <option>広島県</option><option>福岡県</option><option>（全47都道府県）</option>
+      </select>
+
+      <label class="label">市区町村・番地 <span style="color:red">*</span></label>
+      <input placeholder="例：中央区銀座5-9-8">
+
+      <label class="label">メールアドレス <span style="color:red">*</span></label>
+      <input type="email" placeholder="例：info@example.co.jp（半角英数）">
+
+      <label class="label">電話番号 <span style="color:red">*</span></label>
+      <input type="tel" placeholder="例：03-0000-0000（半角英数）">
+
+      <label class="label">FAX <span style="color:#888;font-size:11px">（任意）</span></label>
+      <input type="tel" placeholder="例：03-0000-0001（半角英数）">
+
+      <label class="label">お問い合わせ内容 <span style="color:red">*</span></label>
+      <select>
+        <option>選択してください</option>
+        <option>資料請求</option>
+        <option>見積依頼</option>
+        <option>採用</option>
+        <option>技術</option>
+        <option>アフターサービス</option>
+        <option>セミナー申込</option>
+        <option>その他</option>
+      </select>
+
+      <label class="label">貴社取扱い製品 <span style="color:red">*</span></label>
+      <div style="display:flex;gap:24px;margin-bottom:16px;flex-wrap:wrap">
+        <label style="font-size:14px"><input type="radio" name="industry"> 食品</label>
+        <label style="font-size:14px"><input type="radio" name="industry"> 工業</label>
+        <label style="font-size:14px"><input type="radio" name="industry"> 医療関連</label>
+        <label style="font-size:14px"><input type="radio" name="industry"> その他</label>
+      </div>
+
+      <label class="label">ご興味のある製品 <span style="color:red">*</span></label>
+      <div style="margin-bottom:16px;line-height:2.2"><label style="display:inline-block;margin:4px 12px 4px 0;font-size:14px"><input type="checkbox"> 深絞り包装機</label><label style="display:inline-block;margin:4px 12px 4px 0;font-size:14px"><input type="checkbox"> チャンバー真空包装機</label><label style="display:inline-block;margin:4px 12px 4px 0;font-size:14px"><input type="checkbox"> トレーシーラー</label><label style="display:inline-block;margin:4px 12px 4px 0;font-size:14px"><input type="checkbox"> ブリスター包装機</label><label style="display:inline-block;margin:4px 12px 4px 0;font-size:14px"><input type="checkbox"> 充填機（ハンドトマン）</label><label style="display:inline-block;margin:4px 12px 4px 0;font-size:14px"><input type="checkbox"> 食肉加工機械</label><label style="display:inline-block;margin:4px 12px 4px 0;font-size:14px"><input type="checkbox"> 製パン・製菓機械</label><label style="display:inline-block;margin:4px 12px 4px 0;font-size:14px"><input type="checkbox"> コンベヤラベラー</label><label style="display:inline-block;margin:4px 12px 4px 0;font-size:14px"><input type="checkbox"> その他</label></div>
+
+      <label class="label">弊社を知ったきっかけ <span style="color:red">*</span></label>
+      <select>
+        <option>選択してください</option>
+        <option>紹介</option>
+        <option>展示会</option>
+        <option>上司・同僚からの指示</option>
+        <option>現場での利用経験</option>
+        <option>メールマガジン</option>
+        <option>Web検索</option>
+        <option>その他</option>
+      </select>
+
+      <label class="label">返信方法 <span style="color:#888;font-size:11px">（任意）</span></label>
+      <div style="display:flex;gap:24px;margin-bottom:16px;flex-wrap:wrap">
+        <label style="font-size:14px"><input type="radio" name="reply"> メール</label>
+        <label style="font-size:14px"><input type="radio" name="reply"> 電話</label>
+        <label style="font-size:14px"><input type="radio" name="reply"> Web商談</label>
+        <label style="font-size:14px"><input type="radio" name="reply"> FAX</label>
+      </div>
+
+      <label class="label">返信希望時間 <span style="color:#888;font-size:11px">（任意）</span></label>
+      <div style="display:flex;gap:24px;margin-bottom:16px;flex-wrap:wrap">
+        <label style="font-size:14px"><input type="radio" name="replyTime"> なるべく早く</label>
+        <label style="font-size:14px"><input type="radio" name="replyTime"> 午前</label>
+        <label style="font-size:14px"><input type="radio" name="replyTime"> 午後</label>
+        <label style="font-size:14px"><input type="radio" name="replyTime"> 終日OK</label>
+      </div>
+
+      <label class="label">ご要望について <span style="color:red">*</span></label>
+      <textarea rows="6" placeholder="ご質問・ご相談内容をご記入ください"></textarea>
+
+      <div style="background:#f5f5f5;padding:16px;border-radius:4px;margin-bottom:24px;font-size:13px">
+        <a href="23_privacy.html" style="color:#003087" target="_blank">個人情報の取り扱い</a>に同意の上、送信してください。<br>
+        <label style="display:block;margin-top:8px"><input type="checkbox"> 個人情報の取り扱いに同意する <span style="color:red">*</span></label>
+      </div>
+
+      <div class="btn-primary" style="text-align:center;padding:16px;border-radius:4px;font-size:16px;cursor:pointer;max-width:320px;margin:0 auto">送信する</div>
+    </div>
+  </div>
+
+  <!-- ② 拠点一覧 -->
+  <div id="branches">
+    <div class="wf-section">アフターサービス・部品に関するお問い合わせ</div>
+    <p style="font-size:13px;color:#666;margin:12px 0 24px">各拠点へ直接お電話でお問い合わせいただけます。</p>
+    <div class="l-grid2">
+    <div class="wf-box" style="margin-bottom:12px">
+      <h3 style="font-size:15px;font-weight:bold;color:#003087;margin-bottom:8px">北海道支店</h3>
+      <p style="font-size:13px;line-height:2;color:#444">
+        〒003-0835 北海道札幌市白石区北郷5条5丁目7-25<br>
+        TEL：011-805-2010　FAX：011-805-2020
+      </p>
+    </div>
+    <div class="wf-box" style="margin-bottom:12px">
+      <h3 style="font-size:15px;font-weight:bold;color:#003087;margin-bottom:8px">東北支店</h3>
+      <p style="font-size:13px;line-height:2;color:#444">
+        〒982-0023 宮城県仙台市太白区鹿野3-19-15<br>
+        TEL：022-398-9101　FAX：022-246-6101
+      </p>
+    </div>
+    <div class="wf-box" style="margin-bottom:12px">
+      <h3 style="font-size:15px;font-weight:bold;color:#003087;margin-bottom:8px">新潟支店</h3>
+      <p style="font-size:13px;line-height:2;color:#444">
+        〒950-0950 新潟県新潟市中央区鳥屋野南3丁目10-26<br>
+        TEL：029-828-5087　FAX：—
+      </p>
+    </div>
+    <div class="wf-box" style="margin-bottom:12px">
+      <h3 style="font-size:15px;font-weight:bold;color:#003087;margin-bottom:8px">つくば本社工場</h3>
+      <p style="font-size:13px;line-height:2;color:#444">
+        〒305-0883 茨城県つくば市みどりの東10-3<br>
+        TEL：029-828-5087　FAX：029-828-7742
+      </p>
+    </div>
+    <div class="wf-box" style="margin-bottom:12px">
+      <h3 style="font-size:15px;font-weight:bold;color:#003087;margin-bottom:8px">名古屋支店</h3>
+      <p style="font-size:13px;line-height:2;color:#444">
+        〒463-0037 愛知県名古屋市守山区天子田3丁目909<br>
+        TEL：052-778-9712　FAX：052-778-9713
+      </p>
+    </div>
+    <div class="wf-box" style="margin-bottom:12px">
+      <h3 style="font-size:15px;font-weight:bold;color:#003087;margin-bottom:8px">大阪支店</h3>
+      <p style="font-size:13px;line-height:2;color:#444">
+        〒567-0037 大阪府茨木市上穂東町4-13<br>
+        TEL：072-646-7828　FAX：072-622-7777
+      </p>
+    </div>
+    <div class="wf-box" style="margin-bottom:12px">
+      <h3 style="font-size:15px;font-weight:bold;color:#003087;margin-bottom:8px">広島支店</h3>
+      <p style="font-size:13px;line-height:2;color:#444">
+        〒731-3164 広島県広島市安佐南区伴東一丁目1-44<br>
+        TEL：082-849-6502　FAX：082-849-6503
+      </p>
+    </div>
+    <div class="wf-box" style="margin-bottom:12px">
+      <h3 style="font-size:15px;font-weight:bold;color:#003087;margin-bottom:8px">九州支店</h3>
+      <p style="font-size:13px;line-height:2;color:#444">
+        〒816-0911 福岡県大野城市大城2-23-36<br>
+        TEL：092-558-3001　FAX：092-504-5277
+      </p>
+    </div>
+    </div>
+  </div>
+
+</div>
 <footer>
   <div class="ft-grid">
     <div class="ft-col"><h4>製品情報</h4><p><a href="05_products-food.html">食品</a><br><a href="06_products-medical.html">メディカル</a><br><a href="07_products-industry.html">工業</a><br><a href="08_products-household.html">家庭用品</a><br><a href="09_products-chemical.html">化成品</a></p></div>
