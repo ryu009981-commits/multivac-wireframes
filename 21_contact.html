@@ -83,26 +83,9 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
 .anchor-nav a:hover { color:#003087; }
 
 /* contact page overrides */
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 48px;
-  align-items: start;
-}
-.contact-sidebar {
-  background: #003087;
-  border-radius: 8px;
-  padding: 24px;
-  position: sticky;
-  top: 80px;
-}
-.contact-sidebar h3 {
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+.contact-main {
+  max-width: 800px;
+  margin: 0 auto;
 }
 .form-card {
   background: #fff;
@@ -110,9 +93,14 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
   border-radius: 8px;
   padding: 32px;
 }
+.branch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
 @media (max-width: 900px) {
-  .contact-layout { grid-template-columns: 1fr; }
-  .contact-sidebar { position: static; }
+  .branch-grid { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
 </head>
@@ -152,10 +140,8 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
     <p>製品・サービスに関するご質問・資料請求・見積依頼など、お気軽にお問い合わせください。</p>
   </div>
 
-  <div class="contact-layout">
+  <div class="contact-main">
 
-    <!-- ═══ 左：フォームエリア ═══ -->
-    <div>
       <div class="wf-box" style="background:#f0f4ff;margin-bottom:8px">
         <p style="font-size:13px;line-height:2">
           <strong>受付時間：</strong>平日 9:00〜17:30<br>
@@ -279,51 +265,48 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
         </div>
 
       </div><!-- /form-card -->
-    </div><!-- /left -->
 
-    <!-- ═══ 右：スティッキーサイドバー ═══ -->
-    <div class="contact-sidebar">
-      <h3>📞 電話でのお問い合わせ</h3>
-      <p style="font-size:11px;color:rgba(255,255,255,0.7);margin-bottom:16px">アフターサービス・部品のご用件は各拠点へ直接ご連絡ください</p>
-      
-      <div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.15)">
-        <p style="font-size:13px;font-weight:bold;color:#fff;margin-bottom:4px">北海道支店</p>
-        <p style="font-size:11px;color:rgba(255,255,255,0.7);line-height:1.8">〒003-0835 北海道札幌市白石区北郷5条5丁目7-25<br>TEL：011-805-2010&nbsp;&nbsp;FAX：011-805-2020</p>
+    <!-- 拠点情報 -->
+    <div style="margin-top:48px;padding-top:40px;border-top:2px solid #003087">
+      <h2 style="font-size:18px;font-weight:bold;color:#003087;margin-bottom:4px">電話でのお問い合わせ</h2>
+      <p style="font-size:13px;color:#666;margin-bottom:20px">アフターサービス・部品のご用件は各拠点へ直接ご連絡ください。受付時間：平日 9:00〜17:30</p>
+      <div class="branch-grid">
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">北海道支店</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">〒003-0835<br>北海道札幌市白石区北郷5条5丁目7-25<br>TEL：011-805-2010<br>FAX：011-805-2020</p>
+        </div>
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">東北支店</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">〒982-0023<br>宮城県仙台市太白区鹿野3-19-15<br>TEL：022-398-9101<br>FAX：022-246-6101</p>
+        </div>
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">新潟支店</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">〒950-0950<br>新潟県新潟市中央区鳥屋野南3丁目10-26<br>TEL：029-828-5087<br>FAX：—</p>
+        </div>
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">つくば本社工場</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">〒305-0883<br>茨城県つくば市みどりの東10-3<br>TEL：029-828-5087<br>FAX：029-828-7742</p>
+        </div>
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">名古屋支店</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">〒463-0037<br>愛知県名古屋市守山区天子田3丁目909<br>TEL：052-778-9712<br>FAX：052-778-9713</p>
+        </div>
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">大阪支店</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">〒567-0037<br>大阪府茨木市上穂東町4-13<br>TEL：072-646-7828<br>FAX：072-622-7777</p>
+        </div>
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">広島支店</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">〒731-3164<br>広島県広島市安佐南区伴東一丁目1-44<br>TEL：082-849-6502<br>FAX：082-849-6503</p>
+        </div>
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">九州支店</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">〒816-0911<br>福岡県大野城市大城2-23-36<br>TEL：092-558-3001<br>FAX：092-504-5277</p>
+        </div>
       </div>
-      <div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.15)">
-        <p style="font-size:13px;font-weight:bold;color:#fff;margin-bottom:4px">東北支店</p>
-        <p style="font-size:11px;color:rgba(255,255,255,0.7);line-height:1.8">〒982-0023 宮城県仙台市太白区鹿野3-19-15<br>TEL：022-398-9101&nbsp;&nbsp;FAX：022-246-6101</p>
-      </div>
-      <div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.15)">
-        <p style="font-size:13px;font-weight:bold;color:#fff;margin-bottom:4px">新潟支店</p>
-        <p style="font-size:11px;color:rgba(255,255,255,0.7);line-height:1.8">〒950-0950 新潟県新潟市中央区鳥屋野南3丁目10-26<br>TEL：029-828-5087&nbsp;&nbsp;FAX：—</p>
-      </div>
-      <div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.15)">
-        <p style="font-size:13px;font-weight:bold;color:#fff;margin-bottom:4px">つくば本社工場</p>
-        <p style="font-size:11px;color:rgba(255,255,255,0.7);line-height:1.8">〒305-0883 茨城県つくば市みどりの東10-3<br>TEL：029-828-5087&nbsp;&nbsp;FAX：029-828-7742</p>
-      </div>
-      <div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.15)">
-        <p style="font-size:13px;font-weight:bold;color:#fff;margin-bottom:4px">名古屋支店</p>
-        <p style="font-size:11px;color:rgba(255,255,255,0.7);line-height:1.8">〒463-0037 愛知県名古屋市守山区天子田3丁目909<br>TEL：052-778-9712&nbsp;&nbsp;FAX：052-778-9713</p>
-      </div>
-      <div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.15)">
-        <p style="font-size:13px;font-weight:bold;color:#fff;margin-bottom:4px">大阪支店</p>
-        <p style="font-size:11px;color:rgba(255,255,255,0.7);line-height:1.8">〒567-0037 大阪府茨木市上穂東町4-13<br>TEL：072-646-7828&nbsp;&nbsp;FAX：072-622-7777</p>
-      </div>
-      <div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.15)">
-        <p style="font-size:13px;font-weight:bold;color:#fff;margin-bottom:4px">広島支店</p>
-        <p style="font-size:11px;color:rgba(255,255,255,0.7);line-height:1.8">〒731-3164 広島県広島市安佐南区伴東一丁目1-44<br>TEL：082-849-6502&nbsp;&nbsp;FAX：082-849-6503</p>
-      </div>
-      <div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.15)">
-        <p style="font-size:13px;font-weight:bold;color:#fff;margin-bottom:4px">九州支店</p>
-        <p style="font-size:11px;color:rgba(255,255,255,0.7);line-height:1.8">〒816-0911 福岡県大野城市大城2-23-36<br>TEL：092-558-3001&nbsp;&nbsp;FAX：092-504-5277</p>
-      </div>
-      <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.3);font-size:11px;color:rgba(255,255,255,0.6)">
-        受付時間：平日 9:00〜17:30
-      </div>
-    </div><!-- /sidebar -->
+    </div><!-- /branch -->
 
-  </div><!-- /contact-layout -->
+  </div><!-- /contact-main -->
 </div>
 
 <footer>
