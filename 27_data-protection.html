@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WF｜データ保護 - ムルチバック・ジャパン</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; color: #222; background: #fff; }
+.wf-note { background:#fff9c4; border:1px solid #f0c040; border-radius:4px; padding:6px 10px; font-size:12px; color:#555; display:inline-block; margin-bottom:16px; }
+
+.l-wrap { max-width:900px; margin:0 auto; padding:0 24px; }
+
+header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; position:sticky; top:0; z-index:100; }
+.hd-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:24px; }
+.hd-logo  { font-size:18px; font-weight:900; color:#003087; letter-spacing:2px; min-width:180px; }
+.hd-nav   { display:flex; gap:16px; font-size:13px; flex:1; }
+.hd-nav a { padding:4px 0; color:#333; text-decoration:none; }
+.hd-nav a:hover { color:#003087; }
+.hd-btns  { display:flex; gap:10px; }
+.hd-btns a { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; text-decoration:none; }
+.hd-btns a + a { margin-left:4px; }
+
+.breadcrumb { background:#f5f5f5; padding:8px 0; font-size:12px; color:#666; }
+.breadcrumb span { margin:0 6px; }
+.breadcrumb a { color:#666; text-decoration:none; }
+
+/* ── ページヘッダー ── */
+.page-head { padding:48px 0 32px; border-bottom:1px solid #eee; margin-bottom:40px; }
+.page-head-en { font-size:12px; color:#888; letter-spacing:3px; margin-bottom:8px; }
+.page-head h1 { font-size:28px; font-weight:900; color:#003087; }
+
+/* ── 本文エリア ── */
+.content-section { margin-bottom:40px; }
+.content-section h2 {
+  font-size:17px; font-weight:bold; color:#003087;
+  border-left:4px solid #003087;
+  padding:8px 14px; background:#f0f4ff;
+  margin-bottom:16px;
+}
+.content-section h3 {
+  font-size:15px; font-weight:bold; color:#222;
+  margin-bottom:10px; margin-top:20px;
+}
+.content-section p { font-size:14px; color:#444; line-height:2; margin-bottom:12px; }
+.content-section ul { padding-left:20px; }
+.content-section ul li { font-size:14px; color:#444; line-height:2; }
+
+/* テーブル */
+.data-table { width:100%; border-collapse:collapse; margin-bottom:16px; }
+.data-table th { background:#f0f4ff; padding:10px 14px; text-align:left; font-size:13px; color:#003087; border:1px solid #ddd; width:200px; vertical-align:top; }
+.data-table td { padding:10px 14px; border:1px solid #ddd; font-size:14px; line-height:1.8; vertical-align:top; }
+
+/* 更新日 */
+.last-updated { font-size:12px; color:#888; margin-bottom:32px; }
+
+/* ── フッター ── */
+footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font-size:13px; border-top:1px solid #dde3ee; }
+.ft-inner { max-width:1200px; margin:0 auto; padding:0 24px 40px; display:flex; gap:60px; align-items:flex-start; }
+.ft-brand { min-width:220px; }
+.ft-logo-wrap { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.ft-logo-icon { color:#003087; font-size:18px; }
+.ft-logo-text { font-size:20px; font-weight:900; color:#003087; letter-spacing:2px; }
+.ft-company-name { font-size:11px; color:#666; margin-bottom:16px; }
+.ft-sns { display:flex; gap:10px; margin-bottom:20px; }
+.ft-sns-btn { display:flex; align-items:center; justify-content:center; width:36px; height:36px; background:#003087; color:#fff; border-radius:50%; text-decoration:none; }
+.ft-address { font-style:normal; font-size:12px; color:#666; line-height:1.9; }
+.ft-links { display:flex; flex-direction:column; gap:20px; padding-top:4px; }
+.ft-links a { color:#333; text-decoration:none; font-size:14px; }
+.ft-links a:hover { color:#003087; }
+.ft-copy { background:#003087; color:rgba(255,255,255,.6); text-align:center; font-size:11px; padding:14px; }
+</style>
+</head>
+<body>
+<script>
+(function(){
+  if(sessionStorage.getItem('wf_auth')!=='ok'){
+    location.replace('gate.html?r='+encodeURIComponent(location.pathname.split('/').pop()||'index.html'));
+  }
+})();
+</script>
+
+<header>
+  <div class="hd-inner">
+    <div class="hd-logo">&#9632; MULTIVAC<br><small style="font-size:10px;font-weight:400">ムルチバック・ジャパン株式会社</small></div>
+    <nav class="hd-nav">
+      <a href="01_news-list.html">ニュース</a>
+      <a href="04_products-top.html">製品情報</a>
+      <a href="12_service-top.html">サービス</a>
+      <a href="16_company-overview.html">会社概要</a>
+      <a href="20_careers.html">採用情報</a>
+    </nav>
+    <div class="hd-btns">
+      <a href="22_catalog-download.html">&#x2193; カタログダウンロード</a>
+      <a href="21_contact.html">&#x2709; お問い合わせ</a>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="l-wrap" style="max-width:1200px;">
+    <a href="index.html">HOME</a><span>›</span>
+    <span>データ保護</span>
+  </div>
+</div>
+
+<div class="l-wrap" style="padding-top:0; padding-bottom:80px;">
+
+  <div class="page-head">
+    <div class="page-head-en">DATA PROTECTION</div>
+    <h1>データ保護</h1>
+  </div>
+
+  <span class="wf-note">※ コンテンツは multivac.com/jp/ja/nv/privacy-policy と同内容を掲載予定。以下はページ構成の想定レイアウト。</span>
+
+  <p class="last-updated">最終更新日：2026年1月1日</p>
+
+  <!-- 1. 総則 -->
+  <div class="content-section">
+    <h2>1. データ保護に関する基本方針</h2>
+    <p>ムルチバック・ジャパン株式会社（以下「当社」）は、お客様の個人情報および関連データの保護を重要な責務と認識し、適用される法令およびMULTIVACグループのデータ保護基準に従い、適切に管理・取り扱います。</p>
+  </div>
+
+  <!-- 2. 収集するデータ -->
+  <div class="content-section">
+    <h2>2. 収集するデータの種類</h2>
+    <table class="data-table">
+      <tr><th>カテゴリ</th><td>氏名、会社名、所属部署、役職、メールアドレス、電話番号、住所 など</td></tr>
+      <tr><th>利用状況データ</th><td>IPアドレス、ブラウザ情報、閲覧ページ、Cookie情報 など</td></tr>
+      <tr><th>お問い合わせ内容</th><td>フォームから送信いただいた情報</td></tr>
+    </table>
+  </div>
+
+  <!-- 3. 利用目的 -->
+  <div class="content-section">
+    <h2>3. データの利用目的</h2>
+    <ul>
+      <li>お問い合わせへの対応および製品・サービスのご提案</li>
+      <li>カタログ・資料の送付</li>
+      <li>イベント・展示会等のご案内</li>
+      <li>ウェブサイトの利便性向上および分析</li>
+      <li>法令上の義務の履行</li>
+    </ul>
+  </div>
+
+  <!-- 4. 第三者提供 -->
+  <div class="content-section">
+    <h2>4. 第三者への提供</h2>
+    <p>当社は、法令に定める場合を除き、お客様の同意なく第三者にデータを提供することはありません。ただし、MULTIVACグループ内での共有（業務遂行上必要な範囲）、および業務委託先への提供（守秘義務契約締結済み）を行う場合があります。</p>
+  </div>
+
+  <!-- 5. Cookieの使用 -->
+  <div class="content-section">
+    <h2>5. Cookieの使用について</h2>
+    <p>当サイトでは、利便性向上および利用状況分析のためにCookieを使用しています。ブラウザの設定によりCookieを無効にすることができますが、一部機能が制限される場合があります。</p>
+    <table class="data-table">
+      <tr><th>必須Cookie</th><td>サイトの正常な動作に必要なCookie。無効化するとサイトが正しく機能しない場合があります。</td></tr>
+      <tr><th>分析Cookie</th><td>サイトの利用状況を把握するためのCookie（Google Analytics等）。</td></tr>
+      <tr><th>マーケティングCookie</th><td>広告配信の最適化のためのCookie。</td></tr>
+    </table>
+  </div>
+
+  <!-- 6. データ主体の権利 -->
+  <div class="content-section">
+    <h2>6. お客様の権利</h2>
+    <p>お客様は、ご自身のデータに関して以下の権利を有しています。</p>
+    <ul>
+      <li>データへのアクセス・開示請求</li>
+      <li>データの訂正・削除の請求</li>
+      <li>データ処理の制限・異議申し立て</li>
+      <li>データポータビリティの権利</li>
+    </ul>
+    <p style="margin-top:12px;">権利行使のご依頼は、下記お問い合わせ窓口までご連絡ください。</p>
+  </div>
+
+  <!-- 7. 保存期間 -->
+  <div class="content-section">
+    <h2>7. データの保存期間</h2>
+    <p>収集したデータは、利用目的の達成に必要な期間、または法令で定められた期間保存します。保存期間終了後は、安全な方法で削除または匿名化します。</p>
+  </div>
+
+  <!-- 8. セキュリティ -->
+  <div class="content-section">
+    <h2>8. セキュリティ対策</h2>
+    <p>当社は、収集したデータへの不正アクセス・漏洩・改ざん等を防止するため、適切な技術的・組織的安全管理措置を講じています。</p>
+  </div>
+
+  <!-- 9. お問い合わせ -->
+  <div class="content-section">
+    <h2>9. お問い合わせ窓口</h2>
+    <table class="data-table">
+      <tr><th>会社名</th><td>ムルチバック・ジャパン株式会社</td></tr>
+      <tr><th>住所</th><td>〒104-0061 東京都中央区銀座5丁目9-8 クロス銀座ビル5F</td></tr>
+      <tr><th>メール</th><td>privacy@multivac.jp（※ 仮）</td></tr>
+    </table>
+    <p style="margin-top:8px;"><a href="21_contact.html" style="color:#003087; font-weight:bold;">お問い合わせフォームはこちら →</a></p>
+  </div>
+
+</div><!-- /l-wrap -->
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <div class="ft-logo-wrap">
+        <span class="ft-logo-icon">&#9632;</span>
+        <span class="ft-logo-text">MULTIVAC</span>
+      </div>
+      <div class="ft-company-name">ムルチバック・ジャパン株式会社</div>
+      <div class="ft-sns">
+        <a href="#" class="ft-sns-btn" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+        <a href="#" class="ft-sns-btn" aria-label="X (Twitter)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+      <address class="ft-address">〒104-0061<br>東京都中央区銀座5丁目9-8<br>クロス銀座ビル5F</address>
+    </div>
+    <nav class="ft-links">
+      <a href="21_contact.html">お問い合わせ</a>
+      <a href="24_terms.html">サイトのご利用にあたって</a>
+      <a href="23_privacy.html">個人情報保護方針</a>
+      <a href="26_sitemap.html">サイトマップ</a>
+    </nav>
+  </div>
+  <div class="ft-copy">Copyright&copy;2026 MULTIVAC Japan Inc. All rights reserved.</div>
+</footer>
+</body>
+</html>
