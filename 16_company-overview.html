@@ -83,6 +83,28 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
 .anchor-nav a:hover { color:#003087; }
 
 html { scroll-behavior: smooth; }
+
+/* ── ヘッダーボタン更新 ── */
+.btn-dl      { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; }
+.btn-contact { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; margin-left:4px; }
+.btn-dl:hover, .btn-contact:hover { background:#00246b; }
+
+/* ── フッター更新 ── */
+footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font-size:13px; border-top:1px solid #dde3ee; }
+.ft-inner { max-width:1200px; margin:0 auto; padding:0 24px 40px; display:flex; gap:60px; align-items:flex-start; }
+.ft-brand { min-width:220px; }
+.ft-logo-wrap { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.ft-logo-icon { color:#003087; font-size:18px; }
+.ft-logo-text { font-size:20px; font-weight:900; color:#003087; letter-spacing:2px; }
+.ft-company-name { font-size:11px; color:#666; margin-bottom:16px; }
+.ft-sns { display:flex; gap:10px; margin-bottom:20px; }
+.ft-sns-btn { display:flex; align-items:center; justify-content:center; width:36px; height:36px; background:#003087; color:#fff; border-radius:50%; text-decoration:none; transition:background .2s; }
+.ft-sns-btn:hover { background:#00246b; }
+.ft-address { font-style:normal; font-size:12px; color:#666; line-height:1.9; }
+.ft-links { display:flex; flex-direction:column; gap:20px; padding-top:4px; }
+.ft-links a { color:#333; text-decoration:none; font-size:14px; }
+.ft-links a:hover { color:#003087; }
+.ft-copy { background:#003087; color:rgba(255,255,255,0.6); text-align:center; font-size:11px; padding:14px; }
 </style>
 </head>
 <body>
@@ -98,16 +120,15 @@ html { scroll-behavior: smooth; }
   <div class="hd-inner">
     <div class="hd-logo">■ MULTIVAC<br><small style="font-size:10px;font-weight:400">ムルチバック・ジャパン株式会社</small></div>
     <nav class="hd-nav">
-      <a href="03_exhibition.html">展示会情報</a>
-      <a href="01_news-list.html">お知らせ</a>
-      <a href="04_products-top.html">製品情報 ▾</a>
-      <a href="12_service-top.html">サービス ▾</a>
-      <a href="16_company-overview.html">会社概要 ▾</a>
+      <a href="01_news-list.html">ニュース</a>
+      <a href="04_products-top.html">製品情報</a>
+      <a href="12_service-top.html">サービス</a>
+      <a href="16_company-overview.html">会社概要</a>
       <a href="20_careers.html">採用情報</a>
     </nav>
     <div class="hd-btns">
-      <a href="21_contact.html" class="btn-outline">■ お問い合わせ</a>
-      <a href="22_catalog-download.html" class="btn-primary">▼ カタログDL</a>
+      <a href="22_catalog-download.html" class="btn-primary btn-dl">&#x2193; カタログダウンロード</a>
+      <a href="21_contact.html" class="btn-primary btn-contact">&#x2709; お問い合わせ</a>
     </div>
   </div>
 </header>
@@ -194,12 +215,30 @@ html { scroll-behavior: smooth; }
 
 
 <footer>
-  <div class="ft-grid">
-    <div class="ft-col"><h4>製品情報</h4><p><a href="05_products-food.html">食品</a><br><a href="06_products-medical.html">メディカル</a><br><a href="07_products-industry.html">工業</a><br><a href="08_products-household.html">家庭用品</a><br><a href="09_products-chemical.html">化成品</a></p></div>
-    <div class="ft-col"><h4>サービス</h4><p><a href="13_service-innovation.html">グローバルイノベーションセンター</a><br><a href="14_service-training.html">トレーニング</a><br><a href="15_service-aftersales.html">アフターサポート</a></p></div>
-    <div class="ft-col"><h4>会社情報</h4><p><a href="16_company-overview.html">会社概要</a><br><a href="16_company-overview.html#philosophy">経営理念</a><br><a href="16_company-overview.html#history">沿革</a><br><a href="16_company-overview.html#clients">主要取引先</a></p></div>
-    <div class="ft-col"><h4>採用・お問い合わせ</h4><p><a href="20_careers.html">採用情報</a><br><a href="21_contact.html">お問い合わせ</a><br><a href="22_catalog-download.html">カタログダウンロード</a><br><a href="23_privacy.html">個人情報保護方針</a></p></div>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <div class="ft-logo-wrap">
+        <span class="ft-logo-icon">&#9632;</span>
+        <span class="ft-logo-text">MULTIVAC</span>
+      </div>
+      <div class="ft-company-name">ムルチバック・ジャパン株式会社</div>
+      <div class="ft-sns">
+        <a href="#" class="ft-sns-btn" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+        <a href="#" class="ft-sns-btn" aria-label="X (Twitter)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+      <address class="ft-address">〒104-0061<br>東京都中央区銀座5丁目9-8<br>クロス銀座ビル5F</address>
+    </div>
+    <nav class="ft-links">
+      <a href="21_contact.html">お問い合わせ</a>
+      <a href="24_terms.html">サイトのご利用にあたって</a>
+      <a href="23_privacy.html">個人情報保護方針</a>
+      <a href="26_sitemap.html">サイトマップ</a>
+    </nav>
   </div>
-  <div class="ft-copy">© 2026 MULTIVAC Japan Co., Ltd. All Rights Reserved.</div>
+  <div class="ft-copy">Copyright&copy;2026 MULTIVAC Japan Inc. All rights reserved.</div>
 </footer>
 </body></html>
