@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WF｜包装の形態から探す - ムルチバック・ジャパン</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; color: #222; background: #fff; }
+.wf-note { background:#fff9c4; border:1px solid #f0c040; border-radius:4px; padding:6px 10px; font-size:12px; color:#555; display:inline-block; margin-bottom:8px; }
+.wf-img  { background:#e8e8e8; border:1px dashed #aaa; display:flex; align-items:center; justify-content:center; color:#888; font-size:13px; }
+
+.l-wrap { max-width:1200px; margin:0 auto; padding:0 24px; }
+
+header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; position:sticky; top:0; z-index:100; }
+.hd-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:24px; }
+.hd-logo  { font-size:18px; font-weight:900; color:#003087; letter-spacing:2px; min-width:180px; }
+.hd-nav   { display:flex; gap:16px; font-size:13px; flex:1; }
+.hd-nav a { padding:4px 0; color:#333; text-decoration:none; }
+.hd-nav a:hover { color:#003087; }
+.hd-btns  { display:flex; gap:10px; }
+.hd-btns a { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; text-decoration:none; }
+.hd-btns a + a { margin-left:4px; }
+
+.breadcrumb { background:#f5f5f5; padding:8px 0; font-size:12px; color:#666; }
+.breadcrumb span { margin:0 6px; }
+.breadcrumb a { color:#666; text-decoration:none; }
+
+/* ── ページヒーロー ── */
+.page-hero { background:#e8edf5; padding:48px 0 40px; border-bottom:1px solid #dde3ee; }
+.page-hero-en { font-size:12px; color:#888; letter-spacing:3px; margin-bottom:8px; }
+.page-hero h1 { font-size:30px; font-weight:900; color:#003087; margin-bottom:12px; }
+.page-hero p  { font-size:15px; color:#555; max-width:580px; line-height:1.8; }
+
+/* ── 形態カードグリッド（3列） ── */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 16px;
+  margin-bottom: 48px;
+}
+.form-card {
+  border: 1px solid #dde3ee;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: box-shadow .2s;
+}
+.form-card:hover { box-shadow: 0 4px 20px rgba(0,48,135,.12); }
+.form-card-img { height: 140px; display:flex; align-items:center; justify-content:center; font-size:13px; color:#888; }
+.form-card-img-vacuum    { background: linear-gradient(135deg,#e0e8f8 60%,#c0d0f0); }
+.form-card-img-skin      { background: linear-gradient(135deg,#e0f0e8 60%,#c0e0d0); }
+.form-card-img-gas       { background: linear-gradient(135deg,#f8f0e0 60%,#f0e0c0); }
+.form-card-img-tray      { background: linear-gradient(135deg,#f0e8f8 60%,#e0c8f0); }
+.form-card-img-bag       { background: linear-gradient(135deg,#f8e8e0 60%,#f0d0c0); }
+.form-card-img-other     { background: linear-gradient(135deg,#f0f0f0 60%,#e0e0e0); }
+.form-card-body { padding:20px; }
+.form-card-label { font-size:11px; color:#888; letter-spacing:2px; margin-bottom:6px; }
+.form-card-name  { font-size:17px; font-weight:900; color:#003087; margin-bottom:8px; }
+.form-card-desc  { font-size:13px; color:#555; line-height:1.7; margin-bottom:16px; }
+.form-card-tags  { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
+.form-tag { background:#e8edf5; color:#003087; font-size:11px; padding:3px 10px; border-radius:10px; }
+.form-card-link  { font-size:13px; color:#003087; font-weight:bold; }
+
+/* ── 他の探し方 ── */
+.alt-search { border-top:1px solid #eee; padding-top:32px; margin-top:8px; margin-bottom:0; }
+.alt-search h3 { font-size:15px; font-weight:bold; color:#333; margin-bottom:16px; }
+.alt-btns { display:flex; gap:12px; flex-wrap:wrap; }
+.alt-btn { border:1px solid #aaa; color:#555; font-size:13px; padding:10px 20px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+.alt-btn:hover { border-color:#003087; color:#003087; }
+
+/* ── 下部CTA ── */
+.bottom-cta { background:#003087; color:#fff; padding:48px 0; margin-top:60px; text-align:center; }
+.bottom-cta h2 { font-size:20px; font-weight:bold; margin-bottom:8px; }
+.bottom-cta p  { font-size:14px; color:rgba(255,255,255,.7); margin-bottom:24px; }
+.btn-white { background:#fff; color:#003087; padding:12px 32px; border-radius:4px; font-size:14px; font-weight:bold; text-decoration:none; display:inline-block; }
+
+/* ── フッター ── */
+footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; border-top:1px solid #dde3ee; }
+.ft-inner { max-width:1200px; margin:0 auto; padding:0 24px 40px; display:flex; gap:60px; align-items:flex-start; }
+.ft-brand { min-width:220px; }
+.ft-logo-wrap { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.ft-logo-icon { color:#003087; font-size:18px; }
+.ft-logo-text { font-size:20px; font-weight:900; color:#003087; letter-spacing:2px; }
+.ft-company-name { font-size:11px; color:#666; margin-bottom:16px; }
+.ft-sns { display:flex; gap:10px; margin-bottom:20px; }
+.ft-sns-btn { display:flex; align-items:center; justify-content:center; width:36px; height:36px; background:#003087; color:#fff; border-radius:50%; text-decoration:none; }
+.ft-address { font-style:normal; font-size:12px; color:#666; line-height:1.9; }
+.ft-links { display:flex; flex-direction:column; gap:20px; padding-top:4px; }
+.ft-links a { color:#333; text-decoration:none; font-size:14px; }
+.ft-links a:hover { color:#003087; }
+.ft-copy { background:#003087; color:rgba(255,255,255,.6); text-align:center; font-size:11px; padding:14px; }
+</style>
+</head>
+<body>
+<script>
+(function(){
+  if(sessionStorage.getItem('wf_auth')!=='ok'){
+    location.replace('gate.html?r='+encodeURIComponent(location.pathname.split('/').pop()||'index.html'));
+  }
+})();
+</script>
+
+<header>
+  <div class="hd-inner">
+    <div class="hd-logo">&#9632; MULTIVAC<br><small style="font-size:10px;font-weight:400">ムルチバック・ジャパン株式会社</small></div>
+    <nav class="hd-nav">
+      <a href="01_news-list.html">ニュース</a>
+      <a href="04_products-top.html">製品情報</a>
+      <a href="12_service-top.html">サービス</a>
+      <a href="16_company-overview.html">会社概要</a>
+      <a href="20_careers.html">採用情報</a>
+    </nav>
+    <div class="hd-btns">
+      <a href="22_catalog-download.html">&#x2193; カタログダウンロード</a>
+      <a href="21_contact.html">&#x2709; お問い合わせ</a>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="l-wrap">
+    <a href="index.html">HOME</a><span>›</span>
+    <a href="04_products-top.html">製品情報</a><span>›</span>
+    <span>包装の形態から探す</span>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="l-wrap">
+    <div class="page-hero-en">SEARCH BY PACKAGING TYPE</div>
+    <h1>包装の形態から探す</h1>
+    <p>実現したい包装の形・仕様から、最適な機械を絞り込めます。<br>当てはまる包装形態を選んでください。</p>
+  </div>
+</div>
+
+<div class="l-wrap" style="padding-top:48px; padding-bottom:0;">
+
+  <span class="wf-note">※ 各カードをクリックすると、対応する製品一覧ページへ遷移（本番は製品一覧をフィルタリング表示）</span>
+
+  <div class="form-grid">
+
+    <!-- 真空包装 -->
+    <a href="05_products-food.html" class="form-card">
+      <div class="form-card-img form-card-img-vacuum wf-img">[真空包装イメージ]</div>
+      <div class="form-card-body">
+        <div class="form-card-label">VACUUM PACKAGING</div>
+        <div class="form-card-name">真空包装</div>
+        <div class="form-card-desc">空気を除去して密封。酸化防止・長期保存に優れ、精肉・水産・チーズなど幅広い食品に対応。</div>
+        <div class="form-card-tags">
+          <span class="form-tag">深絞り包装機</span>
+          <span class="form-tag">チャンバー真空包装機</span>
+        </div>
+        <div class="form-card-link">この形態の製品を見る →</div>
+      </div>
+    </a>
+
+    <!-- スキンパック -->
+    <a href="05_products-food.html" class="form-card">
+      <div class="form-card-img form-card-img-skin wf-img">[スキンパックイメージ]</div>
+      <div class="form-card-body">
+        <div class="form-card-label">SKIN PACK</div>
+        <div class="form-card-name">スキンパック</div>
+        <div class="form-card-desc">食品の形状に沿ってフィルムを密着させる包装。製品の見た目を美しく見せ、食品ロスも低減。</div>
+        <div class="form-card-tags">
+          <span class="form-tag">深絞り包装機</span>
+          <span class="form-tag">トレーシーラー</span>
+        </div>
+        <div class="form-card-link">この形態の製品を見る →</div>
+      </div>
+    </a>
+
+    <!-- ガス置換（MA）包装 -->
+    <a href="05_products-food.html" class="form-card">
+      <div class="form-card-img form-card-img-gas wf-img">[ガス置換包装イメージ]</div>
+      <div class="form-card-body">
+        <div class="form-card-label">MAP / GAS FLUSH</div>
+        <div class="form-card-name">ガス置換（MA）包装</div>
+        <div class="form-card-desc">窒素・CO₂などの混合ガスで内部空気を置換。惣菜・サラダ・菓子類などの鮮度維持に有効。</div>
+        <div class="form-card-tags">
+          <span class="form-tag">深絞り包装機</span>
+          <span class="form-tag">トレーシーラー</span>
+        </div>
+        <div class="form-card-link">この形態の製品を見る →</div>
+      </div>
+    </a>
+
+    <!-- トレイシール -->
+    <a href="05_products-food.html" class="form-card">
+      <div class="form-card-img form-card-img-tray wf-img">[トレイシールイメージ]</div>
+      <div class="form-card-body">
+        <div class="form-card-label">TRAY SEALING</div>
+        <div class="form-card-name">トレイシール</div>
+        <div class="form-card-desc">既製トレーにフィルムをシールする包装形態。スーパー向け精肉・惣菜・和菓子などに多用される。</div>
+        <div class="form-card-tags">
+          <span class="form-tag">トレーシーラー</span>
+        </div>
+        <div class="form-card-link">この形態の製品を見る →</div>
+      </div>
+    </a>
+
+    <!-- 袋包装 -->
+    <a href="05_products-food.html" class="form-card">
+      <div class="form-card-img form-card-img-bag wf-img">[袋包装イメージ]</div>
+      <div class="form-card-body">
+        <div class="form-card-label">BAG PACKAGING</div>
+        <div class="form-card-name">袋包装</div>
+        <div class="form-card-desc">ピロー袋・スタンドパウチ・ガゼット袋など、多様な袋形状への充填・シールに対応。</div>
+        <div class="form-card-tags">
+          <span class="form-tag">充填包装機</span>
+          <span class="form-tag">横ピロー</span>
+          <span class="form-tag">縦ピロー</span>
+        </div>
+        <div class="form-card-link">この形態の製品を見る →</div>
+      </div>
+    </a>
+
+    <!-- その他・特殊包装 -->
+    <a href="04_products-top.html" class="form-card">
+      <div class="form-card-img form-card-img-other wf-img">[特殊包装イメージ]</div>
+      <div class="form-card-body">
+        <div class="form-card-label">OTHER</div>
+        <div class="form-card-name">その他・特殊包装</div>
+        <div class="form-card-desc">ブリスター包装・収縮包装・無菌包装など、特殊な仕様が必要な場合はお問い合わせください。</div>
+        <div class="form-card-tags">
+          <span class="form-tag">ブリスター</span>
+          <span class="form-tag">収縮包装</span>
+          <span class="form-tag">無菌包装</span>
+        </div>
+        <div class="form-card-link">製品情報TOPを見る →</div>
+      </div>
+    </a>
+
+  </div><!-- /form-grid -->
+
+  <!-- 他の探し方 -->
+  <div class="alt-search" style="margin-bottom:60px;">
+    <h3>他の方法でも探せます</h3>
+    <div class="alt-btns">
+      <a href="04a_products-by-use.html" class="alt-btn">📦 包みたいものから探す</a>
+      <a href="04c_products-by-process.html" class="alt-btn">⚙️ 加工したいものから探す</a>
+      <a href="11_products-maker.html" class="alt-btn">🏭 メーカーから探す</a>
+      <a href="04_products-top.html" class="alt-btn">◀ 製品情報TOPに戻る</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="bottom-cta">
+  <h2>お探しの包装形態が見つからない場合</h2>
+  <p>ご要件をお伝えいただければ、最適な機械をご提案します。</p>
+  <a href="21_contact.html" class="btn-white">&#x2709; お問い合わせ・ご相談はこちら</a>
+</div>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <div class="ft-logo-wrap">
+        <span class="ft-logo-icon">&#9632;</span>
+        <span class="ft-logo-text">MULTIVAC</span>
+      </div>
+      <div class="ft-company-name">ムルチバック・ジャパン株式会社</div>
+      <div class="ft-sns">
+        <a href="#" class="ft-sns-btn" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+        <a href="#" class="ft-sns-btn" aria-label="X (Twitter)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+      <address class="ft-address">〒104-0061<br>東京都中央区銀座5丁目9-8<br>クロス銀座ビル5F</address>
+    </div>
+    <nav class="ft-links">
+      <a href="21_contact.html">お問い合わせ</a>
+      <a href="24_terms.html">サイトのご利用にあたって</a>
+      <a href="23_privacy.html">個人情報保護方針</a>
+      <a href="26_sitemap.html">サイトマップ</a>
+    </nav>
+  </div>
+  <div class="ft-copy">Copyright&copy;2026 MULTIVAC Japan Inc. All rights reserved.</div>
+</footer>
+</body>
+</html>
