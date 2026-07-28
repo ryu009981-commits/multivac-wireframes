@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WF｜メーカーから探す - ムルチバック・ジャパン</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; color: #222; background: #fff; }
+.wf-note { background:#fff9c4; border:1px solid #f0c040; border-radius:4px; padding:6px 10px; font-size:12px; color:#555; display:inline-block; margin-bottom:8px; }
+.wf-new  { background:#e3f2fd; border:1px solid #90caf9; border-radius:4px; padding:3px 8px; font-size:11px; color:#1565c0; font-weight:bold; }
+.wf-img  { background:#e8e8e8; border:1px dashed #aaa; display:flex; align-items:center; justify-content:center; color:#888; font-size:13px; }
+.wf-box  { background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:16px; margin-bottom:16px; }
+.wf-section { border-left:4px solid #003087; padding:10px 14px; background:#f0f4ff; margin-bottom:12px; font-weight:bold; }
+
+.l-wrap  { max-width:1200px; margin:0 auto; padding:0 24px; }
+.l-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.l-grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; }
+
+header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; position:sticky; top:0; z-index:100; }
+.hd-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:24px; }
+.hd-logo  { font-size:18px; font-weight:900; color:#003087; letter-spacing:2px; min-width:180px; }
+.hd-nav   { display:flex; gap:16px; font-size:13px; flex:1; }
+.hd-nav a { padding:4px 0; cursor:pointer; color:#333; text-decoration:none; }
+.hd-nav a:hover { color:#003087; }
+.hd-btns  { display:flex; gap:10px; }
+.btn-primary { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; cursor:pointer; text-decoration:none; display:inline-block; }
+.btn-dl   { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; }
+.btn-contact { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; margin-left:4px; }
+.hd-btns a { text-decoration:none; }
+
+.breadcrumb { background:#f5f5f5; padding:8px 0; font-size:12px; color:#666; }
+.breadcrumb span { margin:0 6px; }
+.breadcrumb a { color:#666; text-decoration:none; }
+.breadcrumb a:hover { color:#003087; text-decoration:underline; }
+
+/* ── ページヒーロー ── */
+.page-hero { background:#e8edf5; padding:48px 0 40px; border-bottom:1px solid #dde3ee; }
+.page-hero-en { font-size:12px; color:#888; letter-spacing:3px; margin-bottom:8px; }
+.page-hero h1 { font-size:30px; font-weight:900; color:#003087; margin-bottom:12px; }
+.page-hero p  { font-size:15px; color:#555; max-width:580px; line-height:1.8; }
+
+/* ── メーカーカード ── */
+.maker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 16px;
+}
+.maker-card {
+  border: 1px solid #dde3ee;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow .2s;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.maker-card:hover { box-shadow: 0 4px 20px rgba(0,48,135,.12); }
+.maker-card-logo {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #888;
+  background: #f0f4ff;
+  border-bottom: 1px solid #dde3ee;
+}
+.maker-card-body { padding: 20px; }
+.maker-card-name  { font-size:20px; font-weight:900; color:#003087; margin-bottom:6px; letter-spacing:1px; }
+.maker-card-origin { font-size:11px; color:#888; margin-bottom:10px; }
+.maker-card-spec {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.spec-tag {
+  background: #e3f2fd;
+  color: #003087;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+.maker-card-desc  { font-size:13px; color:#555; line-height:1.7; margin-bottom:16px; }
+.maker-card-link  { font-size:13px; color:#003087; font-weight:bold; }
+
+/* ── ブランド概要 ── */
+.brand-overview { background:#f5f7fa; border-radius:8px; padding:24px; margin-top:40px; margin-bottom:40px; }
+.brand-overview h2 { font-size:16px; font-weight:bold; color:#003087; margin-bottom:12px; }
+.brand-tags { display:flex; flex-wrap:wrap; gap:10px; }
+.brand-tag {
+  border: 1px solid #003087;
+  color: #003087;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background .15s, color .15s;
+  font-weight: bold;
+}
+.brand-tag:hover { background:#003087; color:#fff; }
+
+/* ── 他の探し方 ── */
+.alt-search { border-top:1px solid #eee; padding-top:32px; margin-top:40px; }
+.alt-search h3 { font-size:15px; font-weight:bold; color:#333; margin-bottom:16px; }
+.alt-btns { display:flex; gap:12px; flex-wrap:wrap; }
+.alt-btn {
+  border: 1px solid #aaa;
+  color: #555;
+  font-size: 13px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.alt-btn:hover { border-color:#003087; color:#003087; }
+.alt-btn-icon { font-size:18px; }
+
+/* ── 下部CTA ── */
+.bottom-cta { background:#003087; color:#fff; padding:48px 0; margin-top:60px; text-align:center; }
+.bottom-cta h2 { font-size:20px; font-weight:bold; margin-bottom:8px; }
+.bottom-cta p  { font-size:14px; color:rgba(255,255,255,.7); margin-bottom:24px; }
+.btn-white { background:#fff; color:#003087; padding:12px 32px; border-radius:4px; font-size:14px; font-weight:bold; text-decoration:none; display:inline-block; }
+.btn-white:hover { background:#f0f4ff; }
+
+/* ── フッター ── */
+footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; border-top:1px solid #dde3ee; }
+.ft-inner { max-width:1200px; margin:0 auto; padding:0 24px 40px; display:flex; gap:60px; align-items:flex-start; }
+.ft-brand { min-width:220px; }
+.ft-logo-wrap { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.ft-logo-icon { color:#003087; font-size:18px; }
+.ft-logo-text { font-size:20px; font-weight:900; color:#003087; letter-spacing:2px; }
+.ft-company-name { font-size:11px; color:#666; margin-bottom:16px; }
+.ft-sns { display:flex; gap:10px; margin-bottom:20px; }
+.ft-sns-btn { display:flex; align-items:center; justify-content:center; width:36px; height:36px; background:#003087; color:#fff; border-radius:50%; text-decoration:none; }
+.ft-address { font-style:normal; font-size:12px; color:#666; line-height:1.9; }
+.ft-links { display:flex; flex-direction:column; gap:20px; padding-top:4px; }
+.ft-links a { color:#333; text-decoration:none; font-size:14px; }
+.ft-links a:hover { color:#003087; }
+.ft-copy { background:#003087; color:rgba(255,255,255,.6); text-align:center; font-size:11px; padding:14px; }
+</style>
+</head>
+<body>
+<script>
+(function(){
+  if(sessionStorage.getItem('wf_auth')!=='ok'){
+    location.replace('gate.html?r='+encodeURIComponent(location.pathname.split('/').pop()||'index.html'));
+  }
+})();
+</script>
+
+<header>
+  <div class="hd-inner">
+    <div class="hd-logo">&#9632; MULTIVAC<br><small style="font-size:10px;font-weight:400">ムルチバック・ジャパン株式会社</small></div>
+    <nav class="hd-nav">
+      <a href="01_news-list.html">ニュース</a>
+      <a href="04_products-top.html">製品情報</a>
+      <a href="13_service-innovation.html">サービス</a>
+      <a href="16_company-overview.html">会社概要</a>
+      <a href="20_careers.html">採用情報</a>
+    </nav>
+    <div class="hd-btns">
+      <a href="22_catalog-download.html" class="btn-primary btn-dl">&#x2193; カタログダウンロード</a>
+      <a href="21_contact.html" class="btn-primary btn-contact">&#x2709; お問い合わせ</a>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="l-wrap">
+    <a href="index.html">HOME</a><span>›</span>
+    <a href="04_products-top.html">製品情報</a><span>›</span>
+    <span>メーカーから探す</span>
+  </div>
+</div>
+
+<!-- ページヒーロー -->
+<div class="page-hero">
+  <div class="l-wrap">
+    <div class="page-hero-en">SEARCH BY MAKER</div>
+    <h1>メーカーから製品を探す</h1>
+    <p>ムルチバック・ジャパンが取り扱う、世界トップクラスのメーカーを一覧でご確認いただけます。<br>ご関心のあるブランドを選択してください。</p>
+  </div>
+</div>
+
+<!-- メインコンテンツ -->
+<div class="l-wrap" style="padding-top:48px; padding-bottom:0;">
+
+  <span class="wf-note">※ 各カードをクリックすると、メーカー詳細（11_products-maker.html の各セクション）へ遷移</span>
+
+  <!-- メーカーカードグリッド（3列） -->
+  <div class="maker-grid" style="margin-top:16px;">
+
+    <!-- MULTIVAC -->
+    <a href="11_products-maker.html#multivac" class="maker-card">
+      <div class="maker-card-logo wf-img">[MULTIVACロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">MULTIVAC</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ 包装機全般</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">深絞り包装</span>
+          <span class="spec-tag">トレイシーラー</span>
+          <span class="spec-tag">チャンバー機</span>
+          <span class="spec-tag">食品・医療・工業</span>
+        </div>
+        <div class="maker-card-desc">世界トップシェアを誇る包装機メーカー。食品・メディカル・工業分野に対応する幅広いラインナップを展開。</div>
+        <div class="maker-card-link">MULTIVACの製品を見る →</div>
+      </div>
+    </a>
+
+    <!-- TVI -->
+    <a href="11_products-maker.html#tvi" class="maker-card">
+      <div class="maker-card-logo wf-img">[TVIロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">TVI</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ 食肉加工</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">インジェクター</span>
+          <span class="spec-tag">マッサージャー</span>
+          <span class="spec-tag">ブライン製造</span>
+        </div>
+        <div class="maker-card-desc">食肉加工向けの高性能インジェクター・マッサージャーを製造するドイツの専門メーカー。歩留まり向上と品質改善に貢献。</div>
+        <div class="maker-card-link">TVIの製品を見る →</div>
+      </div>
+    </a>
+
+    <!-- FRITSCH -->
+    <a href="11_products-maker.html#fritsch" class="maker-card">
+      <div class="maker-card-logo wf-img">[FRITSCHロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">FRITSCH</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ 製パン・製菓</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">シーティングマシン</span>
+          <span class="spec-tag">リバースシーター</span>
+          <span class="spec-tag">ラミネーター</span>
+        </div>
+        <div class="maker-card-desc">パン・菓子製造向けシーティングマシンの世界的メーカー。高品質なクロワッサン・デニッシュ製造ラインを実現。</div>
+        <div class="maker-card-link">FRITSCHの製品を見る →</div>
+      </div>
+    </a>
+
+    <!-- Stephan -->
+    <a href="11_products-maker.html#stephan" class="maker-card">
+      <div class="maker-card-logo wf-img">[Stephanロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">Stephan</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ 混合・乳化・カット</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">ユニバーサルマシン</span>
+          <span class="spec-tag">乳化</span>
+          <span class="spec-tag">混合・カット</span>
+        </div>
+        <div class="maker-card-desc">高性能ユニバーサルマシン・ミクロカットマシンを展開。乳化・混合・カット機能を1台に集約し、多様な加工に対応。</div>
+        <div class="maker-card-link">Stephanの製品を見る →</div>
+      </div>
+    </a>
+
+    <!-- SCHROEDER -->
+    <a href="11_products-maker.html#schroeder" class="maker-card">
+      <div class="maker-card-logo wf-img">[SCHROEDERロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">SCHROEDER</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ 大型食肉加工</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">大型インジェクター</span>
+          <span class="spec-tag">タンブラー</span>
+          <span class="spec-tag">歩留まり改善</span>
+        </div>
+        <div class="maker-card-desc">大型インジェクター・タンブラーのドイツ専門メーカー。食肉加工の大量生産ラインに最適化された高効率機械を提供。</div>
+        <div class="maker-card-link">SCHROEDERの製品を見る →</div>
+      </div>
+    </a>
+
+    <!-- Seydelmann -->
+    <a href="11_products-maker.html#seydelmann" class="maker-card">
+      <div class="maker-card-logo wf-img">[Seydelmannロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">Seydelmann</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ ミンチ・ソーセージ</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">カッター</span>
+          <span class="spec-tag">グラインダー</span>
+          <span class="spec-tag">ミキサー</span>
+        </div>
+        <div class="maker-card-desc">カッター・グラインダー・ミキサーの世界的ブランド。ソーセージ・ミンチ製造ラインに最適な高性能機械を提供。</div>
+        <div class="maker-card-link">Seydelmannの製品を見る →</div>
+      </div>
+    </a>
+
+    <!-- handtmann -->
+    <a href="11_products-maker.html#handtmann" class="maker-card">
+      <div class="maker-card-logo wf-img">[handtmannロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">handtmann</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ 充填・成型</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">真空定量充填機</span>
+          <span class="spec-tag">ソーセージライン</span>
+          <span class="spec-tag">高速充填</span>
+        </div>
+        <div class="maker-card-desc">真空定量充填機・ソーセージラインの世界シェアトップメーカー。高精度・高速充填で生産性を大幅に向上。</div>
+        <div class="maker-card-link">handtmannの製品を見る →</div>
+      </div>
+    </a>
+
+  </div><!-- /maker-grid -->
+
+  <!-- ブランドクイックリンク -->
+  <div class="brand-overview">
+    <h2>取り扱いメーカー一覧</h2>
+    <div class="brand-tags">
+      <a href="11_products-maker.html#multivac"   class="brand-tag">MULTIVAC</a>
+      <a href="11_products-maker.html#tvi"         class="brand-tag">TVI</a>
+      <a href="11_products-maker.html#fritsch"     class="brand-tag">FRITSCH</a>
+      <a href="11_products-maker.html#stephan"     class="brand-tag">Stephan</a>
+      <a href="11_products-maker.html#schroeder"   class="brand-tag">SCHROEDER</a>
+      <a href="11_products-maker.html#seydelmann"  class="brand-tag">Seydelmann</a>
+      <a href="11_products-maker.html#handtmann"   class="brand-tag">handtmann</a>
+    </div>
+  </div>
+
+  <!-- 他の探し方 -->
+  <div class="alt-search">
+    <h3>他の方法でも探せます</h3>
+    <div class="alt-btns">
+      <a href="04a_products-by-use.html" class="alt-btn">
+        <span class="alt-btn-icon">🍖</span>包みたいものから探す
+      </a>
+      <a href="04b_products-by-form.html" class="alt-btn">
+        <span class="alt-btn-icon">📐</span>包装の形態から探す
+      </a>
+      <a href="04c_products-by-process.html" class="alt-btn">
+        <span class="alt-btn-icon">⚙️</span>加工したいものから探す
+      </a>
+      <a href="04_products-top.html" class="alt-btn">
+        <span class="alt-btn-icon">◀</span>製品情報TOPに戻る
+      </a>
+    </div>
+  </div>
+
+</div><!-- /l-wrap -->
+
+<!-- 下部CTA -->
+<div class="bottom-cta">
+  <h2>製品・メーカーについてのご相談はこちら</h2>
+  <p>ご用途・ご要件をお知らせいただければ、最適なメーカー・機械をご提案します。</p>
+  <a href="21_contact.html" class="btn-white">&#x2709; お問い合わせ・ご相談はこちら</a>
+</div>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <div class="ft-logo-wrap">
+        <span class="ft-logo-icon">&#9632;</span>
+        <span class="ft-logo-text">MULTIVAC</span>
+      </div>
+      <div class="ft-company-name">ムルチバック・ジャパン株式会社</div>
+      <div class="ft-sns">
+        <a href="#" class="ft-sns-btn" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+        <a href="#" class="ft-sns-btn" aria-label="X (Twitter)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+      <address class="ft-address">〒104-0061<br>東京都中央区銀座5丁目9-8<br>クロス銀座ビル5F</address>
+    </div>
+    <nav class="ft-links">
+      <a href="21_contact.html">お問い合わせ</a>
+      <a href="24_terms.html">サイトのご利用にあたって</a>
+      <a href="23_privacy.html">個人情報保護方針</a>
+      <a href="26_sitemap.html">サイトマップ</a>
+    </nav>
+  </div>
+  <div class="ft-copy">Copyright&copy;2026 MULTIVAC Japan Inc. All rights reserved.</div>
+</footer>
+</body>
+</html>

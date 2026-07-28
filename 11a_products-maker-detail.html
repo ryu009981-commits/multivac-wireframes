@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WF｜メーカー詳細（テンプレ）MULTIVAC - ムルチバック・ジャパン</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; color: #222; background: #fff; }
+.wf-note { background:#fff9c4; border:1px solid #f0c040; border-radius:4px; padding:6px 10px; font-size:12px; color:#555; display:inline-block; margin-bottom:8px; }
+.wf-img  { background:#e8e8e8; border:1px dashed #aaa; display:flex; align-items:center; justify-content:center; color:#888; font-size:13px; }
+
+.l-wrap  { max-width:1200px; margin:0 auto; padding:0 24px; }
+.l-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.l-grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+
+/* ── ヘッダー ── */
+header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; position:sticky; top:0; z-index:100; }
+.hd-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:24px; }
+.hd-logo  { font-size:18px; font-weight:900; color:#003087; letter-spacing:2px; min-width:180px; }
+.hd-nav   { display:flex; gap:16px; font-size:13px; flex:1; }
+.hd-nav a { padding:4px 0; color:#333; text-decoration:none; }
+.hd-nav a:hover { color:#003087; }
+.hd-btns  { display:flex; gap:10px; }
+.btn-dl      { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; text-decoration:none; }
+.btn-contact { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; margin-left:4px; text-decoration:none; }
+
+/* ── パンくず ── */
+.breadcrumb { background:#f5f5f5; padding:8px 0; font-size:12px; color:#666; }
+.breadcrumb span { margin:0 6px; }
+.breadcrumb a { color:#666; text-decoration:none; }
+.breadcrumb a:hover { color:#003087; text-decoration:underline; }
+
+/* ── メーカーヒーロー ── */
+.maker-hero { background:#e8edf5; border-bottom:1px solid #dde3ee; padding:48px 0; }
+.maker-hero-inner { display:flex; align-items:center; gap:48px; }
+.maker-hero-logo { width:280px; height:140px; flex-shrink:0; border-radius:8px; border:1px solid #dde3ee; background:#fff; }
+.maker-hero-text { flex:1; }
+.maker-hero-en   { font-size:11px; color:#888; letter-spacing:3px; margin-bottom:8px; }
+.maker-hero-name { font-size:36px; font-weight:900; color:#003087; margin-bottom:8px; }
+.maker-hero-tagline { font-size:15px; color:#555; margin-bottom:16px; line-height:1.7; }
+.maker-hero-tags { display:flex; flex-wrap:wrap; gap:8px; }
+.hero-tag { background:#003087; color:#fff; font-size:12px; padding:4px 14px; border-radius:2px; }
+
+/* ── セクション見出し ── */
+.section-head { display:flex; align-items:baseline; gap:12px; margin-bottom:24px; padding-bottom:10px; border-bottom:2px solid #003087; }
+.section-head h2 { font-size:20px; font-weight:900; color:#003087; }
+.section-head p  { font-size:13px; color:#888; }
+
+/* ── メーカー概要 ── */
+.overview-table { width:100%; border-collapse:collapse; font-size:14px; }
+.overview-table th { background:#f0f4ff; padding:12px 16px; text-align:left; font-weight:bold; color:#003087; border:1px solid #dde3ee; width:160px; white-space:nowrap; }
+.overview-table td { padding:12px 16px; border:1px solid #dde3ee; line-height:1.7; }
+
+/* ── 主力製品カード ── */
+.feature-card { border:1px solid #dde3ee; border-radius:8px; overflow:hidden; }
+.feature-card-img { height:180px; }
+.feature-card-body { padding:20px; }
+.feature-card-label { font-size:11px; color:#888; letter-spacing:2px; margin-bottom:6px; }
+.feature-card-name  { font-size:16px; font-weight:bold; color:#003087; margin-bottom:8px; }
+.feature-card-desc  { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+.btn-outline { border:2px solid #003087; color:#003087; padding:8px 20px; border-radius:4px; font-size:13px; text-decoration:none; display:inline-block; }
+.btn-outline:hover { background:#003087; color:#fff; }
+
+/* ── 製品ラインナップ ── */
+.product-card { border:1px solid #dde3ee; border-radius:6px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:box-shadow .2s; }
+.product-card:hover { box-shadow:0 4px 16px rgba(0,48,135,.1); }
+.product-card-img  { height:140px; }
+.product-card-body { padding:14px; }
+.product-card-cat  { font-size:11px; color:#888; margin-bottom:4px; }
+.product-card-name { font-size:14px; font-weight:bold; color:#003087; margin-bottom:6px; }
+.product-card-desc { font-size:12px; color:#666; line-height:1.6; }
+
+/* ── ページネーション ── */
+.pagination { display:flex; justify-content:center; gap:8px; margin-top:40px; }
+.page-btn { border:1px solid #dde3ee; padding:8px 14px; border-radius:4px; font-size:13px; color:#333; cursor:pointer; }
+.page-btn.active { background:#003087; color:#fff; border-color:#003087; }
+
+/* ── 下部CTA ── */
+.bottom-cta { background:#003087; color:#fff; padding:48px 0; margin-top:60px; text-align:center; }
+.bottom-cta h2 { font-size:20px; font-weight:bold; margin-bottom:8px; }
+.bottom-cta p  { font-size:14px; color:rgba(255,255,255,.7); margin-bottom:24px; }
+.btn-white { background:#fff; color:#003087; padding:12px 32px; border-radius:4px; font-size:14px; font-weight:bold; text-decoration:none; display:inline-block; }
+.btn-white:hover { background:#f0f4ff; }
+
+/* ── フッター ── */
+footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; border-top:1px solid #dde3ee; }
+.ft-inner { max-width:1200px; margin:0 auto; padding:0 24px 40px; display:flex; gap:60px; align-items:flex-start; }
+.ft-brand { min-width:220px; }
+.ft-logo-wrap { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.ft-logo-icon { color:#003087; font-size:18px; }
+.ft-logo-text { font-size:20px; font-weight:900; color:#003087; letter-spacing:2px; }
+.ft-company-name { font-size:11px; color:#666; margin-bottom:16px; }
+.ft-sns { display:flex; gap:10px; margin-bottom:20px; }
+.ft-sns-btn { display:flex; align-items:center; justify-content:center; width:36px; height:36px; background:#003087; color:#fff; border-radius:50%; text-decoration:none; }
+.ft-address { font-style:normal; font-size:12px; color:#666; line-height:1.9; }
+.ft-links { display:flex; flex-direction:column; gap:20px; padding-top:4px; }
+.ft-links a { color:#333; text-decoration:none; font-size:14px; }
+.ft-links a:hover { color:#003087; }
+.ft-copy { background:#003087; color:rgba(255,255,255,.6); text-align:center; font-size:11px; padding:14px; }
+</style>
+</head>
+<body>
+<script>
+(function(){
+  if(sessionStorage.getItem('wf_auth')!=='ok'){
+    location.replace('gate.html?r='+encodeURIComponent(location.pathname.split('/').pop()||'index.html'));
+  }
+})();
+</script>
+
+<header>
+  <div class="hd-inner">
+    <div class="hd-logo">&#9632; MULTIVAC<br><small style="font-size:10px;font-weight:400">ムルチバック・ジャパン株式会社</small></div>
+    <nav class="hd-nav">
+      <a href="01_news-list.html">ニュース</a>
+      <a href="04_products-top.html">製品情報</a>
+      <a href="13_service-innovation.html">サービス</a>
+      <a href="16_company-overview.html">会社概要</a>
+      <a href="20_careers.html">採用情報</a>
+    </nav>
+    <div class="hd-btns">
+      <a href="22_catalog-download.html" class="btn-dl">&#x2193; カタログダウンロード</a>
+      <a href="21_contact.html" class="btn-contact">&#x2709; お問い合わせ</a>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="l-wrap">
+    <a href="index.html">HOME</a><span>›</span>
+    <a href="04_products-top.html">製品情報</a><span>›</span>
+    <a href="11_products-maker.html">メーカーから探す</a><span>›</span>
+    <span>MULTIVAC</span>
+  </div>
+</div>
+
+<!-- メーカーヒーロー -->
+<div class="maker-hero">
+  <div class="l-wrap">
+    <span class="wf-note">※ テンプレート。メーカーごとに内容を差し替え（MULTIVAC / TVI / FRITSCH / Stephan / SCHROEDER / Seydelmann / handtmann）</span>
+    <div class="maker-hero-inner" style="margin-top:16px;">
+      <div class="maker-hero-logo wf-img">[MULTIVACロゴ（大）]</div>
+      <div class="maker-hero-text">
+        <div class="maker-hero-en">MAKER DETAIL</div>
+        <div class="maker-hero-name">MULTIVAC</div>
+        <div class="maker-hero-tagline">世界No.1の包装機メーカー。食品・メディカル・工業・化粧品分野に対応する<br>包括的なパッケージングソリューションを提供。</div>
+        <div class="maker-hero-tags">
+          <span class="hero-tag">🇩🇪 ドイツ</span>
+          <span class="hero-tag">包装機全般</span>
+          <span class="hero-tag">食品・メディカル・工業</span>
+          <span class="hero-tag">世界140カ国以上</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="l-wrap" style="padding-top:48px; padding-bottom:60px;">
+
+  <!-- メーカー概要 -->
+  <section style="margin-bottom:60px;">
+    <div class="section-head">
+      <h2>メーカー概要</h2>
+    </div>
+    <div class="l-grid2" style="align-items:start;">
+      <div>
+        <p style="font-size:14px; line-height:1.9; color:#444; margin-bottom:20px;">MULTIVACは1961年にドイツ・バイエルン州に設立された世界最大級の包装機メーカーです。深絞り包装機・トレーシーラー・チャンバー機など、あらゆる包装ニーズに応える幅広い製品ラインナップを展開。140カ国以上でビジネスを展開し、食品・メディカル・工業分野のお客様から高い信頼を獲得しています。</p>
+        <table class="overview-table">
+          <tr><th>設立年</th><td>1961年</td></tr>
+          <tr><th>本社所在地</th><td>ドイツ・バイエルン州ヴォルフェルツハウゼン</td></tr>
+          <tr><th>グループ従業員数</th><td>約6,500名（グループ全体）</td></tr>
+          <tr><th>事業拠点</th><td>140カ国以上</td></tr>
+          <tr><th>主な製品カテゴリ</th><td>深絞り包装機 / トレーシーラー / チャンバー機 / ブリスター包装機</td></tr>
+          <tr><th>対応業種</th><td>食品・メディカル・工業・化粧品</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="wf-img" style="width:100%; height:280px; border-radius:8px;">[メーカー紹介イメージ（工場・製品ラインなど）]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主力製品 -->
+  <section style="margin-bottom:60px;">
+    <div class="section-head">
+      <h2>主力製品</h2>
+      <p>代表的な製品をピックアップ</p>
+    </div>
+    <div class="l-grid3">
+
+      <div class="feature-card">
+        <div class="feature-card-img wf-img">[深絞り包装機イメージ]</div>
+        <div class="feature-card-body">
+          <div class="feature-card-label">DEEP DRAWING</div>
+          <div class="feature-card-name">深絞り包装機</div>
+          <div class="feature-card-desc">フィルムを熱成形してトレーを成型し、製品を充填後にシールする一貫ライン。食肉・チーズ・惣菜などに最適。</div>
+          <a href="10_products-detail.html" class="btn-outline">製品詳細を見る</a>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card-img wf-img">[トレーシーラーイメージ]</div>
+        <div class="feature-card-body">
+          <div class="feature-card-label">TRAY SEALER</div>
+          <div class="feature-card-name">トレーシーラー</div>
+          <div class="feature-card-desc">既製トレーに製品を充填してシールする方式。MAP（ガス置換）包装にも対応。惣菜・鮮魚・精肉に幅広く使用。</div>
+          <a href="10_products-detail.html" class="btn-outline">製品詳細を見る</a>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card-img wf-img">[チャンバー機イメージ]</div>
+        <div class="feature-card-body">
+          <div class="feature-card-label">CHAMBER MACHINE</div>
+          <div class="feature-card-name">チャンバー機</div>
+          <div class="feature-card-desc">卓上型から大型まで幅広いラインナップ。真空包装・ガス置換包装に対応し、食品の鮮度保持と長期保存を実現。</div>
+          <a href="10_products-detail.html" class="btn-outline">製品詳細を見る</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 製品ラインナップ（全件） -->
+  <section>
+    <div class="section-head">
+      <h2>製品ラインナップ</h2>
+      <p style="margin-left:auto; font-size:13px; color:#666;">全12製品</p>
+    </div>
+
+    <div class="l-grid3">
+
+      <a href="10_products-detail.html" class="product-card">
+        <div class="product-card-img wf-img">[製品イメージ]</div>
+        <div class="product-card-body">
+          <div class="product-card-cat">深絞り包装機</div>
+          <div class="product-card-name">R 105</div>
+          <div class="product-card-desc">コンパクトなエントリーモデル。小ロット生産・多品種対応に最適。</div>
+        </div>
+      </a>
+
+      <a href="10_products-detail.html" class="product-card">
+        <div class="product-card-img wf-img">[製品イメージ]</div>
+        <div class="product-card-body">
+          <div class="product-card-cat">深絞り包装機</div>
+          <div class="product-card-name">R 245</div>
+          <div class="product-card-desc">中型ラインの標準モデル。高い汎用性と安定した生産性を両立。</div>
+        </div>
+      </a>
+
+      <a href="10_products-detail.html" class="product-card">
+        <div class="product-card-img wf-img">[製品イメージ]</div>
+        <div class="product-card-body">
+          <div class="product-card-cat">深絞り包装機</div>
+          <div class="product-card-name">R 535</div>
+          <div class="product-card-desc">大型ライン向けフラッグシップモデル。高速・高精度な包装を実現。</div>
+        </div>
+      </a>
+
+      <a href="10_products-detail.html" class="product-card">
+        <div class="product-card-img wf-img">[製品イメージ]</div>
+        <div class="product-card-body">
+          <div class="product-card-cat">トレーシーラー</div>
+          <div class="product-card-name">T 200</div>
+          <div class="product-card-desc">自動トレーシーラー。MAP包装対応。惣菜・鮮魚・精肉ラインに適合。</div>
+        </div>
+      </a>
+
+      <a href="10_products-detail.html" class="product-card">
+        <div class="product-card-img wf-img">[製品イメージ]</div>
+        <div class="product-card-body">
+          <div class="product-card-cat">トレーシーラー</div>
+          <div class="product-card-name">T 800</div>
+          <div class="product-card-desc">高速大型トレーシーラー。スキンパック・MAP両対応の多機能モデル。</div>
+        </div>
+      </a>
+
+      <a href="10_products-detail.html" class="product-card">
+        <div class="product-card-img wf-img">[製品イメージ]</div>
+        <div class="product-card-body">
+          <div class="product-card-cat">チャンバー機</div>
+          <div class="product-card-name">C 300</div>
+          <div class="product-card-desc">卓上型チャンバー機。少量生産・試作・小規模店舗向けのスタンダードモデル。</div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="pagination">
+      <div class="page-btn active">1</div>
+      <div class="page-btn">2</div>
+      <div class="page-btn">次へ ›</div>
+    </div>
+  </section>
+
+</div>
+
+<!-- 下部CTA -->
+<div class="bottom-cta">
+  <h2>MULTIVACの製品について、もっと詳しく知りたい方へ</h2>
+  <p>カタログ送付・デモ機体験・見積り依頼など、お気軽にご相談ください。</p>
+  <a href="21_contact.html" class="btn-white">&#x2709; お問い合わせ・ご相談はこちら</a>
+</div>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <div class="ft-logo-wrap">
+        <span class="ft-logo-icon">&#9632;</span>
+        <span class="ft-logo-text">MULTIVAC</span>
+      </div>
+      <div class="ft-company-name">ムルチバック・ジャパン株式会社</div>
+      <div class="ft-sns">
+        <a href="#" class="ft-sns-btn" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+        <a href="#" class="ft-sns-btn" aria-label="X (Twitter)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+      <address class="ft-address">〒104-0061<br>東京都中央区銀座5丁目9-8<br>クロス銀座ビル5F</address>
+    </div>
+    <nav class="ft-links">
+      <a href="21_contact.html">お問い合わせ</a>
+      <a href="24_terms.html">サイトのご利用にあたって</a>
+      <a href="23_privacy.html">個人情報保護方針</a>
+      <a href="26_sitemap.html">サイトマップ</a>
+    </nav>
+  </div>
+  <div class="ft-copy">Copyright&copy;2026 MULTIVAC Japan Inc. All rights reserved.</div>
+</footer>
+</body>
+</html>

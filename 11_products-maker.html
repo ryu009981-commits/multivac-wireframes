@@ -86,6 +86,19 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
 .btn-contact { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; margin-left:4px; }
 .btn-dl:hover, .btn-contact:hover { background:#00246b; }
 
+/* ── メーカーカードグリッド ── */
+.maker-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px; }
+.maker-card { border:1px solid #dde3ee; border-radius:8px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:box-shadow .2s; }
+.maker-card:hover { box-shadow:0 4px 20px rgba(0,48,135,.12); }
+.maker-card-logo { height:120px; background:#f0f4ff; border-bottom:1px solid #dde3ee; display:flex; align-items:center; justify-content:center; font-size:13px; color:#888; }
+.maker-card-body { padding:20px; }
+.maker-card-name { font-size:20px; font-weight:900; color:#003087; margin-bottom:4px; }
+.maker-card-origin { font-size:11px; color:#888; margin-bottom:10px; }
+.maker-card-spec { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; }
+.spec-tag { background:#e3f2fd; color:#003087; font-size:11px; padding:3px 10px; border-radius:2px; }
+.maker-card-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+.maker-card-link { font-size:13px; color:#003087; font-weight:bold; }
+
 /* ── フッター更新 ── */
 footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font-size:13px; border-top:1px solid #dde3ee; }
 .ft-inner { max-width:1200px; margin:0 auto; padding:0 24px 40px; display:flex; gap:60px; align-items:flex-start; }
@@ -119,7 +132,7 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
     <nav class="hd-nav">
       <a href="01_news-list.html">ニュース</a>
       <a href="04_products-top.html">製品情報</a>
-      <a href="12_service-top.html">サービス</a>
+      <a href="13_service-innovation.html">サービス</a>
       <a href="16_company-overview.html">会社概要</a>
       <a href="20_careers.html">採用情報</a>
     </nav>
@@ -135,7 +148,103 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
     <h1>メーカーから製品を探す</h1>
     <p>ムルチバック・ジャパンが取り扱う世界トップクラスのメーカーをご紹介します。</p>
   </div>
-  <div class="wf-box" style="display:flex;gap:32px;align-items:flex-start;margin-bottom:24px" id="multivac"><div style="min-width:180px"><div class="wf-img" style="width:100%;height:80px">[MULTIVACロゴ]</div></div><div><h2 style="font-size:18px;font-weight:bold;color:#003087;margin-bottom:8px">MULTIVAC</h2><p style="font-size:13px;line-height:1.8;color:#555">ドイツ本社の世界トップシェアを誇る包装機メーカー。深絞り包装機・トレーシーラー・チャンバー機など食品・メディカル・工業分野の幅広い製品を展開。</p><button class="btn-more" style="margin-top:12px">MULTIVACの製品を見る</button></div></div><div class="wf-box" style="display:flex;gap:32px;align-items:flex-start;margin-bottom:24px" id="tvi"><div style="min-width:180px"><div class="wf-img" style="width:100%;height:80px">[TVIロゴ]</div></div><div><h2 style="font-size:18px;font-weight:bold;color:#003087;margin-bottom:8px">TVI</h2><p style="font-size:13px;line-height:1.8;color:#555">食肉加工向けの高性能マッサージャー・インジェクター等を製造するドイツの専門メーカー。</p><button class="btn-more" style="margin-top:12px">TVIの製品を見る</button></div></div><div class="wf-box" style="display:flex;gap:32px;align-items:flex-start;margin-bottom:24px" id="fritsch"><div style="min-width:180px"><div class="wf-img" style="width:100%;height:80px">[FRITSCHロゴ]</div></div><div><h2 style="font-size:18px;font-weight:bold;color:#003087;margin-bottom:8px">FRITSCH</h2><p style="font-size:13px;line-height:1.8;color:#555">パン・菓子製造向けシーティングマシン・リバースシーターの世界的メーカー。</p><button class="btn-more" style="margin-top:12px">FRITSCHの製品を見る</button></div></div><div class="wf-box" style="display:flex;gap:32px;align-items:flex-start;margin-bottom:24px" id="stephan"><div style="min-width:180px"><div class="wf-img" style="width:100%;height:80px">[Stephanロゴ]</div></div><div><h2 style="font-size:18px;font-weight:bold;color:#003087;margin-bottom:8px">Stephan</h2><p style="font-size:13px;line-height:1.8;color:#555">高性能ユニバーサルマシン・ミクロカットマシンを展開。乳化・混合・カット機能を1台に集約。</p><button class="btn-more" style="margin-top:12px">Stephanの製品を見る</button></div></div><div class="wf-box" style="display:flex;gap:32px;align-items:flex-start;margin-bottom:24px" id="schroeder"><div style="min-width:180px"><div class="wf-img" style="width:100%;height:80px">[SCHROEDERロゴ]</div></div><div><h2 style="font-size:18px;font-weight:bold;color:#003087;margin-bottom:8px">SCHROEDER</h2><p style="font-size:13px;line-height:1.8;color:#555">大型インジェクター・タンブラーのドイツ専門メーカー。食肉加工の効率化と歩留まり改善に貢献。</p><button class="btn-more" style="margin-top:12px">SCHROEDERの製品を見る</button></div></div><div class="wf-box" style="display:flex;gap:32px;align-items:flex-start;margin-bottom:24px" id="seydelmann"><div style="min-width:180px"><div class="wf-img" style="width:100%;height:80px">[Seydelmannロゴ]</div></div><div><h2 style="font-size:18px;font-weight:bold;color:#003087;margin-bottom:8px">Seydelmann</h2><p style="font-size:13px;line-height:1.8;color:#555">カッター・グラインダー・ミキサーの世界的ブランド。ソーセージ・ミンチ製造ラインに最適。</p><button class="btn-more" style="margin-top:12px">Seydelmannの製品を見る</button></div></div><div class="wf-box" style="display:flex;gap:32px;align-items:flex-start;margin-bottom:24px" id="handtmann"><div style="min-width:180px"><div class="wf-img" style="width:100%;height:80px">[handtmannロゴ]</div></div><div><h2 style="font-size:18px;font-weight:bold;color:#003087;margin-bottom:8px">handtmann</h2><p style="font-size:13px;line-height:1.8;color:#555">真空定量充填機・ソーセージラインの世界シェアトップメーカー。高精度・高速充填を実現。</p><button class="btn-more" style="margin-top:12px">handtmannの製品を見る</button></div></div>
+
+  <span class="wf-note">※ カードクリック → 各メーカー詳細ページ（11a_products-maker-detail.html）へ遷移</span>
+
+  <div class="maker-grid">
+
+    <a href="11a_products-maker-detail.html" class="maker-card" id="multivac">
+      <div class="maker-card-logo wf-img">[MULTIVACロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">MULTIVAC</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ 包装機全般</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">深絞り包装</span><span class="spec-tag">トレイシーラー</span><span class="spec-tag">チャンバー機</span>
+        </div>
+        <div class="maker-card-desc">世界トップシェアを誇る包装機メーカー。食品・メディカル・工業分野に対応する幅広いラインナップ。</div>
+        <div class="maker-card-link">詳細を見る →</div>
+      </div>
+    </a>
+
+    <a href="11a_products-maker-detail.html" class="maker-card" id="tvi">
+      <div class="maker-card-logo wf-img">[TVIロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">TVI</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ 食肉加工</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">インジェクター</span><span class="spec-tag">マッサージャー</span>
+        </div>
+        <div class="maker-card-desc">食肉加工向けの高性能インジェクター・マッサージャーを製造するドイツの専門メーカー。</div>
+        <div class="maker-card-link">詳細を見る →</div>
+      </div>
+    </a>
+
+    <a href="11a_products-maker-detail.html" class="maker-card" id="fritsch">
+      <div class="maker-card-logo wf-img">[FRITSCHロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">FRITSCH</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ 製パン・製菓</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">シーティングマシン</span><span class="spec-tag">リバースシーター</span>
+        </div>
+        <div class="maker-card-desc">パン・菓子製造向けシーティングマシンの世界的メーカー。高品質なクロワッサン・デニッシュ製造ラインを実現。</div>
+        <div class="maker-card-link">詳細を見る →</div>
+      </div>
+    </a>
+
+    <a href="11a_products-maker-detail.html" class="maker-card" id="stephan">
+      <div class="maker-card-logo wf-img">[Stephanロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">Stephan</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ 混合・乳化・カット</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">ユニバーサルマシン</span><span class="spec-tag">乳化</span>
+        </div>
+        <div class="maker-card-desc">乳化・混合・カット機能を1台に集約した高性能ユニバーサルマシン。多様な食品加工プロセスに対応。</div>
+        <div class="maker-card-link">詳細を見る →</div>
+      </div>
+    </a>
+
+    <a href="11a_products-maker-detail.html" class="maker-card" id="schroeder">
+      <div class="maker-card-logo wf-img">[SCHROEDERロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">SCHROEDER</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ 大型食肉加工</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">大型インジェクター</span><span class="spec-tag">タンブラー</span>
+        </div>
+        <div class="maker-card-desc">大型インジェクター・タンブラーのドイツ専門メーカー。食肉加工の大量生産ラインに最適化された高効率機械を提供。</div>
+        <div class="maker-card-link">詳細を見る →</div>
+      </div>
+    </a>
+
+    <a href="11a_products-maker-detail.html" class="maker-card" id="seydelmann">
+      <div class="maker-card-logo wf-img">[Seydelmannロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">Seydelmann</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ ミンチ・ソーセージ</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">カッター</span><span class="spec-tag">グラインダー</span><span class="spec-tag">ミキサー</span>
+        </div>
+        <div class="maker-card-desc">カッター・グラインダー・ミキサーの世界的ブランド。ソーセージ・ミンチ製造ラインに最適な高性能機械を提供。</div>
+        <div class="maker-card-link">詳細を見る →</div>
+      </div>
+    </a>
+
+    <a href="11a_products-maker-detail.html" class="maker-card" id="handtmann">
+      <div class="maker-card-logo wf-img">[handtmannロゴ]</div>
+      <div class="maker-card-body">
+        <div class="maker-card-name">handtmann</div>
+        <div class="maker-card-origin">🇩🇪 ドイツ ／ 充填・成型</div>
+        <div class="maker-card-spec">
+          <span class="spec-tag">真空定量充填機</span><span class="spec-tag">ソーセージライン</span>
+        </div>
+        <div class="maker-card-desc">真空定量充填機・ソーセージラインの世界シェアトップメーカー。高精度・高速充填で生産性を大幅に向上。</div>
+        <div class="maker-card-link">詳細を見る →</div>
+      </div>
+    </a>
+
+  </div>
 </div>
 
 <footer>
