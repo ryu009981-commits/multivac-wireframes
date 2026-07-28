@@ -97,7 +97,7 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; borde
 /* ── MV（メインビジュアル） ── */
 .mv { position:relative; height:320px; overflow:hidden; }
 .mv-bg { position:absolute; inset:0; background:#7a8fa8; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.4); font-size:13px; letter-spacing:1px; }
-.mv-overlay { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; background:rgba(0,24,64,.5); }
+.mv-overlay { position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; background:rgba(0,24,64,.5); padding:0 0 24px calc(max(24px, 50% - 576px)); }
 .mv-title { color:#fff; font-size:38px; font-weight:900; letter-spacing:2px; margin-bottom:10px; text-shadow:0 2px 8px rgba(0,0,0,.4); }
 .mv-en { color:rgba(255,255,255,.8); font-size:14px; letter-spacing:4px; }
 </style>
@@ -130,8 +130,8 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; borde
 <div class="mv">
   <div class="mv-bg">[MV背景画像]</div>
   <div class="mv-overlay">
-    <div class="mv-title">製品情報</div>
-    <div class="mv-en">PRODUCTS</div>
+    <div class="mv-title">包装の形態から探す</div>
+    <div class="mv-en">SEARCH BY FORM</div>
   </div>
 </div>
 <div class="breadcrumb">
