@@ -102,6 +102,13 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
 .ft-links a { color:#333; text-decoration:none; font-size:14px; }
 .ft-links a:hover { color:#003087; }
 .ft-copy { background:#003087; color:rgba(255,255,255,0.6); text-align:center; font-size:11px; padding:14px; }
+
+/* ── MV（メインビジュアル） ── */
+.mv { position:relative; height:320px; overflow:hidden; }
+.mv-bg { position:absolute; inset:0; background:#7a8fa8; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.4); font-size:13px; letter-spacing:1px; }
+.mv-overlay { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; background:rgba(0,24,64,.5); }
+.mv-title { color:#fff; font-size:38px; font-weight:900; letter-spacing:2px; margin-bottom:10px; text-shadow:0 2px 8px rgba(0,0,0,.4); }
+.mv-en { color:rgba(255,255,255,.8); font-size:14px; letter-spacing:4px; }
 </style>
 </head>
 <body>
@@ -129,6 +136,13 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
     </div>
   </div>
 </header>
+<div class="mv">
+  <div class="mv-bg">[MV背景画像]</div>
+  <div class="mv-overlay">
+    <div class="mv-title">サイトマップ</div>
+    <div class="mv-en">SITEMAP</div>
+  </div>
+</div>
 <div class="breadcrumb"><div class="l-wrap"><a href="index.html">HOME</a><span>›</span><span>サイトマップ</span></div></div>
 <div class="l-wrap" style="padding-top:32px;padding-bottom:60px">
   <div class="page-head">
