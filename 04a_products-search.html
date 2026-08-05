@@ -60,16 +60,6 @@ header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; posit
 .cat-card-desc  { font-size:13px; color:#555; line-height:1.7; margin-bottom:16px; }
 .cat-card-link  { font-size:13px; color:#003087; font-weight:bold; }
 
-/* ── 食品サブカテゴリー ── */
-.sub-section { background:#f5f7fa; border-radius:8px; padding:24px; margin-top:40px; margin-bottom:0; }
-.sub-section-head { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
-.sub-section-head h2 { font-size:16px; font-weight:bold; color:#003087; }
-.sub-section-head p  { font-size:13px; color:#666; }
-.sub-tags { display:flex; flex-wrap:wrap; gap:10px; }
-.sub-tag { border:1px solid #003087; color:#003087; font-size:13px; padding:8px 18px; border-radius:20px; text-decoration:none; display:inline-flex; align-items:center; gap:6px; transition:background .15s, color .15s; }
-.sub-tag:hover { background:#003087; color:#fff; }
-.sub-tag-icon { font-size:16px; }
-
 /* ── 包装形態カード（包装の形態から） ── */
 .form-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:0; }
 .form-card { border:1px solid #dde3ee; border-radius:8px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:box-shadow .2s; }
@@ -109,14 +99,6 @@ header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; posit
 .proc-card-tags  { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:12px; }
 .proc-tag { background:#e8edf5; color:#003087; font-size:11px; padding:2px 8px; border-radius:10px; }
 .proc-card-link  { font-size:12px; color:#003087; font-weight:bold; }
-
-/* ── 他の探し方 ── */
-.alt-search { border-top:1px solid #eee; padding-top:32px; margin-top:40px; }
-.alt-search h3 { font-size:15px; font-weight:bold; color:#333; margin-bottom:16px; }
-.alt-btns { display:flex; gap:12px; flex-wrap:wrap; }
-.alt-btn { border:1px solid #aaa; color:#555; font-size:13px; padding:10px 20px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
-.alt-btn:hover { border-color:#003087; color:#003087; }
-.alt-btn-icon { font-size:18px; }
 
 /* ── 下部CTA ── */
 .bottom-cta { background:#003087; color:#fff; padding:48px 0; margin-top:60px; text-align:center; }
@@ -271,24 +253,6 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; borde
       </a>
 
     </div><!-- /category-grid -->
-
-    <!-- 食品サブカテゴリー -->
-    <div class="sub-section">
-      <div class="sub-section-head">
-        <h2>食品をさらに詳しく絞り込む</h2>
-        <p style="font-size:13px; color:#666;">対象素材から直接探せます</p>
-      </div>
-      <div class="sub-tags">
-        <a href="05_products-food.html#meat" class="sub-tag"><span class="sub-tag-icon">🥩</span>肉類・ハム・ソーセージ</a>
-        <a href="05_products-food.html#seafood" class="sub-tag"><span class="sub-tag-icon">🐟</span>魚介類・水産加工品</a>
-        <a href="05_products-food.html#vegetable" class="sub-tag"><span class="sub-tag-icon">🥦</span>野菜・惣菜・豆腐</a>
-        <a href="05_products-food.html#dairy" class="sub-tag"><span class="sub-tag-icon">🧀</span>チーズ・乳製品</a>
-        <a href="05_products-food.html#confectionery" class="sub-tag"><span class="sub-tag-icon">🍪</span>菓子・スナック</a>
-        <a href="05_products-food.html#bakery" class="sub-tag"><span class="sub-tag-icon">🍞</span>パン・ベーカリー</a>
-        <a href="05_products-food.html#other" class="sub-tag"><span class="sub-tag-icon">📦</span>その他の食品</a>
-      </div>
-      <p style="font-size:12px; color:#999; margin-top:12px;">※ 現時点では各タグは 05_products-food.html へリンク。本番はアンカーリンク or フィルタリング機能で実装予定。</p>
-    </div>
 
   </div><!-- /panel-use -->
 
@@ -502,15 +466,6 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; borde
     </div><!-- /process-grid -->
 
   </div><!-- /panel-process -->
-
-  <!-- 他の探し方 -->
-  <div class="alt-search" style="margin-bottom:60px;">
-    <h3>他の方法でも探せます</h3>
-    <div class="alt-btns">
-      <a href="11_products-maker.html" class="alt-btn"><span class="alt-btn-icon">🏭</span>メーカーから探す</a>
-      <a href="04_products-top.html" class="alt-btn"><span class="alt-btn-icon">◀</span>製品情報TOPに戻る</a>
-    </div>
-  </div>
 
 </div><!-- /l-wrap -->
 
