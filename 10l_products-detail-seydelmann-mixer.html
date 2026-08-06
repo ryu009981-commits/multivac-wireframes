@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WF｜SEYDELMANN ミキサー - ムルチバック・ジャパン</title>
+<style>
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; color: #222; background: #fff; }
+.wf-note { background:#fff9c4; border:1px solid #f0c040; border-radius:4px; padding:6px 10px; font-size:12px; color:#555; display:inline-block; margin-bottom:8px; }
+.wf-img  { background:#e8e8e8; border:1px dashed #aaa; display:flex; align-items:center; justify-content:center; color:#888; font-size:13px; }
+.wf-box  { background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:16px; margin-bottom:16px; }
+.wf-section { border-left:4px solid #003087; padding:10px 14px; background:#f0f4ff; margin-bottom:20px; font-weight:bold; font-size:16px; color:#003087; }
+
+.l-wrap  { max-width:1200px; margin:0 auto; padding:0 24px; }
+.l-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.l-grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; }
+.l-grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+
+header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; position:sticky; top:0; z-index:100; }
+.hd-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:24px; }
+.hd-logo  { font-size:18px; font-weight:900; color:#003087; letter-spacing:2px; min-width:180px; }
+.hd-nav   { display:flex; gap:16px; font-size:13px; flex:1; }
+.hd-nav a { padding:4px 0; cursor:pointer; color:#333; text-decoration:none; }
+.hd-nav a:hover { color:#003087; }
+.hd-btns  { display:flex; gap:10px; }
+.btn-primary { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; cursor:pointer; text-decoration:none; display:inline-block; }
+.btn-outline { border:2px solid #003087; color:#003087; padding:6px 14px; border-radius:4px; font-size:13px; cursor:pointer; display:inline-block; }
+.btn-dl      { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; }
+.btn-contact { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; margin-left:4px; }
+
+.breadcrumb { background:#f5f5f5; padding:8px 0; font-size:12px; color:#666; }
+.breadcrumb span { margin:0 6px; }
+.breadcrumb a { color:#666; text-decoration:none; }
+.breadcrumb a:hover { color:#003087; text-decoration:underline; }
+
+.tag { background:#e3f2fd; color:#003087; font-size:11px; padding:2px 8px; border-radius:2px; display:inline-block; margin:2px; }
+.tag-green { background:#e8f5e9; color:#2e7d32; }
+.cat-btn { border:1px solid #003087; padding:6px 14px; border-radius:20px; font-size:12px; color:#003087; cursor:pointer; display:inline-block; margin:4px; }
+.cat-btn.active { background:#003087; color:#fff; }
+
+/* -- MV -- */
+.mv { position:relative; height:320px; overflow:hidden; }
+.mv-bg { position:absolute; inset:0; background:#7a8fa8; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.4); font-size:13px; letter-spacing:1px; }
+.mv-overlay { position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; background:rgba(0,24,64,.5); padding:0 0 24px calc(max(24px, 50% - 576px)); }
+.mv-title { color:#fff; font-size:38px; font-weight:900; letter-spacing:2px; margin-bottom:10px; text-shadow:0 2px 8px rgba(0,0,0,.4); }
+.mv-en { color:rgba(255,255,255,.8); font-size:14px; letter-spacing:4px; }
+
+/* -- tokucho card -- */
+.feature-card { background:#fff; border:1px solid #e0e0e0; border-radius:6px; padding:20px; }
+.feature-num { font-size:28px; font-weight:900; color:#003087; opacity:.25; line-height:1; margin-bottom:8px; }
+.feature-title { font-size:14px; font-weight:bold; color:#003087; margin-bottom:6px; }
+.feature-desc { font-size:13px; color:#555; line-height:1.8; }
+
+/* -- MULTIVAC dakara -- */
+.strength-card { background:#f0f4ff; border-radius:8px; padding:24px; }
+.strength-label { font-size:11px; color:#003087; letter-spacing:2px; font-weight:bold; margin-bottom:8px; }
+.strength-title { font-size:16px; font-weight:900; color:#003087; margin-bottom:10px; }
+.strength-desc { font-size:13px; color:#444; line-height:1.9; }
+
+/* -- jisseki bar -- */
+.stat-bar { background:#003087; color:#fff; padding:40px 0; margin:60px 0; }
+.stat-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:repeat(3,1fr); gap:32px; text-align:center; }
+.stat-num { font-size:44px; font-weight:900; letter-spacing:2px; }
+.stat-unit { font-size:16px; margin-left:4px; }
+.stat-label { font-size:12px; color:rgba(255,255,255,.75); margin-top:6px; letter-spacing:1px; }
+
+/* -- CTA -- */
+.cta-block { background:#e8edf5; border-radius:8px; padding:40px; text-align:center; }
+.cta-title { font-size:22px; font-weight:900; color:#003087; margin-bottom:10px; }
+.cta-sub { font-size:14px; color:#555; margin-bottom:24px; }
+.cta-btns { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+.cta-btn-primary { background:#003087; color:#fff; padding:14px 32px; border-radius:4px; font-size:14px; font-weight:bold; cursor:pointer; }
+.cta-btn-outline { border:2px solid #003087; color:#003087; padding:12px 28px; border-radius:4px; font-size:14px; font-weight:bold; cursor:pointer; }
+
+/* -- accordion -- */
+.accordion { border:1px solid #e0e0e0; border-radius:6px; overflow:hidden; margin-bottom:8px; }
+.accordion-head { background:#f9f9f9; padding:14px 18px; font-size:14px; font-weight:bold; color:#333; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+.accordion-head:hover { background:#f0f4ff; }
+.accordion-icon { font-size:18px; color:#003087; transition:transform .2s; }
+.accordion-icon.open { transform:rotate(45deg); }
+.accordion-body { display:none; padding:16px 18px; font-size:13px; color:#444; line-height:1.9; border-top:1px solid #e0e0e0; }
+.accordion-body.show { display:block; }
+
+/* -- kanren card -- */
+.rel-card { background:#fff; border:1px solid #e0e0e0; border-radius:6px; overflow:hidden; cursor:pointer; transition:box-shadow .2s; }
+.rel-card:hover { box-shadow:0 4px 16px rgba(0,48,135,.12); }
+.rel-card-img { height:120px; }
+.rel-card-body { padding:14px; }
+.rel-card-title { font-size:13px; font-weight:bold; color:#003087; margin-bottom:4px; }
+.rel-card-sub { font-size:11px; color:#888; }
+
+/* -- anchor nav -- */
+.anchor-nav { display:flex; gap:0; border-bottom:2px solid #003087; margin-bottom:40px; overflow-x:auto; }
+.anchor-nav a { padding:10px 20px; font-size:13px; color:#666; text-decoration:none; white-space:nowrap; border-bottom:3px solid transparent; margin-bottom:-2px; }
+.anchor-nav a:hover, .anchor-nav a.active { color:#003087; font-weight:bold; border-bottom-color:#003087; }
+
+/* -- kadai card -- */
+.issue-card { background:#fff; border:1px solid #ddd; border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start; }
+.issue-icon { font-size:28px; line-height:1; flex-shrink:0; }
+.issue-title { font-size:15px; font-weight:bold; color:#003087; margin-bottom:6px; }
+.issue-desc { font-size:13px; color:#555; line-height:1.8; }
+
+/* -- footer -- */
+footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font-size:13px; border-top:1px solid #dde3ee; }
+.ft-inner { max-width:1200px; margin:0 auto; padding:0 24px 40px; display:flex; gap:60px; align-items:flex-start; }
+.ft-brand { min-width:220px; }
+.ft-logo-wrap { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.ft-logo-icon { color:#003087; font-size:18px; }
+.ft-logo-text { font-size:20px; font-weight:900; color:#003087; letter-spacing:2px; }
+.ft-company-name { font-size:11px; color:#666; margin-bottom:16px; }
+.ft-sns { display:flex; gap:10px; margin-bottom:20px; }
+.ft-sns-btn { display:flex; align-items:center; justify-content:center; width:36px; height:36px; background:#003087; color:#fff; border-radius:50%; text-decoration:none; }
+.ft-address { font-style:normal; font-size:12px; color:#666; line-height:1.9; }
+.ft-links { display:flex; flex-direction:column; gap:20px; padding-top:4px; }
+.ft-links a { color:#333; text-decoration:none; font-size:14px; }
+.ft-links a:hover { color:#003087; }
+.ft-copy { background:#003087; color:rgba(255,255,255,0.6); text-align:center; font-size:11px; padding:14px; }
+
+/* -- gallery placeholder (no real images this round) -- */
+.gallery-main { position:relative; height:380px; border-radius:6px; overflow:hidden; background:#eee; }
+
+</style>
+</head>
+<body>
+<script>
+(function(){
+  if(sessionStorage.getItem('wf_auth')!=='ok'){
+    location.replace('gate.html?r='+encodeURIComponent(location.pathname.split('/').pop()||'index.html'));
+  }
+})();
+</script>
+
+<header>
+  <div class="hd-inner">
+    <div class="hd-logo">&#9632; MULTIVAC<br><small style="font-size:10px;font-weight:400">ムルチバック・ジャパン株式会社</small></div>
+    <nav class="hd-nav">
+      <a href="01_news-list.html">ニュース</a>
+      <a href="04_products-top.html">製品情報</a>
+      <a href="13_service-innovation.html">サービス</a>
+      <a href="16_company-overview.html">会社概要</a>
+      <a href="20_careers.html">採用情報</a>
+    </nav>
+    <div class="hd-btns">
+      <a href="index.html" style="border:1px solid #003087;color:#003087;background:#fff;padding:8px 16px;border-radius:4px;font-size:13px;text-decoration:none;display:inline-block;margin-right:4px">&#8592; WF一覧</a>
+      <a href="22_catalog-download.html" class="btn-primary btn-dl">&#x2193; カタログダウンロード</a>
+      <a href="21_contact.html" class="btn-primary btn-contact">&#x2709; お問い合わせ</a>
+    </div>
+  </div>
+</header>
+
+<div class="mv">
+  <div class="mv-bg">[MV背景画像 &#8212; SEYDELMANN ミキサーの稼働シーン]</div>
+  <div class="mv-overlay">
+    <div class="mv-title">SEYDELMANNミキサー</div>
+    <div class="mv-en">SEYDELMANN — MIXER</div>
+  </div>
+</div>
+
+<div class="breadcrumb">
+  <div class="l-wrap">
+    <a href="index.html">HOME</a><span>&#8250;</span>
+    <a href="04_products-top.html">製品情報</a><span>&#8250;</span>
+    <span>SEYDELMANN ミキサー</span>
+  </div>
+</div>
+
+<div class="l-wrap" style="padding-top:40px;padding-bottom:80px">
+
+  <!-- 製品概要 -->
+  <section id="overview" style="margin-bottom:60px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:flex-start">
+      <div>
+        <div class="wf-img gallery-main">[SEYDELMANN ミキサー メイン画像]</div>
+      </div>
+      <div>
+        <p style="font-size:12px;color:#888;letter-spacing:2px;margin-bottom:4px">SEYDELMANN</p>
+        <h1 style="font-size:26px;font-weight:900;color:#003087;line-height:1.4;margin-bottom:8px">SEYDELMANN ミキサー</h1>
+        <p style="font-size:14px;color:#555;line-height:1.8;margin-bottom:20px">短時間で均一な混合を実現し、品質安定化と生産性向上に貢献する食品用ミキサー</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:20px">
+          <span class="tag">原料混合</span><span class="tag">真空混合</span><span class="tag">衛生設計</span><span class="tag tag-green">食品向け</span>
+        </div>
+
+        <div class="wf-box" style="margin-bottom:20px">
+          <h3 style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px">SEYDELMANN ミキサーとは</h3>
+          <p style="font-size:13px;line-height:1.9;color:#444">食肉、水産、惣菜、ペットフードなどの原料混合工程に対応する食品加工機です。独自のミキシング構造により、原料や調味料を短時間で均一に混合。製品品質の安定化、歩留まり向上、生産能力向上に貢献します。また、原料へのダメージを抑えながら混合できるため、高品質な製品づくりと後工程の安定化を支援します。</p>
+        </div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="22_catalog-download.html" class="btn-primary" style="flex:1;text-align:center;padding:14px;font-weight:bold">&#x2193; カタログダウンロード</a>
+          <a href="21_contact.html" class="btn-outline" style="flex:1;text-align:center;padding:12px;font-weight:bold">&#x2709; お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 解決できる課題 -->
+  <section style="margin-bottom:60px">
+    <div class="wf-section">解決できる課題</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <div class="issue-card">
+        <div class="issue-icon">&#x1F9C2;</div>
+        <div>
+          <div class="issue-title">味付け・調味料分散のばらつき</div>
+          <div class="issue-desc">独自のミキシング構造により原料や調味料を短時間で均一に混合。味付けのばらつきや調味料の分散不足を解消し、品質の標準化を支援します。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <div class="issue-icon">&#x2696;&#xFE0F;</div>
+        <div>
+          <div class="issue-title">歩留まり・原料ダメージ</div>
+          <div class="issue-desc">原料へのダメージを抑えながら混合できるため、原料形状や食感を維持し、歩留まり向上と後工程の安定化に貢献します。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <div class="issue-icon">&#x1F465;</div>
+        <div>
+          <div class="issue-title">混合工程の省人化</div>
+          <div class="issue-desc">多品種の原料に対応し、品種切替を効率化。混合工程の省人化と生産効率向上を支援します。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 特長 -->
+  <section id="features" style="margin-bottom:60px">
+    <div class="wf-section">製品の特長</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:20px">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <div class="feature-title">短時間で均一な混合を実現</div>
+        <div class="feature-desc">原料を短時間で均一に混合し、調味料や添加剤を効率よく分散。製品品質のばらつきを低減し、生産能力向上に貢献します。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <div class="feature-title">原料にやさしい混合</div>
+        <div class="feature-desc">原料ダメージを抑制し、原料形状・食感・品質を保持。歩留まり向上を支援します。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <div class="feature-title">真空混合に対応</div>
+        <div class="feature-desc">真空モデルをラインアップ。空気混入を抑制し、品質の安定化に貢献。製品特性に応じた選択が可能です。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">04</div>
+        <div class="feature-title">肉から野菜まで幅広い食品原料に対応</div>
+        <div class="feature-desc">食肉原料、水産原料、野菜原料、惣菜原料、ペットフード原料、チーズやフィリング原料など幅広い原料に対応します。</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:20px">
+      <div class="feature-card">
+        <div class="feature-num">05</div>
+        <div class="feature-title">大容量生産に対応</div>
+        <div class="feature-desc">中規模から大規模生産まで対応。高能力処理と安定した連続生産により、生産効率向上に貢献します。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">06</div>
+        <div class="feature-title">衛生性に配慮した設計</div>
+        <div class="feature-desc">優れた洗浄性により原料残留を低減し、製品切替を効率化。Hygienic Designを採用しています。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">07</div>
+        <div class="feature-title">多品種生産に対応</div>
+        <div class="feature-desc">幅広い製品に対応し、品種切替を効率化。品質の標準化と柔軟な生産計画をサポートします。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MULTIVACだからできること -->
+  <section id="multivac" style="margin-bottom:60px">
+    <div class="wf-section">MULTIVACだからできること</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+      <div class="strength-card">
+        <div class="strength-label">LIC実機テスト</div>
+        <div class="strength-title">つくば本社工場LICで<br>実機テストが可能</div>
+        <div class="strength-desc" style="margin-top:12px">SEYDELMANN ミキサーは、つくば本社工場のLICにて実機テストが可能です。お客様原料での評価テスト、混合状態の確認、品質比較評価、条件最適化を支援します。</div>
+      </div>
+      <div class="strength-card">
+        <div class="strength-label">INTEGRATED LINE</div>
+        <div class="strength-title">前後工程を含めた<br>ライン提案</div>
+        <ul style="font-size:12px;line-height:2.1;padding-left:16px;color:#444;margin-top:12px"><li>SEYDELMANN グラインダー</li><li>SEYDELMANN ミキサー</li><li>handtmann 真空定量充填機</li><li>MULTIVAC包装機</li><li>MULTIVAC ラベリングシステム</li><li>MULTIVAC 画像検査システム</li></ul>
+      </div>
+      <div class="strength-card">
+        <div class="strength-label">PRODUCTIVITY</div>
+        <div class="strength-title">生産能力向上支援</div>
+        <div class="strength-desc" style="margin-top:12px">混合工程の効率化、ライン最適化、品質標準化、省人化提案により、生産能力向上を支援します。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3本柱 -->
+  <section style="margin-bottom:60px">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+      <div style="text-align:center;padding:32px 24px;border:1px solid #e0e0e0;border-radius:8px">
+        <div style="font-size:36px;margin-bottom:12px">&#x1F9FC;</div>
+        <h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:10px">Hygienic Design</h3>
+        <p style="font-size:13px;color:#555;line-height:1.9">食品工場向けに衛生性と清掃性に配慮した設計を採用しています。</p>
+      </div>
+      <div style="text-align:center;padding:32px 24px;border:1px solid #e0e0e0;border-radius:8px">
+        <div style="font-size:36px;margin-bottom:12px">&#x1F1EF;&#x1F1F5;</div>
+        <h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:10px">国内サポート体制</h3>
+        <p style="font-size:13px;color:#555;line-height:1.9">全国に展開するサービス拠点と専任エンジニアにより、迅速なオンサイト対応を実現。導入後も安心して稼働を続けられます。</p>
+      </div>
+      <div style="text-align:center;padding:32px 24px;border:1px solid #e0e0e0;border-radius:8px">
+        <div style="font-size:36px;margin-bottom:12px">&#x1F30F;</div>
+        <h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:10px">グローバル導入実績</h3>
+        <p style="font-size:13px;color:#555;line-height:1.9">食品加工分野において世界各国で採用されている混合ソリューション。SEYDELMANNは食肉・水産・惣菜・ペットフードなど幅広い分野で採用されている食品加工機ブランドです。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下部CTA -->
+  <section id="cta" style="margin-bottom:60px">
+    <div class="cta-block">
+      <div class="cta-title">サンプル作成・実機テスト・見積のご依頼</div>
+      <div class="cta-sub">LIC（ローカルイノベーションセンター）では実機を使ったサンプル評価テストを無償で実施しています。<br>まずはお気軽にお問い合わせください。</div>
+      <div class="cta-btns">
+        <div class="cta-btn-primary">&#x2709; お問い合わせ・見積依頼</div>
+        <div class="cta-btn-outline">&#x1F9EA; 実機テストを申し込む</div>
+        <div class="cta-btn-outline">&#x2193; カタログをダウンロード</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="margin-bottom:60px">
+    <div class="wf-section">よくある質問 FAQ</div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. SEYDELMANN ミキサーとは何ですか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body show">
+        <p>食肉、水産、惣菜などの原料を均一に混合する食品用ミキサーです。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. ミキサーグラインダーとの違いは何ですか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>ミキサーは混合専用機です。ミキサーグラインダーは混合作業と粉砕作業を1台で行うことができます。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 真空混合のメリットは何ですか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>空気混入を抑えながら混合できるため、品質安定化や製品特性の向上に貢献します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. どのような原料に対応できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>食肉、水産、惣菜、ペットフード、チーズ、フィリング原料など幅広い原料に対応できます。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 調味料や添加剤も均一に混合できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。塩や香辛料、機能性添加剤などを均一に分散することが可能です。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 多品種生産に向いていますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。幅広い原料や製品に対応でき、品種切替にも柔軟に対応できます。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 原料へのダメージは抑えられますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。原料特性に配慮した混合により、品質を維持しながら加工できます。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 洗浄しやすいですか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。衛生設計により優れた洗浄性と清掃性を実現しています。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 導入前にテストできますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。LICにてお客様原料を使用した実機テストが可能です。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 包装ラインまで提案できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。SEYDELMANN加工機とMULTIVAC包装機を組み合わせたライン提案が可能です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主な対象製品 -->
+  <section style="margin-bottom:60px">
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)" style="font-size:15px">
+        <span>主な対象製品</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="cat-btn">味付け牛肉</span><span class="cat-btn">味付け豚肉</span><span class="cat-btn">味付け鶏肉</span><span class="cat-btn">ハム</span><span class="cat-btn">ベーコン</span><span class="cat-btn">ソーセージ原料</span><span class="cat-btn">ハンバーグ</span><span class="cat-btn">ミートボール</span><span class="cat-btn">餃子餡</span><span class="cat-btn">惣菜原料</span><span class="cat-btn">水産練り製品</span><span class="cat-btn">ペットフード</span><span class="cat-btn">チーズ原料</span><span class="cat-btn">フィリング原料</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 関連情報 -->
+  <section id="related" style="margin-bottom:60px">
+    <div class="wf-section">関連機種</div>
+    <div class="wf-note">&#9733; 回遊性UI &#8212; 関連機種ページへの導線</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px">
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[SEYDELMANN グラインダー]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">SEYDELMANN グラインダー</div>
+          <div class="rel-card-sub">食肉・水産原料の粉砕</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[SEYDELMANN ミキサーグラインダー]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">SEYDELMANN ミキサーグラインダー</div>
+          <div class="rel-card-sub">混合と粉砕を1台で</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[SEYDELMANN トロリータンブラー]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">SEYDELMANN トロリータンブラー</div>
+          <div class="rel-card-sub">食肉のタンブリング処理</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[Stephan UMシリーズ]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">Stephan UMシリーズ</div>
+          <div class="rel-card-sub">カット・乳化・加熱冷却</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[handtmann 真空定量充填機]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">handtmann 真空定量充填機</div>
+          <div class="rel-card-sub">ミンチ・ペースト状食品の定量充填</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[MULTIVAC 深絞り包装機]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">MULTIVAC 深絞り包装機</div>
+          <div class="rel-card-sub">真空・MAP・スキンパック</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[MULTIVAC トレーシーラー]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">MULTIVAC トレーシーラー</div>
+          <div class="rel-card-sub">トレー蓋シール・MAP対応</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</div><!-- /l-wrap -->
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <div class="ft-logo-wrap">
+        <span class="ft-logo-icon">&#9632;</span>
+        <span class="ft-logo-text">MULTIVAC</span>
+      </div>
+      <div class="ft-company-name">ムルチバック・ジャパン株式会社</div>
+      <div class="ft-sns">
+        <a href="#" class="ft-sns-btn" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+        <a href="#" class="ft-sns-btn" aria-label="X (Twitter)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+      <address class="ft-address">〒104-0061<br>東京都中央区銀座5丁目9-8<br>クロス銀座ビル5F</address>
+    </div>
+    <nav class="ft-links">
+      <a href="21_contact.html">お問い合わせ</a>
+      <a href="24_terms.html">サイトのご利用にあたって</a>
+      <a href="23_privacy.html">個人情報保護方針</a>
+      <a href="26_sitemap.html">サイトマップ</a>
+    </nav>
+  </div>
+  <div class="ft-copy">Copyright&copy;2026 MULTIVAC Japan Inc. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleAcc(head) {
+  var icon = head.querySelector('.accordion-icon');
+  var body = head.nextElementSibling;
+  var isOpen = body.classList.contains('show');
+  body.classList.toggle('show', !isOpen);
+  icon.classList.toggle('open', !isOpen);
+}
+</script>
+</body>
+</html>
