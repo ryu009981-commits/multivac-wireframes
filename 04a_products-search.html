@@ -35,14 +35,10 @@ header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; posit
 .page-hero h1 { font-size:30px; font-weight:900; color:#003087; margin-bottom:12px; }
 .page-hero p  { font-size:15px; color:#555; max-width:640px; line-height:1.8; }
 
-/* ── タブ切替 ── */
-.search-tabs { display:flex; gap:0; border-bottom:2px solid #dde3ee; margin-top:32px; }
-.search-tab { padding:14px 28px; font-size:14px; font-weight:bold; color:#666; cursor:pointer; border-bottom:3px solid transparent; margin-bottom:-2px; display:flex; align-items:center; gap:8px; background:none; border-top:none; border-left:none; border-right:none; font-family:inherit; }
-.search-tab:hover { color:#003087; }
-.search-tab.active { color:#003087; border-bottom-color:#003087; }
-.search-tab-icon { font-size:16px; }
-.tab-panel { display:none; }
-.tab-panel.active { display:block; }
+/* ── 探し方セクション見出し ── */
+.search-section-head { display:flex; align-items:center; gap:12px; padding:16px 20px; background:#f0f4ff; border-left:4px solid #003087; border-radius:4px; margin-bottom:20px; }
+.search-section-icon { font-size:20px; }
+.search-section-head h2 { font-size:17px; font-weight:900; color:#003087; }
 
 /* ── 業種カード（包みたいものから） ── */
 .category-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:16px; }
@@ -177,27 +173,19 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; borde
   <div class="l-wrap">
     <div class="page-hero-en">SEARCH PRODUCTS</div>
     <h1>製品を探す</h1>
-    <p>業種・包装の形態・加工工程など、探し方を選んで最適な機械を絞り込めます。<br>タブを切り替えてお探しください。</p>
+    <p>業種・包装の形態・加工工程など、探し方から最適な機械を絞り込めます。</p>
   </div>
 </div>
 
 <div class="l-wrap" style="padding-top:0; padding-bottom:0;">
 
-  <!-- タブ切替 -->
-  <div class="search-tabs" id="searchTabs">
-    <button type="button" class="search-tab active" data-tab="use" onclick="switchTab('use')">
-      <span class="search-tab-icon">&#128230;</span>包みたいものから探す
-    </button>
-    <button type="button" class="search-tab" data-tab="form" onclick="switchTab('form')">
-      <span class="search-tab-icon">&#128208;</span>包装の形態から探す
-    </button>
-    <button type="button" class="search-tab" data-tab="process" onclick="switchTab('process')">
-      <span class="search-tab-icon">&#9881;</span>加工したいものから探す
-    </button>
-  </div>
+  <!-- ============ 包みたいものから ============ -->
+  <section id="use" style="padding-top:32px;margin-bottom:60px;">
 
-  <!-- ============ タブ1：包みたいものから ============ -->
-  <div class="tab-panel active" id="panel-use" style="padding-top:32px;">
+    <div class="search-section-head">
+      <span class="search-section-icon">&#128230;</span>
+      <h2>包みたいものから探す</h2>
+    </div>
 
     <span class="wf-note">※ 各カテゴリーカードをクリックすると、対応する製品一覧ページへ遷移</span>
 
@@ -255,10 +243,15 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; borde
 
     </div><!-- /category-grid -->
 
-  </div><!-- /panel-use -->
+  </section><!-- /use -->
 
-  <!-- ============ タブ2：包装の形態から ============ -->
-  <div class="tab-panel" id="panel-form" style="padding-top:32px;">
+  <!-- ============ 包装の形態から ============ -->
+  <section id="form" style="margin-bottom:60px;">
+
+    <div class="search-section-head">
+      <span class="search-section-icon">&#128208;</span>
+      <h2>包装の形態から探す</h2>
+    </div>
 
     <span class="wf-note">※ 各カードをクリックすると、対応する製品一覧ページへ遷移（本番は製品一覧をフィルタリング表示）</span>
 
@@ -351,10 +344,15 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; borde
 
     </div><!-- /form-grid -->
 
-  </div><!-- /panel-form -->
+  </section><!-- /form -->
 
-  <!-- ============ タブ3：加工したいものから ============ -->
-  <div class="tab-panel" id="panel-process" style="padding-top:32px;">
+  <!-- ============ 加工したいものから ============ -->
+  <section id="process" style="margin-bottom:60px;">
+
+    <div class="search-section-head">
+      <span class="search-section-icon">&#9881;</span>
+      <h2>加工したいものから探す</h2>
+    </div>
 
     <span class="wf-note">※ 各カードをクリックすると、対応する製品一覧ページへ遷移（TOPデザインのアコーディオン01〜08に対応）</span>
 
@@ -466,7 +464,7 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; borde
 
     </div><!-- /process-grid -->
 
-  </div><!-- /panel-process -->
+  </section><!-- /process -->
 
 </div><!-- /l-wrap -->
 
@@ -505,24 +503,5 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; borde
   <div class="ft-copy">Copyright&copy;2026 MULTIVAC Japan Inc. All rights reserved.</div>
 </footer>
 
-<script>
-function switchTab(name){
-  document.querySelectorAll('.search-tab').forEach(function(t){
-    t.classList.toggle('active', t.getAttribute('data-tab') === name);
-  });
-  document.querySelectorAll('.tab-panel').forEach(function(p){
-    p.classList.toggle('active', p.id === 'panel-' + name);
-  });
-  history.replaceState(null, '', '#' + name);
-}
-function applyHash(){
-  var hash = location.hash.replace('#','');
-  if (['use','form','process'].indexOf(hash) !== -1) {
-    switchTab(hash);
-  }
-}
-applyHash();
-window.addEventListener('hashchange', applyHash);
-</script>
 </body>
 </html>
