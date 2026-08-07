@@ -109,6 +109,18 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
 .mv-overlay { position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; background:rgba(0,24,64,.5); padding:0 0 24px calc(max(24px, 50% - 576px)); }
 .mv-title { color:#fff; font-size:38px; font-weight:900; letter-spacing:2px; margin-bottom:10px; text-shadow:0 2px 8px rgba(0,0,0,.4); }
 .mv-en { color:rgba(255,255,255,.8); font-size:14px; letter-spacing:4px; }
+
+/* ── 製品アコーディオン ── */
+.prod-acc { border-radius:6px; overflow:hidden; margin-top:12px; }
+.prod-acc-head { background:#003087; color:#fff; padding:10px 14px; display:flex; align-items:center; gap:10px; cursor:pointer; }
+.prod-acc-num { background:#fff; color:#003087; font-size:11px; font-weight:900; padding:2px 8px; border-radius:3px; }
+.prod-acc-title { flex:1; font-size:13px; font-weight:bold; }
+.prod-acc-icon { font-size:16px; transition:transform .2s; }
+.prod-acc-icon.open { transform:rotate(45deg); }
+.prod-acc-body { display:none; background:#001d54; padding:12px; grid-template-columns:repeat(2,1fr); gap:8px; }
+.prod-acc-body.show { display:grid; }
+.prod-pill { background:#fff; color:#222; font-size:12px; padding:10px 12px; border-radius:4px; text-decoration:none; display:block; }
+.prod-pill:hover { background:#f0f4ff; color:#003087; }
 </style>
 </head>
 <body>
@@ -185,42 +197,472 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
 
   <div id="by-industry" class="wf-section">業種から探す</div>
   <div class="l-grid2" style="margin-bottom:40px">
-    <div class="card"><div class="wf-img" style="width:100%;height:160px">[食品製品イメージ]</div><div class="card-body"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:6px"><a href="05_products-food.html" style="color:#003087;text-decoration:none">食品</a></h3><p style="font-size:13px;color:#666;line-height:1.8;margin-bottom:10px">賞味期限延長や食品ロス削減に貢献しながら、省人化・自動化を実現する食品向け包装・加工機械です。</p><div class="btn-more">製品を見る →</div></div></div>
-    <div class="card"><div class="wf-img" style="width:100%;height:160px">[家庭用品製品イメージ]</div><div class="card-body"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:6px"><a href="08_products-household.html" style="color:#003087;text-decoration:none">家庭用品</a></h3><p style="font-size:13px;color:#666;line-height:1.8;margin-bottom:10px">店頭での訴求力を高める差別化包装から充填、ブリスター包装まで、家庭用品向け包装ソリューションを提供します。</p><div class="btn-more">製品を見る →</div></div></div>
-    <div class="card"><div class="wf-img" style="width:100%;height:160px">[メディカル製品イメージ]</div><div class="card-body"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:6px"><a href="06_products-medical.html" style="color:#003087;text-decoration:none">メディカル</a></h3><p style="font-size:13px;color:#666;line-height:1.8;margin-bottom:10px">品質保証とトレーサビリティを確保し、高信頼性の包装で製品を保護する医療機器・医薬品向けソリューションです。</p><div class="btn-more">製品を見る →</div></div></div>
-    <div class="card"><div class="wf-img" style="width:100%;height:160px">[工業製品イメージ]</div><div class="card-body"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:6px"><a href="07_products-industry.html" style="color:#003087;text-decoration:none">工業製品</a></h3><p style="font-size:13px;color:#666;line-height:1.8;margin-bottom:10px">防錆・防塵による製品保護と製品固定を実現し、省人化・自動化にも貢献する工業製品向けソリューションです。</p><div class="btn-more">製品を見る →</div></div></div>
+    <div class="card"><div class="wf-img" style="width:100%;height:160px">[食品製品イメージ]</div><div class="card-body"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:6px"><a href="05_products-food.html" style="color:#003087;text-decoration:none">食品</a></h3><p style="font-size:13px;color:#666;line-height:1.8;margin-bottom:10px">賞味期限延長や食品ロス削減に貢献しながら、省人化・自動化を実現する食品向け包装・加工機械です。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">01</span>
+          <span class="prod-acc-title">食品</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="10b_products-detail-traysealer-food.html" class="prod-pill">&#8250; トレーシーラー（食品）</a>
+          <a href="10c_products-detail-chamber-food.html" class="prod-pill">&#8250; チャンバー包装機（食品）</a>
+          <a href="10f_products-detail-labeler.html" class="prod-pill">&#8250; ラベラー</a>
+          <a href="10d_products-detail-topclose.html" class="prod-pill">&#8250; コンベヤベルトラベラー</a>
+          <a href="#" class="prod-pill">&#8250; 加工機全般</a>
+        </div>
+      </div>
+      <div class="btn-more">製品を見る →</div></div></div>
+    <div class="card"><div class="wf-img" style="width:100%;height:160px">[家庭用品製品イメージ]</div><div class="card-body"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:6px"><a href="08_products-household.html" style="color:#003087;text-decoration:none">家庭用品</a></h3><p style="font-size:13px;color:#666;line-height:1.8;margin-bottom:10px">店頭での訴求力を高める差別化包装から充填、ブリスター包装まで、家庭用品向け包装ソリューションを提供します。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">02</span>
+          <span class="prod-acc-title">家庭用品</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; 各種充填機</a>
+          <a href="#" class="prod-pill">&#8250; 各種ミキサー</a>
+        </div>
+      </div>
+      <div class="btn-more">製品を見る →</div></div></div>
+    <div class="card"><div class="wf-img" style="width:100%;height:160px">[メディカル製品イメージ]</div><div class="card-body"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:6px"><a href="06_products-medical.html" style="color:#003087;text-decoration:none">メディカル</a></h3><p style="font-size:13px;color:#666;line-height:1.8;margin-bottom:10px">品質保証とトレーサビリティを確保し、高信頼性の包装で製品を保護する医療機器・医薬品向けソリューションです。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">03</span>
+          <span class="prod-acc-title">メディカル</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（メディカル）</a>
+          <a href="#" class="prod-pill">&#8250; トレーシーラー（メディカル）</a>
+          <a href="#" class="prod-pill">&#8250; チャンバー包装機（メディカル）</a>
+        </div>
+      </div>
+      <div class="btn-more">製品を見る →</div></div></div>
+    <div class="card"><div class="wf-img" style="width:100%;height:160px">[工業製品イメージ]</div><div class="card-body"><h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:6px"><a href="07_products-industry.html" style="color:#003087;text-decoration:none">工業製品</a></h3><p style="font-size:13px;color:#666;line-height:1.8;margin-bottom:10px">防錆・防塵による製品保護と製品固定を実現し、省人化・自動化にも貢献する工業製品向けソリューションです。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">04</span>
+          <span class="prod-acc-title">工業製品</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+          <a href="#" class="prod-pill">&#8250; トレーシーラー（工業製品）</a>
+          <a href="#" class="prod-pill">&#8250; チャンバー包装機（工業製品）</a>
+        </div>
+      </div>
+      <div class="btn-more">製品を見る →</div></div></div>
   </div>
 
   <div id="by-package" class="wf-section">包装の種類・機能から探す</div>
   <div class="l-grid2" style="margin-bottom:40px">
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">真空包装</h4><p style="font-size:13px;color:#666;line-height:1.8">空気を除去して密封することで酸化を抑制し、賞味期限を延長。省スペース化と製品固定にも貢献します。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">MAP（ガス置換包装）</h4><p style="font-size:13px;color:#666;line-height:1.8">ガス置換により酸化を抑制し賞味期限を延長。盛り付け形状を保持しながら防錆にも対応します。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">スキンパック</h4><p style="font-size:13px;color:#666;line-height:1.8">フィルムを密着させ省スペース化と酸化抑制を実現し、賞味期限延長やドリップ抑制にも貢献します。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">ブリスターパック</h4><p style="font-size:13px;color:#666;line-height:1.8">製品を保護しながら異物混入を防止し、店頭での視認性向上にも寄与するパッケージ形態です。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">トレー包装</h4><p style="font-size:13px;color:#666;line-height:1.8">店頭での訴求力と陳列性を高め、多品種の製品にも柔軟に対応できる包装形態です。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">ノントレー包装</h4><p style="font-size:13px;color:#666;line-height:1.8">トレーを使わず省資材化と包材コスト低減を実現。積載効率の向上により環境負荷低減にも貢献します。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">レトルト・レンジ対応包装</h4><p style="font-size:13px;color:#666;line-height:1.8">そのまま加熱調理できる簡便性で付加価値を高め、食品ロス削減にも貢献する包装形態です。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">冷凍対応包装</h4><p style="font-size:13px;color:#666;line-height:1.8">冷凍環境下でも品質を保持し、長期保存や広域流通に対応できる包装形態です。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">環境対応包装</h4><p style="font-size:13px;color:#666;line-height:1.8">プラスチック使用量を削減し省資材化を図ることで、持続可能性の向上に貢献する包装形態です。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">イージーオープン機能</h4><p style="font-size:13px;color:#666;line-height:1.8">開封性を高め利便性を向上させることで、ユーザー満足度の向上に貢献する機能です。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">リシール機能</h4><p style="font-size:13px;color:#666;line-height:1.8">開封後も再封できることで保存性を高め、使い勝手の向上に貢献する機能です。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">ジッパー機能</h4><p style="font-size:13px;color:#666;line-height:1.8">ジッパーによる再封のしやすさで保存性を高め、使い勝手の向上に貢献する機能です。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">ミシン目機能</h4><p style="font-size:13px;color:#666;line-height:1.8">必要な分だけ切り離せる小分け対応により、個食需要やストック需要に応える機能です。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">ハンガーホール機能</h4><p style="font-size:13px;color:#666;line-height:1.8">吊り下げ陳列を可能にし、省スペースな展示と販促効果の向上に貢献する機能です。</p></div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">真空包装</h4><p style="font-size:13px;color:#666;line-height:1.8">空気を除去して密封することで酸化を抑制し、賞味期限を延長。省スペース化と製品固定にも貢献します。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">01</span>
+          <span class="prod-acc-title">真空包装</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+          <a href="10c_products-detail-chamber-food.html" class="prod-pill">&#8250; チャンバー包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; チャンバー包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; チャンバー包装機（メディカル）</a>
+          <a href="#" class="prod-pill">&#8250; チャンバー包装機（工業製品）</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">MAP（ガス置換包装）</h4><p style="font-size:13px;color:#666;line-height:1.8">ガス置換により酸化を抑制し賞味期限を延長。盛り付け形状を保持しながら防錆にも対応します。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">02</span>
+          <span class="prod-acc-title">MAP（ガス置換包装）</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+          <a href="10b_products-detail-traysealer-food.html" class="prod-pill">&#8250; トレーシーラー（食品）</a>
+          <a href="#" class="prod-pill">&#8250; トレーシーラー（工業製品）</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">スキンパック</h4><p style="font-size:13px;color:#666;line-height:1.8">フィルムを密着させ省スペース化と酸化抑制を実現し、賞味期限延長やドリップ抑制にも貢献します。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">03</span>
+          <span class="prod-acc-title">スキンパック</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+          <a href="10b_products-detail-traysealer-food.html" class="prod-pill">&#8250; トレーシーラー（食品）</a>
+          <a href="#" class="prod-pill">&#8250; トレーシーラー（工業製品）</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">ブリスターパック</h4><p style="font-size:13px;color:#666;line-height:1.8">製品を保護しながら異物混入を防止し、店頭での視認性向上にも寄与するパッケージ形態です。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">04</span>
+          <span class="prod-acc-title">ブリスターパック</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（メディカル）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">トレー包装</h4><p style="font-size:13px;color:#666;line-height:1.8">店頭での訴求力と陳列性を高め、多品種の製品にも柔軟に対応できる包装形態です。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">05</span>
+          <span class="prod-acc-title">トレー包装</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10b_products-detail-traysealer-food.html" class="prod-pill">&#8250; トレーシーラー（食品）</a>
+          <a href="#" class="prod-pill">&#8250; トレーシーラー（工業製品）</a>
+          <a href="10d_products-detail-topclose.html" class="prod-pill">&#8250; コンベヤベルトラベラー</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">ノントレー包装</h4><p style="font-size:13px;color:#666;line-height:1.8">トレーを使わず省資材化と包材コスト低減を実現。積載効率の向上により環境負荷低減にも貢献します。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">06</span>
+          <span class="prod-acc-title">ノントレー包装</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（メディカル）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+          <a href="10c_products-detail-chamber-food.html" class="prod-pill">&#8250; チャンバー包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; チャンバー包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; チャンバー包装機（メディカル）</a>
+          <a href="#" class="prod-pill">&#8250; チャンバー包装機（工業製品）</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">レトルト・レンジ対応包装</h4><p style="font-size:13px;color:#666;line-height:1.8">そのまま加熱調理できる簡便性で付加価値を高め、食品ロス削減にも貢献する包装形態です。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">07</span>
+          <span class="prod-acc-title">レトルト・レンジ対応包装</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="10b_products-detail-traysealer-food.html" class="prod-pill">&#8250; トレーシーラー（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 包装資材</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">冷凍対応包装</h4><p style="font-size:13px;color:#666;line-height:1.8">冷凍環境下でも品質を保持し、長期保存や広域流通に対応できる包装形態です。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">08</span>
+          <span class="prod-acc-title">冷凍対応包装</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="10b_products-detail-traysealer-food.html" class="prod-pill">&#8250; トレーシーラー（食品）</a>
+          <a href="10c_products-detail-chamber-food.html" class="prod-pill">&#8250; チャンバー包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 包装資材</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">環境対応包装</h4><p style="font-size:13px;color:#666;line-height:1.8">プラスチック使用量を削減し省資材化を図ることで、持続可能性の向上に貢献する包装形態です。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">09</span>
+          <span class="prod-acc-title">環境対応包装</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+          <a href="10b_products-detail-traysealer-food.html" class="prod-pill">&#8250; トレーシーラー（食品）</a>
+          <a href="#" class="prod-pill">&#8250; トレーシーラー（工業製品）</a>
+          <a href="#" class="prod-pill">&#8250; 包装資材</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">イージーオープン機能</h4><p style="font-size:13px;color:#666;line-height:1.8">開封性を高め利便性を向上させることで、ユーザー満足度の向上に貢献する機能です。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">10</span>
+          <span class="prod-acc-title">イージーオープン機能</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">リシール機能</h4><p style="font-size:13px;color:#666;line-height:1.8">開封後も再封できることで保存性を高め、使い勝手の向上に貢献する機能です。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">11</span>
+          <span class="prod-acc-title">リシール機能</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+          <a href="10d_products-detail-topclose.html" class="prod-pill">&#8250; コンベヤベルトラベラー</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">ジッパー機能</h4><p style="font-size:13px;color:#666;line-height:1.8">ジッパーによる再封のしやすさで保存性を高め、使い勝手の向上に貢献する機能です。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">12</span>
+          <span class="prod-acc-title">ジッパー機能</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">ミシン目機能</h4><p style="font-size:13px;color:#666;line-height:1.8">必要な分だけ切り離せる小分け対応により、個食需要やストック需要に応える機能です。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">13</span>
+          <span class="prod-acc-title">ミシン目機能</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（メディカル）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">ハンガーホール機能</h4><p style="font-size:13px;color:#666;line-height:1.8">吊り下げ陳列を可能にし、省スペースな展示と販促効果の向上に貢献する機能です。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">14</span>
+          <span class="prod-acc-title">ハンガーホール機能</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（メディカル）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="by-purpose" class="wf-section">目的から探す</div>
   <div class="l-grid2" style="margin-bottom:40px">
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">ロングライフ化したい</h4><p style="font-size:13px;color:#666;line-height:1.8">賞味期限を延長し食品ロス削減に貢献。物流効率化にもつながり、より広域での販売を可能にします。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">製品を保護・固定したい</h4><p style="font-size:13px;color:#666;line-height:1.8">製品をしっかり保護・固定し、防錆・防塵にも対応。輸送時の品質向上に貢献します。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">包材コスト・輸送コストを下げたい</h4><p style="font-size:13px;color:#666;line-height:1.8">省資材包装やノントレー包装により積載効率を向上させ、物流全体のコスト改善に貢献します。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">歩留まりを改善したい</h4><p style="font-size:13px;color:#666;line-height:1.8">原料ロスを削減し定量化を図ることで、重量ばらつきの低減と過充填の抑制に貢献します。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">品質を安定させたい</h4><p style="font-size:13px;color:#666;line-height:1.8">重量ばらつきを低減し成形品質を向上させることで、品質の標準化を支援します。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">食品安全・品質保証を強化したい</h4><p style="font-size:13px;color:#666;line-height:1.8">印字検査・ラベル検査・シール噛み込み検査により、トレーサビリティの強化に貢献します。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">工程を改善したい</h4><p style="font-size:13px;color:#666;line-height:1.8">前処理から加工、充填、成形、包装まで、各工程の最適化を支援します。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">新商品を開発したい</h4><p style="font-size:13px;color:#666;line-height:1.8">試作から商品開発、量産化まで一貫して支援し、差別化商品の開発に貢献します。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">一台で多用途に使用したい</h4><p style="font-size:13px;color:#666;line-height:1.8">設備を集約し多用途に活用できることで、多品種生産への対応力を高めます。</p></div>
-    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">環境負荷を低減したい</h4><p style="font-size:13px;color:#666;line-height:1.8">プラスチック使用量を削減する環境対応包装により、食品ロス削減にも貢献します。</p></div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">ロングライフ化したい</h4><p style="font-size:13px;color:#666;line-height:1.8">賞味期限を延長し食品ロス削減に貢献。物流効率化にもつながり、より広域での販売を可能にします。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">01</span>
+          <span class="prod-acc-title">ロングライフ化したい</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="10b_products-detail-traysealer-food.html" class="prod-pill">&#8250; トレーシーラー（食品）</a>
+          <a href="10c_products-detail-chamber-food.html" class="prod-pill">&#8250; チャンバー包装機（食品）</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">製品を保護・固定したい</h4><p style="font-size:13px;color:#666;line-height:1.8">製品をしっかり保護・固定し、防錆・防塵にも対応。輸送時の品質向上に貢献します。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">02</span>
+          <span class="prod-acc-title">製品を保護・固定したい</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+          <a href="10b_products-detail-traysealer-food.html" class="prod-pill">&#8250; トレーシーラー（食品）</a>
+          <a href="#" class="prod-pill">&#8250; トレーシーラー（工業製品）</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">包材コスト・輸送コストを下げたい</h4><p style="font-size:13px;color:#666;line-height:1.8">省資材包装やノントレー包装により積載効率を向上させ、物流全体のコスト改善に貢献します。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">03</span>
+          <span class="prod-acc-title">包材コスト・輸送コストを下げたい</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（家庭用品）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（メディカル）</a>
+          <a href="#" class="prod-pill">&#8250; 深絞り包装機（工業製品）</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">歩留まりを改善したい</h4><p style="font-size:13px;color:#666;line-height:1.8">原料ロスを削減し定量化を図ることで、重量ばらつきの低減と過充填の抑制に貢献します。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">04</span>
+          <span class="prod-acc-title">歩留まりを改善したい</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10e_products-detail-tvi-portioncutter.html" class="prod-pill">&#8250; TVIポーションカッター</a>
+          <a href="#" class="prod-pill">&#8250; MULTIVACスライサー</a>
+          <a href="10r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; Handtmann VFシリーズ</a>
+          <a href="10s_products-detail-handtmann-sausage-line.html" class="prod-pill">&#8250; Handtmann ソーセージライン</a>
+          <a href="#" class="prod-pill">&#8250; Handtmann ミンチ製造ライン</a>
+          <a href="10p_products-detail-schroder-imax.html" class="prod-pill">&#8250; SCHRÖDER IMAXシリーズ</a>
+          <a href="10q_products-detail-schroder-max.html" class="prod-pill">&#8250; SCHRÖDER MAXシリーズ</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">品質を安定させたい</h4><p style="font-size:13px;color:#666;line-height:1.8">重量ばらつきを低減し成形品質を向上させることで、品質の標準化を支援します。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">05</span>
+          <span class="prod-acc-title">品質を安定させたい</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; Handtmann VFシリーズ</a>
+          <a href="10s_products-detail-handtmann-sausage-line.html" class="prod-pill">&#8250; Handtmann ソーセージライン</a>
+          <a href="10t_products-detail-handtmann-forming-line.html" class="prod-pill">&#8250; Handtmann 成形品製造ライン</a>
+          <a href="10l_products-detail-seydelmann-mixer.html" class="prod-pill">&#8250; SEYDELMANNミキサー</a>
+          <a href="10m_products-detail-seydelmann-mixer-grinder.html" class="prod-pill">&#8250; SEYDELMANNミキサーグラインダー</a>
+          <a href="10n_products-detail-stephan-um.html" class="prod-pill">&#8250; Stephan UMシリーズ</a>
+          <a href="10o_products-detail-stephan-mc.html" class="prod-pill">&#8250; Stephan MCシリーズ</a>
+          <a href="10p_products-detail-schroder-imax.html" class="prod-pill">&#8250; SCHRÖDER IMAXシリーズ</a>
+          <a href="10q_products-detail-schroder-max.html" class="prod-pill">&#8250; SCHRÖDER MAXシリーズ</a>
+          <a href="#" class="prod-pill">&#8250; MULTIVAC画像検査システム</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">食品安全・品質保証を強化したい</h4><p style="font-size:13px;color:#666;line-height:1.8">印字検査・ラベル検査・シール噛み込み検査により、トレーサビリティの強化に貢献します。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">06</span>
+          <span class="prod-acc-title">食品安全・品質保証を強化したい</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="#" class="prod-pill">&#8250; MULTIVAC画像検査システム</a>
+          <a href="10f_products-detail-labeler.html" class="prod-pill">&#8250; ラベラー</a>
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="10b_products-detail-traysealer-food.html" class="prod-pill">&#8250; トレーシーラー（食品）</a>
+          <a href="10c_products-detail-chamber-food.html" class="prod-pill">&#8250; チャンバー包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; LIC</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">工程を改善したい</h4><p style="font-size:13px;color:#666;line-height:1.8">前処理から加工、充填、成形、包装まで、各工程の最適化を支援します。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">07</span>
+          <span class="prod-acc-title">工程を改善したい</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10p_products-detail-schroder-imax.html" class="prod-pill">&#8250; SCHRÖDER IMAXシリーズ</a>
+          <a href="10q_products-detail-schroder-max.html" class="prod-pill">&#8250; SCHRÖDER MAXシリーズ</a>
+          <a href="10j_products-detail-seydelmann-grinder.html" class="prod-pill">&#8250; SEYDELMANNグラインダー</a>
+          <a href="10k_products-detail-seydelmann-tumbler.html" class="prod-pill">&#8250; SEYDELMANNトロリータンブラー</a>
+          <a href="10n_products-detail-stephan-um.html" class="prod-pill">&#8250; Stephan UMシリーズ</a>
+          <a href="10o_products-detail-stephan-mc.html" class="prod-pill">&#8250; Stephan MCシリーズ</a>
+          <a href="10e_products-detail-tvi-portioncutter.html" class="prod-pill">&#8250; TVIポーションカッター</a>
+          <a href="#" class="prod-pill">&#8250; MULTIVACスライサー</a>
+          <a href="10r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; Handtmann VFシリーズ</a>
+          <a href="10s_products-detail-handtmann-sausage-line.html" class="prod-pill">&#8250; Handtmann ソーセージライン</a>
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="10b_products-detail-traysealer-food.html" class="prod-pill">&#8250; トレーシーラー（食品）</a>
+          <a href="10f_products-detail-labeler.html" class="prod-pill">&#8250; ラベラー</a>
+          <a href="#" class="prod-pill">&#8250; MULTIVAC画像検査システム</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">新商品を開発したい</h4><p style="font-size:13px;color:#666;line-height:1.8">試作から商品開発、量産化まで一貫して支援し、差別化商品の開発に貢献します。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">08</span>
+          <span class="prod-acc-title">新商品を開発したい</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="#" class="prod-pill">&#8250; LIC</a>
+          <a href="10r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; Handtmann VFシリーズ</a>
+          <a href="10s_products-detail-handtmann-sausage-line.html" class="prod-pill">&#8250; Handtmann ソーセージライン</a>
+          <a href="10n_products-detail-stephan-um.html" class="prod-pill">&#8250; Stephan UMシリーズ</a>
+          <a href="10o_products-detail-stephan-mc.html" class="prod-pill">&#8250; Stephan MCシリーズ</a>
+          <a href="10h_products-detail-fritsch-multiflex.html" class="prod-pill">&#8250; FRITSCHペストリー成形機</a>
+          <a href="10i_products-detail-fritsch-multitwist.html" class="prod-pill">&#8250; FRITSCH編み込み成形機</a>
+          <a href="#" class="prod-pill">&#8250; ESCHERスパイラルミキサー</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">一台で多用途に使用したい</h4><p style="font-size:13px;color:#666;line-height:1.8">設備を集約し多用途に活用できることで、多品種生産への対応力を高めます。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">09</span>
+          <span class="prod-acc-title">一台で多用途に使用したい</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; Handtmann VFシリーズ</a>
+          <a href="10t_products-detail-handtmann-forming-line.html" class="prod-pill">&#8250; Handtmann 成形品製造ライン</a>
+          <a href="10u_products-detail-handtmann-ds552.html" class="prod-pill">&#8250; Handtmann DS552</a>
+          <a href="#" class="prod-pill">&#8250; ConPro</a>
+          <a href="10n_products-detail-stephan-um.html" class="prod-pill">&#8250; Stephan UMシリーズ</a>
+          <a href="10o_products-detail-stephan-mc.html" class="prod-pill">&#8250; Stephan MCシリーズ</a>
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="10b_products-detail-traysealer-food.html" class="prod-pill">&#8250; トレーシーラー（食品）</a>
+          <a href="10g_products-detail-fritsch-rollfix.html" class="prod-pill">&#8250; FRITSCHリバースシーター</a>
+        </div>
+      </div>
+    </div>
+    <div class="wf-box"><h4 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:8px">環境負荷を低減したい</h4><p style="font-size:13px;color:#666;line-height:1.8">プラスチック使用量を削減する環境対応包装により、食品ロス削減にも貢献します。</p>
+      <div class="prod-acc">
+        <div class="prod-acc-head" onclick="toggleProdAcc(this)">
+          <span class="prod-acc-num">10</span>
+          <span class="prod-acc-title">環境負荷を低減したい</span>
+          <span class="prod-acc-icon">+</span>
+        </div>
+        <div class="prod-acc-body">
+          <a href="10a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; 深絞り包装機（食品）</a>
+          <a href="10b_products-detail-traysealer-food.html" class="prod-pill">&#8250; トレーシーラー（食品）</a>
+          <a href="10c_products-detail-chamber-food.html" class="prod-pill">&#8250; チャンバー包装機（食品）</a>
+          <a href="#" class="prod-pill">&#8250; ノントレー包装</a>
+          <a href="#" class="prod-pill">&#8250; スキンパック</a>
+          <a href="#" class="prod-pill">&#8250; 環境対応包装</a>
+          <a href="#" class="prod-pill">&#8250; 包装資材</a>
+          <a href="#" class="prod-pill">&#8250; LIC</a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="wf-section">メーカーから探す</div>
@@ -254,4 +696,13 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
   </div>
   <div class="ft-copy">Copyright&copy;2026 MULTIVAC Japan Inc. All rights reserved.</div>
 </footer>
+<script>
+function toggleProdAcc(head) {
+  var icon = head.querySelector('.prod-acc-icon');
+  var body = head.nextElementSibling;
+  var isOpen = body.classList.contains('show');
+  body.classList.toggle('show', !isOpen);
+  icon.classList.toggle('open', !isOpen);
+}
+</script>
 </body></html>
