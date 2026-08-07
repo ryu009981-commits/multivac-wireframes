@@ -40,7 +40,7 @@ header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; posit
 .search-section-icon { font-size:20px; }
 .search-section-head h2 { font-size:17px; font-weight:900; color:#003087; }
 
-/* ── 業種カード（包みたいものから） ── */
+/* ── 業種カード（業種から） ── */
 .category-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:16px; }
 .cat-card { border:1px solid #dde3ee; border-radius:8px; overflow:hidden; transition:box-shadow .2s; cursor:pointer; text-decoration:none; color:inherit; display:block; }
 .cat-card:hover { box-shadow:0 4px 20px rgba(0,48,135,.12); }
@@ -56,7 +56,7 @@ header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; posit
 .cat-card-desc  { font-size:13px; color:#555; line-height:1.7; margin-bottom:16px; }
 .cat-card-link  { font-size:13px; color:#003087; font-weight:bold; }
 
-/* ── 包装形態カード（包装の形態から） ── */
+/* ── 包装形態カード（包装の種類・機能から） ── */
 .form-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:0; }
 .form-card { border:1px solid #dde3ee; border-radius:8px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:box-shadow .2s; }
 .form-card:hover { box-shadow:0 4px 20px rgba(0,48,135,.12); }
@@ -75,7 +75,7 @@ header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; posit
 .form-tag { background:#e8edf5; color:#003087; font-size:11px; padding:3px 10px; border-radius:10px; }
 .form-card-link  { font-size:13px; color:#003087; font-weight:bold; }
 
-/* ── 工程カード（加工したいものから） ── */
+/* ── 工程カード（目的から） ── */
 .process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-bottom:0; }
 .proc-card { border:1px solid #dde3ee; border-radius:8px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:box-shadow .2s; }
 .proc-card:hover { box-shadow:0 4px 20px rgba(0,48,135,.12); }
@@ -179,12 +179,12 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; borde
 
 <div class="l-wrap" style="padding-top:0; padding-bottom:0;">
 
-  <!-- ============ 包みたいものから ============ -->
+  <!-- ============ 業種から ============ -->
   <section id="use" style="padding-top:32px;margin-bottom:60px;">
 
     <div class="search-section-head">
       <span class="search-section-icon">&#128230;</span>
-      <h2>包みたいものから探す</h2>
+      <h2>業種から探す</h2>
     </div>
 
     <span class="wf-note">※ 各カテゴリーカードをクリックすると、対応する製品一覧ページへ遷移</span>
@@ -245,12 +245,12 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; borde
 
   </section><!-- /use -->
 
-  <!-- ============ 包装の形態から ============ -->
+  <!-- ============ 包装の種類・機能から ============ -->
   <section id="form" style="margin-bottom:60px;">
 
     <div class="search-section-head">
       <span class="search-section-icon">&#128208;</span>
-      <h2>包装の形態から探す</h2>
+      <h2>包装の種類・機能から探す</h2>
     </div>
 
     <span class="wf-note">※ 各カードをクリックすると、対応する製品一覧ページへ遷移（本番は製品一覧をフィルタリング表示）</span>
@@ -346,12 +346,12 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; font-size:13px; borde
 
   </section><!-- /form -->
 
-  <!-- ============ 加工したいものから ============ -->
+  <!-- ============ 目的から ============ -->
   <section id="process" style="margin-bottom:60px;">
 
     <div class="search-section-head">
       <span class="search-section-icon">&#9881;</span>
-      <h2>加工したいものから探す</h2>
+      <h2>目的から探す</h2>
     </div>
 
     <span class="wf-note">※ 各カードをクリックすると、対応する製品一覧ページへ遷移（TOPデザインのアコーディオン01〜08に対応）</span>
