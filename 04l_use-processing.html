@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WF｜製品情報［用途別］加工 - ムルチバック・ジャパン</title>
+<style>
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; color: #222; background: #fff; }
+.wf-note { background:#fff9c4; border:1px solid #f0c040; border-radius:4px; padding:6px 10px; font-size:12px; color:#555; display:inline-block; margin-bottom:8px; }
+.wf-new  { background:#e3f2fd; border:1px solid #90caf9; border-radius:4px; padding:3px 8px; font-size:11px; color:#1565c0; font-weight:bold; }
+.wf-img  { background:#e8e8e8; border:1px dashed #aaa; display:flex; align-items:center; justify-content:center; color:#888; font-size:13px; }
+.wf-box  { background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:16px; margin-bottom:16px; }
+.wf-section { border-left:4px solid #003087; padding:10px 14px; background:#f0f4ff; margin-bottom:12px; font-weight:bold; }
+
+.l-wrap  { max-width:1200px; margin:0 auto; padding:0 24px; }
+.l-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.l-grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; }
+.l-grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.l-side  { display:grid; grid-template-columns:260px 1fr; gap:32px; }
+
+header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; position:sticky; top:0; z-index:100; }
+.hd-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:24px; }
+.hd-logo  { font-size:18px; font-weight:900; color:#003087; letter-spacing:2px; min-width:180px; }
+.hd-nav   { display:flex; gap:16px; font-size:13px; flex:1; }
+.hd-nav span { padding:4px 0; cursor:pointer; color:#333; }
+.hd-nav span:hover { color:#003087; }
+.hd-btns  { display:flex; gap:10px; }
+.btn-primary { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; cursor:pointer; }
+.btn-outline { border:2px solid #003087; color:#003087; padding:6px 14px; border-radius:4px; font-size:13px; cursor:pointer; }
+
+.breadcrumb { background:#f5f5f5; padding:8px 0; font-size:12px; color:#666; }
+.breadcrumb span { margin:0 6px; }
+
+.hero { background:#e8edf5; padding:60px 0; text-align:left; }
+.hero h1 { font-size:32px; font-weight:900; color:#003087; }
+.hero p  { font-size:15px; color:#555; margin-top:12px; max-width:600px; }
+.hero-en { font-size:13px; color:#888; letter-spacing:2px; margin-bottom:8px; }
+
+.page-head { padding:40px 0 24px; border-bottom:1px solid #eee; margin-bottom:32px; }
+.page-head h1 { font-size:28px; font-weight:900; color:#003087; }
+.page-head p  { font-size:14px; color:#666; margin-top:8px; }
+
+footer { background:#003087; color:#fff; padding:40px 0 20px; margin-top:60px; font-size:13px; }
+.ft-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:1200px; margin:0 auto; padding:0 24px; }
+.ft-col h4 { font-size:13px; font-weight:bold; margin-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:6px; }
+.ft-col p  { color:rgba(255,255,255,0.7); line-height:2; font-size:12px; }
+.ft-copy { text-align:center; color:rgba(255,255,255,0.5); font-size:11px; padding-top:24px; margin-top:24px; border-top:1px solid rgba(255,255,255,0.2); }
+
+.card { background:#fff; border:1px solid #e0e0e0; border-radius:6px; overflow:hidden; }
+.card-body { padding:16px; }
+.tag { background:#e3f2fd; color:#003087; font-size:11px; padding:2px 8px; border-radius:2px; display:inline-block; margin-bottom:6px; }
+.tag-red { background:#fce4ec; color:#c62828; }
+.tag-green { background:#e8f5e9; color:#2e7d32; }
+.news-item { display:flex; gap:16px; padding:16px 0; border-bottom:1px solid #eee; align-items:flex-start; }
+.news-date { color:#888; font-size:12px; min-width:90px; }
+.news-title { font-size:14px; color:#003087; }
+.btn-more { border:1px solid #003087; color:#003087; padding:8px 24px; border-radius:4px; font-size:13px; cursor:pointer; margin:16px auto; display:block; width:fit-content; }
+.label { font-size:12px; color:#666; margin-bottom:4px; display:block; }
+input, select, textarea { width:100%; border:1px solid #ccc; border-radius:4px; padding:10px 12px; font-size:14px; margin-bottom:16px; }
+table { width:100%; border-collapse:collapse; }
+th { background:#f0f4ff; padding:10px 14px; text-align:left; font-size:13px; color:#003087; border:1px solid #ddd; width:160px; }
+td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
+.search-bar { display:flex; gap:8px; background:#f0f4ff; padding:20px; border-radius:6px; margin-bottom:24px; }
+.search-bar input { margin:0; flex:1; }
+.cat-btn { border:1px solid #003087; padding:6px 14px; border-radius:20px; font-size:12px; color:#003087; cursor:pointer; display:inline-block; margin:4px; }
+.cat-btn.active { background:#003087; color:#fff; }
+.anchor-nav { display:flex; gap:8px; border-bottom:2px solid #003087; margin-bottom:24px; padding-bottom:0; }
+.anchor-nav span { padding:10px 20px; font-size:13px; cursor:pointer; color:#666; }
+.anchor-nav span.active { color:#003087; font-weight:bold; border-bottom:3px solid #003087; margin-bottom:-2px; }
+
+
+.hd-nav a { padding:4px 0; cursor:pointer; color:#333; text-decoration:none; font-size:13px; }
+.hd-nav a:hover { color:#003087; }
+.hd-btns a { text-decoration:none; }
+.ft-col a { color:rgba(255,255,255,0.7); text-decoration:none; line-height:2; font-size:12px; display:block; }
+.ft-col a:hover { color:#fff; }
+.breadcrumb a { color:#666; text-decoration:none; }
+.breadcrumb a:hover { color:#003087; text-decoration:underline; }
+.anchor-nav a { padding:10px 20px; font-size:13px; cursor:pointer; color:#666; text-decoration:none; display:inline-block; }
+.anchor-nav a:hover { color:#003087; }
+
+/* ── ヘッダーボタン更新 ── */
+.btn-dl      { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; }
+.btn-contact { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; margin-left:4px; }
+.btn-dl:hover, .btn-contact:hover { background:#00246b; }
+
+/* ── フッター更新 ── */
+footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font-size:13px; border-top:1px solid #dde3ee; }
+.ft-inner { max-width:1200px; margin:0 auto; padding:0 24px 40px; display:flex; gap:60px; align-items:flex-start; }
+.ft-brand { min-width:220px; }
+.ft-logo-wrap { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.ft-logo-icon { color:#003087; font-size:18px; }
+.ft-logo-text { font-size:20px; font-weight:900; color:#003087; letter-spacing:2px; }
+.ft-company-name { font-size:11px; color:#666; margin-bottom:16px; }
+.ft-sns { display:flex; gap:10px; margin-bottom:20px; }
+.ft-sns-btn { display:flex; align-items:center; justify-content:center; width:36px; height:36px; background:#003087; color:#fff; border-radius:50%; text-decoration:none; transition:background .2s; }
+.ft-sns-btn:hover { background:#00246b; }
+.ft-address { font-style:normal; font-size:12px; color:#666; line-height:1.9; }
+.ft-links { display:flex; flex-direction:column; gap:20px; padding-top:4px; }
+.ft-links a { color:#333; text-decoration:none; font-size:14px; }
+.ft-links a:hover { color:#003087; }
+.ft-copy { background:#003087; color:rgba(255,255,255,0.6); text-align:center; font-size:11px; padding:14px; }
+
+/* ── MV（メインビジュアル） ── */
+.mv { position:relative; height:320px; overflow:hidden; }
+.mv-bg { position:absolute; inset:0; background:#7a8fa8; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.4); font-size:13px; letter-spacing:1px; }
+.mv-overlay { position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; background:rgba(0,24,64,.5); padding:0 0 24px calc(max(24px, 50% - 576px)); }
+.mv-title { color:#fff; font-size:38px; font-weight:900; letter-spacing:2px; margin-bottom:10px; text-shadow:0 2px 8px rgba(0,0,0,.4); }
+.mv-en { color:rgba(255,255,255,.8); font-size:14px; letter-spacing:4px; }
+
+/* ── 用途別ページ ── */
+.card-thumb { height:140px; background:#f4f5f7; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.card-thumb img { width:100%; height:100%; object-fit:contain; }
+a.use-card { display:block; text-decoration:none; color:inherit; transition:box-shadow .15s, transform .15s; }
+a.use-card:hover { box-shadow:0 4px 14px rgba(0,48,135,.15); transform:translateY(-2px); }
+.use-card.is-pending { opacity:.6; }
+.pending-tag { display:inline-block; margin-top:8px; font-size:11px; color:#8a6d00; background:#fff6d6; border:1px solid #e6d08a; border-radius:3px; padding:2px 8px; }
+.step-flow { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px; }
+.step-box { border:1px solid #e0e0e0; border-radius:6px; background:#fff; padding:16px; text-align:center; }
+.step-no { display:inline-block; width:26px; height:26px; line-height:26px; border-radius:50%; background:#003087; color:#fff; font-size:13px; font-weight:bold; margin-bottom:8px; }
+.step-box p { font-size:13px; color:#555; line-height:1.7; }
+.term-box { background:#f0f4ff; border-left:4px solid #003087; border-radius:0 6px 6px 0; padding:20px 24px; margin-bottom:20px; }
+.term-box h3 { font-size:16px; font-weight:bold; color:#003087; margin-bottom:8px; }
+.term-box p { font-size:14px; color:#444; line-height:1.9; }
+.spec-list { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.spec-item { border:1px solid #e0e0e0; border-radius:6px; background:#fff; padding:16px 18px; }
+.spec-item h4 { font-size:14px; font-weight:bold; color:#003087; margin-bottom:8px; }
+.spec-item ul { list-style:none; }
+.spec-item li { font-size:13px; color:#555; line-height:1.9; padding-left:14px; position:relative; }
+.spec-item li::before { content:"–"; position:absolute; left:0; color:#8a9ec0; }
+.ref-note { font-size:12px; color:#888; line-height:1.9; margin-top:10px; }
+.use-cta { background:#003087; border-radius:8px; padding:32px; text-align:center; margin-top:48px; }
+.use-cta h3 { color:#fff; font-size:20px; font-weight:bold; margin-bottom:8px; }
+.use-cta p { color:rgba(255,255,255,.75); font-size:13px; margin-bottom:18px; }
+.use-cta-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.use-cta-btn { background:#fff; color:#003087; text-decoration:none; font-size:14px; font-weight:bold; padding:12px 28px; border-radius:4px; display:inline-block; }
+.use-cta-btn.is-outline { background:transparent; color:#fff; border:1px solid rgba(255,255,255,.6); }
+.use-nav { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px; }
+.use-nav a { border:1px solid #d5dced; background:#fff; color:#003087; text-decoration:none; font-size:12px; padding:6px 14px; border-radius:20px; }
+.use-nav a:hover { background:#f0f4ff; }
+.use-nav a.is-current { background:#003087; color:#fff; border-color:#003087; }
+</style>
+</head>
+<body>
+<script>
+(function(){
+  if(sessionStorage.getItem('wf_auth')!=='ok'){
+    location.replace('gate.html?r='+encodeURIComponent(location.pathname.split('/').pop()||'index.html'));
+  }
+})();
+</script>
+
+<header>
+  <div class="hd-inner">
+    <div class="hd-logo">■ MULTIVAC<br><small style="font-size:10px;font-weight:400">ムルチバック・ジャパン株式会社</small></div>
+    <nav class="hd-nav">
+      <a href="01_news-list.html">ニュース</a>
+      <a href="04_products-top.html">製品情報</a>
+      <a href="11_service-innovation.html">サービス</a>
+      <a href="14_company-overview.html">会社概要</a>
+      <a href="18_careers.html">採用情報</a>
+    </nav>
+    <div class="hd-btns">
+      <a href="index.html" style="border:1px solid #003087;color:#003087;background:#fff;padding:8px 16px;border-radius:4px;font-size:13px;text-decoration:none;display:inline-block;margin-right:4px">&#8592; WF一覧</a>
+      <a href="20_catalog-download.html" class="btn-primary btn-dl">&#x2193; カタログダウンロード</a>
+      <a href="19_contact.html" class="btn-primary btn-contact">&#x2709; お問い合わせ</a>
+    </div>
+  </div>
+</header>
+<div class="mv">
+  <div class="mv-bg">[MV背景画像：加工]</div>
+  <div class="mv-overlay">
+    <div style="color:rgba(255,255,255,.8);font-size:12px;letter-spacing:2px;margin-bottom:6px">製品情報［用途別］</div>
+    <div class="mv-title">加工</div>
+    <div class="mv-en">PROCESSING</div>
+  </div>
+</div>
+<div class="breadcrumb"><div class="l-wrap"><a href="index.html">HOME</a><span>›</span><a href="04_products-top.html">製品情報</a><span>›</span><span>用途別</span><span>›</span><span>加工</span></div></div>
+<div class="l-wrap" style="padding-top:32px;padding-bottom:60px">
+  <div class="page-head">
+    <h1>加工</h1>
+    <p>市場ニーズに応える加工技術で、商品の魅力を引き出します。主に精肉の加工技術などは、市場ニーズと理想の状況を認識し、最先端の技術力とノウハウによる各種製造方法をご提案します。多様化する食生活にも対応し、売り上げや注目度のアップも視野に入れた商品の可能性を追求します。</p>
+  </div>
+  <div style="margin-bottom:40px">
+  <div class="wf-section">カット・成形</div>
+  <div class="l-grid3"><a href="10e_products-detail-tvi-portioncutter.html" class="card use-card"><div class="card-thumb"><img src="https://multivac.com/content/dam/celum/01-Machines/TVI/Portioning/MGS-520-singlecut/43060_Photo-GMS-520.png" alt="TVI ポーションカッター" loading="lazy"></div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">TVI ポーションカッター</h4><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">不定形品を同じ厚み・重さ・形でカット。</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a><div class="card use-card is-pending"><div class="wf-img" style="width:100%;height:140px">[ミートプレス機 製品イメージ]</div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">ミートプレス機</h4><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">不定形ブロック肉の成形加工に。</p><div class="pending-tag">準備中</div></div></div></div>
+  </div>
+  <div style="margin-bottom:40px">
+  <div class="wf-section">充填・ライン</div>
+  <div class="l-grid3"><a href="10r_products-detail-handtmann-vf.html" class="card use-card"><div class="card-thumb"><img src="https://www.us.processing.handtmann.com/_Resources/Persistent/3/9/1/4/391414bdb5396b967499f1b5d2df835fb73a6d32/VF%20804%20S-945x709-945x709.webp" alt="Handtmann 真空定量充填機" loading="lazy"></div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">Handtmann 真空定量充填機</h4><p style="font-size:12px;color:#888;margin-top:2px">VFシリーズ</p><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">ペースト状の製品をグラム単位で正確に吐出。</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a><a href="10s_products-detail-handtmann-sausage-line.html" class="card use-card"><div class="card-thumb"><img src="https://www.us.processing.handtmann.com/_Resources/Persistent/0/4/f/0/04f0da7e0130d587d2f820cfaa747eea3364933e/linking_pls115_product_listing-1500x1061.webp" alt="Handtmann ソーセージライン" loading="lazy"></div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">Handtmann ソーセージライン</h4><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">ひねり装置やハンギング装置と連結して効率的に製造。</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a></div>
+  </div>
+  <div style="margin-bottom:40px">
+  <div class="wf-section">カッター／グラインダー／ミキサー</div>
+  <div class="l-grid3"><a href="10j_products-detail-seydelmann-grinder.html" class="card use-card"><div class="card-thumb"><img src="https://www.seydelmann.com/uploads/machine/image/26/medium_retina_AE130_HP_10.2021.jpg" alt="SEYDELMANN グラインダー" loading="lazy"></div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">SEYDELMANN グラインダー</h4><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">高い耐用年数と安定した挽き性能。</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a><a href="10l_products-detail-seydelmann-mixer.html" class="card use-card"><div class="card-thumb"><img src="https://www.seydelmann.com/uploads/machine/image/43/medium_MR600_2021_HP.jpg" alt="SEYDELMANN ミキサー" loading="lazy"></div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">SEYDELMANN ミキサー</h4><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">高いミキシング効果を実現。</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a><a href="10m_products-detail-seydelmann-mixer-grinder.html" class="card use-card"><div class="card-thumb"><img src="https://www.seydelmann.com/uploads/machine/image/57/medium_MRG_1300_HP_2021.jpg" alt="SEYDELMANN ミキサーグラインダー" loading="lazy"></div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">SEYDELMANN ミキサーグラインダー</h4><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">混合と挽き工程を1台で。</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a></div>
+  </div>
+  <div style="margin-bottom:40px">
+  <div class="wf-section">ユニバーサルマシン／ミクロカットマシン</div>
+  <div class="l-grid3"><a href="10n_products-detail-stephan-um.html" class="card use-card"><div class="card-thumb"><img src="https://stephan-uk.co.uk/wp-content/uploads/2023/04/csm_ProXES_Machine_UM200_web_d9931863f0@2x.png" alt="Stephan ユニバーサルマシン" loading="lazy"></div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">Stephan ユニバーサルマシン</h4><p style="font-size:12px;color:#888;margin-top:2px">UMシリーズ</p><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">高速かつ均一な切り混ぜを実現。</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a><a href="10o_products-detail-stephan-mc.html" class="card use-card"><div class="card-thumb"><img src="https://stephan-uk.co.uk/wp-content/uploads/2023/04/Microcut-MCH-20-492x343.jpg" alt="Stephan ミクロカットマシン" loading="lazy"></div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">Stephan ミクロカットマシン</h4><p style="font-size:12px;color:#888;margin-top:2px">MCシリーズ</p><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">微細なカット・粉砕で幅広い使用が可能。</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a></div>
+  </div>
+  <div style="margin-bottom:40px">
+  <div class="wf-section">マッサージ装置／インジェクター装置</div>
+  <div class="l-grid3"><a href="10q_products-detail-schroder-max.html" class="card use-card"><div class="card-thumb"><img src="https://jbtmarel.com/media/enpbfuhg/jbt_schroeder_max_3000_6000_massagers.jpg" alt="SCHRÖDER マッサージャー" loading="lazy"></div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">SCHRÖDER マッサージャー</h4><p style="font-size:12px;color:#888;margin-top:2px">MAXシリーズ</p><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">肉や魚のタンパク質を活性・安定化。</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a><a href="10p_products-detail-schroder-imax.html" class="card use-card"><div class="card-thumb"><img src="https://jbtmarel.com/media/drsn1cza/jbt_schroeder_imax_highline.jpg" alt="SCHRÖDER インジェクター" loading="lazy"></div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">SCHRÖDER インジェクター</h4><p style="font-size:12px;color:#888;margin-top:2px">IMAXシリーズ</p><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">調味料を高速かつ正確・均一に注入・分散。</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a></div>
+  </div>
+  <div style="margin-bottom:40px">
+  <div class="wf-section">ベーカリー</div>
+  <div class="l-grid3"><a href="10g_products-detail-fritsch-rollfix.html" class="card use-card"><div class="card-thumb"><img src="https://www.fritsch-group.com/content/dam/fritsch-cms/pictures/maschinen/rollfix-prime/Rollfix_prime_Steuerung_1920x1080.jpg" alt="FRITSCH リバースシーター" loading="lazy"></div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">FRITSCH リバースシーター</h4><p style="font-size:12px;color:#888;margin-top:2px">ROLLFIX prime</p><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">パイシート生地工程を効率化し、生産能力アップ。</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a><a href="10h_products-detail-fritsch-multiflex.html" class="card use-card"><div class="card-thumb"><img src="https://multivac.com/content/dam/celum/01-Machines/FRITSCH/80937_FRITSCH_MULTIFLEX-L-700.png" alt="FRITSCH ペストリー成形機" loading="lazy"></div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">FRITSCH ペストリー成形機</h4><p style="font-size:12px;color:#888;margin-top:2px">MULTIFLEX</p><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">生地のシートづくりに欠かせない、汎用性の高い自動ライン。</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a><div class="card use-card is-pending"><div class="wf-img" style="width:100%;height:140px">[ベーカリーオーブン 製品イメージ]</div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">ベーカリーオーブン</h4><p style="font-size:12px;color:#888;margin-top:2px">PICCOLO／ATLAS／HPシリーズ</p><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">パン・お菓子もこれ一台で。</p><div class="pending-tag">準備中</div></div></div></div>
+  </div>
+  <div style="margin-bottom:40px">
+  <div class="wf-section">熱処理・解凍</div>
+  <div class="l-grid3"><div class="card use-card is-pending"><div class="wf-img" style="width:100%;height:140px">[スモークハウス 製品イメージ]</div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">スモークハウス</h4><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">優れたエアーマネジメントによる均一な仕上がり。</p><div class="pending-tag">準備中</div></div></div><div class="card use-card is-pending"><div class="wf-img" style="width:100%;height:140px">[解凍機 製品イメージ]</div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">解凍機</h4><p style="font-size:12px;color:#666;margin-top:6px;line-height:1.7">均一な解凍を実現し、製品庫としても充実。</p><div class="pending-tag">準備中</div></div></div></div>
+  </div>
+  <span class="wf-note">※ 既存サイトに掲載のある「クラストフリーザーテンパリング装置」は<strong>取扱終了</strong>のため本WFでは掲載していない。「Anco G5」「FF280」は既存サイト上でも説明が未記入のため保留。</span>
+  <div class="use-cta">
+    <h3>サンプル作成・実機テスト・お見積のご依頼</h3>
+    <p>包装・加工のご要望に合わせて、最適なシステムをご提案します。まずはお気軽にご相談ください。</p>
+    <div class="use-cta-btns">
+      <a href="19_contact.html" class="use-cta-btn">&#x2709; お問い合わせ・ご相談</a>
+      <a href="20_catalog-download.html" class="use-cta-btn is-outline">&#x2193; カタログダウンロード</a>
+    </div>
+  </div>
+  <div class="use-nav"><a href="04j_use-packing.html">包装</a><a href="04k_use-films.html">包装資材</a><a href="04l_use-processing.html" class="is-current">加工</a></div>
+</div>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <div class="ft-logo-wrap">
+        <span class="ft-logo-icon">&#9632;</span>
+        <span class="ft-logo-text">MULTIVAC</span>
+      </div>
+      <div class="ft-company-name">ムルチバック・ジャパン株式会社</div>
+      <div class="ft-sns">
+        <a href="#" class="ft-sns-btn" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+        <a href="#" class="ft-sns-btn" aria-label="X (Twitter)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+      <address class="ft-address">〒104-0061<br>東京都中央区銀座5丁目9-8<br>クロス銀座ビル5F</address>
+    </div>
+    <nav class="ft-links">
+      <a href="19_contact.html">お問い合わせ</a>
+      <a href="22_terms.html">サイトのご利用にあたって</a>
+      <a href="21_privacy.html">個人情報保護方針</a>
+      <a href="24_sitemap.html">サイトマップ</a>
+    </nav>
+  </div>
+  <div class="ft-copy">Copyright&copy;2026 MULTIVAC Japan Inc. All rights reserved.</div>
+</footer>
+</body></html>
