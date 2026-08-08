@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WF｜サイトマップ - ムルチバック・ジャパン</title>
+<title>WF｜製品情報 Seydelmann - ムルチバック・ジャパン</title>
 <style>
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -109,6 +109,18 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
 .mv-overlay { position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; background:rgba(0,24,64,.5); padding:0 0 24px calc(max(24px, 50% - 576px)); }
 .mv-title { color:#fff; font-size:38px; font-weight:900; letter-spacing:2px; margin-bottom:10px; text-shadow:0 2px 8px rgba(0,0,0,.4); }
 .mv-en { color:rgba(255,255,255,.8); font-size:14px; letter-spacing:4px; }
+
+/* ── メーカー別一覧ページ ── */
+.maker-logo-lg { width:180px; height:56px; object-fit:contain; display:block; margin-bottom:14px; }
+a.maker-card { display:block; text-decoration:none; color:inherit; transition:box-shadow .15s, transform .15s; }
+a.maker-card:hover { box-shadow:0 4px 14px rgba(0,48,135,.15); transform:translateY(-2px); }
+.maker-card.is-pending { opacity:.6; }
+.pending-tag { display:inline-block; margin-top:8px; font-size:11px; color:#8a6d00; background:#fff6d6; border:1px solid #e6d08a; border-radius:3px; padding:2px 8px; }
+.pending-box { border:2px dashed #ccc; background:#fafafa; color:#999; text-align:center; padding:60px 20px; font-size:14px; border-radius:6px; }
+.maker-nav { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px; }
+.maker-nav a { border:1px solid #d5dced; background:#fff; color:#003087; text-decoration:none; font-size:12px; padding:6px 14px; border-radius:20px; }
+.maker-nav a:hover { background:#f0f4ff; }
+.maker-nav a.is-current { background:#003087; color:#fff; border-color:#003087; }
 </style>
 </head>
 <body>
@@ -140,83 +152,22 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
 <div class="mv">
   <div class="mv-bg">[MV背景画像]</div>
   <div class="mv-overlay">
-    <div class="mv-title">サイトマップ</div>
-    <div class="mv-en">SITEMAP</div>
+    <div class="mv-title">Seydelmann</div>
+    <div class="mv-en">SEYDELMANN</div>
   </div>
 </div>
-<div class="breadcrumb"><div class="l-wrap"><a href="index.html">HOME</a><span>›</span><span>サイトマップ</span></div></div>
+<div class="breadcrumb"><div class="l-wrap"><a href="index.html">HOME</a><span>›</span><a href="04_products-top.html">製品情報</a><span>›</span><span>メーカーから探す</span><span>›</span><span>Seydelmann</span></div></div>
 <div class="l-wrap" style="padding-top:32px;padding-bottom:60px">
   <div class="page-head">
-    <h1>サイトマップ</h1>
+    <img src="logos/seydelmann.jpg" alt="Seydelmannロゴ" class="maker-logo-lg">
+    <h1>Seydelmann</h1>
+    <p>食肉加工機械の老舗メーカー。グラインダー、ミキサー、タンブラーなど、原料処理から練り工程までの機械を幅広く展開しています。</p>
   </div>
-
-  <div class="l-grid3">
-    <div>
-      <h2 style="font-size:15px;font-weight:bold;color:#003087;border-bottom:2px solid #003087;padding-bottom:6px;margin-bottom:12px">ニュース</h2>
-      <ul style="font-size:14px;line-height:2.2;list-style:none">
-        <li>→ <a href="01_news-list.html">お知らせ</a></li>
-        <li>→ <a href="03_exhibition.html">展示会情報</a></li>
-      </ul>
-
-      <h2 style="font-size:15px;font-weight:bold;color:#003087;border-bottom:2px solid #003087;padding-bottom:6px;margin-bottom:12px;margin-top:24px">サービス</h2>
-      <ul style="font-size:14px;line-height:2.2;list-style:none">
-        <li>→ <a href="11_service-innovation.html">ローカルイノベーションセンター（LIC）</a></li>
-        <li>→ <a href="12_service-training.html">マシンユーザートレーニング</a></li>
-        <li>→ <a href="13_service-aftersales.html">アフターサポート</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h2 style="font-size:15px;font-weight:bold;color:#003087;border-bottom:2px solid #003087;padding-bottom:6px;margin-bottom:12px">製品情報</h2>
-      <p style="font-size:12px;color:#888;margin-bottom:6px">業種別</p>
-      <ul style="font-size:14px;line-height:2.2;list-style:none;margin-bottom:12px">
-        <li>→ <a href="05_products-food.html">食品</a></li>
-        <li>→ <a href="06_products-medical.html">メディカル</a></li>
-        <li>→ <a href="07_products-industry.html">工業</a></li>
-        <li>→ <a href="08_products-household.html">家庭用品</a></li>
-        <li>→ <a href="09_products-chemical.html">化成品（コスメほか）</a></li>
-      </ul>
-      <p style="font-size:12px;color:#888;margin-bottom:6px">用途別検索</p>
-      <ul style="font-size:14px;line-height:2.2;list-style:none;margin-bottom:12px">
-        <li>→ <a href="04a_products-search.html#use">業種から探す</a></li>
-        <li>→ <a href="04a_products-search.html#form">包装の種類・機能から探す</a></li>
-        <li>→ <a href="04a_products-search.html#process">目的から探す</a></li>
-      </ul>
-      <p style="font-size:12px;color:#888;margin-bottom:6px">メーカー別</p>
-      <ul style="font-size:14px;line-height:2.2;list-style:none">
-        <li>→ <a href="04_products-top.html#by-maker">メーカーから探す</a></li>
-        <li style="padding-left:12px">→ <a href="04b_maker-multivac.html">MULTIVAC</a></li>
-        <li style="padding-left:12px">→ <a href="04c_maker-tvi.html">TVI</a></li>
-        <li style="padding-left:12px">→ <a href="04d_maker-fritsch.html">FRITSCH</a></li>
-        <li style="padding-left:12px">→ <a href="04e_maker-stephan.html">Stephan</a></li>
-        <li style="padding-left:12px">→ <a href="04f_maker-schroeder.html">SCHROEDER</a></li>
-        <li style="padding-left:12px">→ <a href="04g_maker-seydelmann.html">Seydelmann</a></li>
-        <li style="padding-left:12px">→ <a href="04h_maker-handtmann.html">handtmann</a></li>
-        <li style="padding-left:12px">→ <a href="04i_maker-escher.html">ESCHER</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h2 style="font-size:15px;font-weight:bold;color:#003087;border-bottom:2px solid #003087;padding-bottom:6px;margin-bottom:12px">会社情報</h2>
-      <ul style="font-size:14px;line-height:2.2;list-style:none;margin-bottom:24px">
-        <li>→ <a href="14_company-overview.html">会社概要</a></li>
-        <li>→ <a href="14_company-overview.html#philosophy">経営理念</a></li>
-        <li>→ <a href="14_company-overview.html#history">沿革</a></li>
-        <li>→ <a href="14_company-overview.html#clients">主要取引先</a></li>
-      </ul>
-
-      <h2 style="font-size:15px;font-weight:bold;color:#003087;border-bottom:2px solid #003087;padding-bottom:6px;margin-bottom:12px">その他</h2>
-      <ul style="font-size:14px;line-height:2.2;list-style:none">
-        <li>→ <a href="18_careers.html">採用情報</a></li>
-        <li>→ <a href="19_contact.html">お問い合わせ</a></li>
-        <li>→ <a href="20_catalog-download.html">カタログダウンロード</a></li>
-        <li>→ <a href="21_privacy.html">個人情報保護方針</a></li>
-        <li>→ <a href="22_terms.html">サイトのご利用にあたって</a></li>
-        <li>→ <a href="25_data-protection.html">データ保護</a></li>
-        <li>→ Cookie設定</li>
-      </ul>
-    </div>
+  <div style="margin-bottom:40px">
+  <div class="wf-section">加工機 <span class="wf-new">Seydelmann</span></div>
+  <div class="l-grid3"><a href="10j_products-detail-seydelmann-grinder.html" class="card maker-card"><div class="wf-img" style="width:100%;height:140px">[SEYDELMANNグラインダー 製品イメージ]</div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">SEYDELMANNグラインダー</h4><p style="font-size:12px;color:#666;margin-top:4px">主要特徴・スペックの概要テキスト</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a><a href="10k_products-detail-seydelmann-tumbler.html" class="card maker-card"><div class="wf-img" style="width:100%;height:140px">[SEYDELMANNトロリータンブラー 製品イメージ]</div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">SEYDELMANNトロリータンブラー</h4><p style="font-size:12px;color:#666;margin-top:4px">主要特徴・スペックの概要テキスト</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a><a href="10l_products-detail-seydelmann-mixer.html" class="card maker-card"><div class="wf-img" style="width:100%;height:140px">[SEYDELMANN ミキサー 製品イメージ]</div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">SEYDELMANN ミキサー</h4><p style="font-size:12px;color:#666;margin-top:4px">主要特徴・スペックの概要テキスト</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a><a href="10m_products-detail-seydelmann-mixer-grinder.html" class="card maker-card"><div class="wf-img" style="width:100%;height:140px">[SEYDELMANN ミキサーグラインダー 製品イメージ]</div><div class="card-body"><h4 style="font-size:14px;font-weight:bold;color:#003087">SEYDELMANN ミキサーグラインダー</h4><p style="font-size:12px;color:#666;margin-top:4px">主要特徴・スペックの概要テキスト</p><div class="btn-more" style="margin:8px 0 0;font-size:12px">詳細を見る &#8594;</div></div></a></div>
   </div>
+  <div class="maker-nav"><a href="04b_maker-multivac.html">MULTIVAC</a><a href="04c_maker-tvi.html">TVI</a><a href="04d_maker-fritsch.html">FRITSCH</a><a href="04e_maker-stephan.html">Stephan</a><a href="04f_maker-schroeder.html">SCHROEDER</a><a href="04g_maker-seydelmann.html" class="is-current">Seydelmann</a><a href="04h_maker-handtmann.html">handtmann</a><a href="04i_maker-escher.html">ESCHER</a></div>
 </div>
 
 <footer>
