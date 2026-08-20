@@ -117,13 +117,11 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font
 .gallery-thumb { flex:1; height:90px; border-radius:4px; object-fit:cover; min-width:0; cursor:pointer; opacity:.55; border:2px solid transparent; transition:opacity .2s, border-color .2s; }
 .gallery-thumb:hover { opacity:.85; }
 .gallery-thumb.active { opacity:1; border-color:#003087; }
-/* ── 画像トリミング調整（2026-08-18 追加・要望により削除可） ── */
-/* ギャラリー1・2・4枚目は被写体が小さく余白が多いため、拡大してトリミング表示する。
-   元に戻す場合は、このブロックと該当 <img> の crop-1 / crop-2 / crop-4 クラスを削除する。 */
-.gallery-main .crop-1 { transform:scale(1.40); transform-origin:47% 56%; }
-.gallery-main .crop-2 { transform:scale(1.28); transform-origin:48% 50%; }
-.gallery-main .crop-4 { transform:scale(1.25); transform-origin:52% 56%; }
-/* ── 画像トリミング調整ここまで ── */
+/* ── 製品トップの動画埋め込み（2026-08-20 追加） ── */
+.video-embed { position:relative; width:100%; aspect-ratio:16/9; border-radius:6px; overflow:hidden; background:#000; }
+.video-embed iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+/* ギャラリーセクションの実写真（旧スライダーから移動） */
+.gallery-photo { display:block; width:100%; height:180px; object-fit:contain; background:#f4f5f7; border-radius:6px; }
 </style>
 </head>
 <body>
@@ -179,22 +177,11 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font
 
       <div>
 
-        <div class="gallery" id="productGallery">
-          <div class="gallery-main">
-            <img class="gallery-slide active crop-1" src="https://multivac.com/content/dam/celum/01-Machines/Traysealer/44470_TX-710.png" alt="トレーシーラー TX-710">
-            <img class="gallery-slide crop-2" src="https://multivac.com/content/dam/celum/01-Machines/Traysealer/76000_T-250.png" alt="T-250">
-            <img class="gallery-slide" src="https://multivac.com/content/dam/celum/01-Machines/Traysealer/T-205/77881_Photo-T-205-with-preheating.png" alt="T-205">
-            <img class="gallery-slide crop-4" src="https://multivac.com/content/dam/celum/01-Machines/Traysealer/45817_Photo-TX-710-with-film.png" alt="TX-710 フィルム装填">
-            <button type="button" class="gallery-arrow gallery-prev" onclick="galleryMove(this,-1)" aria-label="前の画像">&#10094;</button>
-            <button type="button" class="gallery-arrow gallery-next" onclick="galleryMove(this,1)" aria-label="次の画像">&#10095;</button>
-          </div>
-          <div class="gallery-thumbs">
-            <img class="gallery-thumb active" src="https://multivac.com/content/dam/celum/01-Machines/Traysealer/44470_TX-710.png" alt="トレーシーラー TX-710" onclick="galleryGo(this,0)">
-            <img class="gallery-thumb" src="https://multivac.com/content/dam/celum/01-Machines/Traysealer/76000_T-250.png" alt="T-250" onclick="galleryGo(this,1)">
-            <img class="gallery-thumb" src="https://multivac.com/content/dam/celum/01-Machines/Traysealer/T-205/77881_Photo-T-205-with-preheating.png" alt="T-205" onclick="galleryGo(this,2)">
-            <img class="gallery-thumb" src="https://multivac.com/content/dam/celum/01-Machines/Traysealer/45817_Photo-TX-710-with-film.png" alt="TX-710 フィルム装填" onclick="galleryGo(this,3)">
-          </div>
+        <!-- ── 製品紹介動画（YouTube埋め込み） ── -->
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/C8hivaOFJnw?si=nGdtbktKxvrlmzkS" title="MULTIVAC  TX620 トレーシーラー  |　ムルチバック・ジャパン" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
+        <div class="wf-note" style="margin-top:10px">&#9733; 製品トップは YouTube 動画の埋め込み（ムルチバック・ジャパン公式チャンネル）。従来のスライダー画像は下部の「ギャラリー」へ移動</div>
 
       </div>
 
@@ -354,13 +341,14 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font
   <!-- ── ギャラリー ── -->
   <section id="gallery-photos" style="margin-bottom:60px">
     <div class="wf-section">ギャラリー</div>
+    <div class="wf-note">&#9733; 製品トップにあった画像をここへ移動。1〜3枚目は先方支給画像に差し替え済み。残り2枠は追加写真の支給を想定</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <img class="gallery-photo" src="images/09b-1_TX710.png" alt="トレーシーラー TX 710" loading="lazy">
+      <img class="gallery-photo" src="images/09b-2_T305.png" alt="T 305" loading="lazy">
+      <img class="gallery-photo" src="images/09b-3_T255.png" alt="T 255" loading="lazy">
+      <img class="gallery-photo" src="https://multivac.com/content/dam/celum/01-Machines/Traysealer/45817_Photo-TX-710-with-film.png" alt="TX-710 フィルム装填" loading="lazy">
       <div class="wf-img" style="height:180px;border-radius:6px">[稼働シーン01]</div>
       <div class="wf-img" style="height:180px;border-radius:6px">[稼働シーン02]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[稼働シーン03]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品ディテール01]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品ディテール02]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品ディテール03]</div>
     </div>
   </section>
 
