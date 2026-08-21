@@ -130,6 +130,11 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font
 .gallery-thumb { flex:1; height:90px; border-radius:4px; object-fit:cover; min-width:0; cursor:pointer; opacity:.55; border:2px solid transparent; transition:opacity .2s, border-color .2s; }
 .gallery-thumb:hover { opacity:.85; }
 .gallery-thumb.active { opacity:1; border-color:#003087; }
+/* ── 製品トップの動画埋め込み（2026-08-20 追加） ── */
+.video-embed { position:relative; width:100%; aspect-ratio:16/9; border-radius:6px; overflow:hidden; background:#000; }
+.video-embed iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+/* ギャラリーセクションの実写真（旧スライダーから移動） */
+.gallery-photo { display:block; width:100%; height:180px; object-fit:contain; background:#f4f5f7; border-radius:6px; }
 
 </style>
 </head>
@@ -182,22 +187,11 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font
   <section id="overview" style="margin-bottom:60px">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:flex-start">
       <div>
-        <div class="gallery" id="productGallery">
-          <div class="gallery-main">
-            <img class="gallery-slide active" src="https://www.us.processing.handtmann.com/_Resources/Persistent/3/9/1/4/391414bdb5396b967499f1b5d2df835fb73a6d32/VF%20804%20S-945x709-945x709.webp" alt="Handtmann 真空定量充填機 VFシリーズ">
-            <img class="gallery-slide" src="https://www.us.processing.handtmann.com/_Resources/Persistent/2/c/a/b/2cab165cb4f6e11302901908c6dd4e38d0a635f1/VF%20806%20S-1004x826-1004x826.webp" alt="Handtmann 真空定量充填機 VFシリーズ">
-            <img class="gallery-slide" src="https://www.us.processing.handtmann.com/_Resources/Persistent/7/0/c/5/70c5450eef094e376f2986f542508a0dcafe3a59/VF%20818%20S-1200x900.webp" alt="Handtmann 真空定量充填機 VFシリーズ">
-            <img class="gallery-slide" src="https://www.us.processing.handtmann.com/_Resources/Persistent/f/8/4/c/f84c5fb6d963a2fd8b12d2000ebd25773235ec33/VF%20820-1200x900.webp" alt="Handtmann 真空定量充填機 VFシリーズ">
-            <button type="button" class="gallery-arrow gallery-prev" onclick="galleryMove(this,-1)" aria-label="前の画像">&#10094;</button>
-            <button type="button" class="gallery-arrow gallery-next" onclick="galleryMove(this,1)" aria-label="次の画像">&#10095;</button>
-          </div>
-          <div class="gallery-thumbs">
-            <img class="gallery-thumb active" src="https://www.us.processing.handtmann.com/_Resources/Persistent/3/9/1/4/391414bdb5396b967499f1b5d2df835fb73a6d32/VF%20804%20S-945x709-945x709.webp" alt="Handtmann 真空定量充填機 VFシリーズ" onclick="galleryGo(this,0)">
-            <img class="gallery-thumb" src="https://www.us.processing.handtmann.com/_Resources/Persistent/2/c/a/b/2cab165cb4f6e11302901908c6dd4e38d0a635f1/VF%20806%20S-1004x826-1004x826.webp" alt="Handtmann 真空定量充填機 VFシリーズ" onclick="galleryGo(this,1)">
-            <img class="gallery-thumb" src="https://www.us.processing.handtmann.com/_Resources/Persistent/7/0/c/5/70c5450eef094e376f2986f542508a0dcafe3a59/VF%20818%20S-1200x900.webp" alt="Handtmann 真空定量充填機 VFシリーズ" onclick="galleryGo(this,2)">
-            <img class="gallery-thumb" src="https://www.us.processing.handtmann.com/_Resources/Persistent/f/8/4/c/f84c5fb6d963a2fd8b12d2000ebd25773235ec33/VF%20820-1200x900.webp" alt="Handtmann 真空定量充填機 VFシリーズ" onclick="galleryGo(this,3)">
-          </div>
+        <!-- ── 製品紹介動画（YouTube埋め込み） ── -->
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/6ADLl_yeCXU?si=tnv1EuEeROUYQsQN" title="Handtmann Maschinenfabrik - VF800 Product Clip EN" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
+        <div class="wf-note" style="margin-top:10px">&#9733; 製品トップは YouTube 動画の埋め込み（Handtmann Processing 公式チャンネル）。従来のスライダー画像は下部の「ギャラリー」へ移動</div>
       </div>
       <div>
         <p style="font-size:12px;color:#888;letter-spacing:2px;margin-bottom:4px">Handtmann</p>
@@ -286,13 +280,14 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font
   <!-- ── ギャラリー ── -->
   <section id="gallery-photos" style="margin-bottom:60px">
     <div class="wf-section">ギャラリー</div>
+    <div class="wf-note">&#9733; 製品トップにあったスライダー画像4点をここへ移動。残り2枠は追加写真の支給を想定</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <img class="gallery-photo" src="https://www.us.processing.handtmann.com/_Resources/Persistent/3/9/1/4/391414bdb5396b967499f1b5d2df835fb73a6d32/VF%20804%20S-945x709-945x709.webp" alt="Handtmann 真空定量充填機 VFシリーズ" loading="lazy">
+      <img class="gallery-photo" src="https://www.us.processing.handtmann.com/_Resources/Persistent/2/c/a/b/2cab165cb4f6e11302901908c6dd4e38d0a635f1/VF%20806%20S-1004x826-1004x826.webp" alt="Handtmann 真空定量充填機 VFシリーズ" loading="lazy">
+      <img class="gallery-photo" src="https://www.us.processing.handtmann.com/_Resources/Persistent/7/0/c/5/70c5450eef094e376f2986f542508a0dcafe3a59/VF%20818%20S-1200x900.webp" alt="Handtmann 真空定量充填機 VFシリーズ" loading="lazy">
+      <img class="gallery-photo" src="https://www.us.processing.handtmann.com/_Resources/Persistent/f/8/4/c/f84c5fb6d963a2fd8b12d2000ebd25773235ec33/VF%20820-1200x900.webp" alt="Handtmann 真空定量充填機 VFシリーズ" loading="lazy">
       <div class="wf-img" style="height:180px;border-radius:6px">[稼働シーン01]</div>
       <div class="wf-img" style="height:180px;border-radius:6px">[稼働シーン02]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[稼働シーン03]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品ディテール01]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品ディテール02]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品ディテール03]</div>
     </div>
   </section>
 
