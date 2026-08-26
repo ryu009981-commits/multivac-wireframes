@@ -117,6 +117,11 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font
 .gallery-thumb { flex:1; height:90px; border-radius:4px; object-fit:cover; min-width:0; cursor:pointer; opacity:.55; border:2px solid transparent; transition:opacity .2s, border-color .2s; }
 .gallery-thumb:hover { opacity:.85; }
 .gallery-thumb.active { opacity:1; border-color:#003087; }
+/* ── 製品トップの動画埋め込み（2026-08-20 追加） ── */
+.video-embed { position:relative; width:100%; aspect-ratio:16/9; border-radius:6px; overflow:hidden; background:#000; }
+.video-embed iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+/* ギャラリーセクションの実写真（旧スライダーから移動） */
+.gallery-photo { display:block; width:100%; height:180px; object-fit:contain; background:#f4f5f7; border-radius:6px; }
 </style>
 </head>
 <body>
@@ -172,21 +177,9 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font
 
       <div>
 
-        <div class="gallery" id="productGallery">
-          <div class="gallery-main">
-            <img class="gallery-slide active" src="https://www.seydelmann.com/uploads/machine/image/26/medium_retina_AE130_HP_10.2021.jpg" alt="SEYDELMANN グラインダー AE130">
-            <img class="gallery-slide" src="https://www.seydelmann.com/uploads/machine/image/85/medium_retina_AE130-3_10.2021.jpg" alt="AE130-3">
-            <img class="gallery-slide" src="https://www.seydelmann.com/uploads/machine/image/32/medium_retina_AU_200_U_HP_2021.jpg" alt="AU 200 U">
-            <img class="gallery-slide" src="https://www.seydelmann.com/uploads/machine/image/33/medium_retina_AV_250_U_HP_2021.jpg" alt="AV 250 U">
-            <button type="button" class="gallery-arrow gallery-prev" onclick="galleryMove(this,-1)" aria-label="前の画像">&#10094;</button>
-            <button type="button" class="gallery-arrow gallery-next" onclick="galleryMove(this,1)" aria-label="次の画像">&#10095;</button>
-          </div>
-          <div class="gallery-thumbs">
-            <img class="gallery-thumb active" src="https://www.seydelmann.com/uploads/machine/image/26/medium_retina_AE130_HP_10.2021.jpg" alt="SEYDELMANN グラインダー AE130" onclick="galleryGo(this,0)">
-            <img class="gallery-thumb" src="https://www.seydelmann.com/uploads/machine/image/85/medium_retina_AE130-3_10.2021.jpg" alt="AE130-3" onclick="galleryGo(this,1)">
-            <img class="gallery-thumb" src="https://www.seydelmann.com/uploads/machine/image/32/medium_retina_AU_200_U_HP_2021.jpg" alt="AU 200 U" onclick="galleryGo(this,2)">
-            <img class="gallery-thumb" src="https://www.seydelmann.com/uploads/machine/image/33/medium_retina_AV_250_U_HP_2021.jpg" alt="AV 250 U" onclick="galleryGo(this,3)">
-          </div>
+        <!-- ── 製品紹介動画（YouTube埋め込み） ── -->
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/C9xDpmVwsy0" title="Seydelmann WD 114　グラインダー｜ムルチバック・ジャパン" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
       </div>
@@ -262,12 +255,12 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font
   <section id="gallery-photos" style="margin-bottom:60px">
     <div class="wf-section">ギャラリー</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <img class="gallery-photo" src="https://www.seydelmann.com/uploads/machine/image/26/medium_retina_AE130_HP_10.2021.jpg" alt="SEYDELMANN グラインダー AE130" loading="lazy">
+      <img class="gallery-photo" src="https://www.seydelmann.com/uploads/machine/image/85/medium_retina_AE130-3_10.2021.jpg" alt="AE130-3" loading="lazy">
+      <img class="gallery-photo" src="https://www.seydelmann.com/uploads/machine/image/32/medium_retina_AU_200_U_HP_2021.jpg" alt="AU 200 U" loading="lazy">
+      <img class="gallery-photo" src="https://www.seydelmann.com/uploads/machine/image/33/medium_retina_AV_250_U_HP_2021.jpg" alt="AV 250 U" loading="lazy">
       <div class="wf-img" style="height:180px;border-radius:6px">[稼働シーン01]</div>
       <div class="wf-img" style="height:180px;border-radius:6px">[稼働シーン02]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[稼働シーン03]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品ディテール01]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品ディテール02]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品ディテール03]</div>
     </div>
   </section>
 
