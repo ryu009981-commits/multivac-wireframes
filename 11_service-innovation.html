@@ -109,6 +109,46 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
 .mv-overlay { position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; background:rgba(0,24,64,.5); padding:0 0 24px calc(max(24px, 50% - 576px)); }
 .mv-title { color:#fff; font-size:38px; font-weight:900; letter-spacing:2px; margin-bottom:10px; text-shadow:0 2px 8px rgba(0,0,0,.4); }
 .mv-en { color:rgba(255,255,255,.8); font-size:14px; letter-spacing:4px; }
+
+/* ── LICページ ── */
+.lic-sec { scroll-margin-top:80px; margin-bottom:48px; }
+.lic-sub { font-size:14px; color:#555; line-height:1.8; margin:-4px 0 12px; }
+.lic-body { font-size:14px; line-height:2; color:#444; margin-bottom:16px; }
+.lic-list { font-size:13px; line-height:2; color:#444; padding-left:18px; margin:0; }
+.lic-list.cols { columns:2; column-gap:32px; }
+.lic-note { font-size:12px; line-height:1.9; color:#666; background:#f7f7f7; border-left:3px solid #ccc; padding:10px 14px; margin-top:12px; }
+.accordion { border:1px solid #e0e0e0; border-radius:6px; overflow:hidden; margin-bottom:8px; }
+.accordion-head { background:#f9f9f9; padding:14px 18px; font-size:14px; font-weight:bold; color:#333; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+.accordion-head:hover { background:#f0f4ff; }
+.accordion-icon { font-size:18px; color:#003087; transition:transform .2s; }
+.accordion-icon.open { transform:rotate(45deg); }
+.accordion-body { display:none; padding:16px 18px; font-size:13px; color:#444; line-height:1.9; border-top:1px solid #e0e0e0; }
+.accordion-body.show { display:block; }
+.btn-lic { display:inline-block; background:#003087; color:#fff; padding:11px 26px; border-radius:4px; font-size:13px; text-decoration:none; margin:12px 8px 0 0; }
+.btn-lic:hover { background:#00246b; }
+.btn-lic.ghost { background:#fff; color:#003087; border:2px solid #003087; padding:9px 24px; }
+.btn-lic.ghost:hover { background:#f0f4ff; }
+.lic-feat { border:1px solid #dde3ee; border-radius:6px; padding:18px 16px; background:#fff; }
+.lic-feat b { display:inline-block; background:#003087; color:#fff; font-size:11px; padding:3px 10px; border-radius:12px; margin-bottom:10px; }
+.lic-feat p { font-size:13px; line-height:1.8; color:#333; }
+.lic-pill { display:inline-block; border:1px solid #003087; color:#003087; background:#fff; padding:7px 14px; border-radius:20px; font-size:12.5px; text-decoration:none; margin:4px 6px 4px 0; }
+.lic-pill:hover { background:#003087; color:#fff; }
+.lic-pill-group { margin-bottom:20px; }
+.lic-pill-group h4 { font-size:13px; font-weight:bold; color:#003087; margin-bottom:8px; }
+.lic-compare { background:#f0f4ff; border:2px solid #003087; border-radius:8px; padding:28px; }
+.lic-flow { display:grid; grid-template-columns:56px 1fr; gap:16px; align-items:start; padding:16px 0; border-bottom:1px dashed #ddd; }
+.lic-flow-no { background:#003087; color:#fff; width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:16px; }
+.lic-flow h4 { font-size:15px; color:#003087; margin-bottom:6px; }
+.lic-flow p { font-size:13px; line-height:1.9; color:#555; }
+.lic-person { display:flex; gap:20px; align-items:flex-start; background:#fff; border:1px solid #e0e0e0; border-radius:6px; padding:20px; }
+.lic-person img { width:120px; height:120px; object-fit:cover; border-radius:6px; background:#f4f5f7; flex:0 0 120px; }
+.lic-person h4 { font-size:16px; color:#003087; margin-bottom:2px; }
+.lic-person .en { font-size:11px; color:#888; letter-spacing:1px; margin-bottom:4px; }
+.lic-person .role { font-size:12px; color:#666; margin-bottom:10px; }
+.lic-case { background:#fff; border:1px solid #e0e0e0; border-radius:6px; padding:20px; }
+.lic-case h4 { font-size:15px; color:#003087; margin-bottom:12px; }
+.lic-case dt { font-size:12px; font-weight:bold; color:#003087; margin-top:12px; }
+.lic-case dd { font-size:13px; line-height:1.9; color:#444; }
 </style>
 </head>
 <body>
@@ -147,103 +187,797 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
 <div class="breadcrumb"><div class="l-wrap"><a href="index.html">HOME</a><span>›</span><span>サービス</span><span>›</span><span>ローカルイノベーションセンター（LIC）</span></div></div>
 <div class="l-wrap" style="padding-top:32px;padding-bottom:60px">
   <div class="page-head">
-    <p class="hero-en">LOCAL INNOVATION CENTER（LIC）</p>
+    <p class="hero-en">MULTIVAC JAPAN Local Innovation Center</p>
     <h1>ローカルイノベーションセンター（LIC）</h1>
-    <p style="font-size:14px;line-height:1.8;color:#555;margin-top:12px;max-width:720px">ローカルイノベーションセンター（LIC）は、豊富なテスト金型・フィルムを活用した包装検証を起点に、食品加工・製パン工程までを実機で一貫してテスト・検証できる、MULTIVAC Japanの技術開発拠点です。</p>
+    <p style="font-size:17px;line-height:1.9;color:#003087;font-weight:bold;margin-top:14px">食品・工業製品・医療機器の包装最適化から<br>食品の加工品質向上・利益率改善・商品開発サポートまで。<br>実機と実製品による検証で、お客様ごとの最適解を導きます。</p>
+    <p class="lic-body" style="margin-top:16px;max-width:900px">MULTIVAC JAPAN Local Innovation Center（LIC）は、お客様の原料や製品を使用し、食品の加工・包装テスト、食品・家庭用品・工業製品・医療機器の包装テスト、商品開発、工程改善を行う実証拠点です。加工方法、包装技術、包装資材、設備構成を比較・検証し、品質、生産性、コスト、流通条件などを総合的に考慮したソリューションをご提案します。</p>
+    <p><a href="19_contact.html" class="btn-lic">&#x2709; LICにテスト・課題相談を申し込む</a><a href="19_contact.html" class="btn-lic ghost">LICの見学を申し込む</a></p>
   </div>
 
-  <div style="display:flex;gap:48px;align-items:center;margin-bottom:48px">
-    <p style="flex:1;font-size:15px;line-height:2;color:#444">包装は製品価値を左右する重要な要素です。<br>LICでは包装を起点に、製品特性や加工条件まで踏み込んだ検証を実施します。<br>実機と実サンプルを用いて、机上では得られない現場に即した最適な判断と提案を行います。</p>
-    <div class="wf-img" style="flex:0 0 45%;height:280px">[LIC施設全景・テスト室写真]</div>
-  </div>
+  <section class="lic-sec">
+    <div class="wf-section">実際の原料・製品で検証できる環境</div>
+    <div class="l-grid3" style="margin-bottom:16px">
+      <div class="lic-feat"><b>300種類以上</b><p>包装テストに対応するテスト金型</p></div>
+      <div class="lic-feat"><b>機能性も外観も</b><p>包装テスト用の多彩なテストフィルム</p></div>
+      <div class="lic-feat"><b>実物で検証</b><p>お客様の原料・製品を持ち込んでテスト</p></div>
+      <div class="lic-feat"><b>加工から包装まで</b><p>食品の加工・成形・充填・包装を一貫して検証</p></div>
+      <div class="lic-feat"><b>比較して選べる</b><p>複数の設備、加工方法、包装技術、包装資材を比較</p></div>
+    </div>
+    <p class="lic-body">LICには、300種類以上のテスト金型、多彩なテスト用フィルム、深絞り包装機、スキンパック専用深絞り包装機、トレーシーラー、チャンバー型真空包装機などの包装設備に加え、食品の加工、成形、充填、定量化、ベーカリー製品の製造に対応する設備を備えています。</p>
+  </section>
 
-  <!-- LICで実施できる検証 -->
-  <div class="wf-section">LICで実施できる主な検証</div>
-  <div class="l-grid3" style="margin-bottom:40px">
-    <div class="wf-box" style="text-align:center"><p style="font-size:20px;margin-bottom:8px">📦</p><p style="font-size:13px;font-weight:bold;color:#003087">包装検証</p></div>
-    <div class="wf-box" style="text-align:center"><p style="font-size:20px;margin-bottom:8px">🥩</p><p style="font-size:13px;font-weight:bold;color:#003087">食品加工機による製造検証</p></div>
-    <div class="wf-box" style="text-align:center"><p style="font-size:20px;margin-bottom:8px">🔗</p><p style="font-size:13px;font-weight:bold;color:#003087">加工から包装までの一貫検証</p></div>
-    <div class="wf-box" style="text-align:center"><p style="font-size:20px;margin-bottom:8px">🍞</p><p style="font-size:13px;font-weight:bold;color:#003087">WOB（World of Bakery）での製パン検証</p></div>
-    <div class="wf-box" style="text-align:center"><p style="font-size:20px;margin-bottom:8px">🎓</p><p style="font-size:13px;font-weight:bold;color:#003087">技術セミナー・講習会</p></div>
-  </div>
+  <section class="lic-sec">
+    <div class="wf-section">LICとは</div>
+    <p class="lic-sub" style="font-size:16px;font-weight:bold;color:#003087">単なるショールームやテストセンターではありません</p>
+    <p class="lic-body">MULTIVAC JAPAN Local Innovation Center（LIC）とは、食品の加工・包装テストと、食品・家庭用品・工業製品・医療機器などの包装テストを、実機と実製品で行うムルチバック・ジャパンの実証拠点です。包装仕様の最適化、賞味期限の延長、包装資材の見直し、輸出対応、食品の商品開発、歩留まり改善、自動化、省人化など、お客様が抱える課題を実際の原料や製品を用いて検証します。包装機、食品加工機、包装資材、検査・自動化技術を組み合わせ、機械単体ではなく、加工・包装工程全体の視点から、お客様の製品や製造環境に適したプロセスの構築を支援します。設備や包装方法が決まっていない段階でもご相談いただけます。</p>
+    <div class="wf-img" style="height:280px">[LIC施設全景・テスト室写真]</div>
+  </section>
 
-  <!-- 包装検証 -->
-  <div class="wf-section">包装検証（Packaging Test）</div>
-  <div class="l-grid2" style="margin-bottom:40px;gap:32px">
-    <div>
-      <p style="font-size:14px;line-height:1.9;color:#444;margin-bottom:16px">LICでは、包装検討を最優先テーマとし、多様な包装仕様・包装形態の検証を行っています。テスト金型・フィルムを豊富に保有し、実機を用いたサンプル包装・条件比較をスピーディーに実施できます。</p>
-      <div class="wf-box">
-        <h3 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:10px">テスト環境の特長</h3>
-        <ul style="font-size:13px;line-height:2.1;padding-left:16px;color:#444">
-          <li>テスト金型・フィルムを豊富に保有</li>
-          <li>スキンパック・真空包装・MAP（ガス置換）・含気包装など多様な包装方式に対応</li>
-          <li>実機を用いたサンプル包装・条件比較が可能</li>
-          <li>包装改善・賞味期限延長・SFPによる工程効率化などの課題解決支援</li>
-        </ul>
+  <section class="lic-sec">
+    <div class="wf-section">課題・目的から探す</div>
+    <p class="lic-sub"><strong>このような課題をご相談いただけます</strong><br>気になる課題を選択すると、LICで検証できる内容をご覧いただけます。</p>
+    <div class="lic-pill-group">
+      <h4>包装・保存・物流に関する課題</h4>
+      <a href="#packaging-optimization" class="lic-pill">&#8250; 賞味期限を延ばしたい</a>
+      <a href="#packaging-optimization" class="lic-pill">&#8250; 包装仕様や包装資材を見直したい</a>
+      <a href="#packaging-materials" class="lic-pill">&#8250; 包装資材の使用量やコストを削減したい</a>
+      <a href="#packaging-materials" class="lic-pill">&#8250; 新しい包装資材や環境対応包材を検討したい</a>
+      <a href="#packaging-optimization" class="lic-pill">&#8250; 包装をコンパクトにして物流効率を改善したい</a>
+      <a href="#packaging-optimization" class="lic-pill">&#8250; 遠方や海外への販売に適した包装を検討したい</a>
+      <a href="#comparison-testing" class="lic-pill">&#8250; 製品に合う包装方法を比較したい</a>
+    </div>
+    <div class="lic-pill-group">
+      <h4>自動化・量産化に関する課題</h4>
+      <a href="#packaging-automation" class="lic-pill">&#8250; 包装工程を自動化・省人化したい</a>
+      <a href="#comparison-testing" class="lic-pill">&#8250; 設備導入前に実際の製品でテストしたい</a>
+      <a href="#scale-up-support" class="lic-pill">&#8250; 試作品を量産可能な商品へ発展させたい</a>
+    </div>
+    <div class="lic-pill-group">
+      <h4>食品加工・商品開発に関する課題</h4>
+      <a href="#export-support" class="lic-pill">&#8250; 輸出先国の規制やHACCP等を見据えた設備・工程を検討したい</a>
+      <a href="#food-processing-improvement" class="lic-pill">&#8250; 食品加工の歩留まりを改善したい</a>
+      <a href="#food-processing-improvement" class="lic-pill">&#8250; 原料や副産物を有効活用したい</a>
+      <a href="#food-product-development" class="lic-pill">&#8250; 新商品や新カテゴリー商品を開発したい</a>
+      <a href="#comparison-testing" class="lic-pill">&#8250; 複数の加工方法や包装方法を比較したい</a>
+      <a href="#food-expertise" class="lic-pill">&#8250; ハム・ソーセージの開発や品質改善を相談したい</a>
+      <a href="#world-of-bakery" class="lic-pill">&#8250; ベーカリー製品を開発・改良したい</a>
+    </div>
+    <div class="lic-pill-group">
+      <h4>工業製品の包装に関する課題</h4>
+      <a href="#industrial-packaging" class="lic-pill">&#8250; 工業製品を包装内で固定・保護したい</a>
+      <a href="#industrial-packaging" class="lic-pill">&#8250; 工業製品の防湿・防塵・防錆包装を検討したい</a>
+    </div>
+    <div class="lic-pill-group">
+      <h4>医療機器の包装に関する課題</h4>
+      <a href="#medical-packaging" class="lic-pill">&#8250; 医療機器の包装仕様を検討したい</a>
+    </div>
+  </section>
+
+  <div class="wf-section" style="font-size:16px">LICでできること</div>
+
+  <section class="lic-sec" id="packaging-optimization">
+    <h3 style="font-size:19px;font-weight:900;color:#003087;margin-bottom:6px">包装の最適化</h3>
+    <p class="lic-sub">製品と流通条件に適した包装を検証します</p>
+    <p class="lic-body">製品の形状や特性、求められる品質、流通・保管条件、販売形態などを踏まえ、包装技術、包装形態、包装資材、包装条件を比較します。包装後の品質や外観だけでなく、包装資材の使用量、作業性、物流・保管効率なども考慮し、製品ごとに適した包装仕様を検討します。</p>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">対応内容<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>真空包装</li>
+        <li>MAP包装</li>
+        <li>スキンパック</li>
+        <li>含気包装</li>
+        <li>ロングライフ包装</li>
+        <li>輸出向け包装</li>
+        <li>包装技術・包装形態の選定</li>
+        <li>製品形状に合わせた包装形状の提案</li>
+        <li>包装資材の選定</li>
+        <li>包装のコンパクト化</li>
+        <li>包材の薄肉化・省資材化</li>
+        <li>テスト金型による包装サンプルの試作</li>
+        <li>真空度・シール温度などの包装条件検証</li>
+      </ul>
       </div>
     </div>
-    <div class="wf-img" style="height:280px">[包装検証テスト室・サンプル写真]</div>
-  </div>
-
-  <!-- 食品加工機による製造検証 -->
-  <div class="wf-section">食品加工機による製造検証（Processing Test）</div>
-  <div class="l-grid2" style="margin-bottom:40px;gap:32px">
-    <div class="wf-img" style="height:260px">[食品加工機テスト風景]</div>
-    <div>
-      <p style="font-size:14px;line-height:1.9;color:#444;margin-bottom:16px">お客様が原材料を持ち込み、食品加工機を使用した製造検証を行っています。製品状態を把握したうえで、後工程となる包装への適性評価まで行うことが可能です。</p>
-      <div class="wf-box">
-        <h3 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:10px">主なテスト内容</h3>
-        <ul style="font-size:13px;line-height:2.1;padding-left:16px;color:#444">
-          <li>チョッパー／カッター／エマルシファイヤーなど複数機械による仕上がり比較</li>
-          <li>同一原材料・同一条件での工程差検証</li>
-          <li>食感・風味・結着性・乳化状態・見た目・歩留まりの確認</li>
-        </ul>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">このような課題に<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>賞味期限を延ばしたい</li>
+        <li>遠方や海外へ販売したい</li>
+        <li>包装仕様を見直したい</li>
+        <li>包装資材の使用量やコストを削減したい</li>
+        <li>包装をコンパクトにしたい</li>
+        <li>物流・保管効率を改善したい</li>
+        <li>実際の製品で包装サンプルを作りたい</li>
+      </ul>
       </div>
     </div>
-  </div>
+    <p><a href="19_contact.html" class="btn-lic">この課題をLICに相談する</a></p>
+    <div class="wf-note">&#9733; 仕様 &#8212; 各分野のCTAは共通の問い合わせフォームへ遷移し、クリックした分野が「相談内容」にあらかじめ選択された状態で開く</div>
+  </section>
 
-  <!-- WOB -->
-  <div class="wf-section">WOB（World of Bakery：製パン分野）</div>
-  <div class="l-grid2" style="margin-bottom:40px;gap:32px">
-    <div>
-      <p style="font-size:14px;line-height:1.9;color:#444;margin-bottom:16px">LIC内のWOB（ワールド・オブ・ベーカリー）では、ヨーロッパ製の製パン機器を使用したテスト・試作・検証を行っています。生地づくりから焼成・包装までを一連の流れで確認できる、テストキッチン型の施設です。</p>
-      <div class="wf-box">
-        <h3 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:10px">WOBで実現できる検証</h3>
-        <ul style="font-size:13px;line-height:2.1;padding-left:16px;color:#444">
-          <li>生地作りから焼成までの製パン工程</li>
-          <li>同一材料を用いた複数機械での仕上がり比較</li>
-          <li>製パン後の包装テスト・サンプル作成</li>
-          <li>製パン機・食品加工機・包装機を用いた一貫検証</li>
-          <li>ドイツ本社ドウ・スペシャリストによる講習会</li>
-          <li>1日1社限定の貸切インハウスセミナー対応</li>
-        </ul>
+  <section class="lic-sec" id="packaging-automation">
+    <h3 style="font-size:19px;font-weight:900;color:#003087;margin-bottom:6px">包装工程の自動化・効率化</h3>
+    <p class="lic-sub">製品供給から包装後の搬送まで、工程全体を検証します</p>
+    <p class="lic-body">製品供給から包装、印刷、検査、選別、搬送まで、包装工程全体を見据えた自動化・効率化を検討します。実製品によるテストを通じて、製品を安定して供給できるか、目標とする包装品質や生産能力を確保できるかを確認し、お客様の製品と生産条件に適したライン構成をご提案します。</p>
+    <p class="lic-body">工業製品では、自動連続包装や自動投入ロボットとの連動による省人化・生産能力向上を検討できます。医療機器では、自動投入、印刷、検査、シール、良品・不良品の選別を含む包装ラインの構築を支援します。</p>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">対応内容<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>製品の供給・整列・投入方法の検討</li>
+        <li>包装機への自動投入テスト</li>
+        <li>包装条件と生産能力の確認</li>
+        <li>包装前後工程との接続検討</li>
+        <li>印刷・ラベリング工程の組み込み</li>
+        <li>印字・外観・製品有無などの検査工程の検討</li>
+        <li>良品・不良品の選別方法の検討</li>
+        <li>包装後の排出・搬送方法の検討</li>
+        <li>包装ライン全体のボトルネック確認</li>
+        <li>品種切り替えや段取りを考慮した運用設計</li>
+        <li>将来の生産量増加を考慮した拡張性の検討</li>
+      </ul>
       </div>
     </div>
-    <div class="wf-img" style="height:280px">[WOBテストキッチン写真]</div>
-  </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">このような課題に<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>包装工程の人手を削減したい</li>
+        <li>製品の供給や整列を自動化したい</li>
+        <li>作業者による包装品質のばらつきを抑えたい</li>
+        <li>生産能力を向上させたい</li>
+        <li>印刷・検査・選別まで自動化したい</li>
+        <li>包装前後の工程を連携させたい</li>
+        <li>導入前に包装ラインの成立性を確認したい</li>
+        <li>将来の増産に対応できるラインを検討したい</li>
+      </ul>
+      </div>
+    </div>
+    <p><a href="19_contact.html" class="btn-lic">この課題をLICに相談する</a></p>
+  </section>
 
-  <!-- よくあるご質問 -->
-  <div class="wf-section">よくあるご質問</div>
-  <div style="margin-bottom:40px">
-    <div class="wf-box" style="margin-bottom:12px">
-      <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:6px">Q. LICでは包装テストが主な目的ですか？</p>
-      <p style="font-size:13px;line-height:1.8;color:#555">いいえ。LICは包装検証・食品加工検証・製パン検証に対応する技術開発拠点です。加工から包装まで、製パンから包装までを実機で一貫して検証できることが大きな特長です。</p>
+  <section class="lic-sec" id="packaging-materials">
+    <h3 style="font-size:19px;font-weight:900;color:#003087;margin-bottom:6px">包装資材の開発・評価</h3>
+    <p class="lic-sub">包装機、製品、包装資材の組み合わせを検証します</p>
+    <p class="lic-body">ムルチバック・ジャパン包材部開発課と連携し、包装資材の選定・評価や、新しい包装フィルムの共同開発を行います。フィルム単体の性能だけでなく、内容物との相性、成形性、シール性、包装機での安定稼働などを実機で確認します。品質、生産性、コスト、環境対応の観点から、製品に適した包装資材を検討します。</p>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">対応内容<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>包装フィルムの共同開発</li>
+        <li>内容物と包材の相性確認</li>
+        <li>バリア構成の検討・評価</li>
+        <li>包装適性試験</li>
+        <li>成形性・シール性の確認</li>
+        <li>包材の薄肉化</li>
+        <li>モノマテリアル化の検討</li>
+        <li>リサイクル性を考慮した包材検討</li>
+        <li>保存試験</li>
+        <li>包材変更時の実機テスト</li>
+      </ul>
+      </div>
     </div>
-    <div class="wf-box" style="margin-bottom:12px">
-      <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:6px">Q. テスト金型やフィルムは用意されていますか？</p>
-      <p style="font-size:13px;line-height:1.8;color:#555">はい。豊富なテスト金型・テストフィルムを常備しており、実機でのスピーディーな包装検証が可能です。</p>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">このような課題に<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>新しい包装資材を開発したい</li>
+        <li>製品に適した包材構成を確認したい</li>
+        <li>内容物と包装資材の相性を検証したい</li>
+        <li>包材を薄肉化したい</li>
+        <li>環境対応包材への切り替えを検討したい</li>
+        <li>包材変更後の成形性やシール性を確認したい</li>
+        <li>包装資材と包装条件を同時に見直したい</li>
+      </ul>
+      </div>
     </div>
-    <div class="wf-box">
-      <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:6px">Q. 原材料を持ち込んで加工から包装まで確認できますか？</p>
-      <p style="font-size:13px;line-height:1.8;color:#555">可能です。食品加工機による製造テストから、包装機による最終包装までを一貫して行えます。</p>
-    </div>
-  </div>
+    <p><a href="19_contact.html" class="btn-lic">この課題をLICに相談する</a></p>
+  </section>
 
-  <div style="background:#003087;color:#fff;padding:40px;border-radius:6px;text-align:center">
-    <h3 style="font-size:20px;margin-bottom:8px">包装・加工・製パンのテスト／検証／見学を相談する</h3>
-    <p style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:20px">まずはお気軽にお問い合わせください。</p>
-    <a href="19_contact.html" class="btn-primary" style="background:#fff;color:#003087;display:inline-block;padding:12px 32px;text-decoration:none;border-radius:4px">お問い合わせ</a>
-  </div>
+  <section class="lic-sec" id="food-processing-improvement">
+    <h3 style="font-size:19px;font-weight:900;color:#003087;margin-bottom:6px">食品加工工程の改善・利益率改善</h3>
+    <p class="lic-sub">加工条件と工程を比較し、生産性向上を支援します</p>
+    <p class="lic-body">食品加工工程を実機で検証し、歩留まり、原料使用量、定量精度、生産能力、品質再現性、作業性などを比較します。加工方法、設備、工程構成を見直すことで、品質を維持・向上しながら、原料ロスの削減、工程の効率化、省人化、利益率改善を支援します。</p>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">対応内容<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>歩留まり改善</li>
+        <li>原料・副産物の有効活用</li>
+        <li>過充填・ギブアウェイの削減</li>
+        <li>定量化・充填精度の向上</li>
+        <li>原価低減</li>
+        <li>加工工程の自動化・省人化</li>
+        <li>工程削減</li>
+        <li>生産能力の向上</li>
+        <li>加工条件の標準化</li>
+        <li>加工から包装までの工程検討</li>
+      </ul>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">検証・提案例<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>原料副産物を活用した商品化</li>
+        <li>ミートインミートによる原料活用</li>
+        <li>アルギン酸ケーシングを活用した商品提案</li>
+        <li>充填精度向上による過充填の削減</li>
+        <li>加工方法の比較による歩留まり改善</li>
+        <li>自動化による作業人数・作業負荷の軽減</li>
+      </ul>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">このような課題に<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>原料価格の高騰に対応したい</li>
+        <li>食品加工の歩留まりを改善したい</li>
+        <li>原料ロスや過充填を削減したい</li>
+        <li>原料や副産物を有効活用したい</li>
+        <li>同じ品質を安定して再現したい</li>
+        <li>工程を減らして生産性を向上させたい</li>
+        <li>人手不足に対応したい</li>
+        <li>製品単位の利益率を改善したい</li>
+      </ul>
+      </div>
+    </div>
+    <p><a href="19_contact.html" class="btn-lic">この課題をLICに相談する</a></p>
+  </section>
+
+  <section class="lic-sec" id="export-support">
+    <h3 style="font-size:19px;font-weight:900;color:#003087;margin-bottom:6px">輸出対応を見据えた設備・工程検証</h3>
+    <p class="lic-sub">輸出する商品と流通条件に適した加工・包装工程を検討します</p>
+    <p class="lic-body">食品を輸出する際には、輸出先国・地域の規制や取引先の要求に応じた施設・設備、衛生管理、品質保持などが求められる場合があります。LICでは、輸出する商品や流通条件を踏まえ、食品加工機、包装機、包装資材、検査・自動化技術を組み合わせた設備・工程を実機で検証します。加工・包装後の品質、賞味期限、生産能力、作業性、衛生性、温度管理、検査、トレーサビリティなど、輸出を見据えた製造・包装ラインの構築を支援します。</p>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">対応内容<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>輸出向け商品の加工・包装テスト</li>
+        <li>輸出先国や流通条件を考慮した包装仕様の検討</li>
+        <li>賞味期限延長・ロングライフ化の検討</li>
+        <li>真空包装、MAP包装、スキンパックなどの比較</li>
+        <li>冷凍・冷蔵流通を想定した工程検討</li>
+        <li>食品加工・包装設備の衛生性や清掃性の確認</li>
+        <li>製品供給から包装、検査、搬送までのライン検討</li>
+        <li>異物検査、印字検査、ラベリング工程の検討</li>
+        <li>生産能力と品質再現性の確認</li>
+        <li>包装資材と包装条件の検証</li>
+        <li>輸出商品の量産化を見据えた工程設計</li>
+      </ul>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">このような課題に<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>食品の輸出を新たに開始したい</li>
+        <li>輸出先国や取引先の要求に対応する設備を検討したい</li>
+        <li>HACCP等を見据えた加工・包装ラインを構築したい</li>
+        <li>国際認証の取得に向けて設備や工程を見直したい</li>
+        <li>輸出に必要な賞味期限を確保したい</li>
+        <li>冷凍・冷蔵流通に適した加工・包装方法を確認したい</li>
+        <li>設備導入前に実際の商品で工程を検証したい</li>
+        <li>輸出向け商品の量産性や採算性を確認したい</li>
+      </ul>
+      </div>
+    </div>
+    <p class="lic-note">※LICでは、輸出対応を見据えた加工・包装設備、包装資材、工程構成などの検討と実機検証を支援します。輸出先国・地域の規制、認定・認証および補助事業の対象要件については、関係機関または各分野の専門家へご確認ください。</p>
+    <p><a href="19_contact.html" class="btn-lic">輸出対応を見据えた設備・工程について相談する</a></p>
+  </section>
+
+  <section class="lic-sec" id="food-product-development">
+    <h3 style="font-size:19px;font-weight:900;color:#003087;margin-bottom:6px">食品の商品開発</h3>
+    <p class="lic-sub">アイデアを、実際の商品へ</p>
+    <p class="lic-body">原料や加工方法の検討から、成形、充填、定量化、包装、保存・流通方法までを組み合わせ、新商品や新カテゴリー商品の開発を支援します。試作品を作るだけでなく、実際の製造現場への展開を見据え、生産能力、品質再現性、歩留まり、包装適性などを確認します。</p>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">対応分野の一例<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>食肉加工品</li>
+        <li>乳製品</li>
+        <li>惣菜</li>
+        <li>ベーカリー</li>
+        <li>プラントベース食品</li>
+        <li>ペットフード</li>
+        <li>介護食</li>
+        <li>高たんぱく食品</li>
+      </ul>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">支援内容<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>原料特性に応じた加工方法の検討</li>
+        <li>食感・形状・粒度などの商品設計</li>
+        <li>成形・充填・定量化の検証</li>
+        <li>加工条件の比較</li>
+        <li>試作品の製造</li>
+        <li>包装方法・包装資材の選定</li>
+        <li>保存・流通方法を考慮した包装設計</li>
+        <li>量産化を見据えた工程構築</li>
+        <li>海外の加工技術や事例を活用した商品提案</li>
+      </ul>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">このような課題に<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>商品のアイデアを実際の形にしたい</li>
+        <li>他社との差別化につながる商品を開発したい</li>
+        <li>既存商品に新しい食感や形状を加えたい</li>
+        <li>原料や副産物を活用した商品を開発したい</li>
+        <li>新しい市場や商品カテゴリーへ参入したい</li>
+        <li>加工と包装を組み合わせて商品価値を高めたい</li>
+        <li>試作品を量産可能な商品へ発展させたい</li>
+      </ul>
+      </div>
+    </div>
+    <p><a href="19_contact.html" class="btn-lic">この課題をLICに相談する</a></p>
+  </section>
+
+  <section class="lic-sec" id="industrial-packaging">
+    <h3 style="font-size:19px;font-weight:900;color:#003087;margin-bottom:6px">工業製品の包装テスト</h3>
+    <p class="lic-sub">製品の固定・保護から、物流効率の改善まで</p>
+    <p class="lic-body">電子部品、半導体関連製品、精密機器、各種工業部品などを対象に、製品の形状や特性、輸送・保管条件に適した包装を検討します。実製品を用いた包装テストにより、製品の固定・保護、防湿・防塵・防錆、包装のコンパクト化、副資材の削減、自動化など、製品ごとの課題に適した包装仕様を導き出します。</p>
+    <p class="lic-body">電子部品、半導体関連製品、精密機器、ボールベアリング、チェーン、切削工具、サービスパーツ、消耗品など、さまざまな工業製品の包装をご提案します。</p>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">対応内容<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>製品形状に合わせた包装形態の検討</li>
+        <li>包装による製品の固定・保護</li>
+        <li>真空包装・ガス置換包装・スキンパックの比較</li>
+        <li>防湿・防塵・防錆包装の検討</li>
+        <li>包装資材・フィルム構成の選定</li>
+        <li>緩衝材・乾燥剤・防錆紙などの副資材削減</li>
+        <li>包装のコンパクト化</li>
+        <li>積載効率・保管効率・物流効率の改善</li>
+        <li>大型品・重量物の包装</li>
+        <li>包装工程の自動化・省人化</li>
+        <li>包装サンプルの試作</li>
+      </ul>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">このような課題に<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>手作業による梱包負荷を軽減したい</li>
+        <li>製品を包装内で安定して固定したい</li>
+        <li>輸送時の接触や荷崩れによる損傷を防ぎたい</li>
+        <li>海外輸送に対応した防湿・防錆包装を検討したい</li>
+        <li>緩衝材や乾燥剤、防錆紙の使用量を削減したい</li>
+        <li>包装をコンパクトにして物流費を削減したい</li>
+        <li>大型品や重量物の包装を効率化したい</li>
+        <li>多品種・小ロット製品に適した包装を検討したい</li>
+        <li>包装工程を自動化したい</li>
+      </ul>
+      </div>
+    </div>
+    <p><a href="19_contact.html" class="btn-lic">この課題をLICに相談する</a></p>
+  </section>
+
+  <section class="lic-sec" id="medical-packaging">
+    <h3 style="font-size:19px;font-weight:900;color:#003087;margin-bottom:6px">医療機器の包装開発・テスト</h3>
+    <p class="lic-sub">製品と製造環境に適した包装仕様を検討します</p>
+    <p class="lic-body">医療機器の形状、包装材料、製造環境、求められる包装品質を踏まえ、包装形態、包装資材、成形・シール条件などを検討します。実製品によるサンプルテストを通じて各条件を確認し、お客様が実施する各種評価やバリデーションを見据えた包装仕様の構築を支援します。</p>
+    <p class="lic-body">メディカル製品向け包装機は、硬質・軟質プラスチックフィルム、アルミニウム多層フィルム、滅菌紙、タイベック&reg;などに対応し、印刷、検査、自動投入、不良品選別を含むライン構成を検討できます。</p>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">対応内容<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>製品形状に合わせた包装設計</li>
+        <li>深絞り成形・トップ成形の検討</li>
+        <li>包装形態・包装資材の選定</li>
+        <li>硬質・軟質プラスチックフィルムの検討</li>
+        <li>アルミニウム多層フィルムの検討</li>
+        <li>滅菌紙・タイベック&reg;を使用した包装テスト</li>
+        <li>成形・シール条件の確認</li>
+        <li>真空・ガス置換の有無を含む包装条件の検討</li>
+        <li>固有識別番号やバーコードなどの印刷方法の検討</li>
+        <li>印字内容・レイアウト・印刷品質の確認</li>
+        <li>製品の有無・種類・向き・位置などの検査方法の検討</li>
+        <li>少量多品種から大量生産までを見据えた設備構成</li>
+        <li>自動投入・印刷・検査・選別を含むライン構成</li>
+        <li>将来のライン拡張を考慮した仕様検討</li>
+      </ul>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">対象製品の一例<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>手術室用品</li>
+        <li>シングルユース製品</li>
+        <li>キット製品</li>
+        <li>研究室用品</li>
+        <li>インプラント</li>
+        <li>体外診断用製品</li>
+      </ul>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">このような課題に<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>新しい医療機器の包装仕様を検討したい</li>
+        <li>製品形状に合う包装サンプルを試作したい</li>
+        <li>複雑な形状に対応する成形方法を確認したい</li>
+        <li>包装資材と製品の適合性を確認したい</li>
+        <li>成形・シール条件を実機で検証したい</li>
+        <li>少量多品種と生産効率を両立したい</li>
+        <li>印刷や検査を含めて包装工程を自動化したい</li>
+        <li>クリーンルームへの導入を見据えて設備を検討したい</li>
+        <li>評価やバリデーションを見据えて包装条件を整理したい</li>
+      </ul>
+      </div>
+    </div>
+    <p><a href="19_contact.html" class="btn-lic">この課題をLICに相談する</a></p>
+  </section>
+
+  <section class="lic-sec" id="comparison-testing">
+    <div class="lic-compare">
+      <h3 style="font-size:22px;font-weight:900;color:#003087;margin-bottom:12px">LICなら、「試す」だけでなく「比較できる」</h3>
+      <p class="lic-body">LICの大きな特徴は、一つの設備で加工や包装を試すだけでなく、同じ原料・製品に複数の加工方法、包装技術、包装資材を適用し、その違いを比較できることです。</p>
+      <div class="l-grid2" style="gap:24px;margin-bottom:16px">
+        <div class="wf-box" style="background:#fff;margin-bottom:0">
+          <h4 style="font-size:15px;color:#003087;margin-bottom:8px">加工方法を比較する</h4>
+          <p style="font-size:13px;line-height:1.9;color:#444;margin-bottom:12px">同じ原料を異なる加工設備や条件で処理し、製品品質や生産性の違いを確認します。</p>
+          <p style="font-size:12px;font-weight:bold;color:#003087;margin-bottom:4px">比較項目</p>
+      <ul class="lic-list cols">
+        <li>歩留まり</li>
+        <li>食感</li>
+        <li>粒度</li>
+        <li>温度上昇</li>
+        <li>生産能力</li>
+        <li>品質再現性</li>
+        <li>作業性</li>
+        <li>清掃性</li>
+      </ul>
+          <p style="font-size:12px;font-weight:bold;color:#003087;margin:12px 0 4px">比較設備の一例</p>
+          <p style="font-size:13px;line-height:1.9;color:#444">Seydelmann ボウルカッター ／ Stephan UMシリーズ ／ Stephan MCシリーズ</p>
+        </div>
+        <div class="wf-box" style="background:#fff;margin-bottom:0">
+          <h4 style="font-size:15px;color:#003087;margin-bottom:8px">包装方法を比較する</h4>
+          <p style="font-size:13px;line-height:1.9;color:#444;margin-bottom:12px">同じ製品に異なる包装技術、包装資材、包装条件を適用し、包装後の品質、作業性、資材使用量などを比較します。</p>
+          <p style="font-size:12px;font-weight:bold;color:#003087;margin-bottom:4px">比較内容</p>
+      <ul class="lic-list cols">
+        <li>真空包装</li>
+        <li>MAP包装</li>
+        <li>スキンパック</li>
+        <li>包装フィルムの構成・厚み・色</li>
+        <li>包装形状・パック寸法</li>
+        <li>真空度・シール条件</li>
+        <li>包装資材使用量</li>
+      </ul>
+          <p style="font-size:12px;font-weight:bold;color:#003087;margin:12px 0 4px">評価項目</p>
+      <ul class="lic-list cols">
+        <li>保存性</li>
+        <li>ドリップ</li>
+        <li>外観</li>
+        <li>製品固定性</li>
+        <li>輸送適性</li>
+        <li>生産能力</li>
+        <li>作業性</li>
+        <li>包装資材コスト</li>
+        <li>物流・保管効率</li>
+      </ul>
+        </div>
+      </div>
+      <div class="wf-box" style="background:#fff;margin-bottom:0">
+        <h4 style="font-size:15px;color:#003087;margin-bottom:8px">外部施設と連携した評価</h4>
+        <p style="font-size:13px;line-height:1.9;color:#444;margin-bottom:8px">テストの目的に応じて、外部施設と連携し、次のような評価を行うことも可能です。</p>
+      <ul class="lic-list cols">
+        <li>保存試験</li>
+        <li>官能評価</li>
+        <li>物性評価</li>
+        <li>味覚センサー評価</li>
+      </ul>
+      </div>
+      <p><a href="19_contact.html" class="btn-lic">比較テストについて相談する</a></p>
+    </div>
+  </section>
+
+  <section class="lic-sec" id="scale-up-support">
+    <div class="wf-section">試作から量産化へ</div>
+    <p class="lic-sub">実際の製造現場への展開を見据えて検証します</p>
+    <p class="lic-body">試作品として成立することと、安定して量産できることは同じではありません。LICでは、試作結果をもとに、生産能力、品質再現性、歩留まり、作業性、清掃性などを確認し、実際の製造現場への展開を見据えた加工・包装工程の構築を支援します。</p>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">支援内容<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>試作条件の再現性確認</li>
+        <li>目標生産量に応じた設備・工程の検討</li>
+        <li>生産能力とボトルネックの確認</li>
+        <li>加工・包装条件の標準化</li>
+        <li>歩留まり・原料使用量の確認</li>
+        <li>人員配置・作業工程の検討</li>
+        <li>品種切り替え・段取り・清掃性の確認</li>
+        <li>包装資材や消耗品を含むランニングコストの確認</li>
+        <li>導入後の生産を想定した実機テスト</li>
+        <li>オペレーター向け実機トレーニング</li>
+      </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="lic-sec">
+    <div class="wf-section">LICでの検証テーマ例</div>
+    <div class="l-grid3" style="margin-bottom:8px">
+      <div class="lic-case">
+        <h4>工業製品の包装をコンパクト化</h4>
+        <dl>
+          <dt>課題</dt><dd>緩衝材を使用した梱包の作業負担や副資材コストを抑え、パッケージをコンパクト化したい。</dd>
+          <dt>LICで検証できること</dt><dd>実製品を持ち込み、真空包装やスキンパックなどの包装方法を試作。製品固定性、包装寸法、包装資材使用量、作業性、積載効率などを比較します。</dd>
+          <dt>検証によって確認できること</dt>
+          <dd><ul class="lic-list">
+        <li>製品を安定して固定・保護できるか</li>
+        <li>緩衝材などの副資材を削減できるか</li>
+        <li>包装をコンパクト化できるか</li>
+        <li>保管・輸送時の積載効率を改善できるか</li>
+        <li>包装工程を自動化できるか</li>
+      </ul></dd>
+        </dl>
+      </div>
+      <div class="lic-case">
+        <h4>食品加工方法による品質と歩留まりの比較</h4>
+        <dl>
+          <dt>課題</dt><dd>加工設備や条件の違いによって、製品の食感、温度上昇、歩留まり、生産能力がどのように変化するかを確認したい。</dd>
+          <dt>LICで検証できること</dt><dd>同じ原料を複数の食品加工設備や条件で処理し、品質と生産性の違いを比較します。</dd>
+          <dt>検証によって確認できること</dt>
+          <dd><ul class="lic-list">
+        <li>目標とする食感や粒度を再現できるか</li>
+        <li>加工中の温度上昇を抑えられるか</li>
+        <li>歩留まりを改善できるか</li>
+        <li>目標生産量を実現できるか</li>
+        <li>安定した品質を再現できるか</li>
+      </ul></dd>
+        </dl>
+      </div>
+      <div class="lic-case">
+        <h4>同じ食品による包装方法の比較</h4>
+        <dl>
+          <dt>課題</dt><dd>真空包装、MAP包装、スキンパックなど、どの包装方法が製品に適しているかを判断したい。</dd>
+          <dt>LICで検証できること</dt><dd>同じ製品に異なる包装技術、包装資材、包装条件を適用し、包装サンプルを作成します。</dd>
+          <dt>検証によって確認できること</dt>
+          <dd><ul class="lic-list">
+        <li>包装後の外観</li>
+        <li>ドリップの状態</li>
+        <li>保存性</li>
+        <li>包装資材の使用量</li>
+        <li>作業性と生産能力</li>
+        <li>輸送・保管への適性</li>
+        <li>包装コスト</li>
+      </ul></dd>
+        </dl>
+      </div>
+    </div>
+    <p><a href="19_contact.html" class="btn-lic">自社製品で検証できる内容を相談する</a></p>
+  </section>
+
+  <section class="lic-sec">
+    <div class="wf-section">専門設備と専門家が、検証を支えます</div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">包装開発・評価環境<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>300種類以上のテスト金型</li>
+        <li>多彩なテスト用フィルム</li>
+        <li>深絞り包装機（SFP（高温充填包装）対応）</li>
+        <li>スキンパック専用深絞り包装機</li>
+        <li>トレーシーラー</li>
+        <li>チャンバー型真空包装機</li>
+      </ul>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">食品加工設備<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>TVI</li>
+        <li>FRITSCH</li>
+        <li>handtmann</li>
+        <li>Seydelmann</li>
+        <li>Stephan</li>
+        <li>Schr&ouml;der</li>
+        <li>ESCHER</li>
+        <li>その他補助設備（コンベクションオーブン、液体急速凍結機など）</li>
+      </ul>
+      </div>
+    </div>
+    <p class="lic-body">複数の加工設備や条件を使用した同じ原料による比較テストにより、商品開発、品質改善、製造技術向上をサポートします。DLGコンテスト審査員を務めるドイツ国家認定食肉加工マイスターによる製造技術支援も魅力です。</p>
+  </section>
+
+  <section class="lic-sec" id="world-of-bakery">
+    <h3 style="font-size:19px;font-weight:900;color:#003087;margin-bottom:6px">World of Bakery</h3>
+    <p class="lic-sub">ベーカリー製品の開発・量産検証</p>
+    <p class="lic-body">クロワッサン、デニッシュ、プレッツェルをはじめとするベーカリー製品の生地開発、成形、包装、ロングライフ化、冷凍流通対応を支援します。</p>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">主な設備<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">
+      <ul class="lic-list cols">
+        <li>FRITSCH ROLLFIX prime</li>
+        <li>FRITSCH MULTIFLEX</li>
+        <li>FRITSCH MULTITWIST</li>
+        <li>ESCHER MW</li>
+        <li>ESCHER MR</li>
+        <li>その他補助設備（ホイロ（プルーファー）、ベーカリーオーブン）</li>
+      </ul>
+      </div>
+    </div>
+    <p class="lic-body">日本に数名しかいないドイツ国家認定製パンマイスターによる監修や、ドイツ本社のFRITSCHドウスペシャリストによる技術支援・講習会も実施しています。</p>
+  </section>
+
+  <section class="lic-sec" id="food-expertise">
+    <h3 style="font-size:19px;font-weight:900;color:#003087;margin-bottom:12px">Food Expertise</h3>
+    <div class="l-grid2" style="gap:24px">
+      <div class="lic-person">
+        <img src="images/lic-hayashi-seiji.jpg" alt="林 聖二（ドイツ国家認定 食肉加工マイスター）" loading="lazy">
+        <div>
+          <p style="font-size:11px;color:#003087;font-weight:bold;margin-bottom:4px">ドイツ国家認定 食肉加工マイスター</p>
+          <h4>林 聖二</h4>
+          <p class="en">Seiji Hayashi</p>
+          <p class="role">LIC（ローカルイノベーションセンター）所属</p>
+          <p style="font-size:13px;line-height:1.9;color:#444;margin-bottom:10px">ドイツ国家認定「食肉加工マイスター」資格を取得し、DLG国際品質競技会の食肉部門評価員としても活動。LICでは、ハム・ソーセージを中心とした商品開発、品質改善、製造技術の向上を支援しています。</p>
+          <p style="font-size:12px;font-weight:bold;color:#003087;margin-bottom:4px">支援内容</p>
+      <ul class="lic-list">
+        <li>ハム・ソーセージの商品開発</li>
+        <li>既存商品の品質改善</li>
+        <li>食品加工技術の向上</li>
+        <li>ハム・ソーセージ講習会</li>
+        <li>技術セミナー</li>
+        <li>実機トレーニング</li>
+      </ul>
+        </div>
+      </div>
+      <div class="lic-person">
+        <img src="images/lic-yamamoto-takeshi.png" alt="山本 毅（ドイツ国家認定製パンマイスター）" loading="lazy">
+        <div>
+          <p style="font-size:11px;color:#003087;font-weight:bold;margin-bottom:4px">ドイツ国家認定製パンマイスター</p>
+          <h4>山本 毅</h4>
+          <p class="en">Takeshi Yamamoto</p>
+          <p class="role">WOB（ワールドオブベーカリー）監修</p>
+          <p style="font-size:13px;line-height:1.9;color:#444;margin-bottom:10px">ドイツ国家認定の製パンマイスター資格を取得し、現在は本格ドイツパン専門店「アムフルス」を運営。日本では数少ないドイツ製パンマイスターとして、本場で培った製パン技術を日本に伝えています。World of Bakery（WOB）では、生地づくり、成形、発酵、焼成をはじめとした製パン技術と商品開発を監修します。</p>
+          <p style="font-size:12px;font-weight:bold;color:#003087;margin-bottom:4px">支援内容</p>
+      <ul class="lic-list">
+        <li>パン・ベーカリー製品の商品開発</li>
+        <li>既存商品の品質改善</li>
+        <li>製パン技術の向上</li>
+        <li>ベーカリーインハウスセミナー</li>
+        <li>技術セミナー</li>
+        <li>実機トレーニング</li>
+      </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lic-sec">
+    <div class="wf-section">世界の知見と、日本の現場をつなぐ</div>
+    <p class="lic-body">MULTIVACグループが世界各地で蓄積してきた技術や事例を、日本の原料、品質基準、流通、販売形態、製造環境に合わせて活用します。海外の事例をそのまま持ち込むのではなく、日本国内の現場課題と結び付け、お客様の製品と製造環境に適したソリューションを構築します。</p>
+    <p style="font-size:12px;font-weight:bold;color:#003087;margin-bottom:6px">活用する知見の一例</p>
+      <ul class="lic-list cols">
+        <li>欧州のロングライフ包装</li>
+        <li>海外におけるhandtmann ConProの活用</li>
+        <li>ベーカリー製品の量産事例</li>
+        <li>食肉加工の効率化事例</li>
+        <li>プラントベース食品の加工事例</li>
+        <li>工業製品・医療機器の包装事例</li>
+      </ul>
+  </section>
+
+  <section class="lic-sec">
+    <div class="wf-section">LICご利用の流れ</div>
+    <div class="lic-flow">
+      <div class="lic-flow-no">1</div>
+      <div><h4>ご相談・ヒアリング</h4><p>対象製品、現在の包装・加工工程、課題、目標とする品質、生産量、流通条件、ご希望時期などを確認します。具体的な設備や包装方法が決まっていない段階でもご相談いただけます。</p></div>
+    </div>
+    <div class="lic-flow">
+      <div class="lic-flow-no">2</div>
+      <div><h4>要件整理・テスト計画</h4><p>加工や包装に求める条件を整理し、使用設備、原料・製品、包装資材、比較条件、評価項目などを含むテスト内容をご提案します。</p></div>
+    </div>
+    <div class="lic-flow">
+      <div class="lic-flow-no">3</div>
+      <div><h4>原料・製品・資材の準備</h4><p>テスト内容に応じて、お客様の原料、製品、包装資材などをご用意いただきます。必要に応じて、テスト用の包装資材や金型をムルチバック・ジャパンで準備します。</p></div>
+    </div>
+    <div class="lic-flow">
+      <div class="lic-flow-no">4</div>
+      <div><h4>実機と実製品によるテスト</h4><p>実際の原料や製品を使用し、加工条件、包装技術、包装資材などを変更しながら検証します。複数の加工設備、包装方法、包装資材を使用した比較テストも可能です。</p></div>
+    </div>
+    <div class="lic-flow">
+      <div class="lic-flow-no">5</div>
+      <div><h4>比較・評価</h4><p>品質、歩留まり、生産能力、包装状態、作業性、包装資材使用量、コストなど、目的に応じた項目を確認します。必要に応じて、外部施設と連携した評価も検討します。</p></div>
+    </div>
+    <div class="lic-flow">
+      <div class="lic-flow-no">6</div>
+      <div><h4>ソリューションのご提案</h4><p>検証結果をもとに、設備、包装資材、加工・包装条件、自動化範囲、工程構成など、お客様の目的に適したソリューションをご提案します。</p></div>
+    </div>
+    <p><a href="19_contact.html" class="btn-lic">&#x2709; LICにテスト・課題相談を申し込む</a></p>
+  </section>
+
+  <section class="lic-sec">
+    <div class="wf-section">よくあるご質問</div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">Q. LICでは何ができますか？<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">A. 食品の加工・包装テスト、工業製品・医療機器などの包装テスト、包装資材の評価、包装工程の自動化検証、食品の商品開発、歩留まり改善、量産化検証などを行えます。</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">Q. 実際の原料や製品を持ち込めますか？<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">A. はい。お客様の原料や製品を使用し、実機で加工・包装条件を検証できます。必要量、搬入方法、保管条件などは、テスト内容に応じて事前にご案内します。</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">Q. 使用する機械が決まっていなくても相談できますか？<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">A. はい。機械や包装方法が決まっていない段階でもご相談いただけます。現在の課題と目標を伺い、使用設備や検証方法をご提案します。</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">Q. 複数の加工方法や包装方法を比較できますか？<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">A. はい。同じ原料や製品に複数の加工方法、包装技術、包装資材、条件を適用し、品質、生産性、作業性、コストなどを比較できます。</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">Q. 包装サンプルだけを試作できますか？<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">A. はい。包装サンプルの試作にも対応しています。製品形状や包装目的に応じて、テスト金型、包装方法、包装資材をご提案します。</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">Q. 包装資材だけでも相談できますか？<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">A. はい。包装適性、バリア性、成形性、シール性、薄肉化、環境対応など、包装資材に関する検討にも対応します。</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">Q. 工業製品の包装テストはできますか？<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">A. はい。製品の固定・保護、防湿・防塵・防錆、包装のコンパクト化、緩衝材などの副資材削減、自動化を目的とした包装テストが可能です。</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">Q. 医療機器の包装テストはできますか？<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">A. はい。製品形状、包装資材、成形・シール条件、印刷、検査などを実機で確認し、お客様が実施する評価やバリデーションを見据えた包装仕様の検討を支援します。</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">Q. 設備導入を前提としない相談もできますか？<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">A. はい。設備導入の有無が決まっていない段階でもご相談いただけます。まずは課題や目標を伺い、LICで検証できる内容をご案内します。</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">Q. LICを見学できますか？<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">A. はい。事前予約制でLICをご見学いただけます。検討中の課題がございましたら、ご見学時に専門スタッフがご相談を承ります。</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">Q. 輸出向け商品の加工・包装について相談できますか？<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">A. はい。輸出する商品や流通条件を踏まえ、加工方法、包装技術、包装資材、賞味期限延長、冷凍・冷蔵流通、検査、自動化などを実機で検証できます。設備や包装方法が決まっていない段階でもご相談いただけます。</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">Q. HACCP等の認定・認証取得や補助金申請にも対応していますか？<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">A. LICでは、認定・認証や輸出対応を見据えた設備、包装資材、加工・包装工程の検討と実機検証を支援します。認定・認証の取得、輸出先国の規制確認、補助事業の対象可否や申請手続きについては、関係機関または各分野の専門家へご確認ください。</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">Q. テストには費用がかかりますか？<span class="accordion-icon">+</span></div>
+      <div class="accordion-body">A. テストに使用する原料は、お客様にご用意・ご負担いただいています。その他の費用や、必要な原料・製品・包装資材の数量、搬入方法などについては、テスト内容に応じて事前にご案内します。</div>
+    </div>
+  </section>
+
+  <section class="lic-sec">
+    <div class="wf-section">LICへのアクセス</div>
+    <p class="lic-body">MULTIVAC JAPAN Local Innovation Centerは、ムルチバック・ジャパン株式会社つくば本社工場内にあります。LICの見学や実機テストは、事前予約制です。</p>
+    <div class="l-grid2" style="gap:24px;align-items:start">
+      <div class="wf-box" style="margin-bottom:0">
+        <p style="font-size:12px;font-weight:bold;color:#003087;margin-bottom:6px">所在地</p>
+        <p style="font-size:14px;line-height:1.9;color:#333">〒305-0883<br>茨城県つくば市みどりの東10-3<br>ムルチバック・ジャパン株式会社 つくば本社工場内</p>
+        <p><a href="19_contact.html" class="btn-lic ghost">Googleマップで確認する</a><a href="19_contact.html" class="btn-lic">LICの見学を申し込む</a></p>
+      </div>
+      <div class="wf-img" style="height:240px">[Googleマップ埋め込み]</div>
+    </div>
+    <p class="lic-note">原料、製品、包装資材などの搬入方法やご来場時の注意事項については、テスト・見学内容に応じて事前にご案内します。</p>
+  </section>
+
+  <section class="lic-sec" style="background:#003087;color:#fff;padding:40px;border-radius:6px;margin-bottom:0">
+    <h3 style="font-size:22px;margin-bottom:10px">まずは、現在の課題をお聞かせください</h3>
+    <p style="font-size:14px;line-height:1.9;color:rgba(255,255,255,0.85);margin-bottom:20px;max-width:860px">設備や包装方法が決まっていなくても問題ありません。製品、加工工程、包装、品質、生産性、歩留まり、包装資材、物流などのお悩みを伺い、LICで検証できる内容をご提案します。</p>
+    <p style="font-size:12px;font-weight:bold;color:rgba(255,255,255,0.9);margin-bottom:8px">ご相談いただける内容</p>
+    <p style="margin-bottom:20px"><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">包装テスト</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">包装サンプルの試作</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">食品加工テスト</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">食品の商品開発</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">輸出対応を見据えた設備・工程検証</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">歩留まり・利益率改善</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">包装工程の自動化・省人化</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">包装資材の開発・評価</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">工業製品の包装</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">医療機器の包装</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">試作から量産化への検証</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">ハム・ソーセージ講習会</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">ベーカリーインハウスセミナー</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">技術セミナー・実機トレーニング</span><span style="display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0">LICの見学</span></p>
+    <p><a href="19_contact.html" class="btn-lic" style="background:#fff;color:#003087">&#x2709; LICにテスト・課題相談を申し込む</a><a href="19_contact.html" class="btn-lic" style="background:transparent;color:#fff;border:2px solid #fff;padding:9px 24px">LICの見学を申し込む</a><a href="19_contact.html" class="btn-lic" style="background:transparent;color:#fff;border:2px solid #fff;padding:9px 24px">講習会について相談する</a></p>
+  </section>
 </div>
 
 <footer>
@@ -272,4 +1006,13 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
   </div>
   <div class="ft-copy">Copyright&copy;2026 MULTIVAC Japan Inc. All rights reserved.</div>
 </footer>
+<script>
+function toggleAcc(head) {
+  var icon = head.querySelector('.accordion-icon');
+  var body = head.nextElementSibling;
+  var isOpen = body.classList.contains('show');
+  body.classList.toggle('show', !isOpen);
+  icon.classList.toggle('open', !isOpen);
+}
+</script>
 </body></html>
