@@ -153,19 +153,22 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
   </div>
 
   <div class="anchor-nav">
-    <span class="active">すべて</span>
-    <span>お知らせ</span>
-    <span>展示会情報</span>
+    <span class="active" onclick="filterNews(this,'all')">すべて</span>
+    <span onclick="filterNews(this,'news')">お知らせ</span>
+    <span onclick="filterNews(this,'expo')">展示会情報</span>
   </div>
 
-  <div class="news-item"><span class="news-date">2025.12.20</span><span class="tag">お知らせ</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">冬季休業日のお知らせ</a></div>
-  <div class="news-item"><span class="news-date">2025.07.03</span><span class="tag tag-red">展示会</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">7/22(火) 13時〜 無料WEBセミナー開催</a></div>
-  <div class="news-item"><span class="news-date">2025.05.30</span><span class="tag">お知らせ</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">新潟支店 開設のお知らせ</a></div>
-  <div class="news-item"><span class="news-date">2025.01.08</span><span class="tag tag-red">展示会</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">第39回 ネプコン ジャパンに出展</a></div>
-  <div class="news-item"><span class="news-date">2024.08.22</span><span class="tag tag-red">展示会</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">第3回 ネプコンジャパン 秋に出展</a></div>
-  <div class="news-item"><span class="news-date">2024.08.06</span><span class="tag">お知らせ</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">PR TIMES掲載：プラスチック仕様やフードロスを最小限に</a></div>
-  <div class="news-item"><span class="news-date">2023.10.26</span><span class="tag">お知らせ</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">handtmann社製品取扱い開始</a></div>
-  <div class="news-item"><span class="news-date">2023.09.05</span><span class="tag tag-red">展示会</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">第2回 ネプコンジャパン 秋に初出展</a></div>
+  <div id="news-list">
+  <div class="news-item" data-cat="news"><span class="news-date">2025.12.20</span><span class="tag">お知らせ</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">冬季休業日のお知らせ</a></div>
+  <div class="news-item" data-cat="expo"><span class="news-date">2025.07.03</span><span class="tag tag-red">展示会</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">7/22(火) 13時〜 無料WEBセミナー開催</a></div>
+  <div class="news-item" data-cat="news"><span class="news-date">2025.05.30</span><span class="tag">お知らせ</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">新潟支店 開設のお知らせ</a></div>
+  <div class="news-item" data-cat="expo"><span class="news-date">2025.01.08</span><span class="tag tag-red">展示会</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">第39回 ネプコン ジャパンに出展</a></div>
+  <div class="news-item" data-cat="expo"><span class="news-date">2024.08.22</span><span class="tag tag-red">展示会</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">第3回 ネプコンジャパン 秋に出展</a></div>
+  <div class="news-item" data-cat="news"><span class="news-date">2024.08.06</span><span class="tag">お知らせ</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">PR TIMES掲載：プラスチック仕様やフードロスを最小限に</a></div>
+  <div class="news-item" data-cat="news"><span class="news-date">2023.10.26</span><span class="tag">お知らせ</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">handtmann社製品取扱い開始</a></div>
+  <div class="news-item" data-cat="expo"><span class="news-date">2023.09.05</span><span class="tag tag-red">展示会</span>&nbsp;<a class="news-title" href="02_news-detail.html" style="text-decoration:none;color:#003087">第2回 ネプコンジャパン 秋に初出展</a></div>
+  </div>
+  <p id="news-empty" style="display:none;padding:40px 0;text-align:center;color:#888;font-size:14px">該当する記事はありません。</p>
 
   <button class="btn-more">もっと見る</button>
 </div>
@@ -196,4 +199,21 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
   </div>
   <div class="ft-copy">Copyright&copy;2026 MULTIVAC Japan Inc. All rights reserved.</div>
 </footer>
+<script>
+/* ── ニュースのカテゴリー絞り込み（タブ切替） ── */
+function filterNews(el, cat){
+  var nav = document.querySelectorAll('.anchor-nav span');
+  for(var i=0; i<nav.length; i++){ nav[i].classList.remove('active'); }
+  el.classList.add('active');
+
+  var items = document.querySelectorAll('#news-list .news-item');
+  var shown = 0;
+  for(var j=0; j<items.length; j++){
+    var hit = (cat === 'all') || (items[j].getAttribute('data-cat') === cat);
+    items[j].style.display = hit ? '' : 'none';
+    if(hit){ shown++; }
+  }
+  document.getElementById('news-empty').style.display = shown ? 'none' : 'block';
+}
+</script>
 </body></html>
