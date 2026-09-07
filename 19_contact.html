@@ -105,6 +105,8 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
+/* 語の途中で改行させない単位 */
+.nw { white-space: nowrap; }
 @media (max-width: 900px) {
   .branch-grid { grid-template-columns: repeat(2, 1fr); }
   .desk-grid   { grid-template-columns: 1fr; }
@@ -254,7 +256,7 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
         </div>
 
         <label class="label">ご興味のある製品 <span style="color:red">*</span></label>
-        <div style="margin-bottom:20px;line-height:2.4"><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> 深絞り包装機</label><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> チャンバー真空包装機</label><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> トレーシーラー</label><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> ブリスター包装機</label><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> 充填機（ハンドトマン）</label><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> 食肉加工機械</label><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> 製パン・製菓機械</label><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> コンベヤラベラー</label><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> その他</label></div>
+        <div style="margin-bottom:20px;line-height:2.4"><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> 深絞り包装機</label><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> トレーシーラー</label><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> チャンバー型真空包装機</label><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> 食品加工機械</label><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> 製パン・製菓機械</label><label style="display:inline-flex;align-items:center;gap:6px;margin:4px 16px 4px 0;font-size:13px"><input type="checkbox"> その他</label></div>
 
         <div><label class="label">弊社を知ったきっかけ<span style="color:red;margin-left:4px">*</span></label><select>
           <option>選択してください</option>
@@ -314,34 +316,34 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
       <h2 style="font-size:18px;font-weight:bold;color:#003087;margin-bottom:4px">アフターサポート・部品に関するお問い合わせ</h2>
       <p style="font-size:13px;color:#666;margin-bottom:20px">アフターサポート・部品に関しては、下記の窓口へお問い合わせください。受付時間：平日 9:00〜17:30</p>
 
-      <!-- 受付窓口の移管について -->
-      <div style="background:#fff4e5;border:1px solid #f0b775;border-radius:6px;padding:16px 18px;margin-bottom:24px">
-        <p style="font-size:13px;font-weight:bold;color:#b35c00;margin-bottom:6px">※ 2026年6月1日より 受付窓口を移管いたしました</p>
-        <p style="font-size:13px;color:#555;line-height:1.9">
-          下記製品発注の受付窓口を <strong>つくば本社工場</strong> から <strong>本社（包材統括業務課）</strong> に移管いたしました。<br>
-          ＜ リボンテープ・真空袋・インク・ラベル・エイジレス・洗剤・フローズン液・ガス類 ＞
-        </p>
-      </div>
-
       <!-- 受付窓口（本社・つくば本社工場） -->
       <div class="desk-grid">
         <div style="border:2px solid #003087;border-radius:6px;padding:16px;background:#f0f4ff">
           <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px;padding-bottom:6px;border-bottom:1px solid #ccd7ee">本社</p>
           <p style="font-size:12px;font-weight:bold;color:#b35c00;margin-bottom:8px">フィルム・リボンテープ・真空袋・インク・ラベル・エイジレス・洗剤・フローズン液・ガス類の発注受付窓口</p>
           <p style="font-size:12px;color:#555;line-height:1.9">
-            〒104-0061<br>東京都中央区銀座5丁目9-8 クロス銀座ビル5F<br>
-            TEL：03-6264-6407（包材統括業務課）<br>
-            FAX：03-6264-6427 / 03-6264-6428<br>
+            <span class="nw">〒104-0061</span><br>
+            東京都中央区銀座5丁目9-8<br>クロス銀座ビル5F<br>
+            <span class="nw">TEL：03-6264-6407</span><span class="nw">（包材統括業務課）</span><br>
+            <span class="nw">FAX：03-6264-6427</span> / <span class="nw">03-6264-6428</span><br>
             MAIL：<span style="word-break:break-all">mujp-pmd@jp.multivac.com</span>
           </p>
+          <div style="background:#fff4e5;border:1px solid #f0b775;border-radius:4px;padding:10px 12px;margin-top:12px">
+            <p style="font-size:12px;font-weight:bold;color:#b35c00;margin-bottom:4px">※ 2026年6月1日より 受付窓口を移管いたしました</p>
+            <p style="font-size:11px;color:#555;line-height:1.8">
+              下記製品発注の受付窓口を <strong>つくば本社工場</strong> から <strong>本社（包材統括業務課）</strong> に移管いたしました。<br>
+              ＜ リボンテープ・真空袋・インク・ラベル・エイジレス・洗剤・フローズン液・ガス類 ＞
+            </p>
+          </div>
         </div>
         <div style="border:2px solid #003087;border-radius:6px;padding:16px;background:#f0f4ff">
           <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px;padding-bottom:6px;border-bottom:1px solid #ccd7ee">つくば本社工場</p>
           <p style="font-size:12px;font-weight:bold;color:#b35c00;margin-bottom:8px">部品・修理の受付窓口</p>
           <p style="font-size:12px;color:#555;line-height:1.9">
-            〒305-0883<br>茨城県つくば市みどりの東10-3<br>
-            TEL：029-828-5087（カスタマーサポート）<br>
-            FAX：029-828-7742
+            <span class="nw">〒305-0883</span><br>
+            茨城県つくば市<br>みどりの東10-3<br>
+            <span class="nw">TEL：029-828-5087</span><span class="nw">（カスタマーサポート）</span><br>
+            <span class="nw">FAX：029-828-7742</span>
           </p>
         </div>
       </div>
@@ -351,34 +353,68 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
       <div class="branch-grid">
         <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
           <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">北海道支店</p>
-          <p style="font-size:12px;color:#555;line-height:1.9">〒003-0835<br>北海道札幌市白石区北郷5条5丁目7-25<br>TEL：011-805-2010（代表）<br>FAX：011-805-2020</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒003-0835</span><br>
+            北海道札幌市白石区<br>北郷5条5丁目7-25<br>
+            <span class="nw">TEL：011-805-2010</span><span class="nw">（代表）</span><br>
+            <span class="nw">FAX：011-805-2020</span>
+          </p>
         </div>
         <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
           <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">東北支店</p>
-          <p style="font-size:12px;color:#555;line-height:1.9">〒982-0023<br>宮城県仙台市太白区鹿野3-19-15<br>TEL：022-398-9101（代表）<br>FAX：022-246-6101</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒982-0023</span><br>
+            宮城県仙台市太白区<br>鹿野3-19-15<br>
+            <span class="nw">TEL：022-398-9101</span><span class="nw">（代表）</span><br>
+            <span class="nw">FAX：022-246-6101</span>
+          </p>
         </div>
         <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
           <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">新潟支店</p>
-          <p style="font-size:12px;color:#555;line-height:1.9">〒950-0950<br>新潟県新潟市中央区鳥屋野南3丁目10-26<br>TEL：029-828-5087（カスタマーサポート）<br>FAX：—</p>
+          <p style="font-size:11px;color:#888;margin-bottom:6px">※ 2025年6月開設</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒950-0950</span><br>
+            新潟県新潟市中央区<br>鳥屋野南3丁目10-26<br>
+            <span class="nw">TEL：029-828-5087</span><span class="nw">（カスタマーサポート）</span>
+          </p>
         </div>
         <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
           <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">名古屋支店</p>
-          <p style="font-size:12px;color:#555;line-height:1.9">〒463-0037<br>愛知県名古屋市守山区天子田3丁目909<br>TEL：052-778-9712（代表）<br>FAX：052-778-9713</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒463-0037</span><br>
+            愛知県名古屋市守山区<br>天子田3丁目909<br>
+            <span class="nw">TEL：052-778-9712</span><span class="nw">（代表）</span><br>
+            <span class="nw">FAX：052-778-9713</span>
+          </p>
         </div>
         <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
           <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">大阪支店</p>
-          <p style="font-size:12px;color:#555;line-height:1.9">〒567-0037<br>大阪府茨木市上穂東町4-13<br>TEL：072-646-7828（代表）<br>FAX：072-622-7777</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒567-0037</span><br>
+            大阪府茨木市<br>上穂東町4-13<br>
+            <span class="nw">TEL：072-646-7828</span><span class="nw">（代表）</span><br>
+            <span class="nw">FAX：072-622-7777</span>
+          </p>
         </div>
         <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
           <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">広島支店</p>
-          <p style="font-size:12px;color:#555;line-height:1.9">〒731-3164<br>広島県広島市安佐南区伴東一丁目1-44<br>TEL：082-849-6502（代表）<br>FAX：082-849-6503</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒731-3164</span><br>
+            広島県広島市安佐南区<br>伴東一丁目1-44<br>
+            <span class="nw">TEL：082-849-6502</span><span class="nw">（代表）</span><br>
+            <span class="nw">FAX：082-849-6503</span>
+          </p>
         </div>
         <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
           <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">九州支店</p>
-          <p style="font-size:12px;color:#555;line-height:1.9">〒816-0911<br>福岡県大野城市大城2-23-36<br>TEL：092-558-3001（代表）<br>FAX：092-504-5277</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒816-0911</span><br>
+            福岡県大野城市<br>大城2-23-36<br>
+            <span class="nw">TEL：092-558-3001</span><span class="nw">（代表）</span><br>
+            <span class="nw">FAX：092-504-5277</span>
+          </p>
         </div>
       </div>
-      <p style="font-size:12px;color:#888;margin-top:12px">※ 新潟支店は2025年6月に開設いたしました。</p>
     </div><!-- /branch -->
 
   </div><!-- /contact-main -->
