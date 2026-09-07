@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WF｜MULTIVAC トレーシーラー（工業製品向け）- ムルチバック・ジャパン</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; color: #222; background: #fff; }
+.wf-note { background:#fff9c4; border:1px solid #f0c040; border-radius:4px; padding:6px 10px; font-size:12px; color:#555; display:inline-block; margin-bottom:8px; }
+.wf-img  { background:#e8e8e8; border:1px dashed #aaa; display:flex; align-items:center; justify-content:center; color:#888; font-size:13px; }
+.wf-box  { background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:16px; margin-bottom:16px; }
+.wf-section { border-left:4px solid #003087; padding:10px 14px; background:#f0f4ff; margin-bottom:20px; font-weight:bold; font-size:16px; color:#003087; }
+
+.l-wrap  { max-width:1200px; margin:0 auto; padding:0 24px; }
+.l-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.l-grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; }
+.l-grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+
+header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; position:sticky; top:0; z-index:100; }
+.hd-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:24px; }
+.hd-logo  { font-size:18px; font-weight:900; color:#003087; letter-spacing:2px; min-width:180px; }
+.hd-nav   { display:flex; gap:16px; font-size:13px; flex:1; }
+.hd-nav a { padding:4px 0; cursor:pointer; color:#333; text-decoration:none; }
+.hd-nav a:hover { color:#003087; }
+.hd-btns  { display:flex; gap:10px; }
+.btn-primary { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; cursor:pointer; text-decoration:none; display:inline-block; }
+.btn-outline { border:2px solid #003087; color:#003087; padding:6px 14px; border-radius:4px; font-size:13px; cursor:pointer; display:inline-block; }
+.btn-dl      { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; }
+.btn-contact { background:#003087; color:#fff; padding:8px 16px; border-radius:4px; font-size:13px; margin-left:4px; }
+
+.breadcrumb { background:#f5f5f5; padding:8px 0; font-size:12px; color:#666; }
+.breadcrumb span { margin:0 6px; }
+.breadcrumb a { color:#666; text-decoration:none; }
+.breadcrumb a:hover { color:#003087; text-decoration:underline; }
+
+.tag { background:#e3f2fd; color:#003087; font-size:11px; padding:2px 8px; border-radius:2px; display:inline-block; margin:2px; }
+.tag-green { background:#e8f5e9; color:#2e7d32; }
+.cat-btn { border:1px solid #003087; padding:6px 14px; border-radius:20px; font-size:12px; color:#003087; cursor:pointer; display:inline-block; margin:4px; }
+.cat-btn.active { background:#003087; color:#fff; }
+
+/* ── MV ── */
+.mv { position:relative; height:320px; overflow:hidden; }
+.mv-bg { position:absolute; inset:0; background:#7a8fa8; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.4); font-size:13px; letter-spacing:1px; }
+.mv-overlay { position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; background:rgba(0,24,64,.5); padding:0 0 24px calc(max(24px, 50% - 576px)); }
+.mv-title { color:#fff; font-size:38px; font-weight:900; letter-spacing:2px; margin-bottom:10px; text-shadow:0 2px 8px rgba(0,0,0,.4); }
+.mv-en { color:rgba(255,255,255,.8); font-size:14px; letter-spacing:4px; }
+
+/* ── 特長カード ── */
+.feature-card { background:#fff; border:1px solid #e0e0e0; border-radius:6px; padding:20px; }
+.feature-num { font-size:28px; font-weight:900; color:#003087; opacity:.25; line-height:1; margin-bottom:8px; }
+.feature-title { font-size:14px; font-weight:bold; color:#003087; margin-bottom:6px; }
+.feature-desc { font-size:13px; color:#555; line-height:1.8; }
+
+/* ── MVACだからできること ── */
+.strength-card { background:#f0f4ff; border-radius:8px; padding:24px; }
+.strength-label { font-size:11px; color:#003087; letter-spacing:2px; font-weight:bold; margin-bottom:8px; }
+.strength-title { font-size:16px; font-weight:900; color:#003087; margin-bottom:10px; }
+.strength-desc { font-size:13px; color:#444; line-height:1.9; }
+
+/* ── CTA ── */
+.cta-block { background:#e8edf5; border-radius:8px; padding:40px; text-align:center; }
+.cta-title { font-size:22px; font-weight:900; color:#003087; margin-bottom:10px; }
+.cta-sub { font-size:14px; color:#555; margin-bottom:24px; }
+.cta-btns { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+.cta-btn-primary { background:#003087; color:#fff; padding:14px 32px; border-radius:4px; font-size:14px; font-weight:bold; cursor:pointer; }
+.cta-btn-outline { border:2px solid #003087; color:#003087; padding:12px 28px; border-radius:4px; font-size:14px; font-weight:bold; cursor:pointer; }
+
+/* ── アコーディオン ── */
+.accordion { border:1px solid #e0e0e0; border-radius:6px; overflow:hidden; margin-bottom:8px; }
+.accordion-head { background:#f9f9f9; padding:14px 18px; font-size:14px; font-weight:bold; color:#333; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+.accordion-head:hover { background:#f0f4ff; }
+.accordion-icon { font-size:18px; color:#003087; transition:transform .2s; }
+.accordion-icon.open { transform:rotate(45deg); }
+.accordion-body { display:none; padding:16px 18px; font-size:13px; color:#444; line-height:1.9; border-top:1px solid #e0e0e0; }
+.accordion-body.show { display:block; }
+
+/* ── 関連カード ── */
+.rel-card { background:#fff; border:1px solid #e0e0e0; border-radius:6px; overflow:hidden; cursor:pointer; transition:box-shadow .2s; }
+.rel-card:hover { box-shadow:0 4px 16px rgba(0,48,135,.12); }
+.rel-card-img { height:120px; }
+.rel-card-body { padding:14px; }
+.rel-card-title { font-size:13px; font-weight:bold; color:#003087; margin-bottom:4px; }
+.rel-card-sub { font-size:11px; color:#888; }
+
+/* ── 課題カード ── */
+.issue-card { background:#fff; border:1px solid #ddd; border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start; }
+.issue-icon { font-size:28px; line-height:1; flex-shrink:0; }
+.issue-title { font-size:15px; font-weight:bold; color:#003087; margin-bottom:6px; }
+.issue-desc { font-size:13px; color:#555; line-height:1.8; }
+
+/* ── フッター ── */
+footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font-size:13px; border-top:1px solid #dde3ee; }
+.ft-inner { max-width:1200px; margin:0 auto; padding:0 24px 40px; display:flex; gap:60px; align-items:flex-start; }
+.ft-brand { min-width:220px; }
+.ft-logo-wrap { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.ft-logo-icon { color:#003087; font-size:18px; }
+.ft-logo-text { font-size:20px; font-weight:900; color:#003087; letter-spacing:2px; }
+.ft-company-name { font-size:11px; color:#666; margin-bottom:16px; }
+.ft-sns { display:flex; gap:10px; margin-bottom:20px; }
+.ft-sns-btn { display:flex; align-items:center; justify-content:center; width:36px; height:36px; background:#003087; color:#fff; border-radius:50%; text-decoration:none; }
+.ft-address { font-style:normal; font-size:12px; color:#666; line-height:1.9; }
+.ft-links { display:flex; flex-direction:column; gap:20px; padding-top:4px; }
+.ft-links a { color:#333; text-decoration:none; font-size:14px; }
+.ft-links a:hover { color:#003087; }
+.ft-copy { background:#003087; color:rgba(255,255,255,0.6); text-align:center; font-size:11px; padding:14px; }
+
+/* ── 製品画像ギャラリー（スライダー） ── */
+.gallery-main { position:relative; height:380px; border-radius:6px; overflow:hidden; background:#eee; }
+.gallery-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .4s ease; }
+.gallery-slide.active { opacity:1; }
+.gallery-arrow { position:absolute; top:50%; transform:translateY(-50%); width:36px; height:36px; border:none; border-radius:50%; background:rgba(0,24,64,.55); color:#fff; font-size:14px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+.gallery-arrow:hover { background:rgba(0,24,64,.8); }
+.gallery-prev { left:12px; }
+.gallery-next { right:12px; }
+.gallery-thumbs { display:flex; gap:8px; margin-top:12px; }
+.gallery-thumb { flex:1; height:90px; border-radius:4px; object-fit:cover; min-width:0; cursor:pointer; opacity:.55; border:2px solid transparent; transition:opacity .2s, border-color .2s; }
+.gallery-thumb:hover { opacity:.85; }
+.gallery-thumb.active { opacity:1; border-color:#003087; }
+/* ── 製品トップの動画埋め込み（2026-08-20 追加） ── */
+.video-embed { position:relative; width:100%; aspect-ratio:16/9; border-radius:6px; overflow:hidden; background:#000; }
+.video-embed iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+/* ギャラリーセクションの実写真（旧スライダーから移動） */
+.gallery-photo { display:block; width:100%; height:180px; object-fit:contain; background:#f4f5f7; border-radius:6px; }
+</style>
+</head>
+<body>
+<script>
+(function(){
+  if(sessionStorage.getItem('wf_auth')!=='ok'){
+    location.replace('gate.html?r='+encodeURIComponent(location.pathname.split('/').pop()||'index.html'));
+  }
+})();
+</script>
+<header>
+  <div class="hd-inner">
+    <div class="hd-logo">&#9632; MULTIVAC<br><small style="font-size:10px;font-weight:400">ムルチバック・ジャパン株式会社</small></div>
+    <nav class="hd-nav">
+      <a href="01_news-list.html">ニュース</a>
+      <a href="04_products-top.html">製品情報</a>
+      <a href="11_service-innovation.html">サービス</a>
+      <a href="14_company-overview.html">会社概要</a>
+      <a href="18_careers.html">採用情報</a>
+    </nav>
+    <div class="hd-btns">
+      <a href="index.html" style="border:1px solid #003087;color:#003087;background:#fff;padding:8px 16px;border-radius:4px;font-size:13px;text-decoration:none;display:inline-block;margin-right:4px">&#8592; WF一覧</a>
+      <a href="20_catalog-download.html" class="btn-primary btn-dl">&#x2193; カタログダウンロード</a>
+      <a href="19_contact.html" class="btn-primary btn-contact">&#x2709; お問い合わせ</a>
+    </div>
+  </div>
+</header>
+
+<div class="mv">
+  <div class="mv-bg">[MV背景画像 — トレーシーラー（工業製品）の稼働シーン]</div>
+  <div class="mv-overlay">
+    <div class="mv-title">トレーシーラー</div>
+    <div class="mv-en">TRAY SEALER — INDUSTRIAL</div>
+  </div>
+</div>
+
+<div class="breadcrumb">
+  <div class="l-wrap">
+    <a href="index.html">HOME</a><span>›</span>
+    <a href="04_products-top.html">製品情報</a><span>›</span>
+    <span>MULTIVAC トレーシーラー（工業製品向け）</span>
+  </div>
+</div>
+
+<div class="l-wrap" style="padding-top:40px;padding-bottom:80px">
+
+  <!-- ── 製品概要 ── -->
+  <section id="overview" style="margin-bottom:60px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:flex-start">
+      <div>
+        <div class="wf-img" style="width:100%;aspect-ratio:16/9;border-radius:6px">[製品紹介動画 — 動画URL支給待ち]</div>
+      </div>
+      <div>
+        <p style="font-size:12px;color:#888;letter-spacing:2px;margin-bottom:4px">MULTIVAC</p>
+        <h1 style="font-size:26px;font-weight:900;color:#003087;line-height:1.4;margin-bottom:8px">MULTIVAC トレーシーラー<br>工業製品向け</h1>
+        <p style="font-size:14px;color:#555;line-height:1.8;margin-bottom:20px">トレーの剛性を活かした製品保護と包装工程の自動化を実現</p>
+        <p style="font-size:14px;color:#555;line-height:1.8;margin-bottom:20px">精密部品、電子部品、部品セットの固定・保護から工程間搬送まで対応するトレー包装システム</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:20px">
+          <span class="tag">含気包装</span>
+          <span class="tag">トップシール包装</span>
+          <span class="tag">ガス置換包装</span>
+          <span class="tag">スキンパック</span>
+          <span class="tag">トレースキン</span>
+          <span class="tag tag-green">工業製品向け</span>
+        </div>
+
+        <div class="wf-box" style="margin-bottom:20px">
+          <h3 style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px">トレーシーラーとは</h3>
+          <p style="font-size:13px;line-height:1.9;color:#444">トレーシーラーとは、既製トレーや製品専用トレーにトップフィルムを熱シールし、製品を密封・保護する包装機です。MULTIVACのトレーシーラーは、含気包装（トップシール包装）、ガス置換包装、スキンパックなど、多様な包装方式に対応します。トレーの剛性を活かして製品を支え、トップフィルムで密封することで、包装内部での製品移動や部品同士の接触を抑えます。さらに、トレーとトップフィルムの材質やシール条件を適切に選定することで、防塵・防湿など、製品に必要な保護性能を持つ包装仕様を検討できます。電子部品、半導体関連製品、精密加工部品、機械部品、金属部品、切削工具、ワイヤー製品、部品セットなど、幅広い工業製品の包装に対応します。既存トレーを活用した包装から、製品形状や次工程に合わせた専用トレーの提案、ロボット投入、検査、印字、集積まで、包装工程全体の自動化を支援します。</p>
+        </div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="20_catalog-download.html" class="btn-primary" style="flex:1;text-align:center;padding:14px;font-weight:bold">&#x2193; カタログダウンロード</a>
+          <a href="19_contact.html" class="btn-outline" style="flex:1;text-align:center;padding:12px;font-weight:bold">&#x2709; お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 解決できる課題 ── -->
+  <section style="margin-bottom:60px">
+    <div class="wf-section">解決できる課題</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <div class="issue-card">
+        <div class="issue-icon">&#x1F6E1;</div>
+        <div>
+          <div class="issue-title">製品の接触・移動防止</div>
+          <div class="issue-desc">製品に合った形状や仕切り付きのトレーで部品を個別に分離し、必要に応じてスキンフィルムで位置を保持することで、包装内部での接触や移動を抑えます。精密加工面や刃先の保護、部品セットの欠品確認、開封時の散らばり防止にも対応します。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <div class="issue-icon">&#x1F916;</div>
+        <div>
+          <div class="issue-title">包装工程のボトルネック解消</div>
+          <div class="issue-desc">トレー供給機、パーツフィーダー、ロボット、画像検査、印字・ラベリング、集積装置と連携し、トレー供給から包装後の排出までを自動化できます。包装工程の省人化だけでなく、生産計画に応じた包装能力の確保と包装品質の標準化を支援します。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <div class="issue-icon">&#x267B;</div>
+        <div>
+          <div class="issue-title">EU PPWRを見据えた包材見直し</div>
+          <div class="issue-desc">モノマテリアルトレー、再生材を含むトレー、薄肉・軽量トレー、繊維系トレーなどを候補として、トップフィルムとのシール適性や製品保護性能、機械適性を評価します。材料削減だけを目的とせず、包装品質と生産能力を維持できる仕様をご提案します。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ギャラリー ── -->
+  <section id="gallery-photos" style="margin-bottom:60px">
+    <div class="wf-section">ギャラリー</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 1]</div>
+      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 2]</div>
+      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 3]</div>
+      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 4]</div>
+      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 5]</div>
+      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 6]</div>
+    </div>
+  </section>
+
+  <!-- ── 特長 ── -->
+  <section id="features" style="margin-bottom:60px">
+    <div class="wf-section">製品の特長</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <div class="feature-title">トレーの剛性を活かして製品を支持・保護</div>
+        <div class="feature-desc">製品に合った大きさや形状、仕切り付きなどのトレーを使用することで、製品の底面や必要な箇所を安定して支えることができます。精密面や突起、可動部、刃先などがトレーやほかの部品へ接触しにくい収納方法を設計し、包装中や輸送中の製品移動、接触、擦れを抑えます。トレー自体に剛性があるため、包装後の積み重ね、通い箱への収納、工程間搬送、次工程への部品供給にも活用できます。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <div class="feature-title">含気包装・ガス置換包装・スキンパックに対応</div>
+        <div class="feature-desc">含気包装（トップシール包装）は、製品を収納したトレーにトップフィルムをシールするシンプルな密封包装です。ガス置換包装は、製品特性や保管条件に応じて包装内部の空気をガスに置き換えて密封します。スキンパックは、加熱したスキンフィルムを製品周囲のトレー面へ密着させることで、製品の位置を保持します。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <div class="feature-title">スキンパックで製品の向きと配置を保持</div>
+        <div class="feature-desc">緩衝材は落下や衝撃によって製品へ伝わる力を緩和するのに対し、スキンパックは包装内部における製品の移動を抑える包装方法です。輸送中の損傷原因が、外部からの衝撃ではなく、トレー内部での移動、製品同士の接触、精密面とほかの部位との擦れなどにある場合、スキンパックによる配置保持が有効な選択肢になります。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">04</div>
+        <div class="feature-title">製品専用トレーによる個別配置</div>
+        <div class="feature-desc">製品寸法、重量、形状、突起、精密面、可動部、使用順序に合わせて、専用トレーを設計できます。複数の部品を一つのトレー内へ個別に配置することで、部品同士の接触を防ぎながら、数量、配置、取り出し位置を明確にできます。組立工程やメンテナンス作業で使用する部品を、使用する順番に並べて包装することも可能です。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">05</div>
+        <div class="feature-title">既製トレーと製品専用トレーに対応</div>
+        <div class="feature-desc">既製トレーを活用した包装から、製品専用トレーによる高い支持性と配置保持まで、製品条件と運用方法に応じた包装仕様を選択できます。既製トレーを使用する場合は、対象トレーの寸法、材質、フランジ形状、平面度、剛性、耐熱性、トップフィルムとのシール適性を確認します。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">06</div>
+        <div class="feature-title">開封・取り出し・次工程への供給まで設計</div>
+        <div class="feature-desc">包装時の製品保護だけでなく、開封、取り出し、供給、包材の分離までを包装仕様に反映します。ロボットが部品を取り出すための把持空間など、専用トレーの設計も可能です。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">07</div>
+        <div class="feature-title">積み重ね・保管・工程間搬送に対応</div>
+        <div class="feature-desc">トレーの剛性と支持形状を活用し、包装後の積み重ねや工程間搬送に対応できます。製品に合った形状や仕切りによって向きや配置を保ち、包装から保管、搬送、開封、次工程への供給まで、トレーを一つの搬送単位として利用できます。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">08</div>
+        <div class="feature-title">手作業が残る包装工程を自動化</div>
+        <div class="feature-desc">生産量が増加しても、トレー供給、製品投入、包装、検査が手作業のままでは、包装工程が生産のボトルネックになる場合があります。MULTIVACのトレーシーラーは、トレー供給機、パーツフィーダー、ロボット、画像検査、印字・ラベリング、集積装置と連携し、トレー供給から包装後の排出までを自動化できます。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">09</div>
+        <div class="feature-title">ロボット投入・自動ハンドリングに対応</div>
+        <div class="feature-desc">剛性のあるトレーを搬送単位として、トレー供給、位置決め、製品投入、包装、検査、排出までを自動化できます。製品を収納する位置とトレーの位置が固定されるため、ロボットは毎回決められた位置へ製品を投入できます。包装後も、検査、ラベリング、集積、箱詰め工程まで連携したラインを構築できます。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">10</div>
+        <div class="feature-title">小ロットから大量生産まで対応</div>
+        <div class="feature-desc">少量・多品種包装や新しい包装仕様の立ち上げでは、卓上型やコンパクトモデルから導入できます。生産量の増加に応じて、自動トレー供給、ロボット投入、検査、印字、集積を組み合わせた高能力ラインへ展開できます。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EU PPWRを見据えた包装資材への切り替えを支援 ── -->
+  <section style="margin-bottom:60px;background:#f9f9f9;border-radius:8px;padding:40px">
+    <div style="display:flex;gap:48px;align-items:center">
+      <div style="flex:1">
+        <p style="font-size:12px;color:#003087;letter-spacing:2px;font-weight:bold;margin-bottom:8px">EU PPWR</p>
+        <h2 style="font-size:22px;font-weight:900;color:#003087;margin-bottom:16px">EU PPWRを見据えた包装資材への切り替えを支援</h2>
+        <p style="font-size:14px;line-height:2;color:#444;margin-bottom:16px">EUの包装・包装廃棄物規則「PPWR」は、2025年2月11日に発効し、2026年8月12日から原則適用されています。包装廃棄物の削減、包装の最小化、リサイクル可能性の向上などを目的としており、関連する要件は今後段階的に適用・強化されます。EU市場へ製品を輸出する企業にとっても、包装仕様の見直しは重要な検討課題です。</p>
+        <ul style="font-size:13px;line-height:2.2;padding-left:16px;color:#444">
+          <li>モノマテリアルトレー</li>
+          <li>再生材を含むトレー</li>
+          <li>薄肉・軽量トレー</li>
+          <li>繊維系トレー</li>
+          <li>トップフィルム使用量の最適化</li>
+          <li>トレー寸法・深さ・重量の最適化</li>
+          <li>トレーとトップフィルムの分離性</li>
+          <li>包装重量・体積の削減</li>
+          <li>包装資材点数の見直し</li>
+        </ul>
+        <p style="font-size:13px;line-height:2;color:#444;margin-top:16px">環境対応トレーやトップフィルムへの切り替えでは、材質やリサイクル性だけでなく、製品保護とトレーシーラーでの安定稼働を両立させる必要があります。候補となるトレーについて、剛性、たわみ、フランジの平面度、耐熱性、積み重ね性、自動供給時の分離性を確認します。さらに、トップフィルムとのシール適性、防湿・防塵性能、搬送安定性、ロボット投入への適性まで含めて評価します。</p>
+      </div>
+      <div class="wf-img" style="flex:0 0 40%;height:240px;border-radius:6px">[環境対応トレーの例]</div>
+    </div>
+  </section>
+
+  <!-- ── MULTIVACだからできること ── -->
+  <section id="multivac" style="margin-bottom:60px">
+    <div class="wf-section">MULTIVACだからできること</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+      <div class="strength-card">
+        <div class="strength-label">TOTAL SOLUTION</div>
+        <div class="strength-title">包装機・トレー・フィルム・<br>包装技術をトータル提案</div>
+        <ul style="font-size:12px;line-height:2.1;padding-left:16px;color:#444;margin-top:12px">
+          <li>製品条件に応じたトレーシーラーの選定</li>
+          <li>含気包装・ガス置換包装・スキンパックの比較</li>
+          <li>既製トレーと製品専用トレーの比較</li>
+          <li>トレー材質、形状、深さ、剛性の選定</li>
+          <li>トップフィルムの選定</li>
+          <li>シール性、開封性、バリア性の評価</li>
+          <li>製品支持と配置保持の設計</li>
+          <li>ロボット投入を考慮したトレー設計</li>
+          <li>開封・取り出し性の設計</li>
+          <li>検査・印字・排出を含むライン構築</li>
+        </ul>
+        <p style="font-size:12px;line-height:1.9;color:#444;margin-top:12px">製品寸法、重量、形状、必要な保護性能、生産量、品種数、自動化範囲、包装後の搬送方法から、トレーシーラー、トレー、トップフィルム、包装条件を総合的に検討します。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-label">EVALUATION</div>
+        <div class="strength-title">トレー・トップフィルム・<br>機械適性を一体で評価</div>
+        <ul style="font-size:12px;line-height:2.1;padding-left:16px;color:#444;margin-top:12px">
+          <li>トレー … 材質と材料構成、大きさと形状、仕切りと支持構造、深さと剛性、フランジの平面度、耐熱性</li>
+          <li>トレー … 積み重ね性、自動供給時の分離性、搬送安定性、ロボット投入・取り出しへの適性</li>
+          <li>トップフィルム … トレーとのシール適性、シール温度・時間・圧力、ピール性と開封力</li>
+          <li>トップフィルム … 耐突刺し性、引裂き強度、水蒸気・酸素バリア、帯電防止性、透明性</li>
+          <li>スキンフィルムの追従性</li>
+          <li>廃棄・分別・リサイクル性</li>
+        </ul>
+        <p style="font-size:12px;line-height:1.9;color:#444;margin-top:12px">環境対応包材は、トレーやフィルム単体の性能だけでは選定できません。トレー、トップフィルム、包装条件、製品、トレーシーラーの機械適性を一体で評価し、製品保護と安定生産を両立できる包装仕様をご提案します。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-label">LINEUP</div>
+        <div class="strength-title">生産規模に応じた<br>最適な機種提案</div>
+        <ul style="font-size:12px;line-height:2.1;padding-left:16px;color:#444;margin-top:12px">
+          <li>卓上・小ロット向け：T105 … 少量・多品種生産、新しい包装仕様の評価、限られた設置スペース</li>
+          <li>小規模生産向け：T205 … コンパクトな据置型、包装品質の標準化、作業負荷の軽減</li>
+          <li>作業効率向上：T255 … 回転テーブル機構で包装中に次のトレーを準備</li>
+          <li>中規模・自動化向け：T305 … 高い処理能力、搬送バー変更や金型交換に対応</li>
+          <li>大量生産・自動化ライン向け：TXシリーズ … 自動トレー供給、ロボット投入、画像検査、集積・箱詰め</li>
+        </ul>
+        <p style="font-size:12px;line-height:1.9;color:#444;margin-top:12px">製品条件、生産量、品種変更頻度、作業者数、設置スペース、将来の増産計画を踏まえて、最適なトレーシーラーとライン構成をご提案します。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-label">SKIN PACK</div>
+        <div class="strength-title">製品への熱影響に配慮した<br>スキンパック</div>
+        <p style="font-size:12px;line-height:1.9;color:#444;margin-top:12px">スキンパックでは、加熱したフィルムが製品表面へ接触するため、熱に敏感な製品では温度条件の確認が重要です。MULTIVACでは、フィルムの加熱位置と製品へ追従するまでの工程を考慮し、製品表面への熱影響に配慮した包装を行います。製品材料、表面処理、コーティング、接着剤などへの影響は、実製品による包装テストで確認します。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-label">COMPARISON</div>
+        <div class="strength-title">トレースキンと深絞りスキンを<br>比較提案</div>
+        <ul style="font-size:12px;line-height:2.1;padding-left:16px;color:#444;margin-top:12px">
+          <li>トレースキン … トレーの剛性で製品を支持、積み重ねや工程間搬送に適する、既存トレー運用を継続可能</li>
+          <li>トレースキン … 卓上機から段階的に導入可能</li>
+          <li>深絞りスキン … ボトムフィルムをロール材から成形、包装を薄型化しやすい、既製トレーの在庫を削減</li>
+          <li>深絞りスキン … 中量・大量生産へ対応、ロボット投入へ展開しやすい</li>
+        </ul>
+        <p style="font-size:12px;line-height:1.9;color:#444;margin-top:12px">製品重量、高さ、形状、必要な支持力、積み重ね、既製トレーの有無、包装量、自動化範囲、包装後の搬送方法を総合して、適切なスキンパック方式をご提案します。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-label">LINE</div>
+        <div class="strength-title">包装工程全体の<br>一貫提案</div>
+        <ul style="font-size:12px;line-height:2.1;padding-left:16px;color:#444;margin-top:12px">
+          <li>トレー供給機／製品供給装置</li>
+          <li>パーツフィーダー</li>
+          <li>ピック＆プレースロボット</li>
+          <li>MULTIVAC トレーシーラー</li>
+          <li>印字システム／ラベリングシステム</li>
+          <li>MULTIVAC Vision system I410/I420</li>
+          <li>集積・排出装置／箱詰め設備</li>
+        </ul>
+        <p style="font-size:12px;line-height:1.9;color:#444;margin-top:12px">製品供給、トレー供給、投入、包装、検査、印字、排出までを一つの工程として設計し、包装品質の標準化、省人化、生産能力向上を支援します。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-label">LIC TEST</div>
+        <div class="strength-title">LICでの包装テスト</div>
+        <ul style="font-size:12px;line-height:2.1;padding-left:16px;color:#444;margin-top:12px">
+          <li>含気包装／ガス置換包装／トレースキン／深絞りスキン</li>
+          <li>既製トレー／製品専用トレー／環境対応トレー</li>
+          <li>トレー材質・形状・剛性</li>
+          <li>トップフィルム／スキンフィルム</li>
+          <li>シール条件／ガス置換条件</li>
+          <li>製品の固定・支持方法</li>
+          <li>開封性／積み重ね性／ロボット投入・取り出し性</li>
+        </ul>
+        <p style="font-size:12px;line-height:1.9;color:#444;margin-top:12px">つくば本社工場のLocal Innovation Center（LIC）では、実製品と実機を使用した包装テストを実施しています。新しいトレーや環境対応包材へ切り替える場合は、包装できるかだけでなく、実用速度での連続運転、停止後の再始動、品種変更、長時間運転における安定性まで段階的に評価します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 活用事例 ── -->
+  <section id="case-studies" style="margin-bottom:60px">
+    <div class="wf-section">活用事例</div>
+    <div class="wf-note">&#9733; CMS連携 &#8212; 本製品に関連する事例記事（投稿）を自動表示</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px">
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[事例記事サムネイル]</div>
+        <div class="rel-card-body">
+          <div style="font-size:11px;color:#888;margin-bottom:4px">2025.10.28</div>
+          <div class="rel-card-title">半導体関連メーカー様｜専用トレーとスキンパックで精密面の擦れを防止</div>
+          <div class="rel-card-sub">導入事例</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[事例記事サムネイル]</div>
+        <div class="rel-card-body">
+          <div style="font-size:11px;color:#888;margin-bottom:4px">2025.07.16</div>
+          <div class="rel-card-title">切削工具メーカー様｜部品セット包装で組立工程の部品供給を効率化</div>
+          <div class="rel-card-sub">導入事例</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[事例記事サムネイル]</div>
+        <div class="rel-card-body">
+          <div style="font-size:11px;color:#888;margin-bottom:4px">2025.04.09</div>
+          <div class="rel-card-title">電子機器メーカー様｜モノマテリアルトレーへの切り替えを包装テストで検証</div>
+          <div class="rel-card-sub">導入事例</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <a href="#" class="btn-outline" style="padding:10px 24px">事例記事一覧を見る</a>
+    </div>
+  </section>
+
+  <!-- ── 下部CTA ── -->
+  <section id="cta" style="margin-bottom:60px">
+    <div class="cta-block">
+      <div class="cta-title">サンプル作成・実機テスト・見積のご依頼</div>
+      <div class="cta-sub">LIC（ローカルイノベーションセンター）では実機を使ったサンプル包装テストを実施しています。<br>まずはお気軽にお問い合わせください。</div>
+      <div class="cta-btns">
+        <div class="cta-btn-primary">&#x2709; お問い合わせ・見積依頼</div>
+        <div class="cta-btn-outline">&#x1F9EA; 包装テストを申し込む</div>
+        <div class="cta-btn-outline">&#x2193; カタログをダウンロード</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3本柱 ── -->
+  <section style="margin-bottom:60px">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+      <div style="text-align:center;padding:32px 24px;border:1px solid #e0e0e0;border-radius:8px">
+        <div style="font-size:36px;margin-bottom:12px">&#x2699;</div>
+        <h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:10px">設置環境に応じた機械仕様</h3>
+        <p style="font-size:13px;color:#555;line-height:1.9">清掃性、低発塵性、使用材料、排気方法、帯電防止、設置スペース、周辺設備との接続、トレーやフィルムの保管方法、包装品質と記録方法。一般的な製造環境だけでなく、クリーン環境への設置についても、要求清浄度、包材、清掃方法、排気、運用条件を確認して仕様を検討します。</p>
+      </div>
+      <div style="text-align:center;padding:32px 24px;border:1px solid #e0e0e0;border-radius:8px">
+        <div style="font-size:36px;margin-bottom:12px">&#x1F1EF;&#x1F1F5;</div>
+        <h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:10px">国内サポート体制</h3>
+        <p style="font-size:13px;color:#555;line-height:1.9">包装テスト、トレー・包材選定、機械仕様の検討から、設置、立ち上げ、操作トレーニング、アフターサポートまで国内スタッフが対応します。</p>
+      </div>
+      <div style="text-align:center;padding:32px 24px;border:1px solid #e0e0e0;border-radius:8px">
+        <div style="font-size:36px;margin-bottom:12px">&#x1F30F;</div>
+        <h3 style="font-size:16px;font-weight:bold;color:#003087;margin-bottom:10px">グローバル導入実績</h3>
+        <p style="font-size:13px;color:#555;line-height:1.9">MULTIVACのトレー包装システムは、工業製品の保護包装、配置保持、工程間搬送、包装自動化などに活用されています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section id="faq" style="margin-bottom:60px">
+    <div class="wf-section">よくある質問 FAQ</div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. トレーシーラーとはどのような包装機ですか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body show">
+        <p>既製トレーや製品専用トレーにトップフィルムを熱シールし、製品を密封・保護する包装機です。含気包装、ガス置換包装、スキンパックなどに対応します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 工業製品にはどのような包装ができますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>含気包装、ガス置換包装、スキンパックなどに対応します。製品条件に応じて、防塵、製品固定、配置保持、部品同士の接触防止、工程間搬送などを目的とした包装仕様を検討できます。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. どのような製品に対応できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>電子部品、半導体関連製品、精密加工部品、機械部品、金属部品、樹脂成形部品、ベアリング、ギア、シャフト、切削工具、ワイヤー製品、部品セットなどに対応します。製品の寸法、重量、形状、突起、精密面を確認して包装仕様を設計します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. スキンパックとはどのような包装ですか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>スキンフィルムを製品周囲のトレー面へ密着させ、包装内部における製品の位置を保持する包装です。フィルムを製品自体へ接着するのではなく、製品周囲のトレー面へ密着させて固定します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 製品へスキンフィルムが接着しますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>スキンフィルムは製品形状に沿って表面へ密着しますが、基本的には製品自体へ接着するものではありません。製品周囲のトレー面へフィルムをシールすることで、包装内部での製品の位置を保持します。MULTIVACでは、フィルムの加熱位置と製品へ追従するまでの工程を考慮し、製品表面への熱影響に配慮した包装を行います。</p>
+        <p>ただし、フィルムは製品表面に接触するため、製品の材質、表面処理、コーティング、接着剤、粘着性、耐熱性によっては影響を受ける可能性があります。実製品による包装テストで、製品表面の温度、真空による荷重、包装後および開封後の表面状態を確認します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 熱に弱い製品もスキンパックできますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>スキンパック方式によって、フィルムの加熱方法や製品へ追従するまでの工程は異なります。MULTIVACでは、フィルムの加熱位置と製品へ追従するまでの工程を考慮し、製品表面への熱影響に配慮した包装を行います。</p>
+        <p>ただし、対応可否は製品の材質、耐熱温度、表面処理、コーティング、接着剤、製品形状、フィルム、包装条件によって異なります。LICでは、包装中および包装直後の製品表面温度、フィルムの接触状態、固定性、真空による荷重、包装後・開封後の製品状態を実製品で確認します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 製品同士の接触を防げますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。製品に合った形状や仕切り付きのトレーで部品を個別に分離し、必要に応じてスキンフィルムで位置を保持することで、包装内部での接触や移動を抑えられます。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 輸送中のキズや擦れを防げますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>製品専用トレーやスキンパックにより、包装内部での製品移動や部品同士の接触を抑えられます。ただし、落下や強い外部衝撃には外装箱や緩衝材が必要となる場合があるため、損傷原因を分けて包装構造を設計します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 含気包装は真空包装ですか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>いいえ。含気包装は、原則としてトレー内部の空気を残した状態でトップフィルムをシールする包装です。製品への真空負荷を避けたい場合や、防塵、部品セットの保持、工程間搬送を目的とする場合に活用できます。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 真空に弱い製品も包装できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。含気包装やガス置換包装を検討できます。製品への圧力、包装内部の空気量、輸送中の変化、必要な固定力を実製品による包装テストで確認します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 防湿・防塵包装に対応できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。ただし、必要な性能は包装機だけでなく、トレーとトップフィルムのバリア性、シール品質、製品形状、保管・輸送条件などによって決まります。包材を含めた包装仕様をご提案します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 防錆包装に対応できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>対応可能性は、対象金属、保管期間、湿度、洗浄状態、防錆油の有無、トレーとフィルムのバリア性、包装内部の雰囲気などによって異なります。実製品による包装テストを行い、必要な防錆性能を満たせるか確認します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 既存のトレーを使用できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>トレー寸法、材質、フランジ形状、平面度、剛性、耐熱性、トップフィルムとのシール適性が包装機に適合する場合は使用できます。実トレーによるシールテストと搬送評価が必要です。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 製品専用トレーを作れますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。製品形状、支持位置、収納数、仕切り、積み重ね、ロボット投入・取り出し、開封後の使用方法などを考慮した専用トレーをご提案できます。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. ロボットで製品を自動投入できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。トレーと製品の収納位置を固定できるため、ピック＆プレースロボットやパーツフィーダーと連携した自動投入に適しています。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. トレーを自動供給できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。トレー供給機と連携し、トレーの供給、搬送、位置決め、製品投入、包装までを自動化できます。トレー材質、剛性、分離性、静電気などを確認して供給仕様を設計します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. EU PPWRを見据えた包装資材の見直しに対応できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。モノマテリアルトレー、再生材を含むトレー、薄肉・軽量トレー、繊維系トレーなどを候補として、トップフィルムとのシール適性や製品保護性能、機械適性を評価します。</p>
+        <p>材質やリサイクル性だけでなく、トレーの剛性、自動供給時の分離性、搬送安定性、実用速度での連続運転まで確認し、包装仕様の切り替えを支援します。なお、個別の法令適合性については、対象市場、製品用途、包材構成などに応じた確認が必要です。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. モノマテリアルトレーや再生材を使用したトレーにも対応できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>対応可否は、トレーの成形精度、剛性、耐熱性、シール層、トップフィルムとの適合性、自動供給・搬送への適性によって異なります。実トレーと実製品による包装テストを行い、包装品質と連続運転の安定性を確認します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 繊維系トレーも使用できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>候補トレーのフランジ形状、シール性、剛性、耐熱性、表面状態、寸法安定性などを確認したうえで検討します。トレー単体だけでなく、トップフィルム、シール条件、自動供給適性まで含めた評価が必要です。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 環境対応包材へ変更すると包装能力は変わりますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>包材の剛性、摩擦、帯電、シール温度、トレーの分離性などが変わることで、供給、搬送、シール条件、処理能力に影響する場合があります。低速で包装できるかだけでなく、実用速度、停止後の再始動、品種変更、長時間運転まで段階的に評価します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 深絞り包装機との違いは何ですか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>トレーシーラーは既製トレーまたは製品専用トレーを使用するため、トレーの剛性や支持形状を活かした包装に適しています。少量生産や既存トレーを活用した段階的な導入にも対応しやすい方式です。</p>
+        <p>深絞り包装機は、ロール状のボトムフィルムから包装ポケットを連続成形するため、中量・大量生産、包装の薄型化、既製トレー在庫の削減、ロボット投入を含む連続自動化に適しています。製品支持、包装量、資材在庫、積み重ね、前後工程を総合して選定します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. トレースキンと深絞りスキンの違いは何ですか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>トレースキンは既製トレーや専用トレーを使用し、トレーの剛性と支持形状を活かして製品を固定します。深絞りスキンはボトムフィルムを機械上で成形するため、包装を薄型・コンパクト化しやすく、ロール材から連続包装できます。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 包装資材も提案できますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。トレー、トップフィルム、スキンフィルムを含め、製品固定、バリア性、耐突刺し性、帯電防止性、透明性、開封性、機械適性を考慮した包装資材をご提案します。</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        <span>Q. 導入前に包装テストはできますか？</span>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>はい。つくば本社工場のLICで、実製品を使用した包装テストとサンプルパック作成が可能です。包装方式、トレー、フィルム、シール条件、製品固定方法、開封性、自動投入への適合性などを比較できます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 主な対象製品 ── -->
+  <section style="margin-bottom:60px">
+    <div class="wf-section">主な対象製品</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <span class="tag">電子部品</span>
+          <span class="tag">半導体関連製品</span>
+          <span class="tag">半導体材料</span>
+          <span class="tag">精密加工部品</span>
+          <span class="tag">精密装置部品</span>
+          <span class="tag">精密電子機器</span>
+          <span class="tag">機械部品</span>
+          <span class="tag">金属部品</span>
+          <span class="tag">樹脂成形部品</span>
+          <span class="tag">ベアリング</span>
+          <span class="tag">ギア</span>
+          <span class="tag">シャフト</span>
+          <span class="tag">ワッシャー</span>
+          <span class="tag">切削工具</span>
+          <span class="tag">刃物</span>
+          <span class="tag">ワイヤー製品</span>
+          <span class="tag">コネクター</span>
+          <span class="tag">センサー</span>
+          <span class="tag">サービスパーツ</span>
+          <span class="tag">消耗品</span>
+          <span class="tag">交換部品</span>
+          <span class="tag">メンテナンスキット</span>
+          <span class="tag">組立用部品セット</span>
+          <span class="tag">工程間搬送用部品</span>
+    </div>
+  </section>
+
+  <!-- ── 関連情報 ── -->
+  <section id="related" style="margin-bottom:60px">
+    <div class="wf-section">関連機種</div>
+    <div class="wf-note">&#9733; 回遊性UI &#8212; 関連機種ページへの導線</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px">
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[MULTIVAC 深絞り包装機]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">MULTIVAC 深絞り包装機</div>
+          <div class="rel-card-sub">ロールフィルムから連続成形</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[MULTIVAC スキンパック用]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">MULTIVAC スキンパック用深絞り包装機</div>
+          <div class="rel-card-sub">ノントレースキンパック</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[MULTIVAC チャンバー型真]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">MULTIVAC チャンバー型真空包装機</div>
+          <div class="rel-card-sub">小ロット・多品種の真空包装</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[MULTIVAC ベルトチャンバ]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">MULTIVAC ベルトチャンバー型真空包装機</div>
+          <div class="rel-card-sub">連続搬送式の真空包装</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[MULTIVAC ラベリングシス]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">MULTIVAC ラベリングシステム</div>
+          <div class="rel-card-sub">包装後のラベル貼付・印字</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[MULTIVAC Vision ]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">MULTIVAC Vision system I410/I420</div>
+          <div class="rel-card-sub">外観検査・シール不良検出</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[トレー供給機]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">トレー供給機</div>
+          <div class="rel-card-sub">トレーの自動供給・位置決め</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[ロボットローディングシステム]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">ロボットローディングシステム</div>
+          <div class="rel-card-sub">ピック＆プレースによる自動投入</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wf-section">関連技術</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[含気包装]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">含気包装</div>
+          <div class="rel-card-sub">空気を残したままトップシール</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[ガス置換包装]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">ガス置換包装</div>
+          <div class="rel-card-sub">包装内部の雰囲気を調整</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[トレースキン]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">トレースキン</div>
+          <div class="rel-card-sub">トレー面へフィルムを密着</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[スキンパック]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">スキンパック</div>
+          <div class="rel-card-sub">製品の向きと配置を保持</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[製品固定包装]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">製品固定包装</div>
+          <div class="rel-card-sub">包装内部での移動を抑制</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[個別配置包装]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">個別配置包装</div>
+          <div class="rel-card-sub">部品ごとの分離・欠品確認</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[工程間包装]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">工程間包装</div>
+          <div class="rel-card-sub">搬送・部品セットの保持</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[トレー自動供給]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">トレー自動供給</div>
+          <div class="rel-card-sub">供給から位置決めまで自動化</div>
+        </div>
+      </div>
+      <div class="rel-card">
+        <div class="wf-img rel-card-img">[EU PPWRを見据えた包材選定]</div>
+        <div class="rel-card-body">
+          <div class="rel-card-title">EU PPWRを見据えた包材選定</div>
+          <div class="rel-card-sub">環境対応トレーへの切り替え</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /l-wrap -->
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <div class="ft-logo-wrap">
+        <span class="ft-logo-icon">&#9632;</span>
+        <span class="ft-logo-text">MULTIVAC</span>
+      </div>
+      <div class="ft-company-name">ムルチバック・ジャパン株式会社</div>
+      <div class="ft-sns">
+        <a href="#" class="ft-sns-btn" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+        <a href="#" class="ft-sns-btn" aria-label="X (Twitter)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+      <address class="ft-address">〒104-0061<br>東京都中央区銀座5丁目9-8<br>クロス銀座ビル5F</address>
+    </div>
+    <nav class="ft-links">
+      <a href="19_contact.html">お問い合わせ</a>
+      <a href="21_privacy.html">プライバシーポリシー</a>
+      <a href="24_sitemap.html">サイトマップ</a>
+    </nav>
+  </div>
+  <div class="ft-copy">Copyright&copy;2026 MULTIVAC Japan Inc. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleAcc(head) {
+  var icon = head.querySelector('.accordion-icon');
+  var body = head.nextElementSibling;
+  var isOpen = body.classList.contains('show');
+  body.classList.toggle('show', !isOpen);
+  icon.classList.toggle('open', !isOpen);
+}
+
+/* ── 製品画像ギャラリー（スライダー） ── */
+(function(){
+  var galleries = document.querySelectorAll('.gallery');
+  galleries.forEach(function(gallery){
+    var slides = gallery.querySelectorAll('.gallery-slide');
+    var thumbs = gallery.querySelectorAll('.gallery-thumb');
+    var current = 0;
+    var timer = null;
+
+    function show(index){
+      current = (index + slides.length) % slides.length;
+      slides.forEach(function(s,i){ s.classList.toggle('active', i === current); });
+      thumbs.forEach(function(t,i){ t.classList.toggle('active', i === current); });
+    }
+    function startAuto(){
+      stopAuto();
+      timer = setInterval(function(){ show(current + 1); }, 4000);
+    }
+    function stopAuto(){
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+
+    gallery._show = show;
+    gallery._stopAuto = stopAuto;
+    gallery._startAuto = startAuto;
+
+    gallery.addEventListener('mouseenter', stopAuto);
+    gallery.addEventListener('mouseleave', startAuto);
+    startAuto();
+  });
+})();
+
+function galleryGo(el, index){
+  var gallery = el.closest('.gallery');
+  gallery._show(index);
+  gallery._startAuto();
+}
+
+function galleryMove(el, delta){
+  var gallery = el.closest('.gallery');
+  var slides = gallery.querySelectorAll('.gallery-slide');
+  var current = 0;
+  slides.forEach(function(s,i){ if (s.classList.contains('active')) current = i; });
+  gallery._show(current + delta);
+  gallery._startAuto();
+}
+</script>
+</body>
+</html>
