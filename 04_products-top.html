@@ -122,6 +122,9 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
 .prod-pill { background:#fff; color:#222; font-size:12px; padding:10px 12px; border-radius:4px; text-decoration:none; display:block; }
 .prod-pill:hover { background:#f0f4ff; color:#003087; }
 .maker-box { display:block; text-decoration:none; color:inherit; transition:box-shadow .15s, transform .15s; }
+/* メーカーロゴ: 縦横比が異なるため描画面積が揃う高さを個別指定する */
+.maker-logo-wrap { display:flex; align-items:center; justify-content:center; height:76px; }
+.maker-logo-wrap img { max-width:100%; width:auto; object-fit:contain; }
 .maker-box:hover { box-shadow:0 4px 14px rgba(0,48,135,.15); transform:translateY(-2px); }
 </style>
 </head>
@@ -535,9 +538,9 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
         <div class="prod-acc-body">
           <a href="09e_products-detail-tvi-portioncutter.html" class="prod-pill">&#8250; TVIポーションカッター</a>
           <a href="#" class="prod-pill">&#8250; MULTIVACスライサー</a>
-          <a href="09r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; Handtmann VFシリーズ</a>
-          <a href="09s_products-detail-handtmann-sausage-line.html" class="prod-pill">&#8250; Handtmann ソーセージライン</a>
-          <a href="09v_products-detail-handtmann-minced-meat-line.html" class="prod-pill">&#8250; Handtmann ミンチ製造ライン</a>
+          <a href="09r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; handtmann VFシリーズ</a>
+          <a href="09s_products-detail-handtmann-sausage-line.html" class="prod-pill">&#8250; handtmann ソーセージライン</a>
+          <a href="09v_products-detail-handtmann-minced-meat-line.html" class="prod-pill">&#8250; handtmann ミンチ製造ライン</a>
           <a href="09p_products-detail-schroder-imax.html" class="prod-pill">&#8250; SCHRÖDER IMAXシリーズ</a>
           <a href="09q_products-detail-schroder-max.html" class="prod-pill">&#8250; SCHRÖDER MAXシリーズ</a>
         </div>
@@ -551,9 +554,9 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
           <span class="prod-acc-icon">+</span>
         </div>
         <div class="prod-acc-body">
-          <a href="09r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; Handtmann VFシリーズ</a>
-          <a href="09s_products-detail-handtmann-sausage-line.html" class="prod-pill">&#8250; Handtmann ソーセージライン</a>
-          <a href="09t_products-detail-handtmann-forming-line.html" class="prod-pill">&#8250; Handtmann 成形品製造ライン</a>
+          <a href="09r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; handtmann VFシリーズ</a>
+          <a href="09s_products-detail-handtmann-sausage-line.html" class="prod-pill">&#8250; handtmann ソーセージライン</a>
+          <a href="09t_products-detail-handtmann-forming-line.html" class="prod-pill">&#8250; handtmann 成形品製造ライン</a>
           <a href="09l_products-detail-seydelmann-mixer.html" class="prod-pill">&#8250; SEYDELMANNミキサー</a>
           <a href="09m_products-detail-seydelmann-mixer-grinder.html" class="prod-pill">&#8250; SEYDELMANNミキサーグラインダー</a>
           <a href="09y_products-detail-seydelmann-cutter.html" class="prod-pill">&#8250; SEYDELMANNカッター</a>
@@ -597,13 +600,13 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
           <a href="09k_products-detail-seydelmann-tumbler.html" class="prod-pill">&#8250; SEYDELMANNトロリータンブラー</a>
           <a href="09y_products-detail-seydelmann-cutter.html" class="prod-pill">&#8250; SEYDELMANNカッター</a>
           <a href="09z_products-detail-seydelmann-trolley-mixer.html" class="prod-pill">&#8250; SEYDELMANNトロリーミキサー</a>
-          <a href="09v_products-detail-handtmann-minced-meat-line.html" class="prod-pill">&#8250; Handtmann ミンチ製造ライン</a>
+          <a href="09v_products-detail-handtmann-minced-meat-line.html" class="prod-pill">&#8250; handtmann ミンチ製造ライン</a>
           <a href="09n_products-detail-stephan-um.html" class="prod-pill">&#8250; Stephan UMシリーズ</a>
           <a href="09o_products-detail-stephan-mc.html" class="prod-pill">&#8250; Stephan MCシリーズ</a>
           <a href="09e_products-detail-tvi-portioncutter.html" class="prod-pill">&#8250; TVIポーションカッター</a>
           <a href="#" class="prod-pill">&#8250; MULTIVACスライサー</a>
-          <a href="09r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; Handtmann VFシリーズ</a>
-          <a href="09s_products-detail-handtmann-sausage-line.html" class="prod-pill">&#8250; Handtmann ソーセージライン</a>
+          <a href="09r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; handtmann VFシリーズ</a>
+          <a href="09s_products-detail-handtmann-sausage-line.html" class="prod-pill">&#8250; handtmann ソーセージライン</a>
           <a href="09a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; MULTIVAC 深絞り包装機（食品）</a>
           <a href="09b_products-detail-traysealer-food.html" class="prod-pill">&#8250; MULTIVAC トレーシーラー（食品）</a>
           <a href="09f_products-detail-labeler.html" class="prod-pill">&#8250; ラベラー</a>
@@ -620,14 +623,14 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
         </div>
         <div class="prod-acc-body">
           <a href="#" class="prod-pill">&#8250; LIC</a>
-          <a href="09r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; Handtmann VFシリーズ</a>
-          <a href="09s_products-detail-handtmann-sausage-line.html" class="prod-pill">&#8250; Handtmann ソーセージライン</a>
+          <a href="09r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; handtmann VFシリーズ</a>
+          <a href="09s_products-detail-handtmann-sausage-line.html" class="prod-pill">&#8250; handtmann ソーセージライン</a>
           <a href="09n_products-detail-stephan-um.html" class="prod-pill">&#8250; Stephan UMシリーズ</a>
           <a href="09o_products-detail-stephan-mc.html" class="prod-pill">&#8250; Stephan MCシリーズ</a>
           <a href="09h_products-detail-fritsch-multiflex.html" class="prod-pill">&#8250; FRITSCHペストリー成形機</a>
           <a href="09i_products-detail-fritsch-multitwist.html" class="prod-pill">&#8250; FRITSCH編み込み成形機</a>
           <a href="09aa_products-detail-escher-spiral-mixer.html" class="prod-pill">&#8250; ESCHERスパイラルミキサー</a>
-          <a href="09w_products-detail-handtmann-coextruding.html" class="prod-pill">&#8250; Handtmann 二重充填・包餡ライン</a>
+          <a href="09w_products-detail-handtmann-coextruding.html" class="prod-pill">&#8250; handtmann 二重充填・包餡ライン</a>
         </div>
       </div>
     </div>
@@ -639,11 +642,11 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
           <span class="prod-acc-icon">+</span>
         </div>
         <div class="prod-acc-body">
-          <a href="09r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; Handtmann VFシリーズ</a>
-          <a href="09t_products-detail-handtmann-forming-line.html" class="prod-pill">&#8250; Handtmann 成形品製造ライン</a>
-          <a href="09u_products-detail-handtmann-ds552.html" class="prod-pill">&#8250; Handtmann DS552</a>
-          <a href="09x_products-detail-handtmann-conpro.html" class="prod-pill">&#8250; Handtmann ConPro（アルギン酸ケーシング）</a>
-          <a href="09w_products-detail-handtmann-coextruding.html" class="prod-pill">&#8250; Handtmann 二重充填・包餡ライン</a>
+          <a href="09r_products-detail-handtmann-vf.html" class="prod-pill">&#8250; handtmann VFシリーズ</a>
+          <a href="09t_products-detail-handtmann-forming-line.html" class="prod-pill">&#8250; handtmann 成形品製造ライン</a>
+          <a href="09u_products-detail-handtmann-ds552.html" class="prod-pill">&#8250; handtmann DS552</a>
+          <a href="09x_products-detail-handtmann-conpro.html" class="prod-pill">&#8250; handtmann ConPro（アルギン酸ケーシング）</a>
+          <a href="09w_products-detail-handtmann-coextruding.html" class="prod-pill">&#8250; handtmann 二重充填・包餡ライン</a>
           <a href="09n_products-detail-stephan-um.html" class="prod-pill">&#8250; Stephan UMシリーズ</a>
           <a href="09o_products-detail-stephan-mc.html" class="prod-pill">&#8250; Stephan MCシリーズ</a>
           <a href="09a_products-detail-thermoformer-food.html" class="prod-pill">&#8250; MULTIVAC 深絞り包装機（食品）</a>
@@ -675,14 +678,14 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
 
   <div id="by-maker" class="wf-section">メーカーから探す</div>
   <div class="l-grid4">
-    <a href="04b_maker-multivac.html" class="wf-box maker-box" style="text-align:center;padding:20px"><img src="logos/multivac.jpg" alt="MULTIVACロゴ" style="width:100%;height:60px;object-fit:contain"><p style="font-size:13px;margin-top:8px">MULTIVAC</p></a>
-    <a href="04c_maker-tvi.html" class="wf-box maker-box" style="text-align:center;padding:20px"><img src="logos/tvi.jpg" alt="TVIロゴ" style="width:100%;height:60px;object-fit:contain"><p style="font-size:13px;margin-top:8px">TVI</p></a>
-    <a href="04d_maker-fritsch.html" class="wf-box maker-box" style="text-align:center;padding:20px"><img src="logos/fritsch.jpg" alt="FRITSCHロゴ" style="width:100%;height:60px;object-fit:contain"><p style="font-size:13px;margin-top:8px">FRITSCH</p></a>
-    <a href="04e_maker-stephan.html" class="wf-box maker-box" style="text-align:center;padding:20px"><img src="logos/stephan.jpg" alt="Stephanロゴ" style="width:100%;height:60px;object-fit:contain"><p style="font-size:13px;margin-top:8px">Stephan</p></a>
-    <a href="04f_maker-schroeder.html" class="wf-box maker-box" style="text-align:center;padding:20px"><img src="logos/schroeder.jpg" alt="SCHROEDERロゴ" style="width:100%;height:60px;object-fit:contain"><p style="font-size:13px;margin-top:8px">SCHROEDER</p></a>
-    <a href="04g_maker-seydelmann.html" class="wf-box maker-box" style="text-align:center;padding:20px"><img src="logos/seydelmann.jpg" alt="Seydelmannロゴ" style="width:100%;height:60px;object-fit:contain"><p style="font-size:13px;margin-top:8px">Seydelmann</p></a>
-    <a href="04h_maker-handtmann.html" class="wf-box maker-box" style="text-align:center;padding:20px"><img src="logos/handtmann.jpg" alt="handtmannロゴ" style="width:100%;height:60px;object-fit:contain"><p style="font-size:13px;margin-top:8px">handtmann</p></a>
-    <a href="04i_maker-escher.html" class="wf-box maker-box" style="text-align:center;padding:20px"><img src="logos/escher.jpg" alt="ESCHERロゴ" style="width:100%;height:60px;object-fit:contain"><p style="font-size:13px;margin-top:8px">ESCHER</p></a>
+    <a href="04b_maker-multivac.html" class="wf-box maker-box" style="text-align:center;padding:20px"><span class="maker-logo-wrap"><img src="logos/multivac.jpg" alt="MULTIVACロゴ" style="height:47px"></span><p style="font-size:13px;margin-top:8px">MULTIVAC</p></a>
+    <a href="04c_maker-tvi.html" class="wf-box maker-box" style="text-align:center;padding:20px"><span class="maker-logo-wrap"><img src="logos/tvi.jpg" alt="TVIロゴ" style="height:51px"></span><p style="font-size:13px;margin-top:8px">TVI</p></a>
+    <a href="04d_maker-fritsch.html" class="wf-box maker-box" style="text-align:center;padding:20px"><span class="maker-logo-wrap"><img src="logos/fritsch.jpg" alt="FRITSCHロゴ" style="height:53px"></span><p style="font-size:13px;margin-top:8px">FRITSCH</p></a>
+    <a href="04e_maker-stephan.html" class="wf-box maker-box" style="text-align:center;padding:20px"><span class="maker-logo-wrap"><img src="logos/stephan.jpg" alt="Stephanロゴ" style="height:70px"></span><p style="font-size:13px;margin-top:8px">Stephan</p></a>
+    <a href="04f_maker-schroeder.html" class="wf-box maker-box" style="text-align:center;padding:20px"><span class="maker-logo-wrap"><img src="logos/schroeder.jpg" alt="SCHROEDERロゴ" style="height:52px"></span><p style="font-size:13px;margin-top:8px">SCHROEDER</p></a>
+    <a href="04g_maker-seydelmann.html" class="wf-box maker-box" style="text-align:center;padding:20px"><span class="maker-logo-wrap"><img src="logos/seydelmann.jpg" alt="Seydelmannロゴ" style="height:44px"></span><p style="font-size:13px;margin-top:8px">Seydelmann</p></a>
+    <a href="04h_maker-handtmann.html" class="wf-box maker-box" style="text-align:center;padding:20px"><span class="maker-logo-wrap"><img src="logos/handtmann.jpg" alt="handtmannロゴ" style="height:59px"></span><p style="font-size:13px;margin-top:8px">handtmann</p></a>
+    <a href="04i_maker-escher.html" class="wf-box maker-box" style="text-align:center;padding:20px"><span class="maker-logo-wrap"><img src="logos/escher.jpg" alt="ESCHERロゴ" style="height:47px"></span><p style="font-size:13px;margin-top:8px">ESCHER</p></a>
   </div>
 </div>
 
