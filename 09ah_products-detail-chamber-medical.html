@@ -174,18 +174,18 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font
       <div>
         <div class="gallery" id="productGallery">
           <div class="gallery-main">
-            <div class="gallery-slide active wf-img">[製品画像 1 — 画像支給待ち]</div>
-            <div class="gallery-slide wf-img">[製品画像 2 — 画像支給待ち]</div>
-            <div class="gallery-slide wf-img">[製品画像 3 — 画像支給待ち]</div>
-            <div class="gallery-slide wf-img">[製品画像 4 — 画像支給待ち]</div>
+            <img class="gallery-slide active" src="images/09ah-1_C300TC.png" alt="チャンバー型真空包装機 C300 TC">
+            <img class="gallery-slide" src="images/09ah-2_C200TC.png" alt="チャンバー型真空包装機 C200 TC">
+            <img class="gallery-slide" src="images/09ah-3_C700TC.png" alt="チャンバー型真空包装機 C700 TC">
+            <img class="gallery-slide" src="images/09ah-4_C400TC-1.png" alt="チャンバー型真空包装機 C400 TC（チャンバー内部）">
             <button type="button" class="gallery-arrow gallery-prev" onclick="galleryMove(this,-1)" aria-label="前の画像">&#10094;</button>
             <button type="button" class="gallery-arrow gallery-next" onclick="galleryMove(this,1)" aria-label="次の画像">&#10095;</button>
           </div>
           <div class="gallery-thumbs">
-            <div class="gallery-thumb active wf-img" onclick="galleryGo(this,0)">1</div>
-            <div class="gallery-thumb wf-img" onclick="galleryGo(this,1)">2</div>
-            <div class="gallery-thumb wf-img" onclick="galleryGo(this,2)">3</div>
-            <div class="gallery-thumb wf-img" onclick="galleryGo(this,3)">4</div>
+            <img class="gallery-thumb active" src="images/09ah-1_C300TC.png" alt="チャンバー型真空包装機 C300 TC" onclick="galleryGo(this,0)">
+            <img class="gallery-thumb" src="images/09ah-2_C200TC.png" alt="チャンバー型真空包装機 C200 TC" onclick="galleryGo(this,1)">
+            <img class="gallery-thumb" src="images/09ah-3_C700TC.png" alt="チャンバー型真空包装機 C700 TC" onclick="galleryGo(this,2)">
+            <img class="gallery-thumb" src="images/09ah-4_C400TC-1.png" alt="チャンバー型真空包装機 C400 TC（チャンバー内部）" onclick="galleryGo(this,3)">
           </div>
         </div>
       </div>
@@ -249,10 +249,10 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font
   <section id="gallery-photos" style="margin-bottom:60px">
     <div class="wf-section">ギャラリー</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 1]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 2]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 3]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 4]</div>
+      <img class="gallery-photo" src="images/09ah-5_biopsy_forceps.jpg" alt="袋で真空包装した生検鉗子" loading="lazy">
+      <img class="gallery-photo" src="images/09ah-6_stent.jpg" alt="パウチで包装したステント" loading="lazy">
+      <img class="gallery-photo" src="images/09ah-6_test_reagent.jpg" alt="アルミパウチで包装した検査薬" loading="lazy">
+      <img class="gallery-photo" src="images/09ah-8_coronary_stent.jpg" alt="アルミパウチで包装した冠動脈ステント" loading="lazy">
       <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 5]</div>
       <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 6]</div>
     </div>
