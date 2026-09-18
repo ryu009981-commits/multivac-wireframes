@@ -174,18 +174,18 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font
       <div>
         <div class="gallery" id="productGallery">
           <div class="gallery-main">
-            <div class="gallery-slide active wf-img">[製品画像 1 — 画像支給待ち]</div>
-            <div class="gallery-slide wf-img">[製品画像 2 — 画像支給待ち]</div>
-            <div class="gallery-slide wf-img">[製品画像 3 — 画像支給待ち]</div>
-            <div class="gallery-slide wf-img">[製品画像 4 — 画像支給待ち]</div>
+            <img class="gallery-slide active" src="images/09c-1_C200.png" alt="チャンバー型真空包装機 C 200">
+            <img class="gallery-slide" src="images/09c-2_C500.png" alt="チャンバー型真空包装機 C 500">
+            <img class="gallery-slide" src="images/09c-3_B625.png" alt="B 625">
+            <img class="gallery-slide" src="images/09c-4_P605.png" alt="P 605">
             <button type="button" class="gallery-arrow gallery-prev" onclick="galleryMove(this,-1)" aria-label="前の画像">&#10094;</button>
             <button type="button" class="gallery-arrow gallery-next" onclick="galleryMove(this,1)" aria-label="次の画像">&#10095;</button>
           </div>
           <div class="gallery-thumbs">
-            <div class="gallery-thumb active wf-img" onclick="galleryGo(this,0)">1</div>
-            <div class="gallery-thumb wf-img" onclick="galleryGo(this,1)">2</div>
-            <div class="gallery-thumb wf-img" onclick="galleryGo(this,2)">3</div>
-            <div class="gallery-thumb wf-img" onclick="galleryGo(this,3)">4</div>
+            <img class="gallery-thumb active" src="images/09c-1_C200.png" alt="チャンバー型真空包装機 C 200" onclick="galleryGo(this,0)">
+            <img class="gallery-thumb" src="images/09c-2_C500.png" alt="チャンバー型真空包装機 C 500" onclick="galleryGo(this,1)">
+            <img class="gallery-thumb" src="images/09c-3_B625.png" alt="B 625" onclick="galleryGo(this,2)">
+            <img class="gallery-thumb" src="images/09c-4_P605.png" alt="P 605" onclick="galleryGo(this,3)">
           </div>
         </div>
       </div>
@@ -249,12 +249,12 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:80px; font
   <section id="gallery-photos" style="margin-bottom:60px">
     <div class="wf-section">ギャラリー</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 1]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 2]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 3]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 4]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 5]</div>
-      <div class="wf-img" style="height:180px;border-radius:6px">[製品画像 6]</div>
+      <img class="gallery-photo" src="images/09c-5_Group.png" alt="チャンバー型真空包装機 製品群" loading="lazy">
+      <img class="gallery-photo" src="images/09ad-6_packing_bearing.jpg" alt="チャンバー内で袋に入れたベアリングの包装作業" loading="lazy">
+      <img class="gallery-photo" src="images/09ae-4_aluminum.png" alt="アルミ袋で真空包装した工業製品" loading="lazy">
+      <img class="gallery-photo" src="images/09ae-5_bag_bearing.jpg" alt="袋で真空包装したベアリング" loading="lazy">
+      <img class="gallery-photo" src="images/09ae-6_bag_sensor_module.jpg" alt="袋で真空包装したセンサーモジュール" loading="lazy">
+      <img class="gallery-photo" src="images/09ad-10_bag_servo_drive.jpg" alt="アルミ袋で真空包装したサーボドライブ" loading="lazy">
     </div>
   </section>
 
