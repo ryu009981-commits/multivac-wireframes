@@ -18,6 +18,13 @@ body { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; color: #222; ba
 .l-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
 .l-grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; }
 .l-grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.branch-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:16px; }
+/* 語の途中で改行させない単位 */
+.nw { white-space:nowrap; }
+/* 動画埋め込み枠（16:9） */
+.video-embed { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:6px; }
+.video-embed iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+.video-pending { position:absolute; top:0; left:0; width:100%; height:100%; background:#e8e8e8; border:1px dashed #aaa; display:flex; align-items:center; justify-content:center; color:#888; font-size:13px; text-align:center; line-height:1.9; }
 .l-side  { display:grid; grid-template-columns:260px 1fr; gap:32px; }
 
 header { background:#fff; border-bottom:2px solid #003087; padding:12px 0; position:sticky; top:0; z-index:100; }
@@ -154,30 +161,6 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
 
   <p style="font-size:15px;line-height:2;color:#444;margin-bottom:48px;max-width:720px">設備導入後の停止リスクを最小化。<br>全国体制と専任エンジニアにより、長期にわたる安定稼働を支えます。</p>
 
-  <!-- CS -->
-  <div class="wf-section">CS（カスタマーサポート）</div>
-  <div class="l-grid2" style="margin-bottom:40px;gap:32px">
-    <div>
-      <ul style="font-size:14px;line-height:2.2;padding-left:16px;color:#444;margin-bottom:20px">
-        <li>全国の支店拠点＋つくば本社工場に配置したエンジニアが現地対応</li>
-        <li>設備の履歴や運用状況を把握した専任エンジニアによる継続サポート</li>
-        <li>機械・包装・加工分野に精通した技術サポート</li>
-        <li>部品供給・交換対応</li>
-      </ul>
-      <div class="wf-box">
-        <h3 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:10px">主なサポート内容</h3>
-        <ul style="font-size:13px;line-height:2.1;padding-left:16px;color:#444">
-          <li>緊急トラブル対応（時間外受付あり）</li>
-          <li>定期点検・保守</li>
-          <li>技術相談・改善提案</li>
-          <li>リモート診断による迅速な状況把握と技術支援</li>
-          <li>稼働データ分析による改善提案</li>
-        </ul>
-      </div>
-    </div>
-    <div class="wf-img" style="height:280px">[全国サポート体制・拠点マップ]</div>
-  </div>
-
   <!-- PMA -->
   <div class="wf-section">PMA（予防保全メンテナンス）</div>
   <p style="font-size:14px;line-height:1.9;color:#444;margin-bottom:20px">突発的な設備停止を防ぐための、計画的なメンテナンス契約です。定期点検・消耗部品の計画交換・設備診断を通じて不具合の兆候を早期に発見し、安定稼働と設備の長寿命化を支援します。</p>
@@ -206,7 +189,115 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
         </ul>
       </div>
     </div>
-    <div class="wf-img" style="height:280px">[Smart Services ダッシュボードイメージ]</div>
+    <div><div class="video-embed"><div class="video-pending">[Smart Services 紹介動画（YouTube埋め込み）<br>※動画の支給待ち]</div></div></div>
+  </div>
+
+  <!-- CS -->
+  <div class="wf-section">CS（カスタマーサポート）</div>
+  <div class="l-grid2" style="margin-bottom:40px;gap:32px">
+    <div>
+      <ul style="font-size:14px;line-height:2.2;padding-left:16px;color:#444;margin-bottom:20px">
+        <li>全国の支店拠点＋つくば本社工場に配置したエンジニアが現地対応</li>
+        <li>設備の履歴や運用状況を把握した専任エンジニアによる継続サポート</li>
+        <li>機械・包装・加工分野に精通した技術サポート</li>
+        <li>部品供給・交換対応</li>
+      </ul>
+      <div class="wf-box">
+        <h3 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:10px">主なサポート内容</h3>
+        <ul style="font-size:13px;line-height:2.1;padding-left:16px;color:#444">
+          <li>緊急トラブル対応（時間外受付あり）</li>
+          <li>定期点検・保守</li>
+          <li>技術相談・改善提案</li>
+          <li>リモート診断による迅速な状況把握と技術支援</li>
+          <li>稼働データ分析による改善提案</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wf-img" style="height:280px">[全国サポート体制・拠点マップ]</div>
+  </div>
+
+  <div style="margin-bottom:40px">
+    <h3 style="font-size:15px;font-weight:bold;color:#003087;margin-bottom:4px">アフターサポート・部品に関するお問い合わせ</h3>
+    <p style="font-size:13px;color:#666;margin-bottom:16px">アフターサポート・部品に関しては、下記の窓口へお問い合わせください。受付時間：平日 9:00〜17:30</p>
+    <div style="max-width:440px">
+      <div style="border:2px solid #003087;border-radius:6px;padding:16px;background:#f0f4ff">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:4px;padding-bottom:6px;border-bottom:1px solid #ccd7ee">つくば本社工場</p>
+          <p style="font-size:11px;font-weight:bold;color:#b35c00;margin-bottom:8px">部品・修理の受付窓口</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒305-0883</span><br>
+            茨城県つくば市みどりの東10-3<br>
+            <span class="nw">TEL：029-828-5087</span><span class="nw">（カスタマーサポート）</span><br>
+            <span class="nw">FAX：029-828-7742</span><br>
+            MAIL：<span style="word-break:break-all">abiko@jp.multivac.com</span>
+          </p>
+        </div>
+    </div>
+    <p style="font-size:14px;font-weight:bold;color:#003087;margin:28px 0 4px">各支店</p>
+  <div class="branch-grid">
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">北海道支店</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒003-0835</span><br>
+            北海道札幌市白石区<br>北郷5条5丁目7-25<br>
+            <span class="nw">TEL：011-805-2010</span><br>
+            <span class="nw">FAX：011-805-2020</span>
+          </p>
+        </div>
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">東北支店</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒982-0023</span><br>
+            宮城県仙台市太白区<br>鹿野3-19-15<br>
+            <span class="nw">TEL：022-398-9101</span><br>
+            <span class="nw">FAX：022-246-6101</span>
+          </p>
+        </div>
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">新潟支店</p>
+          <p style="font-size:11px;color:#888;margin-bottom:6px">※ 2025年6月開設</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒950-0950</span><br>
+            新潟県新潟市中央区<br>鳥屋野南3丁目10-26<br>
+            <span class="nw">TEL：029-828-5087</span><span class="nw">（カスタマーサポート）</span>
+          </p>
+        </div>
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">名古屋支店</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒463-0037</span><br>
+            愛知県名古屋市守山区<br>天子田3丁目909<br>
+            <span class="nw">TEL：052-778-9712</span><br>
+            <span class="nw">FAX：052-778-9713</span>
+          </p>
+        </div>
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">大阪支店</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒567-0037</span><br>
+            大阪府茨木市<br>上穂東町4-13<br>
+            <span class="nw">TEL：072-646-7828</span><br>
+            <span class="nw">FAX：072-622-7777</span>
+          </p>
+        </div>
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">広島支店</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒731-3164</span><br>
+            広島県広島市安佐南区<br>伴東一丁目1-44<br>
+            <span class="nw">TEL：082-849-6502</span><br>
+            <span class="nw">FAX：082-849-6503</span>
+          </p>
+        </div>
+        <div style="border:1px solid #dde3ee;border-radius:6px;padding:16px">
+          <p style="font-size:13px;font-weight:bold;color:#003087;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee">九州支店</p>
+          <p style="font-size:12px;color:#555;line-height:1.9">
+            <span class="nw">〒816-0911</span><br>
+            福岡県大野城市<br>大城2-23-36<br>
+            <span class="nw">TEL：092-558-3001</span><br>
+            <span class="nw">FAX：092-504-5277</span>
+          </p>
+        </div>
+      </div>
   </div>
 
   <div class="wf-section">よくあるご質問</div>
