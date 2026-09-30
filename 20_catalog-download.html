@@ -66,6 +66,16 @@ td { padding:10px 14px; border:1px solid #ddd; font-size:14px; }
 .search-bar input { margin:0; flex:1; }
 .cat-btn { border:1px solid #003087; padding:6px 14px; border-radius:20px; font-size:12px; color:#003087; cursor:pointer; display:inline-block; margin:4px; }
 .cat-btn.active { background:#003087; color:#fff; }
+a.cat-btn { text-decoration:none; }
+a.cat-btn:hover { background:#f0f4ff; }
+.cat-group { margin-bottom:32px; scroll-margin-top:80px; }
+.cat-maker { font-size:15px; font-weight:bold; color:#003087; padding-bottom:6px; border-bottom:1px solid #d5dced; margin-bottom:12px; }
+.cat-item { display:flex; gap:12px; align-items:center; background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:12px; cursor:pointer; }
+.cat-item:hover { background:#f0f4ff; }
+.cat-thumb { flex:0 0 52px; width:52px; height:68px; font-size:10px; }
+.cat-name { font-size:13px; font-weight:bold; color:#003087; margin-bottom:4px; line-height:1.5; }
+.cat-meta { font-size:12px; color:#888; }
+.cat-pending { font-size:13px; color:#888; }
 .anchor-nav { display:flex; gap:8px; border-bottom:2px solid #003087; margin-bottom:24px; padding-bottom:0; }
 .anchor-nav span { padding:10px 20px; font-size:13px; cursor:pointer; color:#666; }
 .anchor-nav span.active { color:#003087; font-weight:bold; border-bottom:3px solid #003087; margin-bottom:-2px; }
@@ -150,34 +160,91 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
     <p style="color:#1565c0;font-size:12px;font-weight:bold">★ 新規ページ</p>
     <p class="hero-en">CATALOG DOWNLOAD</p>
     <h1>カタログダウンロード</h1>
-    <p>製品カタログをダウンロードいただけます。お名前・会社名・メールアドレスのご入力をお願いします。</p>
+    <p>製品カタログをメーカー別にダウンロードいただけます。ダウンロードをご希望のカタログを選び、お名前・会社名・メールアドレスのご入力をお願いします。</p>
   </div>
 
-  <div class="l-grid2" style="gap:48px">
-    <div>
-      <div class="wf-section">カタログ一覧</div>
-      <div class="wf-box" style="display:flex;gap:16px;align-items:center;margin-bottom:12px"><div class="wf-img" style="width:100%;height:60px">[カタログ表紙]</div><div><h3 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:4px">MULTIVAC 総合カタログ 2025</h3><p style="font-size:12px;color:#888">PDF / 12MB</p></div></div><div class="wf-box" style="display:flex;gap:16px;align-items:center;margin-bottom:12px"><div class="wf-img" style="width:100%;height:60px">[カタログ表紙]</div><div><h3 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:4px">深絞り包装機 製品カタログ</h3><p style="font-size:12px;color:#888">PDF / 4MB</p></div></div><div class="wf-box" style="display:flex;gap:16px;align-items:center;margin-bottom:12px"><div class="wf-img" style="width:100%;height:60px">[カタログ表紙]</div><div><h3 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:4px">トレーシーラー 製品カタログ</h3><p style="font-size:12px;color:#888">PDF / 3MB</p></div></div><div class="wf-box" style="display:flex;gap:16px;align-items:center;margin-bottom:12px"><div class="wf-img" style="width:100%;height:60px">[カタログ表紙]</div><div><h3 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:4px">食肉加工機械 製品カタログ</h3><p style="font-size:12px;color:#888">PDF / 5MB</p></div></div><div class="wf-box" style="display:flex;gap:16px;align-items:center;margin-bottom:12px"><div class="wf-img" style="width:100%;height:60px">[カタログ表紙]</div><div><h3 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:4px">メディカル用包装機 製品カタログ</h3><p style="font-size:12px;color:#888">PDF / 3MB</p></div></div><div class="wf-box" style="display:flex;gap:16px;align-items:center;margin-bottom:12px"><div class="wf-img" style="width:100%;height:60px">[カタログ表紙]</div><div><h3 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:4px">工業・家庭用品 製品カタログ</h3><p style="font-size:12px;color:#888">PDF / 4MB</p></div></div>
-    </div>
-    <div>
-      <div class="wf-section">ダウンロードフォーム</div>
-      <div class="wf-box" style="background:#f0f4ff;margin-bottom:16px">
-        <p style="font-size:13px">下記フォームにご入力いただくと、選択されたカタログをダウンロードできます。</p>
-      </div>
-      <label class="label">お名前 <span style="color:red">*</span></label>
-      <input placeholder="山田 太郎">
-      <label class="label">会社名 <span style="color:red">*</span></label>
-      <input placeholder="株式会社〇〇">
-      <label class="label">メールアドレス <span style="color:red">*</span></label>
-      <input type="email" placeholder="example@email.com">
-      <label class="label">電話番号</label>
-      <input type="tel" placeholder="03-0000-0000">
-      <div style="background:#f5f5f5;padding:12px;font-size:12px;border-radius:4px;margin-bottom:16px">
-        <label><input type="checkbox"> <a href="21_privacy.html" style="color:#003087">プライバシーポリシー</a>に同意する</label>
-      </div>
-      <div class="btn-primary" style="text-align:center;padding:14px;border-radius:4px;font-size:15px">ダウンロードする</div>
+  <div class="wf-section">メーカーから選ぶ</div>
+  <div style="margin-bottom:32px">
+    <a class="cat-btn" href="#cat-multivac">MULTIVAC</a>
+    <a class="cat-btn" href="#cat-tvi">TVI</a>
+    <a class="cat-btn" href="#cat-fritsch">FRITSCH</a>
+    <a class="cat-btn" href="#cat-handtmann">handtmann</a>
+    <a class="cat-btn" href="#cat-seydelmann">Seydelmann</a>
+    <a class="cat-btn" href="#cat-stephan">Stephan</a>
+    <a class="cat-btn" href="#cat-schroeder">SCHROEDER</a>
+    <a class="cat-btn" href="#cat-escher">ESCHER</a>
+  </div>
+
+  <div class="wf-section">カタログ一覧</div>
+  <div class="cat-group" id="cat-multivac">
+    <div class="cat-maker">MULTIVAC</div>
+    <div class="l-grid2">
+      <label class="cat-item"><input type="checkbox"><div class="wf-img cat-thumb">[表紙]</div><div><div class="cat-name">深絞り包装機</div><div class="cat-meta">PDF / 2MB</div></div></label>
+      <label class="cat-item"><input type="checkbox"><div class="wf-img cat-thumb">[表紙]</div><div><div class="cat-name">トレーシーラー</div><div class="cat-meta">PDF / 5MB</div></div></label>
+      <label class="cat-item"><input type="checkbox"><div class="wf-img cat-thumb">[表紙]</div><div><div class="cat-name">チャンバー包装機</div><div class="cat-meta">PDF / 0.8MB</div></div></label>
+      <label class="cat-item"><input type="checkbox"><div class="wf-img cat-thumb">[表紙]</div><div><div class="cat-name">BASE LINE包装機</div><div class="cat-meta">PDF / 2.2MB</div></div></label>
+      <label class="cat-item"><input type="checkbox"><div class="wf-img cat-thumb">[表紙]</div><div><div class="cat-name">スライサー</div><div class="cat-meta">PDF / 1.9MB</div></div></label>
     </div>
   </div>
-</div>
+  <div class="cat-group" id="cat-tvi">
+    <div class="cat-maker">TVI</div>
+    <div class="l-grid2">
+      <label class="cat-item"><input type="checkbox"><div class="wf-img cat-thumb">[表紙]</div><div><div class="cat-name">ポーションカッターGMS</div><div class="cat-meta">PDF / 2MB</div></div></label>
+    </div>
+  </div>
+  <div class="cat-group" id="cat-fritsch">
+    <div class="cat-maker">FRITSCH</div>
+    <div class="l-grid2">
+      <label class="cat-item"><input type="checkbox"><div class="wf-img cat-thumb">[表紙]</div><div><div class="cat-name">パイローラー／シーティングマシン</div><div class="cat-meta">PDF / 2MB</div></div></label>
+    </div>
+  </div>
+  <div class="cat-group" id="cat-handtmann">
+    <div class="cat-maker">handtmann</div>
+    <div class="wf-box" style="margin-bottom:0"><p class="cat-pending">カタログを準備中です。</p></div>
+  </div>
+  <div class="cat-group" id="cat-seydelmann">
+    <div class="cat-maker">Seydelmann</div>
+    <div class="l-grid2">
+      <label class="cat-item"><input type="checkbox"><div class="wf-img cat-thumb">[表紙]</div><div><div class="cat-name">カッター／ミキサー／グラインダー／コンティカッター／プロダクションライン</div><div class="cat-meta">PDF / 1MB</div></div></label>
+    </div>
+  </div>
+  <div class="cat-group" id="cat-stephan">
+    <div class="cat-maker">Stephan</div>
+    <div class="l-grid2">
+      <label class="cat-item"><input type="checkbox"><div class="wf-img cat-thumb">[表紙]</div><div><div class="cat-name">ユニバーサルマシンシリーズ</div><div class="cat-meta">PDF / 1MB</div></div></label>
+      <label class="cat-item"><input type="checkbox"><div class="wf-img cat-thumb">[表紙]</div><div><div class="cat-name">ミクロカッターMC</div><div class="cat-meta">PDF / 0.2MB</div></div></label>
+    </div>
+  </div>
+  <div class="cat-group" id="cat-schroeder">
+    <div class="cat-maker">SCHROEDER</div>
+    <div class="l-grid2">
+      <label class="cat-item"><input type="checkbox"><div class="wf-img cat-thumb">[表紙]</div><div><div class="cat-name">マッサージ装置　MAX</div><div class="cat-meta">PDF / 1MB</div></div></label>
+      <label class="cat-item"><input type="checkbox"><div class="wf-img cat-thumb">[表紙]</div><div><div class="cat-name">インジェクター装置　IMAX</div><div class="cat-meta">PDF / 1MB</div></div></label>
+    </div>
+  </div>
+  <div class="cat-group" id="cat-escher">
+    <div class="cat-maker">ESCHER</div>
+    <div class="wf-box" style="margin-bottom:0"><p class="cat-pending">カタログを準備中です。</p></div>
+  </div>
+
+  <div class="wf-section">ダウンロードフォーム</div>
+  <div style="max-width:520px">
+    <div class="wf-box" style="background:#f0f4ff">
+      <p style="font-size:13px">上でチェックしたカタログをまとめてダウンロードできます。</p>
+    </div>
+    <label class="label">お名前 <span style="color:red">*</span></label>
+    <input placeholder="山田 太郎">
+    <label class="label">会社名 <span style="color:red">*</span></label>
+    <input placeholder="株式会社〇〇">
+    <label class="label">メールアドレス <span style="color:red">*</span></label>
+    <input type="email" placeholder="example@email.com">
+    <label class="label">電話番号</label>
+    <input type="tel" placeholder="03-0000-0000">
+    <div style="background:#f5f5f5;padding:12px;font-size:12px;border-radius:4px;margin-bottom:16px">
+      <label><input type="checkbox"> <a href="21_privacy.html" style="color:#003087">プライバシーポリシー</a>に同意する</label>
+    </div>
+    <div class="btn-primary" style="text-align:center;padding:14px;border-radius:4px;font-size:15px">ダウンロードする</div>
+  </div></div>
 
 <footer>
   <div class="ft-inner">
