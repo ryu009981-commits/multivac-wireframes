@@ -116,6 +116,12 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
 .mv-overlay { position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; background:rgba(0,24,64,.5); padding:0 0 24px calc(max(24px, 50% - 576px)); }
 .mv-title { color:#fff; font-size:38px; font-weight:900; letter-spacing:2px; margin-bottom:10px; text-shadow:0 2px 8px rgba(0,0,0,.4); }
 .mv-en { color:rgba(255,255,255,.8); font-size:14px; letter-spacing:4px; }
+    .sup-intro { display:grid; grid-template-columns:1fr 420px; gap:32px; align-items:center; border-bottom:1px solid #eee; padding-bottom:32px; margin-bottom:40px; }
+    .sup-pma { display:grid; grid-template-columns:1fr 360px; gap:20px; align-items:center; }
+    .sup-photo { width:100%; display:block; object-fit:cover; border-radius:4px; }
+    .sup-photo-intro { height:240px; }
+    .sup-photo-pma   { height:126px; }
+    .sup-photo-parts { height:280px; }
 </style>
 </head>
 <body>
@@ -153,24 +159,31 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
 </div>
 <div class="breadcrumb"><div class="l-wrap"><a href="index.html">HOME</a><span>›</span><span>サービス</span><span>›</span><span>アフターサポート</span></div></div>
 <div class="l-wrap" style="padding-top:32px;padding-bottom:60px">
-  <div class="page-head">
-    <p class="hero-en">AFTER SALES SUPPORT（CS / PMA）</p>
-    <h1>アフターサポート</h1>
-    <p style="font-size:14px;line-height:1.8;color:#555;margin-top:12px;max-width:680px">アフターサポート（CS／PMA）とは、設備導入後のトラブル対応から予防保全までを一貫して行い、包装・加工設備の長期安定稼働を支えるMULTIVAC Japanのサポート体制です。</p>
+  <div class="sup-intro">
+    <div>
+      <div class="page-head" style="border-bottom:none;padding-bottom:0;margin-bottom:24px">
+        <p class="hero-en">AFTER SALES SUPPORT（CS / PMA）</p>
+        <h1>アフターサポート</h1>
+        <p style="font-size:14px;line-height:1.8;color:#555;margin-top:12px;max-width:680px">アフターサポート（CS／PMA）とは、設備導入後のトラブル対応から予防保全までを一貫して行い、包装・加工設備の長期安定稼働を支えるMULTIVAC Japanのサポート体制です。</p>
+      </div>
+      <p style="font-size:15px;line-height:2;color:#444;max-width:720px">設備導入後の停止リスクを最小化。<br>全国体制と専任エンジニアにより、長期にわたる安定稼働を支えます。</p>
+    </div>
+    <img class="sup-photo sup-photo-intro" src="images/support-engineer.jpg" alt="制御盤の配線を点検するサービスエンジニア">
   </div>
-
-  <p style="font-size:15px;line-height:2;color:#444;margin-bottom:48px;max-width:720px">設備導入後の停止リスクを最小化。<br>全国体制と専任エンジニアにより、長期にわたる安定稼働を支えます。</p>
 
   <!-- PMA -->
   <div class="wf-section">PMA（予防保全メンテナンス）</div>
   <p style="font-size:14px;line-height:1.9;color:#444;margin-bottom:20px">突発的な設備停止を防ぐための、計画的なメンテナンス契約です。定期点検・消耗部品の計画交換・設備診断を通じて不具合の兆候を早期に発見し、安定稼働と設備の長寿命化を支援します。</p>
-  <div class="wf-box" style="margin-bottom:40px">
-    <h3 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:10px">主なメンテナンス内容</h3>
-    <ul style="font-size:14px;line-height:2.2;padding-left:16px;color:#444">
-      <li>定期点検と消耗部品の計画的な交換による保守対応</li>
-      <li>点検・診断レポートの提出</li>
-      <li>安定稼働と長寿命化をサポート</li>
-    </ul>
+  <div class="wf-box sup-pma" style="margin-bottom:40px">
+    <div>
+      <h3 style="font-size:14px;font-weight:bold;color:#003087;margin-bottom:10px">主なメンテナンス内容</h3>
+      <ul style="font-size:14px;line-height:2.2;padding-left:16px;color:#444">
+        <li>定期点検と消耗部品の計画的な交換による保守対応</li>
+        <li>点検・診断レポートの提出</li>
+        <li>安定稼働と長寿命化をサポート</li>
+      </ul>
+    </div>
+    <img class="sup-photo sup-photo-pma" src="images/support-pma.jpg" alt="包装機の部品を整備するサービスエンジニア">
   </div>
 
   <!-- Smart Services -->
@@ -213,7 +226,7 @@ footer { background:#f5f7fa; color:#333; padding:48px 0 0; margin-top:60px; font
         </ul>
       </div>
     </div>
-    <div class="wf-img" style="height:280px">[全国サポート体制・拠点マップ]</div>
+    <img class="sup-photo sup-photo-parts" src="images/support-parts.jpg" alt="補修部品を保管する部品倉庫">
   </div>
 
   <div style="margin-bottom:40px">
